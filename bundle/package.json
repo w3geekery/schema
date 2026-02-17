@@ -1,0 +1,21 @@
+{
+  "name": "@zerobias-org/schema-bundle",
+  "version": "0.0.1",
+  "description": "All installable zerobias-org schemas",
+  "author": "team@zerobias.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zerobias-org/schema.git",
+    "directory": "bundle/"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "zerobias": {
+    "package": "bundle.all-schemas",
+    "import-artifact": "bundle",
+    "dataloader-version": "1.0.0"
+  },
+  "dependencies": {}
+}

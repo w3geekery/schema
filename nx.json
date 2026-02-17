@@ -1,0 +1,19 @@
+{
+  "affected": {
+    "defaultBase": "main"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "validate"
+        ],
+        "parallel": 4
+      }
+    }
+  },
+  "targetDefaults": {
+    "validate": {}
+  }
+}

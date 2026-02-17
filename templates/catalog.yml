@@ -1,0 +1,5 @@
+Schema:
+  name: "{name}"
+  package: "{vendor}.{code}.schema"
+  description: |-
+    {description}
