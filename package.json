@@ -15,7 +15,7 @@
     "reset": "npm run clean:full && npm install",
     "lerna:dry-run": "lerna version --no-git-tag-version --no-push --conventional-commits",
     "lerna:version": "lerna version --no-git-tag-version --no-push --conventional-commits --yes",
-    "prepublish-init": "bash scripts/prepublish-init.sh"
+    "prepublish-init": "prepublish-init"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
