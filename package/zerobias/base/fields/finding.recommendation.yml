@@ -1,0 +1,3 @@
+description: "A recommendation for a finding"
+displayName: "Finding Recommendation"
+type: "string"

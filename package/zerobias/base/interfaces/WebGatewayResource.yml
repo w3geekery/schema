@@ -1,0 +1,16 @@
+description: "Web Gateway Resource"
+properties:
+    - path:
+      field:
+        type: string
+        description: "The path of the resource"
+    - parent:
+      linkTo: WebGatewayResource.id.subPaths
+    - subPaths:
+      linkTo: WebGatewayResource.id.parent
+      multi: true
+    - operations:
+      linkTo: WebGatewayOperation
+      multi: true
+    - gateway:
+      linkTo: WebGateway

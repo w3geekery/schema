@@ -1,0 +1,11 @@
+description: "The possible values for an end user device registration"
+displayName: "Registration Status"
+values:
+  - "REGISTERED": "The device is registered"
+  - "UNREGISTERED": "The device is not registered"
+  - "REVOKED": "The device has been blocked, wiped or retired."
+  - "ERROR": "The device has a key conflict or another operational error"
+  - "PENDING_APPROVAL": "The device is pending approval"
+  - "CERTIFICATE_RESET": "The device certificate has been reset"
+  - "PENDING_ENROLLMENT": "The device is not registered and pending enrollment"
+  - "UNKNOWN": "Unknown"

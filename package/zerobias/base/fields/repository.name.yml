@@ -1,0 +1,4 @@
+example: "Hello-World"
+description: "Repository name"
+displayName: "Repository Name"
+type: "string"

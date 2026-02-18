@@ -1,0 +1,7 @@
+description: "Type of change as defined by the Information Technology Infrastructure Library (ITIL) verison 3 (ITIL v3) Service Transition best practices"
+displayName: "Change Type"
+values:
+  - STANDARD: "Low risk and low impact change that is pre-defined and pre-approved by an organizations Change Advisory Board (CAB)"
+  - MINOR_CHANGE: "Non-trivial changes that do not occur frequently but this undergoes every stage of change lifecycle including change Change Advisory Board (CAB) approval"
+  - MAJOR_CHANGE: "High risk and high impact change that could interrupt production live environments if not planned properly which at a minimum requires Change Advisory Board (CAB) approval and potentially external stakeholders as defined by the organization"
+  - EMERGENCY_CHANGE: "Emergency changes are unexpected disruptions that need to be resolved as soon as possible"

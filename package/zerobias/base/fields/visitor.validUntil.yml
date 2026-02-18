@@ -1,0 +1,4 @@
+description: Date until which the visitor access is valid
+displayName: Valid Until
+type: date
+example: "2021-12-31"

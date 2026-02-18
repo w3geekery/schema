@@ -1,0 +1,4 @@
+description: "The legal (government ID) name for a person."
+displayName: "Legal Name"
+type: "string"
+indexed: true

@@ -1,0 +1,11 @@
+description: "Type of Background Check"
+displayName: "Background Check Type"
+values:
+  - "CRIMINAL_STATE": "Criminal State"
+  - "CRIMINAL_FEDERAL": "Criminal Federal"
+  - "FINANCIAL": "Financial"
+  - "DRUG": "Drug"
+  - "DMV": "Motor vehicle"
+  - "EDUCATION": "Education"
+  - "IDENTITY": "Identity"
+  - "OTHER": "Other"

@@ -1,0 +1,9 @@
+description: "Asset Criticality"
+displayName: "Asset Criticality"
+values:
+  - MISSION_CRITICAL:	Affects the company's mission and might noticeably affect corporate profit-and-loss statements.
+  - UNIT_CRITICAL:	Affects the mission of a specific business unit and its profit-and-loss statements.
+  - HIGH:	Might not hinder the mission, but affects high-importance processes. Measurable losses can be quantified in the case of outages.
+  - MEDIUM:	Impact on processes is likely. Losses are low or immeasurable, but brand damage or upstream losses are likely.
+  - LOW:	Impact on business processes isn't measurable. Neither brand damage nor upstream losses are likely. Localized impact on a single team is likely.
+  - UNSUPPORTED:	No business owner, team, or process that's associated with this workload can justify any investment in the ongoing management of the workload.

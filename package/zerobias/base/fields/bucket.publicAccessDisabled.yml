@@ -1,0 +1,3 @@
+description: "Whether public access is disabled for this bucket"
+displayName: "Public Access Disabled"
+type: "boolean"

@@ -1,0 +1,40 @@
+description: "Time-based scheduling for access control and system operations"
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Timezone":
+    jsonata: timeZone
+    sort: timeZone
+  "Effective Date":
+    jsonata: effectiveDate
+    sort: effectiveDate
+  "Time Slots":
+    jsonata: $count(timeSlots)
+extends:
+  - Configuration
+properties:
+  - timeSlots:
+    field: timeSlot
+    multi: true
+  - timeZone:
+    field: timeZone
+  - effectiveDate:
+    field: dateEffective
+  - expirationDate:
+    field: dateOfExpiration
+# Links
+  - credentials:
+    linkTo: AccessCredential.id.schedules
+    multi: true
+  - zones:
+    linkTo: AccessZone.id.schedules
+    multi: true
+  - entries:
+    linkTo: PhysicalEntry.id.schedules
+    multi: true
+  - app:
+    linkTo: PhysicalAccessManagementApp.id.schedules

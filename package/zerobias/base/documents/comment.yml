@@ -1,0 +1,17 @@
+description: "A generic comment document"
+displayName: "Comment"
+properties:
+  - title:
+    field: comment.title
+  - body:
+    field: comment.body
+  - dateCreated:
+    field: dateCreated
+  - authorId:
+    field: comment.authorId
+  - authorName:
+    field: comment.authorName
+  - authorUsername:
+    field: comment.authorUsername
+  - authorEmail:
+    field: email 

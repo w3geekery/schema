@@ -1,0 +1,3 @@
+description: "Boolean value indicating whether or not the asset allows for authenticated vulnerability scans"
+displayName: "Authenticated Scan"
+type: "boolean"

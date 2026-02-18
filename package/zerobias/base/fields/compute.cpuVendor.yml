@@ -1,0 +1,4 @@
+example: "AuthenticAMD"
+description: "CPU Vendor id"
+displayName: "CPU Vendor id"
+type: "string"

@@ -1,0 +1,3 @@
+displayName: "Routers"
+description: "IP addresses for routers on the client's subnet"
+type: "ipAddress"

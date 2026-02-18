@@ -1,0 +1,5 @@
+description: "Pull Request Status"
+displayName: "Pull Request Status"
+values:
+  - "OPEN": "Open"
+  - "CLOSED": "Closed"

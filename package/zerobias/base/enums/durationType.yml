@@ -1,0 +1,6 @@
+description: "The way to determine an interval"
+displayName: "Duration Type"
+values:
+  - "ABSOLUTE": "Specific end date"
+  - "RELATIVE": "Relative end date"
+  - "FOREVER": "No end date"

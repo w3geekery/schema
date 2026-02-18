@@ -1,0 +1,22 @@
+description: "Source Code Management (SCM) Account"
+icon: images/classes/auditmation/base/SourceCodeMgmtAcct.svg
+extends:
+  - Account
+  - SourceCodeMgmtPrincipal
+properties:
+  - repo:
+    multi: true
+    linkTo: Repository
+    t3: permissionSet
+  - prAssignee:
+    linkTo: PullRequest.id.assignee
+    hidden: true
+    multi: true
+  - prReviewer:
+    linkTo: PullRequest.id.reviewer
+    hidden: true
+    multi: true
+  - reviews:
+    linkTo: CodeReview
+    hidden: true
+    multi: true

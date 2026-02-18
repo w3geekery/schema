@@ -1,0 +1,12 @@
+description: "Physical Location"
+displayName: "Location"
+properties:
+  - locationType:
+    field: locationType
+  - address:
+    field: location.address
+    multi: true
+  - geoPoint:
+    field: location.geoPoint
+  - phoneNumber:
+    multi: true

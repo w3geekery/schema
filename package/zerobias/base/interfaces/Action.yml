@@ -1,0 +1,5 @@
+description: An operation or method that may be restricted on a given Resource
+properties:
+  - accessRules:
+    linkTo: AccessRule
+    multi: true

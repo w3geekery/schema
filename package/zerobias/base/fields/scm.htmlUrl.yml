@@ -1,0 +1,3 @@
+description: "HTML / Human URL for viewing an SCM object"
+displayName: "HTML URL"
+type: "url"

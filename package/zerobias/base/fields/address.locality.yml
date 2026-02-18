@@ -1,0 +1,5 @@
+example: "Los Angeles (US City), Ontario (CA Province) "
+description: "A physical region or subregion (city, state, county, province, etc)"
+displayName: "Locality"
+type: "string"
+indexed: true

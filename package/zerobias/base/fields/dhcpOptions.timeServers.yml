@@ -1,0 +1,3 @@
+displayName: "Time Servers"
+description: "IP addresses for time servers"
+type: "ipAddress"

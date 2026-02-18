@@ -1,0 +1,9 @@
+# We can add more based on asset lifecycle
+description: "Asset History operation"
+displayName: "Asset History operation"
+values: 
+  - CHECK_IN
+  - CHECK_OUT
+  - LEAVE_SERVICE
+  - ENTER_SERVICE
+  - MAINTENANCE

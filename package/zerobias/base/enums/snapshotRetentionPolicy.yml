@@ -1,0 +1,7 @@
+description: "Snapshot Retention Policy"
+displayName: "Snapshot Retention Policy"
+values:
+  - "HOURLY": "Hourly"
+  - "DAILY": "Daily"
+  - "WEEKLY": "Weekly"
+  - "OTHER": "Other configuration"

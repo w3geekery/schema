@@ -1,0 +1,20 @@
+description: CVE
+extends:
+  - Vulnerability
+properties:
+  - kev:
+    field:
+      type: boolean
+      description: "True if the CVE is a KEV (Known Exploited Vulnerability)"
+  - kevDiscovered:
+    field:
+      type: date
+      description: "Date the CVE was discovered as a KEV"
+  - kevDueDate:
+    field:
+      type: date
+      description: "Date the CVE is due to be remediated"
+  - kevKnownRansomwareUse:
+    field:
+      type: boolean
+      description: "True if the CVE is known to be used by ransomware"

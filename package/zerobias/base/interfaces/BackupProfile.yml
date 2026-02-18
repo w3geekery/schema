@@ -1,0 +1,13 @@
+description: "A backup profile which contains a backup application's strategy"
+icon: images/classes/auditmation/base/BackupProfile.svg
+properties:
+  - backupType:
+  - backupFrequency:
+    field: backup.frequency
+  - backupApp:
+    linkTo: BackupApplication
+  - backupJobs:
+    linkTo: BackupJob
+    multi: true
+  - cryptoModule:
+    field: cryptoModule

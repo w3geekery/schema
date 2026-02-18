@@ -1,0 +1,18 @@
+description: "Transition step / state provided by and enforced by an Application Workflow, such as HR worfklows, ITSM workflows"
+# icon: images/classes/auditmation/base/Application.svg #fixme - update with Workflow State app icon
+properties:
+  - nextStep:
+    linkTo: WorkflowStep.id.previousStep
+    t3: transition
+    multi: true
+  - previousStep:
+    linkTo: WorkflowStep.id.nextStep
+    t3: transition
+    multi: true
+  - party: "party associated with workflow step, such as approver, requestor, etc."
+    multi: true
+    linkTo: Party
+    t3: partyRole
+  - stepTicket:
+    multi: true
+    linkTo: WorkflowStepTicket

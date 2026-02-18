@@ -1,0 +1,49 @@
+description: "Firewall"
+extends: Asset
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Serial Number":
+    jsonata: serialNumber
+    sort: serialNumber
+  "Manufacturer":
+    jsonata: manufacturer
+    sort: manufacturer
+  "Model":
+    jsonata: model
+    sort: model
+  "Version":
+    jsonata: version
+    sort: version
+  "Environment":
+    jsonata: environment
+    sort: environment
+  "Location":
+    jsonata: location
+    sort: location
+  "InRules":
+    jsonata: $count(inRules)
+  "OutRules":
+    jsonata: $count(outRules)
+# Todo: query .... 
+# Collector work: manuf. model, version ..etc
+properties:
+  - inRules:
+    field: firewall.rule
+    multi: true
+  - outRules:
+    field: firewall.rule
+    multi: true
+  # Links
+  - environment:
+    linkTo: Environment
+  - networks:
+    linkTo: Network
+    multi: true
+    t3: routerAssociation

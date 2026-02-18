@@ -1,0 +1,9 @@
+description: "Describes relationship between a Router and Network"
+displayName: "Router Association"
+properties:
+  - id:
+    field: routerAssociation.id 
+  - type:
+    field: routerAssociationType
+  - status:
+    field: operationalStatus

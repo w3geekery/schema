@@ -1,0 +1,3 @@
+displayName: "Address Block"
+description: "CIDR block of IP addresses for an ACL rule"
+type: "cidr"

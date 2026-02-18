@@ -1,0 +1,11 @@
+description: "Enumeration store for the current status of an employee"
+displayName: "Employment Status"
+values:
+  - "ACTIVE": "Active"
+  - "TERMINATED": "Terminated"
+  - "RESIGNED": "Resigned"
+  - "FURLOUGHED": "Furloughed"
+  - "LEAVE": "Leave"
+  - "ST_DISABILITY": "Short-term disablity"
+  - "LT_DISABILITY": "Long-term disability"
+  - "INACTIVE": "Inactive"

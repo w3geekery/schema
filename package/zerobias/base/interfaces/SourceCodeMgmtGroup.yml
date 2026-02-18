@@ -1,0 +1,14 @@
+description: "Source Code Management (SCM) Group"
+icon: images/classes/auditmation/base/SourceCodeMgmtGroup.svg
+extends:
+  - Group
+  - SourceCodeMgmtPrincipal
+properties:
+  - repo:
+    multi: true
+    linkTo: Repository
+    t3: permissionSet
+  - pullRequests:
+    linkTo: PullRequest
+    hidden: true
+    multi: true

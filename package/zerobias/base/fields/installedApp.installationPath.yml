@@ -1,0 +1,4 @@
+example: "C:\\Program Files\\jenny\\"
+description: "Application Installation Path"
+displayName: "Installation Path"
+type: "string"

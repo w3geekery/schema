@@ -1,0 +1,50 @@
+description: "Store for Volume type records"
+extends:
+  - Asset
+  - CryptoDevice
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description  
+    sort: description
+  "Size":
+    jsonata: "(size ? size : 'unknown') & ' GB'"
+    sort: size
+  "Iops":
+    jsonata: iops
+    sort: iops
+  "Block Device":
+    jsonata: blockDevice
+    sort: blockDevice
+  "Snapshots":
+    jsonata: $count(snapshots)  
+  "Availability Zone":
+    jsonata: availabilityZone
+    sort: availabilityZone
+  "Encrypted":
+    jsonata: cryptoEnabled
+    sort: cryptoEnabled
+  "ID":
+    jsonata: id
+    sort: id
+properties:
+  - size:
+    field: sizeGigaBytes
+  - iops:
+    field: volume.iops
+  - blockDevice:
+    multi: true
+  # Links
+  - snapshots:
+    linkTo: Snapshot
+    multi: true
+  - availabilityZone:
+    linkTo: AvailabilityZone
+    uniLink: true
+  - virtualMachine:
+    linkTo: VirtualMachine
+    t3: blockDevice

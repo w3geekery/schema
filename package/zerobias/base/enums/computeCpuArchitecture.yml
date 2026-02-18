@@ -1,0 +1,11 @@
+description: "The architecture of the CPU."
+displayName: "CPU Architecture"
+values:
+  - "ARM": "32-bit ARM"
+  - "ARM64": "64-bit ARM"
+  - "X86_32": "32-bit x86 (i386, etc)"
+  - "X86_64": "64-bit x86"
+  - "RISC": "RISC"
+  - "MIPS": "MIPS"
+  - "SPARC": "SPARC"
+  - "ALPHA": "ALPHA"

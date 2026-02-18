@@ -1,0 +1,5 @@
+example: "Project Manager"
+description: "The title of the position for an employee"
+displayName: "Position Title"
+type: "string"
+indexed: true

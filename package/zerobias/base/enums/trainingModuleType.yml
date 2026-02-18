@@ -1,0 +1,8 @@
+description: "Training Module Type, such as video training, interactive/gaming, or coursework"
+displayName: "Training Module Type"
+values:
+  - TRAINING_MODULE: "Training Module"
+  - VIDEO_MODULE: "Video Training Module"
+  - GAME: "Gamification and Interactive Training Module"
+  - ASSESSMENT: "Assessment Training Module"
+  - OTHER: "Other"

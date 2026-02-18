@@ -1,0 +1,3 @@
+description: "Boolean value to determine if encryption is enabled or not"
+displayName: "Backup Encryption"
+type: "boolean"

@@ -1,0 +1,13 @@
+description: "Incident Type as defined by the Chairman of the Joint Chiefs of Staff Manual (CJCSM) 6510.01B and DoD"
+displayName: "Incident Type"
+values:
+  - "TRAINING_AND_EXERCISES": "Training/exercises performed for incident handling training purposes"
+  - "ROOT_LEVEL_INTRUSION": "Unauthorized privileged access to an information system"
+  - "USER_LEVEL_INTRUSION": "Unauthorized nonprivileged access to an information system"
+  - "UNSUCCESSFUL_ACTIVITY_ATTEMPT": "Deliberate attempts to gain unauthorized access that are defeated by normal defensive mechanisms"
+  - "DENIAL_OF_SERVICE": "Activity that denies, degardes, or disrupts normal functionality"
+  - "NON_COMPLIANCE_ACTIVITY": "Noncompliant activities such as action or inaction of authorized users"
+  - "RECONNAISSANCE": "Reconnaissance activity that seeks to gather information such as footprinting networks, devices, or applications"
+  - "MALICIOUS_LOGIC": "Installation of software designed and/or deployed by adversaries with malicious intentions"
+  - "INVESTIGATING": "Activity deemed suspicious and warrant, or are undergoing, further review"
+  - "EXPLAINED_ANOMALY": "Suspicious events that after further investigation are determined to be non-malicious activity and do not fit the criteria for any other categories"

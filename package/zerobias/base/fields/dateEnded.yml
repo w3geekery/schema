@@ -1,0 +1,4 @@
+example: "2021-10-26"
+description: "The date when the event ended"
+displayName: "Date Ended"
+type: "date"

@@ -1,0 +1,3 @@
+description: "Whether auto-merge is enabled for a Pull Request"
+displayName: "Auto Merge"
+type: "boolean"

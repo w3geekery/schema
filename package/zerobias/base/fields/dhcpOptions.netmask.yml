@@ -1,0 +1,3 @@
+displayName: "Netmask"
+description: "The subnet mask option specifies the client's subnet mask as per RFC 950 "
+type: "ipAddress"

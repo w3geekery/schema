@@ -1,0 +1,10 @@
+description: "Current operational state of a resource or interface."
+displayName: "Operational Status"
+values:
+  - "UP": "Up/Active/Available"
+  - "DOWN": "Down/Inactive/Unavailable"
+  - "TESTING": "Testing/Information"
+  - "UNKNOWN": "Unknown"
+  - "DORMANT": "Dormant/Standby/Sleeping"
+  - "NOT_PRESENT": "Not Present/No Media/Unplugged/Blank/Empty"
+  - "IMPAIRED": "Impaired/Degraded/Intermittent/Overloaded"

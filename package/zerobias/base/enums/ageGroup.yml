@@ -1,0 +1,6 @@
+description: "Age Category for legal purposes"
+displayName: "Age Category"
+values:
+  - "MINOR": "Child or Minor"
+  - "NOT_ADULT": "Older than Child but not an Adult"
+  - "ADULT": "Legal adult"

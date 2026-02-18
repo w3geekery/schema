@@ -1,0 +1,4 @@
+displayName: "Preferred Maintenance Window"
+description: "The time when the Asset should be maintained"
+example: "02:00-03:00"
+type: "string"

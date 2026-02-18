@@ -1,0 +1,4 @@
+example: "aws"
+description: "A Cloud Services Provider"
+displayName: "Cloud Provider"
+type: "cloudProvider"

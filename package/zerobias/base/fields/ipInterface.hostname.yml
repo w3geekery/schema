@@ -1,0 +1,5 @@
+example: "www.google.com"
+description: "DNS domain name for a service or host"
+displayName: "Hostname"
+type: "string"
+keyed: true

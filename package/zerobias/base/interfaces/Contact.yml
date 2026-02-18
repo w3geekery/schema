@@ -1,0 +1,53 @@
+description: "Contact information for a person"
+extends: Location
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Title":
+    jsonata: jobTitle
+    sort: jobTitle
+  "Department":
+    jsonata: department
+    sort: department
+properties:
+  - prefix:
+    field: person.prefix
+  - firstName:
+    field: person.firstName
+  - middleName:
+    field: person.middleName
+  - lastName:
+    field: person.lastName
+  - maidenName:
+    field: person.maidenName
+  - suffix:
+    field: person.suffix
+  - pronoun:
+    field: person.pronoun
+  - legalName:
+    field: person.legalName
+    multi: true
+  - jobTitle:
+    field: person.jobTitle
+    multi: true
+  - positionTitle:
+    field: person.positionTitle
+    multi: true
+  - department:
+    field: person.department
+  - preferredLanguage:
+    field: person.preferredLanguage
+    multi: true
+  - mailInfo:
+    field: mailInfo
+    multi: true
+  - phoneInfo:
+    field: phoneInfo
+    multi: true
+  - email: # Note: this is a field in order to have proper links and view properties (can be treated as a main email)
+    field: email
+    multi: true

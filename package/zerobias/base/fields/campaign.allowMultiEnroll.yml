@@ -1,0 +1,4 @@
+example: "true"
+description: "Allow courses to be done multiple times"
+displayName: "Allow Multiple Enrollements"
+type: "boolean"

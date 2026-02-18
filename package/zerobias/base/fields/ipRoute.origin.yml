@@ -1,0 +1,4 @@
+description: "The origin of a route"
+displayName: "Origin"
+type: "string"
+indexed: false

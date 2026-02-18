@@ -1,0 +1,24 @@
+description: "Software Application (hosted or SaaS)"
+icon: images/classes/auditmation/base/Application.svg
+extends: Asset
+properties:
+  - passwordPolicy:
+    field: passwordPolicy
+# Links
+  - accounts:
+    multi: true
+    linkTo: Account
+    t3: permissionSet
+  - groups:
+    multi: true
+    linkTo: Group
+    t3: permissionSet
+  - accessRules:
+    multi: true
+    linkTo: AccessRule
+  - serviceEndpoints:
+    multi: true
+    linkTo: ServiceEndpoint
+  - roles:
+    multi: true
+    linkTo: Role.id.app

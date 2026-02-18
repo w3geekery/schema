@@ -1,0 +1,7 @@
+description: An account used for physical access management systems
+extends:
+  - Account
+properties:
+  - hostedVisitors:
+    linkTo: Visitor.id.host 
+    multi: true

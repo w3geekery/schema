@@ -1,0 +1,4 @@
+example: "Production"
+description: "An asset tag assigned by the organization responsible for maintaining the logical or tangible item"
+displayName: "Asset Tag"
+type: "string"

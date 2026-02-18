@@ -1,0 +1,7 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "Object Storage (S3, etc)"
+extends: Component
+properties:
+    - buckets: 
+      linkTo: Bucket
+      multi: true

@@ -1,0 +1,5 @@
+example: "John"
+description: "The first name of a person"
+displayName: "First Name"
+type: "string"
+indexed: false

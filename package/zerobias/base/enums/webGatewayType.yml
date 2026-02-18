@@ -1,0 +1,6 @@
+description: "The web gateway type"
+displayName: "Gateway Type"
+values:
+  - HTTP: HTTP
+  - WEBSOCKET: WebSocket
+  - REST: REST

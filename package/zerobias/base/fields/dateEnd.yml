@@ -1,0 +1,4 @@
+example: "2021-12-31"
+description: "The end date"
+displayName: "End Date"
+type: "date"

@@ -1,0 +1,4 @@
+example: "T1H"
+description: "Maximum allowed session duration"
+displayName: "Max Session Duration"
+type: "duration"

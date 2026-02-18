@@ -1,0 +1,11 @@
+description: "The name of the Cipher Mode as prescribed by JCE"
+displayName: "Cipher Mode"
+values:
+  - "ECB"
+  - "CBC"
+  - "CFB"
+  - "CTR"
+  - "OFB"
+  - "PCBC"
+  - "CTS"
+  - "GCM"

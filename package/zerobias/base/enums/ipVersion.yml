@@ -1,0 +1,5 @@
+description: "Internet Protocol (IP) Version (IPv4, IPv6)"
+displayName: "IP Version"
+values:
+  - "IPv4": "IPv4"
+  - "IPv6": "IPv6"

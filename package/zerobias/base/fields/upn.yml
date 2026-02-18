@@ -1,0 +1,5 @@
+example: "first.last@ad-domain.com"
+description: "User Principal Name"
+displayName: "UPN"
+type: "email"
+keyed: true

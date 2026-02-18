@@ -1,0 +1,9 @@
+description: "Enumeration store for the current status of an Campaign"
+displayName: "Campaign Status"
+values:
+  - "CREATED": "Created"
+  - "ENROLLING": "Enrolling"
+  - "IN_PROGRESS": "In Progress"
+  - "COMPLETED": "Completed"
+  - "CANCELLED": "Cancelled"
+  - "CLOSED": "Closed"

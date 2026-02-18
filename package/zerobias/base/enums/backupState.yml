@@ -1,0 +1,8 @@
+description: "Backup job state"
+displayName: "Backup State"
+values:
+  - PENDING: "Pending"
+  - RUNNING: "Running"
+  - ABORTED: "Aborted"
+  - COMPLETED: "Completed"
+  - FAILED: "Failed"

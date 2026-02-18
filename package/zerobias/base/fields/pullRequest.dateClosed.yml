@@ -1,0 +1,4 @@
+example: "2021-10-26T08:18:00.000Z"
+description: "Timestamp in RFC339/ISO8601 date-time string when a PR closed"
+displayName: "Date Closed"
+type: "date-time"

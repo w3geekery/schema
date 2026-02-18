@@ -1,0 +1,107 @@
+description: "The protection configuration for a Branch"
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120006
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Enabled":
+    jsonata: enabled
+    sort: enabled
+extends: 
+properties:
+  - requiredSignatures:
+    field:
+      description: Required signatures setting
+      displayName: Required Signatures
+      values:
+        - ENABLED
+        - DISABLED
+  - requiredConversationResolution:
+    field:
+      description: Required conversation resolution setting
+      displayName: Required Conversation Resolution
+      values:
+        - ENABLED
+        - DISABLED
+  - blockCreations:
+    field:
+      description: Block creations setting
+      displayName: Block Creations
+      values:
+        - ENABLED
+        - DISABLED
+  - allowDeletions:
+    field:
+      description: Allow deletions setting
+      displayName: Allow Deletions
+      values:
+        - ENABLED
+        - DISABLED
+  - allowForcePushes:
+    field:
+      description: Allow force pushes setting
+      displayName: Allow Force Pushes
+      values:
+        - ENABLED
+        - DISABLED
+  - requiredLinearHistory:
+    field:
+      description: Required linear history setting
+      displayName: Required Linear History
+      values:
+        - ENABLED
+        - DISABLED
+  - enforceAdmins:
+    field:
+      description: Enforce admins setting
+      displayName: Enforce Admins
+      values:
+        - ENABLED
+        - DISABLED
+  - bypassPullRequestAllowances:
+    linkTo: SourceCodeMgmtPrincipal.id.branchProtectionBypass
+    multi: true
+  - requiredApprovingReviewCount:
+    field: 
+      description: The number of approving reviews required
+      displayName: Required Approving Review Count
+      type: integer
+  - requireCodeOwnerReviews:
+    field: 
+      description: Whether or not the code owner reviews are required
+      displayName: Require Code Owner Reviews
+      type: boolean
+  - dismissStaleReviews:
+    field: 
+      description: Whether or not the stale reviews are dismissed
+      displayName: Dismiss Stale Reviews
+      type: boolean
+  - enabled: 
+    field: 
+      description: Whether or not the protection is enabled
+      displayName: Enabled
+      type: boolean
+  - restrictions:
+    linkTo: SourceCodeMgmtPrincipal.id.branchProtectionRestricted
+    multi: true
+  - lockBranch:
+    field:
+      description: Lock Branch
+      displayName: Lock Branch
+      values:
+        - ENABLED
+        - DISABLED
+  - allowForkSyncing:
+    field:
+      description: Allow Fork Syncing
+      displayName: Allow Fork Syncing
+      values:
+        - ENABLED
+        - DISABLED
+  - branches:
+    linkTo: Branch
+    multi: true

@@ -1,0 +1,4 @@
+description: "Country of a person's citizenship"
+displayName: "Citizenship"
+example: "de"
+type: "geoCountry"

@@ -1,0 +1,4 @@
+example: "NIST"
+description: "A pointer to a validation record (e.g., FIPS 140-2) or other compliance information"
+displayName: "Validation"
+type: "string"

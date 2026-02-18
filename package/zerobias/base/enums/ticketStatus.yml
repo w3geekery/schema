@@ -1,0 +1,10 @@
+description: "Ticket Status"
+displayName: "Ticket Status"
+values:
+  - "NEW": "New"
+  - "OPEN": "Open"
+  - "IN_PROGRESS": "In Progress"
+  - "ON_HOLD": "On Hold"
+  - "CANCELED": "Canceled"
+  - "RESOLVED": "Resolved"
+  - "CLOSED": "Closed"

@@ -1,0 +1,5 @@
+description: The SSL versions supported by the server.
+displayName: SSL Versions
+values:
+  - SSL_2: "SSL v2."
+  - SSL_3: "SSL v3."

@@ -1,0 +1,5 @@
+example: "web_server_baseline_1"
+description: "Name of baseline configuration of an asset"
+displayName: "Baseline Configuration"
+type: "string"
+indexed: true

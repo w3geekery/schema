@@ -1,0 +1,4 @@
+example: "Barbara Smith"
+description: "The full name of the author of the comment"
+displayName: "Author Name"
+type: "string"

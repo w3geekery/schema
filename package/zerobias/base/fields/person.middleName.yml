@@ -1,0 +1,4 @@
+example: "Howard"
+description: "The middle name for a person"
+displayName: "Middle Name"
+type: "string"

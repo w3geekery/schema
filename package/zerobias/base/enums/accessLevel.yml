@@ -1,0 +1,13 @@
+description: "Account Access Level"
+displayName: "Access Level"
+values:
+  - NONE: "No access granted"
+  - GUEST: "Guest access with limited permissions"
+  - READ_ONLY: "Read-only access without modification rights"
+  - USER: "Standard user access with basic permissions"
+  - POWER_USER: "Enhanced user access with extended permissions"
+  - SUPERVISOR: "Supervisory access with team management rights"
+  - MANAGER: "Manager access with department oversight"
+  - ADMIN: "Administrative access with system management rights"
+  - SUPER_ADMIN: "Super administrator with full system control"
+  - EMERGENCY: "Emergency access for critical situations"

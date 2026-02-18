@@ -1,0 +1,3 @@
+displayName: "Destination"
+description: "IP addresses for destination network"
+type: "ipAddress"

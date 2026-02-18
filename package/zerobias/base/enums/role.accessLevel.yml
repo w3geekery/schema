@@ -1,0 +1,9 @@
+description: Access level classification for roles
+displayName: Role Access Level
+values:
+  - READ_ONLY: 'Read-only access with no modification rights'
+  - STANDARD: 'Standard user access with basic permissions'
+  - ELEVATED: 'Elevated access with additional permissions'
+  - ADMINISTRATIVE: 'Administrative access with management rights'
+  - SUPER_ADMIN: 'Super administrator with full system access'
+  - CUSTOM: 'Custom access level defined by specific permissions'

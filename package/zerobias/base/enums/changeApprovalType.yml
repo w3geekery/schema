@@ -1,0 +1,11 @@
+description: "Change Approval Type of roles required to approve a change in a given workflow"
+displayName: "Change Approval Type"
+values:
+  - SECURITY: "Security Approval"
+  - MANAGER: "Manager Approval"
+  - CAB: "Change Advisory Board Approval"
+  - COMMITTEE: "Change Committee Approval" 
+  - CUSTOMER: "Customer Approval"
+  - FINANCE: "Budget/Finance Approval"
+  - HR: "Human Resources Approval"
+  - COMPLIANCE: "Compliance Approval"

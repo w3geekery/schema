@@ -1,0 +1,9 @@
+description: An CRM application
+displayName: CRM Application
+extends:
+  - Application
+properties:
+# LInks
+  - customers:
+    multi: true
+    linkTo: Customer

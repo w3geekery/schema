@@ -1,0 +1,6 @@
+description: "Result of a background check"
+displayName: "Background Check Result"
+values:
+  - "PASS": "Pass"
+  - "FAIL": "Fail"
+  - "OTHER": "Other"

@@ -1,0 +1,4 @@
+example: "MIT License"
+description: "Repository license name"
+displayName: "License Name"
+type: "string"

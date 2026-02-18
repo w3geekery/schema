@@ -1,0 +1,4 @@
+example: "eng"
+description: "A persons preferred spoken and written language"
+displayName: "Preferred Language"
+type: language

@@ -1,0 +1,11 @@
+description: "Block device"
+displayName: "Block device"
+properties:
+  - deviceName:
+    field:
+      type: string
+      description: "The name of the device"
+  - isRoot:
+    field:
+      type: boolean
+      description: "Whether or not the device is the root device"

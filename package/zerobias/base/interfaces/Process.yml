@@ -1,0 +1,11 @@
+skip: true
+description: "Set of interrelated or interacting activities which transforms inputs into outputs which supports an organizational business or mission objective."
+icon: images/classes/auditmation/base/Component.svg #todo - update with Process icon
+extends:
+  - Component
+properties:
+  - processPurpose: #intent to have name of business process supported, e.g. HR, Finance, etc. Perhaps pointer to Policy?
+    field: placeholder
+#  - supportedByWorkflow: 
+#    multi: true
+#    linkTo: Workflow

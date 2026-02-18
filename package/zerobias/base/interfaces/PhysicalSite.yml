@@ -1,0 +1,16 @@
+description: A physical location with access control capabilities, extending basic location with security zones and entry points
+extends:
+  - Location
+properties:
+  - timeZone:
+    field: timeZone
+  # Links
+  - entries:
+    linkTo: PhysicalEntry.id.site
+    multi: true
+  - zones:
+    linkTo: AccessZone.id.site
+    multi: true
+  - app:
+    linkTo: PhysicalAccessManagementApp.id.sites
+  # Organization relationship handled at class level

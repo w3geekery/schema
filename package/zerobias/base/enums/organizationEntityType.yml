@@ -1,0 +1,10 @@
+description: "Types of business/provider entities"
+displayName: "Entity Type"
+values:
+  - "INDIVIDUAL": "Individual"
+  - "C_CORPORATION": "C Corporation"
+  - "S_CORPORATION": "S Corporation"
+  - "LLC": "Limited Liability Company (LLC)"
+  - "PARTNERSHIP": "Partnership"
+  - "TRUST": "Trust"
+  - "ESTATE": "Estate"

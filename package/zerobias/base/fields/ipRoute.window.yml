@@ -1,0 +1,3 @@
+displayName: "Window"
+description: "Default window size for TCP connections"
+type: "integer"

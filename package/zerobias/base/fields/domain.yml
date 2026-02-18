@@ -1,0 +1,5 @@
+example: "contosos.com"
+description: "DNS Domain Name"
+displayName: "Domain"
+type: "string"
+keyed: true

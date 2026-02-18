@@ -1,0 +1,17 @@
+description: 'An endpoint of a service.'
+properties:
+  - tlsVersions:
+    field: serviceEndpoint.tlsVersions
+    multi: true
+  - sslVersions:
+    field: serviceEndpoint.sslVersions
+    multi: true
+  - cipherSuites:
+    field: serviceEndpoint.cipherSuites
+    multi: true
+    #links
+  - application:
+    linkTo: Application
+  - tlsCertificates:
+    linkTo: X509Certificate
+    multi: true

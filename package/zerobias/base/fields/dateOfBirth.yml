@@ -1,0 +1,4 @@
+example: "2001-10-22"
+description: "When a person was born"
+displayName: "Date Of Birth"
+type: "date"

@@ -1,0 +1,9 @@
+description: "Asset History"
+properties:
+  - operation:
+    field: assetHistory.operation
+  # Links
+  - asset:
+    linkTo: Asset
+  - assignedTo:
+    linkTo: ITAssetManagementUser

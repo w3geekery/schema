@@ -1,0 +1,26 @@
+description: An inventory item
+displayName: Inventory Item
+properties:
+  - assetType:
+    field: asset.type
+  - qty:
+    field: inventoryItem.qty
+# Links
+  - app: 
+    linkTo: InventoryApplication
+  - location:
+    linkTo: 
+      - Location.id
+      - Location.code
+  - assets:
+    linkTo: 
+      - Asset.id
+      - Asset.includes
+    multi: true
+  - cloudService:
+    linkTo: CloudService
+  - environment:
+    linkTo: Environment
+  - availabilityZone:
+    linkTo: AvailabilityZone
+

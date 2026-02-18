@@ -1,0 +1,10 @@
+description: "Backup media type"
+displayName: "Backup Media Type"
+values:
+  - TAPE: Digital Linear Tape (DLT)
+  - CLOUD: Cloud Storage
+  - OBJECT: Object Storage
+  - PORTABLE: Portable Drive
+  - OPTICAL: Optical Media
+  - FLASH: Flash Drive
+  - APPLIANCE: Backup Appliance

@@ -1,0 +1,14 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "Database Management System"
+extends: 
+  - Application
+properties:
+  - databases:
+    linkTo: Database
+    multi: true
+  - databaseClusters:
+    linkTo: DatabaseCluster
+    multi: true
+  - snapshots:
+    linkTo: DatabaseSnapshot
+    multi: true

@@ -1,0 +1,4 @@
+description: "The network/supernet that contains all subnets for this environment"
+example: "172.31.0.0/16"
+displayName: "Network"
+type: "cidr"

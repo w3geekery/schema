@@ -1,0 +1,12 @@
+description: "A user or system account inside an application"
+extends: Account
+properties:
+  # Links
+  - assets:
+    multi: true
+    linkTo: Asset
+  - assetHistory:
+    multi: true
+    linkTo: AssetHistory
+  - itAssetManager:
+    linkTo: ITAssetManagement

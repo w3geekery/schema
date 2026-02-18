@@ -1,0 +1,7 @@
+description: "A user or system account inside a training application"
+icon: images/classes/auditmation/base/Account.svg
+extends: Account
+properties:
+  - trainingRecord:
+    multi: true
+    linkTo: TrainingRecord

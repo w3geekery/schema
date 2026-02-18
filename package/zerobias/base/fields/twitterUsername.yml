@@ -1,0 +1,4 @@
+example: 'auditmation'
+description: 'A unique Twitter username'
+displayName: 'Twitter Username'
+type: string

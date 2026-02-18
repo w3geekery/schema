@@ -1,0 +1,11 @@
+description: "Protocol (Service) as defined by https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml"
+icon: images/classes/auditmation/base/IANAProtocol.svg
+displayName: "Endpoint Service/Protocol"
+properties:
+#fixme/future - load as content similar to CPE. 
+  - port:
+    field: ip.port
+    multi: true
+  - transportProtocol:
+    field: ipProtocol
+    multi: true

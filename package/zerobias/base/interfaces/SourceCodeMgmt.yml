@@ -1,0 +1,11 @@
+description: "Source Code Management (SCM) Tool, such as Github or Bitbucket"
+icon: images/classes/auditmation/base/SourceCodeMgmt.svg
+extends: Application
+properties:
+  - repositories:
+    multi: true
+    linkTo: Repository
+  - branches:
+    multi: true
+    hidden: true
+    linkTo: Branch

@@ -1,0 +1,24 @@
+description: A specialized application for managing physical access control systems, security zones, and visitor management
+extends:
+  - Application
+properties:
+# Links to physical access entities
+  - sites:
+    linkTo: PhysicalSite.id.app
+    multi: true
+  - zones:
+    linkTo: AccessZone.id.app
+    multi: true
+  - entries:
+    linkTo: PhysicalEntry.id.app
+    multi: true
+  - credentials:
+    linkTo: AccessCredential.id.app
+    multi: true
+  - visitors:
+    linkTo: Visitor.id.app
+    multi: true
+  - schedules:
+    linkTo: Schedule.id.app
+    multi: true
+# Inherited from Application: accounts, groups, accessRules, serviceEndpoints, roles, passwordPolicy

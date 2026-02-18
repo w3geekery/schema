@@ -1,0 +1,12 @@
+description: "Specifies types of network interfaces as defined by the Institute of Electrical and Electronics Engineers (IEEE) standards"
+displayName: "Network Interface Types"
+values:
+  - "ETHERNET": "Ethernet network interface"
+  - "VLAN": "Virutal Local Area Network (VLAN)"
+  - "WIFI": "WiFi network interface"
+  - "VPN": "Virutal Private Network (VPN)"
+  - "CELLULAR": "Cellular/mobile communication network"
+  - "WAN": "Wide Area Network (WAN)"
+  - "BLUETOOTH": "Bluetooth"
+  - "VIRUTAL": "Virutal"
+  - "LOOPBACK": "Loopback"

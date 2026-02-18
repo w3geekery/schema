@@ -1,0 +1,6 @@
+description: "X.509 Certificate Version"
+displayName: "Version"
+values:
+  - "V1": "V1"
+  - "V2": "V2"
+  - "V3": "V3"

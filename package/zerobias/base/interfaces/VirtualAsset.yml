@@ -1,0 +1,7 @@
+skip: true
+description: "A virutal component that is uniquely identifiable"
+icon: images/classes/auditmation/base/VirtualAsset.svg
+extends: Asset
+properties:
+  - infrastructureType:
+    field: virutalInfrastructureType

@@ -1,0 +1,7 @@
+description: "The name of the Cipher Padding as prescribed by JCE"
+displayName: "Cipher Padding"
+values:
+  - "NoPadding"
+  - "PKCS5Padding"
+  - "ISO10126Padding"
+  - "SSL3Padding"

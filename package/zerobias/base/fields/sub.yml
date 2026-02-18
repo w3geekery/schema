@@ -1,0 +1,5 @@
+example: "waad|eBUroEDHfma6OAbiKZtv3MaPDAUhT"
+description: "The subject of an OAUTH claim or user"
+displayName: "Sub"
+type: "string"
+keyed: true

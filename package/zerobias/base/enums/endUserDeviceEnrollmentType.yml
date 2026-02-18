@@ -1,0 +1,17 @@
+description: "Possible ways of adding an end-user device to management"
+displayName: "Enrollment Type"
+ref: https://docs.microsoft.com/en-us/graph/api/resources/intune-devices-deviceenrollmenttype?view=graph-rest-beta
+values:
+  - "USER_BYOD": "User driven enrollment through BYOD channel"
+  - "DEVICE_MANAGER": "User enrollment with a device enrollment manager account"
+  - "APPLE_USER": "Apple bulk enrollment with user challenge. (DEP, Apple Configurator)"
+  - "APPLE_BULK": "Apple bulk enrollment without user challenge. (DEP, Apple Configurator, Mobile Config)"
+  - "DOMAIN_JOIN": "Windows 10 Azure AD Join. Windows 10 bulk Azure AD Join"
+  - "WINDOWS_BULK": "Windows 10 Bulk enrollment through ICD with certificate"
+  - "WINDOWS_AUTO": "Windows 10 automatic enrollment. (Add work account)"
+  - "AUTOPILOT": "Windows 10 Co-Management triggered by AutoPilot or Group Policy"
+  - "AZURE_AD_VM": "Azure AD Join enrollment when an Azure VM is provisioned"
+  - "ANDROID_DEDICATED": "Android Enterprise Dedicated Device"
+  - "ANDROID_MANAGED": "Android Enterprise Fully Managed"
+  - "ANDROID_WORK_PROFILE": "Android Enterprise Corporate Work Profile"
+  - "UNKNOWN": "Unknown / value not collected"

@@ -1,0 +1,6 @@
+description: "Customer of the organization"
+extends: Organization
+properties:
+  # Links
+  - app:
+    linkTo: CRMApplication

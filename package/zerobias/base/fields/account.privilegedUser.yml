@@ -1,0 +1,3 @@
+description: "A user that is authorized (and therefore, trusted) to perform security-relevant functions that ordinary users are not authorized to perform."
+displayName: "Privileged user"
+type: "boolean"

@@ -1,0 +1,9 @@
+description: "Rules that govern when to delete or migrate bucket content"
+displayName: "Bucket Lifecycle Rule"
+properties:
+  - action:
+    field: bucketLifecycleRule.action
+  - condition:
+    field: bucketLifecycleRule.condition
+  - state:
+    field: bucketLifecycleRule.state

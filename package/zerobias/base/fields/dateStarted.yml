@@ -1,0 +1,6 @@
+# used by Ticket.yml
+example: "2021-10-26"
+description: "The date when the event, ticket, or task started"
+displayName: "Date started"
+type: "date"
+

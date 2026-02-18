@@ -1,0 +1,4 @@
+example: "latitude:40.7127281, longitude:74.0060152"
+description: "GPS Coordinate in WGS-84 coordinates"
+displayName: "GPS Point"
+type: geoPoint

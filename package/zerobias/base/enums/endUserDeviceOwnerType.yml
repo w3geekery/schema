@@ -1,0 +1,6 @@
+description: "Device Ownerhip Types"
+displayName: "Device Owner"
+values:
+  - "PERSONAL": "Owned by person"
+  - "COMPANY": "Owned by company"
+  - "UNKNOWN": "Unknown"

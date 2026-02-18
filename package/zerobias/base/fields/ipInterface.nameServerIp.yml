@@ -1,0 +1,4 @@
+example: "127.0.0.1 (IPv4), fe80::e2d5:5eff:fe26:d69f (IPv6)"
+description: "Name server address"
+displayName: "Name Server Address"
+type: "ipAddress"

@@ -1,0 +1,9 @@
+description: "List of permissions for a given principal and resource"
+displayName: "Permissions"
+properties:
+  - allow:
+    multi: true
+    field: permissionType
+  - deny:
+    multi: true
+    field: permissionType

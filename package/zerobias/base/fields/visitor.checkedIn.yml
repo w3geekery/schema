@@ -1,0 +1,3 @@
+description: Whether the visitor is currently checked in
+displayName: Checked In
+type: boolean

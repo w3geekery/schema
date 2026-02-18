@@ -1,0 +1,22 @@
+icon: images/classes/auditmation/base/VirtualMachine.svg
+description: "Store for Virtual Machine record."
+extends:
+  - AppEnvironment
+  - Asset
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+properties:
+  - hypervisor:
+    field: vm.hypervisor
+  - boundaryComponent:
+    field: component.boundaryComponent
+    defaultValue: true
+  # Links
+  - elasticInterfaces:
+    linkTo: ElasticInterface
+    multi: true
+    # This might fail until SCHEM-37 is resolved
+  - volumes:
+    multi: true
+    linkTo: Volume
+    t3: blockDevice

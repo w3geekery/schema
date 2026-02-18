@@ -1,0 +1,8 @@
+icon: images/classes/auditmation/base/PhysicalAsset.svg
+description: "A device management application (MDM, RMM, etc)"
+extends:
+  - Application
+properties:
+  - userDevices:
+    linkTo: EndUserDevice
+    multi: true

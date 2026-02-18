@@ -1,0 +1,11 @@
+description: "Asset Type"
+displayName: "Asset Type"
+values:
+  - LAPTOP: LAPTOP
+  - DESKTOP: DESKTOP
+  - MOBILE: MOBILE
+  - TABLET: TABLET
+  - CA: Certificate Authority
+  - ENTITY: End-entity Certificate (TLS)
+  - FIREWALL: Firewall
+  - UNKNOWN: Unknown

@@ -1,0 +1,2 @@
+description: Start time of day in HH:MM format (e.g., "09:00", "13:30")
+type: string

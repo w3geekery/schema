@@ -1,0 +1,5 @@
+description: "The type of relationship between a router and subnet"
+displayName: "Association Type"
+values:
+  - "DEFAULT": "Main/Default"
+  - "EXPLICIT": "Explicit/Custom"

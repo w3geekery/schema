@@ -1,0 +1,13 @@
+description: "Change sub-ticket"
+icon: images/classes/auditmation/base/Incident.svg #fixme update with ChangeTicket icon
+extends: 
+  - WorkflowStepTicket
+properties:
+  - changeType: "Change type associated with ticket"
+  - testPlan:
+    field: placeholder #fixme (create document - plan name, type, approver)
+# Links
+#  - ticketingSystem:
+#    linkTo: ITSMApplication
+  - changeTicket:
+    linkTo: ChangeTicket

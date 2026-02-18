@@ -1,0 +1,4 @@
+example: "Sentence or Paragraph"
+description: "Comment Body"
+displayName: "Body"
+type: "string"

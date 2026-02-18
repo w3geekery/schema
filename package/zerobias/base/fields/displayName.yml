@@ -1,0 +1,4 @@
+example: "Joe Schmoe"
+description: "Display name"
+displayName: "Username"
+type: "string"

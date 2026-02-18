@@ -1,0 +1,35 @@
+description: "A Federated Identity/Single-Sign On (SSO) Provider"
+icon: images/classes/auditmation/base/IdentityProvider.svg
+extends: Application
+properties:
+  - serviceEndpoint:
+    field: idp.serviceEndpoint
+  - loginScreen:
+    field: idp.loginScreen
+  - protocol:
+    multi: true
+    field: idpProtocolType
+# Links
+  - identity:
+    linkTo: FederatedIdentity
+    multi: true
+  - loginUrl:
+    field:
+      displayName: Login URL
+      description: The URL to initiate an authenticated user session
+  - logoutUrl:
+    field:
+      displayName: Logout URL
+      description: The URL to terminate a user session
+  - thumbprint:
+    field:
+      displayName: Thumbprint
+      description: Certificate thumbprint that is associated with a specified OIDC
+      example: "12345abcdefghijk67890lmnopqrst987"
+    multi: true
+  - audience:
+    field:
+      displayName: Audience
+      description: The audience that is associated with a specified OIDC
+      example: "https://api.my-cloud.com/user"
+    multi: true

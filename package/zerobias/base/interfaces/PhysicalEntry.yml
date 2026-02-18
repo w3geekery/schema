@@ -1,0 +1,23 @@
+description: A physical entry point or access control device such as doors, gates, or barriers
+extends:
+  - Asset
+  - Resource
+properties:
+  - entryType:
+    field: physicalEntry.type
+  - state:
+    field: physicalEntry.status
+  - capacity:
+    field: accessZone.capacity
+  # Links
+  - site:
+    linkTo: PhysicalSite.id.entries
+  - zone:
+    linkTo: AccessZone.id.entries
+  - schedules:
+    linkTo: Schedule.id.entries
+    multi: true
+  - app:
+    linkTo: PhysicalAccessManagementApp.id.entries
+  # accessRules inherited from Resource
+

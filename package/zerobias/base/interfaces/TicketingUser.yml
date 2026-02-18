@@ -1,0 +1,18 @@
+description: "Indicates a user can report or be assigned Tickets"
+icon: images/classes/auditmation/base/Ticket.svg
+properties:
+  - email:
+    field: email
+    multi: true
+  - ticketsAssigned:
+    multi: true
+    linkTo: Ticket.id.assignee
+    t3: componentRole
+  - ticketsReported:
+    multi: true
+    linkTo: Ticket.id.reporter
+    t3: componentRole
+  - ticketsApproved:
+    multi: true
+    linkTo: Ticket.id.approvers
+    t3: componentRole

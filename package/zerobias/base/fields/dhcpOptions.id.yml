@@ -1,0 +1,3 @@
+displayName: "ID"
+description: "An identifier for a collection of DHCP Options"
+type: "string"

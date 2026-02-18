@@ -1,0 +1,4 @@
+example: "1626832"
+description: "Total RAM in kilobytes (kB)"
+displayName: "Total RAM (kB)"
+type: "int32"

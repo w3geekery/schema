@@ -1,0 +1,24 @@
+description: "An IP Address"
+displayName: "Elastic Address"
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Environment":
+    jsonata: environment
+    sort: environment
+  "IP Address":
+    jsonata: ipAddress
+    sort: ipAddress
+#TO-DO: ElasticAddress should belong to Network and Network should belong to VPC's
+properties:
+  - ipAddress:
+  - environment:
+    linkTo: CloudEnvironment
+  - elasticInterface:
+    linkTo: ElasticInterface

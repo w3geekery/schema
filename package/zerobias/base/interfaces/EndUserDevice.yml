@@ -1,0 +1,119 @@
+icon: images/classes/auditmation/base/PhysicalAsset.svg
+description: "A device that is used by an employee or contractor"
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Enrollment Type":
+    jsonata: enrollmentType
+    sort: enrollmentType
+  "User Email":
+    jsonata: userEmail
+    sort: userEmail
+  "Owned By":
+    jsonata: ownerType
+    sort: ownerType
+  "Manufacturer":
+    jsonata: manufacturer
+    sort: manufacturer
+  "Model":
+    jsonata: model
+    sort: model
+  "Status":
+    jsonata: assetStatus
+    sort: assetStatus
+  "Serial Number":
+    jsonata: serialNumber
+    sort: serialNumber
+  "Compliant":
+    jsonata: isCompliant
+    sort: isCompliant
+  #Todo: add appEnv.
+extends:
+  - AppEnvironment
+  - Asset
+properties:
+  - isCompliant:
+    field:
+        displayName: Compliant
+        description: True if device complies with all MDM/RMM requirements 
+        type: boolean
+  - bootstrapTokenEscrowed:
+    field:
+        displayName: Compliant
+        description: True if device complies with all MDM/RMM requirements 
+        type: boolean
+  - deviceType:
+    field: endUserDeviceType
+  - complianceGracePeriodExpiration:
+    field:
+        displayName: Compliant
+        description: True if device complies with all MDM/RMM requirements 
+        type: boolean
+  - enrollmentType:
+    field: endUserDeviceEnrollmentType
+  - userDescription:
+    field: person.fullName
+  - userEmail:
+    field: email
+    multi: true
+  - ownerType:
+    field: endUserDeviceOwnerType
+  - registrationState:
+    field: endUserDeviceRegistrationState
+  - virtual:
+    field: asset.isVirtual
+    defaultValue: false
+  - componentType:
+    field: oscalComponentType
+    defaultValue: hardware
+  - enrollmentDate:
+    field:
+        displayName: Enrollment Date
+        description: Date and time when device was registered/enrolled
+        type: date-time
+  - expirationDate:
+    field:
+        displayName: Expiration Date
+        description: Date and time when certificate or enrollment expires
+        type: date-time
+  - isSharedDevice:
+    field:
+        displayName: Shared Device
+        description: True if more than one person uses this device
+        type: boolean
+  - isSupervised: 
+    field:
+        displayName: Supervised
+        description: True if this device is supervised
+        type: boolean
+  - isJailBroken:
+    field:
+        displayName: Jail Broken
+        description: True if this device is rooted / jail broken 
+        type: boolean
+  - isLost:
+    field:
+        displayName: Lost
+        description: True if this device is reported lost
+        type: boolean
+  - activeMalwareCount:
+    field:
+        displayName: Active Malware Count
+        description: The number of active malware infestations detected on the device
+        type: int32
+  - remediatedMalwareCount:
+    field:
+        displayName: Remediated Malware Count
+        description: The number of inactive/remediated malware infestations detected on the device
+        type: int32
+# Links
+  - deviceManagementApp:
+    linkTo: DeviceManagement
+  - user:
+    linkTo: FederatedIdentity

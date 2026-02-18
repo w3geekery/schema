@@ -1,0 +1,11 @@
+description: "Security Training Campaign"
+extends: 
+ - Group
+icon: images/classes/auditmation/base/Group.svg
+properties:
+  - trainingCampaigns:
+    multi: true
+    linkTo: TrainingCampaign
+  - phishingCampaigns:
+    multi: true
+    linkTo: PhishingCampaign

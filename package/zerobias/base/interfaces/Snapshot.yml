@@ -1,0 +1,23 @@
+description: "A record of the state of a running image, generally captured as the differences between an image and the current state"
+icon: images/classes/auditmation/base/Snapshot.svg
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120005
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Retention Policy":
+    jsonata: retentionPolicy
+    sort: retentionPolicy
+  "Volume":
+    jsonata: volume
+    sort: volume
+properties:
+  - retentionPolicy:
+    field: snapshotRetentionPolicy
+  # Links
+  - volume:
+    linkTo: Volume

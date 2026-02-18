@@ -1,0 +1,18 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "Cloud Service"
+extends: Application
+properties:
+    - provider: 
+      field: cloudProvider
+    - environments:
+      linkTo: CloudEnvironment
+      multi: true
+    - availabilityZones:
+      linkTo: AvailabilityZone
+      multi: true
+    - objectStorage:
+      linkTo: CloudObjectStorage
+      multi: true
+    - inventoryItems:
+      linkTo: InventoryItem
+      multi: true

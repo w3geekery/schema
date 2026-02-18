@@ -1,0 +1,89 @@
+description: "Source control repository"
+icon: images/classes/auditmation/base/Repository.svg
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120006
+extends:
+  - Component
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Visibility":
+    jsonata: visibility
+    sort: visibility
+  "Owner Id":
+    jsonata: owner
+    sort: owner
+  "Archived":
+    jsonata: archived
+    sort: archived
+properties:
+  - repoIsFork:
+    field: isFork
+  - forkCount:
+    field: repository.forkCount
+  - repoUrl:
+    field: repository.url
+  - sshUrl:
+    field: repository.sshUrl
+  - visibility:
+    field: dataClassification
+  - nodeId:
+    field: repository.nodeId 
+  - created:
+    field: timeCreated
+  - pushed:
+    field: timeModified
+  - updated:
+    field: timeModified
+  - disabled:
+    field: timeDisabled
+  - archived:
+    field: repository.isArchived
+  - hasDownloads:
+    field: repository.hasDownload
+  - hasWiki: 
+    field: repository.hasWiki
+  - cloneUrl:
+    field: repository.cloneUrl
+  - licenseKey:
+    field: repository.licenseKey
+  - licenseName:
+    field: repository.licenseName
+  - licenseNodeId:
+    field: repository.licenseNodeId
+  - licenseSpdxId:
+    field: repository.licenseSpdxId
+  - licenseUrl:
+    field: repository.licenseUrl
+  - licenseHtmlUrl:
+    field: repository.HtmlUrl
+  - boundaryComponent:
+    field: component.boundaryComponent
+    defaultValue: true
+  - vulnerabilityAlertsEnabled:
+    field: repository.vulnerabilityAlertsEnabled
+# Links
+  - owner:
+    linkTo: SourceCodeMgmt
+    required: true
+  - user:
+    multi: true
+    linkTo: SourceCodeMgmtAcct
+    t3: permissionSet
+  - group:
+    multi: true  
+    linkTo: SourceCodeMgmtGroup
+    t3: permissionSet
+  - labels:
+    linkTo: RepoLabel
+    multi: true
+  - branches:
+    linkTo: Branch 
+    multi: true
+  - pullRequests:
+    linkTo: PullRequest
+    multi: true

@@ -1,0 +1,7 @@
+description: "Object store for a phone number: includes the number and phone type"
+displayName: "Phone"
+properties:
+  - contactType:
+  - phoneNumber:
+    type: phoneNumber 
+    required: true

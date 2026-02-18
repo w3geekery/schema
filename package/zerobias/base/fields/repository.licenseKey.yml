@@ -1,0 +1,4 @@
+example: "mit"
+description: "Repository license key"
+displayName: "License Key"
+type: "string"

@@ -1,0 +1,19 @@
+description: "Network Service Endpoint (Listening Socket)"
+displayName: "Endpoint"
+properties:
+  - address:
+    field: ipInterface.address
+  - port:
+    field: ip.port
+  - ipProtocol:
+    field: ipProtocol
+  - cryptoModule:
+    field: cryptoModule
+  - hostname:
+    field: ipInterface.hostname
+    multi: true
+  - ianaProtocol:
+    linkTo: IANAProtocol
+    uniLink: true
+  - zoneId:
+    field: dns.zoneId

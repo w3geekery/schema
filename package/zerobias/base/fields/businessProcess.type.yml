@@ -1,0 +1,4 @@
+example: "Human Resources, Change Control, Finance"
+description: "Customer locally defined values for business process type"
+displayName: "Business Process Type"
+type: "string"

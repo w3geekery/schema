@@ -1,0 +1,4 @@
+example: "AMD Embedded R-Series RX-421ND"
+description: "CPU Model"
+displayName: "CPU Model"
+type: "string"

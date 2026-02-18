@@ -1,0 +1,9 @@
+description: "Classification Level of information, systems, data, or applications"
+displayName: "Data Classification Level"
+values:
+  - "PUBLIC": "Public"
+  - "PRIVATE": "Private"
+  - "RESTRICTED": "Restricted"
+  - "CONFIDENTIAL": "Confidential"
+  - "PROPRIETARY": "Proprietary"
+  - "INTERNAL": "Internal Use Only"

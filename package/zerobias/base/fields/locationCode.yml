@@ -1,0 +1,5 @@
+description: "Location code"
+displayName: "Location code"
+type: "string"
+keyed: true
+indexed: true

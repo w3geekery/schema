@@ -1,0 +1,57 @@
+description: "Member of staff (employee or contractor)"
+icon: images/classes/auditmation/base/Person.svg
+tags:
+  - query-folder.hr
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Email":
+    jsonata: email
+    sort: email
+  "Phone Number":
+    jsonata: phone.phoneNumber
+  "Employment Status":
+    jsonata: employmentStatus
+    sort: employmentStatus
+  "Employment Type":
+    jsonata: employmentType
+    sort: employmentType
+  "Citizenship":
+    jsonata: citizenship
+    sort: citizenship
+  #todo: add phone number on person and citizenship
+extends:
+  - Party
+properties:
+  - citizenship:
+    field: person.citizenship
+    multi: true
+  - dateOfHire:
+  - dateOfExit:
+  - employmentStatus:
+  - employmentType:
+  - backgroundCheck:
+    multi: true
+    field: backgroundCheck
+  - employeeId:
+    field: person.employeeId
+# Links
+  - account:
+    multi: true
+    linkTo:
+      - Account.id
+      - Account.email
+  - identity:
+    multi: true
+    linkTo:
+      - FederatedIdentity.id
+      - FederatedIdentity.email
+  - training:
+    multi: true
+    linkTo: TrainingRecord
+  - employer:
+    linkTo: Provider

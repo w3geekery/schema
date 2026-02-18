@@ -1,0 +1,4 @@
+example: "12"
+description: "Number of repository forks"
+displayName: "Fork Count"
+type: "int32"

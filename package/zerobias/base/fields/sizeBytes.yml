@@ -1,0 +1,4 @@
+example: "90210"
+description: "The size of the capacity, in Bytes"
+displayName: "Size in Bytes"
+type: "int64"

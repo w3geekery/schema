@@ -1,0 +1,29 @@
+description: "A responsible party (employee, contractor, provider)"
+icon: images/classes/auditmation/base/Party.svg
+extends:
+  - Contact
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Email":
+    jsonata: email
+    sort: email
+properties:
+  - partyType:
+    # required: true
+    field: partyType
+# Links
+  - itamApp:
+    linkTo: ITAssetManagement
+  - responsibleForComponent:
+    multi: true
+    linkTo: Component
+    t3: componentRole
+    defered: true
+  - workflowStep:
+    linkTo: WorkflowStep
+    t3: partyRole

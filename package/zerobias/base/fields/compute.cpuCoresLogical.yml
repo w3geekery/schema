@@ -1,0 +1,4 @@
+example: "4"
+description: "CPU Logical Core count"
+displayName: "Logical Cores"
+type: "int32"

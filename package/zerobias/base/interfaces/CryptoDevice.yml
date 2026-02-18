@@ -1,0 +1,6 @@
+description: "Any device that may support encryption"
+icon: images/classes/auditmation/base/CryptoDevice.svg
+properties:
+  - cryptoEnabled: "Whether encryption is enabled or disabled"
+    field: cryptoDevice.enabled
+  - cryptoModule: "The cryptographic module for the device"

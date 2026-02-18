@@ -1,0 +1,14 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "Database"
+extends: 
+  - Asset
+  - NetworkService
+properties:
+  - dbms:
+    linkTo: DBMS
+  - snapshots:
+    linkTo: DatabaseSnapshot
+    multi: true
+  - databases:
+    linkTo: Database
+    multi: true

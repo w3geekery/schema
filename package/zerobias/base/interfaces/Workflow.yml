@@ -1,0 +1,15 @@
+description: "Business Process Workflow provided by and enforced by an Application, such as HR system workflows, finance system workflows, ITSM workflows"
+# icon: images/classes/auditmation/base/Application.svg #fixme - update with Workflow app icon
+properties:
+  - workflowTicket: "Task which implement this workflow"
+    multi: true
+    linkTo: WorkflowTicket
+#  - supportsProcess: "Technical Workflow which supports an organization defined Process"
+#    multi: true
+#    linkTo: Process
+  - workflowApplication: "Application which technical workflow is configured by"
+    multi: true
+    linkTo: ITSMApplication
+  - initialStep: 
+    uniLink: true
+    linkTo: WorkflowStep

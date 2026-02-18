@@ -1,0 +1,12 @@
+description: "The type of location"
+displayName: "Location Type"
+values:
+  - "HOME": "Home"
+  - "DATACENTER": "Datacenter"
+  - "OFFICE": "Office"
+  - "LAB": "Lab"
+  - "WAREHOUSE": "Warehouse"
+  - "RECEIVING": "Receiving"
+  - "MAILING": "Mailing"
+  - "SCIF": "Sensitive Compartmented Information Facility (SCIF)"
+  - "OTHER": "Other"

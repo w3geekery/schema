@@ -1,0 +1,4 @@
+example: "PUSH, PULL, READ, WRITE"
+description: "Application permission(s)"
+displayName: "Permission"
+type: "string"

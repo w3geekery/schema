@@ -1,0 +1,67 @@
+# Disabled by Kenji: This is causing issues with the GraphQL/schema builder, and needs to be researched, since it
+# contains no properties, just links.
+description: "A Federated identity tied to a user or user account inside an application"
+extends:
+  - Principal
+icon: images/classes/auditmation/base/FederatedIdentity.svg
+tags: 
+  - query-folder.assets
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Account":
+    jsonata: account
+    sort: account
+  "Email":
+    jsonata: $distinct(email)
+    sort: email
+  "Title":
+    jsonata: jobTitle
+    sort: jobTitle
+  "Log In":
+    jsonata: login
+    sort: login
+  "Auth Type":
+    jsonata: $distinct(authType)
+    sort: authType
+  # Todo:  query ...
+properties:
+  - login:
+    field: account.login
+  - email:
+    field: email
+    multi: true
+  - authType:
+    multi: true
+    field: authType
+  - jobTitle:
+    field: person.jobTitle
+    multi: true
+  - preferredLanguage:
+    field: person.preferredLanguage
+    multi: true
+  - emailVerified:
+  - sub:
+    # Links:
+  - idp:
+    linkTo: IdentityProvider
+    required: true
+  - account:
+    multi: true
+    linkTo:
+      - Account.id
+      - Account.email
+      - Account.login
+  - person:
+    multi: true
+    linkTo:
+      - Person.id
+      - Person.email
+      - Person.employeeId 
+  - devices:
+    linkTo: EndUserDevice
+    multi: true

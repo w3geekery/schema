@@ -1,0 +1,6 @@
+description: "Control Family Type as defined by NIST SP 800-53"
+displayName: "Control Family Type"
+values:
+  - "MANAGEMENT": "Management"
+  - "OPERATIONAL": "Operational"
+  - "TECHNCIAL": "Technical"

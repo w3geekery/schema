@@ -1,0 +1,40 @@
+description: "Application installed within Application Environment"
+displayName: "Installed Applications"
+properties:
+  - timeInstalled:
+  - timeModified:
+  - licenseKey:
+    field: installedApp.licenseKey
+  - installationPath:
+    field: installedApp.installationPath
+  - dataPath:
+    field: installedApp.dataPath
+  - digitalSignature:
+  - cryptoCertificate:
+    multi: true
+    field: x509Certificate
+  - publisher:
+    field:
+      description: Application Publisher
+      displayName: Publisher
+      type: string
+  - size:
+    field:
+      description: Application Size in Bytes
+      displayName: Size
+      type: int64
+  - version:
+    field:
+      description: Application Version
+      displayName: Version
+      type: string
+  - name:
+    field:
+      description: Application Name
+      displayName: Name
+      type: string
+  - id:
+    field:
+      description: Appliction Id
+      displayName: Id
+      type: string

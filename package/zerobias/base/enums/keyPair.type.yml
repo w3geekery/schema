@@ -1,0 +1,8 @@
+description: "Key Pair Type"
+displayName: "Key Pair Type"
+values:
+  - RSA: "RSA"
+  - ED25519: "ED25519"
+  - ECDSA: "ECDSA"
+  - DSA: "DSA"
+  

@@ -1,0 +1,8 @@
+description: "Types of responsible parties"
+displayName: "Party Type"
+values:
+  - "EMPLOYEE": "Employee"
+  - "CONTRACTOR": "Contractor"
+  - "PROVIDER": "External Entity/Organization"
+  - "VENDOR": "Vendor/Manufacturer/Publisher/Maintainer"
+  - "VAR": "Value Add Reseller (VAR)/Agent/Distributor"

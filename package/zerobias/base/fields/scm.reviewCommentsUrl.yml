@@ -1,0 +1,3 @@
+description: "URL for reviewing comments of an SCM object"
+displayName: "Review Comments URL"
+type: "url"

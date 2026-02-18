@@ -1,0 +1,19 @@
+description: "Network Service"
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Endpoints":
+    jsonata: "endpoints.hostname && endpoints.port ? endpoints.hostname & ':' & endpoints.port : ''"
+    sort: endpoints.hostname
+extends: 
+  - Component
+properties:
+  - endpoints:
+    field: endpoint
+    multi: true

@@ -1,0 +1,12 @@
+description: Types of roles in identity and access management systems
+displayName: Role Type
+values:
+  - ADMINISTRATIVE: 'Administrative or management role'
+  - FUNCTIONAL: 'Function-based role (e.g., Developer, Analyst)'
+  - SECURITY: 'Security-focused role'
+  - SERVICE: 'Service account or system role'
+  - TEMPORARY: 'Temporary or time-limited role'
+  - PROJECT: 'Project-specific role'
+  - DEPARTMENT: 'Department or organizational unit role'
+  - EXTERNAL: 'External user or contractor role'
+  - CUSTOM: 'Custom or user-defined role'

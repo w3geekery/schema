@@ -1,0 +1,4 @@
+displayName: "Preferred Backup Window"
+description: "The time when the Database should be backed up"
+example: "02:00-03:00"
+type: "string"

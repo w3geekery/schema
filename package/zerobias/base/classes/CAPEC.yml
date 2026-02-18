@@ -1,0 +1,42 @@
+description: CAPEC
+# extends:
+#   - AttackPattern when available on platform schema
+properties:
+  - status:
+    field: capecStatus
+  - abstraction:
+    field: capecAbstraction
+  - likelihoodOfAttack:
+    field: capecLikelihoodOfAttack
+  - typicalSeverity:
+    field: severity
+# links
+  - parent:
+    linkTo: CAPEC.id.children
+  - children:
+    multi: true
+    linkTo: CAPEC.id.parent
+  - peerOf:
+    multi: true
+    linkTo: CAPEC.id.peers
+  - peers:
+    multi: true
+    linkTo: CAPEC.id.peerOf
+  - canAlsoBe:
+    multi: true
+    linkTo: CAPEC.id.similarTo
+  - similarTo:
+    multi: true
+    linkTo: CAPEC.id.canAlsoBe
+  - canPrecede:
+    multi: true
+    linkTo: CAPEC.id.canFollow
+  - canFollow:
+    multi: true
+    linkTo: CAPEC.id.canPrecede
+  - weaknesses:
+    multi: true
+    linkTo: CWE # Needs moved to AttackPattern linkTo Weakness when available on platform schema
+  - categories:
+    multi: true
+    linkTo: CapecCategory 

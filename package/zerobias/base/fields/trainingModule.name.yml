@@ -1,0 +1,4 @@
+description: "The name of a module."
+displayName: "Module Name"
+type: "string"
+indexed: false

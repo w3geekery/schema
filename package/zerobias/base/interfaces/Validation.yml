@@ -1,0 +1,10 @@
+description: "Validating body assigned attesting compliance, such as NIST, FIPS, ISO, etc"
+icon: images/classes/auditmation/base/Validation.svg
+extends: Component
+properties:
+  - body: 
+    field: component.validationBody
+  - components: "What component(s) this validation covers"
+    linkTo: Component
+    multi: true
+    defered: true

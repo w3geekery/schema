@@ -1,0 +1,13 @@
+description: "The type of encryption"
+displayName: "Crytpo Module Type"
+values:
+  - "BLOCK": "Block storage encryption"
+  - "FILESYSTEM": "Filesystem level encryption"
+  - "FILE": "File level encryption"
+  - "OBJECT": "Object level encryption"
+  - "DATABASE": "Database level encryption"
+  - "APP": "Application level encryption"
+  - "TLS": "Transport Layer Encryption (SSL/HTTPS)"
+  - "VPN": "Virutal Private Network"
+  - "SSH": "Secure shell encryption"
+  - "OTHER": "Custom encryption"

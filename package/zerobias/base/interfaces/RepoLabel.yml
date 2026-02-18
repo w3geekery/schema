@@ -1,0 +1,8 @@
+description: "A Repository Label"
+properties:
+  - repo:
+    linkTo: Repository
+    required: true
+  - pullRequests:
+    linkTo: PullRequest
+    multi: true

@@ -1,0 +1,3 @@
+displayName: "DNS Name Servers"
+description: "IP addresses for DNS name servers"
+type: "ipAddress"

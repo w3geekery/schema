@@ -1,0 +1,3 @@
+description: "Identity Provider (IdP) Login Screen URL"
+displayName: "URL"
+type: "url"

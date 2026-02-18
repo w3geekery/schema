@@ -1,0 +1,4 @@
+example: "aws_us_gov"
+description: "A Cloud Market code for regulatory references"
+displayName: "Cloud Market"
+type: "cloudMarket"

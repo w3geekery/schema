@@ -1,0 +1,8 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "Cloud Object Storage (AWS S3, Azure BLOB Service, GCP Storage, ...)"
+extends: ObjectStorage
+properties:
+    - provider: 
+      field: cloudProvider
+    - service:
+      linkTo: CloudService

@@ -1,0 +1,9 @@
+description: "Enumeration store for the type of employment"
+displayName: "Employment Type"
+values:
+  - "FULL_TIME": "Full time"
+  - "PART_TIME": "Part time"
+  - "TEMPORARY": "Temporary"
+  - "TRAINEE": "Trainee"
+  - "SEASONAL": "Seasonal"
+  - "INTERN": "Internship"
