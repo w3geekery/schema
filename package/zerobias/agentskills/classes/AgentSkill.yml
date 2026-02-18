@@ -1,0 +1,22 @@
+description: "An Agent Skill — a portable, structured set of instructions for AI agents following the agentskills.io specification"
+extends:
+  - Element
+  - AgentSkillObject
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "License":
+    jsonata: license
+    sort: license
+  "Author":
+    jsonata: author
+    sort: author
+  "Version":
+    jsonata: skillVersion
+    sort: skillVersion
+  "Source Repo":
+    jsonata: sourceRepo

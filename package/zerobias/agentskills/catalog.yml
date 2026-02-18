@@ -1,0 +1,5 @@
+Schema:
+  name: "Agent Skills Schema"
+  package: "zerobias.agentskills.schema"
+  description: |-
+    AuditgraphDB schema for Agent Skills from agentskills.io
