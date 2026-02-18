@@ -19,14 +19,13 @@
   },
   "files": [
     "classes/**",
-    "interfaces/**",
     "catalog.yml"
   ],
   "dependencies": {
     "@zerobias-org/product-zerobias-schemas-agentskills": "latest",
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest"
   },
-  "auditmation": {
+  "zerobias": {
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
     "package": "zerobias.agentskills.schema",

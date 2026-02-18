@@ -1,7 +1,46 @@
 description: "An Agent Skill — a portable, structured set of instructions for AI agents following the agentskills.io specification"
 extends:
   - Element
-  - AgentSkillObject
+properties:
+  - license:
+    field:
+      type: string
+      description: License name or reference (e.g., "Apache-2.0")
+
+  - compatibility:
+    field:
+      type: string
+      description: Environment requirements (e.g., "Designed for Claude Code")
+
+  - author:
+    field:
+      type: string
+      description: Skill author from metadata
+
+  - skillVersion:
+    field:
+      type: string
+      description: Version from metadata
+
+  - sourceRepo:
+    field:
+      type: string
+      description: GitHub repository URL
+
+  - sourcePath:
+    field:
+      type: string
+      description: Path within repo (e.g., "skills/pdf/SKILL.md")
+
+  - allowedTools:
+    field:
+      type: string
+      description: Space-delimited list of pre-approved tools for the skill
+
+  - bodyContent:
+    field:
+      type: string
+      description: The markdown body content of the SKILL.md file
 viewProperties:
   "Name":
     jsonata: name
