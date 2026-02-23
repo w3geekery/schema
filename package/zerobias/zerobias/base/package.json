@@ -1,7 +1,7 @@
 {
-  "name": "@zerobias-org/schema-zerobias-base",
+  "name": "@zerobias-org/schema-zerobias-zerobias-base",
   "description": "Base Schema for Zerobias Platform.",
-  "version": "1.0.0-rc.1",
+  "version": "2.0.0-rc.1",
   "author": "team@zerobias.com",
   "license": "ISC",
   "type": "module",
