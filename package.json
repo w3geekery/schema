@@ -32,7 +32,8 @@
   "homepage": "https://github.com/zerobias-org/schema#readme",
   "overrides": {
     "tar": "^7.5.7",
-    "@rollup/plugin-commonjs": "^28.0.0"
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "minimatch": "^10.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.1",
@@ -44,5 +45,8 @@
     "nx": "^22.4.2",
     "tsx": "^4.21.0",
     "yaml": "^2.7.0"
+  },
+  "dependencies": {
+    "@zerobias-com/tag-zerobias-global-tags": "^1.0.0"
   }
 }
