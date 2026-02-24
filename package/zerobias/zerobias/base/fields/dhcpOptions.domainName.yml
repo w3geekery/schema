@@ -1,0 +1,3 @@
+displayName: "Domain Name"
+description: "The domain name that client should use when resolving hostnames via DNS"
+type: "string"

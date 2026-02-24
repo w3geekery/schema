@@ -1,0 +1,3 @@
+description: "Unique ID for this association"
+displayName: "ID"
+type: "string"

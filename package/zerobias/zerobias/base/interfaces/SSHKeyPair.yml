@@ -1,0 +1,8 @@
+description: "An SSH Key Pair"
+properties:
+  - fingerprint:
+    field:
+      type: string
+      description: "The fingerprint of the key pair"
+  - keyType:
+    field: keyPair.type

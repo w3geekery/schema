@@ -1,0 +1,3 @@
+displayName: "MSS"
+description: "Maximum Segment Size for TCP connections"
+type: "integer"

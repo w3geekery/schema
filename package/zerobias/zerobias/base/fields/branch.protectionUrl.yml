@@ -1,0 +1,3 @@
+description: "URL for protecting a branch"
+displayName: "Protection URL"
+type: "url"

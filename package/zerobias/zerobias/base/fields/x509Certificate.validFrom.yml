@@ -1,0 +1,4 @@
+displayName: "Valid from"
+description: "The date from which the x509 certificate is valid."
+example: "2020-01-01T00:00:00Z"
+type: date-time

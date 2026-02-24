@@ -1,0 +1,4 @@
+example: "10"
+description: "IP interface gateway metric/routing preference"
+displayName: "Gateway Metric"
+type: "int32"

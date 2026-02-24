@@ -1,0 +1,8 @@
+description: "Status of a user or system account inside an application"
+displayName: "Account Status"
+values:
+  - "ACTIVE": "Active"
+  - "INACTIVE": "Inactive"
+  - "DISABLED": "Disabled"
+  - "LOCKED": "Locked"
+  - "EXPIRED": "Expired"

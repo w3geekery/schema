@@ -1,0 +1,6 @@
+skip: true
+description: "Type of Baseline"
+displayName: "Baseline Type"
+values:
+  - "CONFIGURATION": "Configuration Baseline"
+  - "SECURITY_CONTROL": "Security Control baseline associated with Compliance Frameworks"

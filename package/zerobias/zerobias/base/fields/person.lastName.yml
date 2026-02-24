@@ -1,0 +1,5 @@
+example: "Doe"
+description: "The last name of a person"
+displayName: "Last Name"
+type: "string"
+indexed: true

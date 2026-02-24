@@ -1,0 +1,3 @@
+description: true if versioning is enabled, otherwise false
+displayName: Versioning Enabled
+type: "boolean"

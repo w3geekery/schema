@@ -1,0 +1,29 @@
+description: "Location"
+displayName: "Location"
+tags: 
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Code":
+    jsonata: code
+    sort: code
+  "Locations":
+    jsonata: $distinct(locations.address.country)
+    sort: locations.address.country
+properties:
+  - code:
+    field: locationCode
+  - locations:
+    field: locationInfo
+    multi: true
+  # Links
+  - assets:
+    linkTo: Asset
+    multi: true
+  - inventoryItems:
+    linkTo: InventoryItem
+    multi: true

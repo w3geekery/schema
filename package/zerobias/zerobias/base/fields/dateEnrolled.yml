@@ -1,0 +1,4 @@
+example: "2021-10-26"
+description: "Date of enrollment"
+displayName: "Date Enrolled"
+type: "date"

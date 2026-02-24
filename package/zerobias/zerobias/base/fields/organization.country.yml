@@ -1,0 +1,4 @@
+description: "Country of an Organization"
+displayName: "Organization Country"
+example: "de"
+type: "geoCountry"

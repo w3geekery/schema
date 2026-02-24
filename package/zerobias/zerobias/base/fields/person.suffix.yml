@@ -1,0 +1,4 @@
+example: "Jr, Sr"
+description: "Suffix name for a person."
+displayName: "Person Suffix"
+type: "string"

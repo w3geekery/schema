@@ -1,0 +1,5 @@
+description: "Issued Date"
+displayName: "Issued Date"
+properties:
+  - dateOfIssue:
+    field: dateOfIssue

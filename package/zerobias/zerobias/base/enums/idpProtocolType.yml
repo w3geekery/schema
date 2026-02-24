@@ -1,0 +1,11 @@
+description: "Protocol used by Identity Provider"
+displayName: "IdP Protocol"
+values:
+  - "SAML_1_0": "Security Assertion Markup Language version (SAML) 1.0"
+  - "SAML_1_1": "Security Assertion Markup Language version (SAML) 1.1"
+  - "SAML_2_0": "Security Assertion Markup Language version (SAML) 2.0"
+  - "OAuth": "Open Authorization"
+  - "OpenID_1_0": "OpenID 1.0"
+  - "OpenID_2_0": "OpenID 2.0"
+  - "OIDC": "OpenID Connect (OIDC)"
+  - "WS_FED": "WS-Federation"

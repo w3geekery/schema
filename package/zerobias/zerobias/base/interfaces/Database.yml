@@ -1,0 +1,55 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "Database"
+extends: 
+  - Asset
+  - NetworkService
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Status":
+    jsonata: assetStatus
+    sort: assetStatus
+  "Cluster":
+    jsonata: cluster
+    sort: cluster
+  "Snapshots":
+    jsonata: snapshots
+    sort: snapshots
+  "DBMS":
+    jsonata: dbms
+    sort: dbms
+  "Oscal Asset Type":
+    jsonata: oscalAssetType
+    sort: oscalAssetType
+  "Location":
+    jsonata: location
+    sort: location
+  "Backups":
+    jsonata: $count(backups)
+  "DB Type":
+    jsonata: assetType
+    sort: assetType
+  "DB Version":
+    jsonata: version
+    sort: version
+  "Manufacturer":
+    jsonata: manufacturer
+    sort: manufacturer
+  "Model":
+    jsonata: model
+    sort: model
+#TO-DO: needs collect all of the viewProperties fields  
+properties:
+  - dbms:
+    linkTo: DBMS
+  - snapshots:
+    linkTo: DatabaseSnapshot
+    multi: true
+  - cluster:
+    linkTo: DatabaseCluster

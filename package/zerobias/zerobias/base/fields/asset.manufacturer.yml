@@ -1,0 +1,4 @@
+description: "The manufacturer of an asset"
+displayName: "Manufacturer"
+example: "Dell Inc."
+type: "string"

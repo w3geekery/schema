@@ -1,0 +1,9 @@
+description: "Workflow Ticket "
+icon: images/classes/auditmation/base/Ticket.svg
+extends: Ticket
+properties:
+  - workflow:
+    linkTo: Workflow
+  - stepTicket:
+    multi: true
+    linkTo: WorkflowStepTicket

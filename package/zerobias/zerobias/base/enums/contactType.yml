@@ -1,0 +1,10 @@
+description: "Type of a contact"
+displayName: "Contact Type"
+values:
+  - "HOME": "Home"
+  - "WORK": "Work/Office"
+  - "FAX": "Fax"
+  - "MOBILE": "Mobile/SMS"
+  - "VOIP": "VoIP"
+  - "OTHER": "Other"
+  - "SCHOOL": "School"

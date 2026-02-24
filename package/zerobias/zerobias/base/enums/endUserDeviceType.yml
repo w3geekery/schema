@@ -1,0 +1,10 @@
+description: "Device Type"
+displayName: "Device Type"
+values:
+  - "LAPTOP": "Laptop"
+  - "DESKTOP": "Desktop"
+  - "WORKSTATION": "Workstation"
+  - "SERVER": "Server"
+  - "PHONE": "Phone"
+  - "TABLET": "Tablet"
+  - "UNKNOWN": "Unknown"

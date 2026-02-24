@@ -1,0 +1,3 @@
+description: "True whe a Label is present by default"
+displayName: "Default"
+type: "boolean"

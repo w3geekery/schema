@@ -1,0 +1,5 @@
+example: "123 Main St"
+displayName: "Address Line"
+description: "A line in a phyical address"
+type: "string"
+indexed: true

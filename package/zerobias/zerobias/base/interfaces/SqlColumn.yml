@@ -1,0 +1,5 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "SQL Column"
+properties:
+  - table:
+    linkTo: SqlTable

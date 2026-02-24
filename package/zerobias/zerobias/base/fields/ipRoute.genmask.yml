@@ -1,0 +1,3 @@
+displayName: "Genmask"
+description: "The netmask for the destination net"
+type: "ipAddress"

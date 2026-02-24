@@ -1,0 +1,16 @@
+description: "Physical Address: address, CSZ, Country."
+displayName: "Address"
+properties:
+  - description: "Location description"
+  - addressLine:
+    multi: true
+    field: address.addressLine
+  - locality:
+    multi: true
+    field: address.locality
+  - postalCode:
+    field: address.postalCode
+  - country:
+    field: address.country
+  - type:
+    field: addressType

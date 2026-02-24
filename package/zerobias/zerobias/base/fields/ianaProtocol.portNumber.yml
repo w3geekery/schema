@@ -1,0 +1,5 @@
+example: "80, 53, 443"
+description: "IANA Service Name and Transport Protocol Port Number Registry assigned Port Number"
+displayName: "Port Number"
+type: "int32"
+deprecated: true

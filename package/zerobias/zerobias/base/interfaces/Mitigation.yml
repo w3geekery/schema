@@ -1,0 +1,13 @@
+description: Mitigation
+extends:
+  - Element
+properties:
+  # Links
+  - techniques:
+    linkTo: Technique
+    multi: true
+    resourceLinkType: mitigates
+  - countermeasures:
+    linkTo: Countermeasure
+    multi: true
+    resourceLinkType: mitigates

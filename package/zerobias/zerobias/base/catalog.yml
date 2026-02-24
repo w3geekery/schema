@@ -1,0 +1,6 @@
+Schema:
+  name: "Zerobias Base Schema"
+  package: "zerobias.zerobias.base.schema"
+  description: |-
+    Base schema definitions for the Zerobias platform, providing common classes,
+    interfaces, fields, documents, and enums for data collected from external systems.

@@ -1,0 +1,4 @@
+example: "TEM8S2-2ET83-CGKP1-DPSI2-EPZO1"
+description: "Application License Key"
+displayName: "License Key"
+type: "string"

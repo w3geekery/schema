@@ -1,0 +1,32 @@
+description: "An Elastic interface"
+displayName: "Elastic Interface"
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Elastic Addresses":
+    jsonata: elasticAddresses
+    sort: elasticAddresses
+  "Virtual Machines":
+    jsonata: virtualMachines
+    sort: virtualMachines
+  "Status":
+    jsonata: operationalStatus
+    sort: operationalStatus
+  "MAC Address":
+    jsonata: macAddress
+    sort: macAddress
+properties:
+  - macAddress:
+  - operationalStatus:
+  - elasticAddresses:
+    linkTo: ElasticAddress
+    multi: true
+  - virtualMachines:
+    linkTo: VirtualMachine
+    multi: true

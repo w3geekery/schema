@@ -1,0 +1,13 @@
+description: "A business entity or group of people"
+icon: images/classes/auditmation/base/Organization.svg
+extends: Party
+properties:
+  - entityType:
+    field: organizationEntityType
+  - domain:
+    multi: true
+    field: organization.domain
+  - nationality:
+    multi: true
+    field: organization.country
+# Links

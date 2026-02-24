@@ -1,0 +1,8 @@
+description: "Ticket associated with a Workflow Step"
+icon: images/classes/auditmation/base/Ticket.svg
+extends: Ticket
+properties:
+  - workflowTicket:
+    linkTo: WorkflowTicket
+  - step:
+    linkTo: WorkflowStep

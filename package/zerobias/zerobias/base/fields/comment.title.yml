@@ -1,0 +1,4 @@
+example: "Read Me First"
+description: "Comment Subject or Title"
+displayName: "Title"
+type: "string"

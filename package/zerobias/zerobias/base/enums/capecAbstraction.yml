@@ -1,0 +1,6 @@
+description: "The abstraction level of a CAPEC"
+displayName: "CAPEC Abstraction"
+values:
+  - "STANDARD": "Standard"
+  - "DETAILED": "Detailed"
+  - "META": "Meta"

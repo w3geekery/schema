@@ -1,0 +1,9 @@
+description: "Source Code Management (SCM) Principal"
+extends: Principal
+properties:
+  - branchProtectionBypass:
+    multi: true
+    linkTo: BranchProtection.id.bypassPullRequestAllowances
+  - branchProtectionRestricted:
+    multi: true
+    linkTo: BranchProtection.id.restrictions

@@ -1,0 +1,20 @@
+description: "Evidence that a person completed a Training Module"
+icon: images/classes/auditmation/base/TrainingRecord.svg
+properties:
+  - dateEnrolled:
+  - dateStarted:
+  - dateCompleted:
+  - testResult:
+    field: testResult
+    required: true
+  - enrollmentStatus:
+    field: enrollmentStatus
+# Links
+  - person: "Person associated with Training Record"
+    linkTo: Person
+  - app: "Training application providing Training Records"
+    linkTo: TrainingApplication
+  - account: "Training account for this Training Record"
+    linkTo: TrainingAccount
+  - module: "Training Module documented by this Training Record"
+    linkTo: TrainingModule

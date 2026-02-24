@@ -1,0 +1,4 @@
+example: "Waiting for Approval"
+description: "Customer locally defined values workflow steps required to implement an organizational defined Workflow"
+displayName: "Workflow Step"
+type: "string"

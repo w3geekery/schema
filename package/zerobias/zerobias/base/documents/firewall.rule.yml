@@ -1,0 +1,12 @@
+description: "Firewall Rule"
+displayName: "Firewall Rule"
+properties:
+  - protocol:
+    field: ipProtocol
+  - portRange:
+    field: acl.portRange
+  - addresses:
+    field: acl.address
+    multi: true
+  - action:
+    field: acl.action

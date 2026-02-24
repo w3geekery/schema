@@ -1,0 +1,5 @@
+example: "CEO, CTO"
+description: "The job title for the person"
+displayName: "Job Title"
+type: "string"
+indexed: true

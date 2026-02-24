@@ -1,0 +1,4 @@
+example: "Garcia"
+description: "Maiden name for a person"
+displayName: "Maiden Name"
+type: "string"

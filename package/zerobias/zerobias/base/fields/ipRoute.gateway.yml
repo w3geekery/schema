@@ -1,0 +1,3 @@
+displayName: "Gateway"
+description: "Gateway address or undefined if none set"
+type: "ipAddress"

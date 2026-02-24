@@ -1,0 +1,18 @@
+description: An entity that can be given access rights to Resources
+properties:
+  - principalType:
+    field: principalType
+  - accessRules:
+    linkTo: AccessRule
+    multi: true
+  - groups: "Link to Groups associated with account and subsequent access level"
+    multi: true
+    linkTo: Group
+    onDelete: UNLINK
+    t3: permissionSet
+  - roles: "Link to Roles assigned to this principal"
+    multi: true
+    linkTo: Role.id.assignees
+  - accessCredentials: "Access credentials associated with this principal"
+    multi: true
+    linkTo: AccessCredential.id.principal

@@ -1,0 +1,4 @@
+example: "aws_us_east2"
+description: "A Cloud Region"
+displayName: "Cloud Region"
+type: "cloudRegion"

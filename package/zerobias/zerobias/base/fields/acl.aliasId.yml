@@ -1,0 +1,4 @@
+displayName: "Address Alias ID"
+description: "A reference to a defined list of addresses for a service, eg prefix list ID."
+example: "pl-123456abcde123456"
+type: "string"

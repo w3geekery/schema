@@ -1,0 +1,12 @@
+description: "ITSM Services implemented by Organization"
+displayName: "ITSM Service Type"
+values:
+  - CONFIGURATION: "Configuration Management"
+  - CHANGE: "Change and Release Management"
+  - INCIDENT: "Incident Management"
+  - VULNERABILITY: "Vulnerability Management"
+  - SERVICE_LEVEL: "Service Level Agreement (SLA) Management"
+  - REQUEST: "Request Management"
+  - TALENT: "Talent Management"
+  - WORKFLOW: "Workflow Management"
+  - PROCESS_IMPROVEMENT: "Process Improvement Management"

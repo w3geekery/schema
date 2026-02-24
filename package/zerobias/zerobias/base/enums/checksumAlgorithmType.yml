@@ -1,0 +1,10 @@
+description: "Checksum/Signature Algorithim Type"
+displayName: "Checksum Algorithim"
+values:
+  - MD5: "Message Digest 5"
+  - SHA: "Single Hash Algorithim"
+  - SHA1: "160-bit Single Hash Algorithm"
+  - SHA2: "256-bit Single Hash Algorithm"
+  - CRC32: "Cyclic Redundancy Check"
+  - LUHN: "Luhn Algorithm"
+  - SM3: "SM3"

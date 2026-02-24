@@ -1,0 +1,10 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "A Configuration for an Asset"
+extends: 
+properties:
+  - parameters:
+    field: parameter
+    multi: true
+  - assets:
+    linkTo: Asset
+    multi: true

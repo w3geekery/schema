@@ -1,0 +1,8 @@
+description: "The current powered state of an application environment"
+displayName: "Power State"
+values:
+  - "PENDING": "Pending/booting"
+  - "RUNNING": "Running"
+  - "STOPPING": "Shutting down/stopping"
+  - "STOPPED": "Stopped/shutdown/terminated"
+  - "UNKNOWN": "Unknown"

@@ -1,0 +1,24 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "Application Hosting Environment"
+extends: 
+  - Asset
+  - Location
+properties:
+    - environmentType: 
+      field: environmentType
+  # Links
+    - networks:
+      linkTo: Network
+      multi: true
+    - routers:
+      linkTo: Router
+      multi: true
+    - gateways:
+      linkTo: IpGateway
+      multi: true
+    - environmentInventoryItems:
+      linkTo: InventoryItem
+      multi: true
+    - firewalls:
+      linkTo: Firewall
+      multi: true

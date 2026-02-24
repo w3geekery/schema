@@ -1,0 +1,4 @@
+example: "true"
+description: "Automatically enroll users that are added to the Campaign"
+displayName: "Allow Enrollements"
+type: "boolean"

@@ -1,0 +1,6 @@
+description:  "Mail Info"
+displayName: "Mail Info"
+properties:
+  - contactType:
+  - email:
+    field: email

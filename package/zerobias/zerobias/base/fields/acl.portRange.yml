@@ -1,0 +1,4 @@
+displayName: "Port Range"
+description: "A single port number (0..65535) or a hyphen separated range"
+example: "8000-8100"
+type: "string"

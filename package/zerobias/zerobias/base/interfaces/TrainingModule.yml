@@ -1,0 +1,27 @@
+description: "Class, Certification, Exam or Activity designed to develop and prove a Competency"
+icon: images/classes/auditmation/base/TrainingModule.svg
+properties:
+  - competencyType:
+    field: competencyType
+    multi: true
+  - provider:
+    field: trainingModule.provider
+  - purchaseDate:
+    field: datePurchased
+  - publishDate:
+    field: datePublished
+  - policyUrl:
+    field: url
+  - moduleType:
+    field: trainingModuleType
+# Links
+  - competencies: "Link field how what competency(ies) this module satisfies"
+    multi: true
+    linkTo: Competency
+  - app: "Application that provides this training"
+    linkTo: TrainingApplication
+  - campaigns: "Training Modules implemented by a given Training Campaign"
+    multi: true
+    linkTo: TrainingCampaign
+  - record: "Training Record of Training Module"
+    linkTo: TrainingRecord

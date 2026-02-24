@@ -1,0 +1,2 @@
+description: End time of day in HH:MM format (e.g., "17:00", "23:59")
+type: string

@@ -1,0 +1,8 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "Cloud Environment"
+extends: Environment
+properties:
+    - cloudService: 
+      linkTo: CloudService 
+    - elasticAddress:
+      linkTo: ElasticAddress

@@ -1,0 +1,5 @@
+description: "The effect of a given AccessRule being applied"
+displayName: "Effect"
+values:
+    - "ALLOW": The effect of this rule is to allow or grant access
+    - "DENY": The effect of this rule is to prevent or deny access

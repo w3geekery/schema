@@ -1,0 +1,5 @@
+description: An application or service that provides conditional or restricted access
+properties:
+  - accessRules:
+    linkTo: AccessRule
+    multi: true

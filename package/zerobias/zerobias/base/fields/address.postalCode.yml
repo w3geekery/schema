@@ -1,0 +1,5 @@
+example: "73301"
+description: "A physical address postal code, postcode, PIN, or ZIP"
+displayName: "Postal Code"
+type: "string"
+indexed: true

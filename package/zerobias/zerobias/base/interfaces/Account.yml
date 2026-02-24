@@ -1,0 +1,65 @@
+description: "A user or system account inside an application"
+icon: images/classes/auditmation/base/Account.svg
+extends:
+  - Principal
+viewProperties:
+  "Account Name":
+    jsonata: name
+    sort: name
+  "Login":
+    jsonata: login
+    sort: login
+  "E-Mail":
+    jsonata: email
+    sort: email
+  "Groups":
+    jsonata: $count(groups)
+  "Access Level":
+    jsonata: accessLevel
+    sort: accessLevel
+  "Status":
+    jsonata: status
+    sort: status
+  "MFA":
+    jsonata: authType
+    sort: authType
+  "Description":
+    jsonata: description
+    sort: description
+properties:
+  - login:
+    field: account.login
+  - email:
+    field: email
+    multi: true
+  - accessLevel:
+    field: accessLevel
+  - type:
+    field: accountType
+  - status:
+    field: accountStatus
+  - privileged:
+    field: account.privilegedUser
+  - authType:
+    multi: true
+    field: authType
+  - permission:
+    field: permissionSet
+  - mfaEnabled:
+    field: mfaEnabled
+# Links
+  - identity:
+    multi: true
+    linkTo: 
+      - FederatedIdentity.id
+      - FederatedIdentity.email
+      - FederatedIdentity.login
+  - person: "Link to Person associated with account"
+    multi: true
+    linkTo:
+      - Person.id
+      - Person.email
+      - Person.employeeId
+  - app:
+    linkTo: Application
+    multi: true

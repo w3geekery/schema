@@ -1,0 +1,3 @@
+description: "An organizationally specific identifier that is used to uniquely identify a logical or tangible item by the organization that owns the item"
+displayName: "Asset ID"
+type: "string"

@@ -1,0 +1,6 @@
+description: "Type of backup"
+displayName: "Backup Type"
+values:
+  - "FULL": "Full Backup"
+  - "DIFFERENTIAL": "Differential Backup"
+  - "INCREMENTAL": "Incremental Backup"

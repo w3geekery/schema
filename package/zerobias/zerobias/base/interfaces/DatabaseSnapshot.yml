@@ -1,0 +1,11 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "Database Snapshot"
+extends: 
+  - Backup
+properties:
+  - dbms:
+    linkTo: DBMS
+  - database:
+    linkTo: Database
+  - cluster:
+    linkTo: DatabaseCluster

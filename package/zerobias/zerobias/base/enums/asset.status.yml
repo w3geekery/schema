@@ -1,0 +1,7 @@
+description: "Asset Status"
+displayName: "Asset Status"
+values:
+  - ACTIVE:	Asset is active and in use. In use by someone or something.
+  - AVAILABLE:	Asset is available for assign.
+  - UNAVAILABLE:	Asset is unavailable for assign (needs repair, configure, etc).
+  - RETIRED: Asset is retired and no longer in service.

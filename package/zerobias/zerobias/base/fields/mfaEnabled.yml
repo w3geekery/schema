@@ -1,0 +1,4 @@
+description: True if the user has enabled multi-factor authentication
+displayName: MFA Enabled
+example: true
+type: boolean

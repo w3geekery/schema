@@ -1,0 +1,4 @@
+example: "86000"
+description: "Input/output operations per second (IOPS)"
+displayName: "IOPS"
+type: "int32"

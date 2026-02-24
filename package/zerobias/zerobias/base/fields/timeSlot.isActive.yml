@@ -1,0 +1,2 @@
+description: Whether this time slot is currently active
+type: boolean

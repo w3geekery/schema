@@ -1,0 +1,10 @@
+description: "Enumeration indicating the type of address being stored"
+displayName: "Address Type"
+values:
+  - "HOME": "Home Address"
+  - "OFFICE": "Office Address"
+  - "MAILING": "Mailing Address"
+  - "BILLING": "Billing Address"
+  - "RECEIVING": "Receiving Address"
+  - "AGENT": "Agent Address"
+  - "OTHER": "Other"

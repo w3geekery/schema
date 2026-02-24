@@ -1,0 +1,6 @@
+description: "Baseline for a runtime environment "
+displayName: "Application Environment Baseline"
+extends:
+  - Baseline
+  - AppEnvironment
+properties:

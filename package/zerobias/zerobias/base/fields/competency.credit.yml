@@ -1,0 +1,4 @@
+example: "120"
+description: "Number of base term credits or continuous education term credits required to obtain or maintain a comptenency"
+displayName: "Credit(s)"
+type: "int32"

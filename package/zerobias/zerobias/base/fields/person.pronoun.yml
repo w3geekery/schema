@@ -1,0 +1,4 @@
+example: "He, Sir, She, They, Them"
+description: "A persons prefered pronoun - Sir, Miss, Mr., He/Him, She/Her, etc."
+displayName: "Person Pronoun"
+type: "string"

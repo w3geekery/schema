@@ -1,0 +1,9 @@
+description: An inventory application
+displayName: Inventory Application
+extends:
+  - Application
+properties:
+# LInks
+  - inventory:
+    multi: true
+    linkTo: InventoryItem

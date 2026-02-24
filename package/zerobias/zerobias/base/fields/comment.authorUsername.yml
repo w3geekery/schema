@@ -1,0 +1,4 @@
+example: "bsmith"
+description: "Username / Login the author of the comment"
+displayName: "Author Username"
+type: "string"

@@ -1,0 +1,4 @@
+example: "3393"
+description: "CPU Clock measured in Mhz"
+displayName: "CPU Clock (Mhz)"
+type: "int32"

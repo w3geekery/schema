@@ -1,0 +1,5 @@
+# Used by Person class
+example: "2021-10-26"
+description: "Date of exit or termination for an employee or contractor"
+displayName: "Exit Date"
+type: "date"

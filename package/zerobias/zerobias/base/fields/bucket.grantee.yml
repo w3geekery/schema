@@ -1,0 +1,3 @@
+description: "Enables a different account/user/group to access a bucket"
+displayName: "Bucket Grantee"
+type: "string" 

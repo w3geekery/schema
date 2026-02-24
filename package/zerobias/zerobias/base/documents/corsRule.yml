@@ -1,0 +1,34 @@
+description: "A rule that supports a Cross-Origin Resource Sharing (CORS) configuration"
+displayName: "CORS Rule"
+properties:
+  - allowedMethods:
+    field: httpMethod
+    multi: true
+  - allowedHeaders:
+    multi: true
+    field: 
+      displayName: Allowed Headers
+      description: 
+        Headers that are specified in the Access-Control-Request-Headers header.
+        In response to any preflight OPTIONS request, the server returns any requested headers that
+        in this list. Use * for all.
+      example: Authorization
+  - allowedOrigins:
+    multi: true
+    field: 
+      displayName: Allowed Origins
+      description: 
+        Referring URLs that are able to use this rule, or * for all
+      example: https://www.acme.com
+  - exposeHeaders:
+    multi: true
+    field: 
+      displayName: Expose Headers
+      description: One or more headers in the response that callers are able to access from their applications
+      example: x-amz-server-side-encryption
+  - maxAge:
+    field: 
+      displayName: Max Age
+      description: The time in ISO8601 duration that your browser is to cache the preflight response for the specified resource
+      type: duration
+      example: T3600S

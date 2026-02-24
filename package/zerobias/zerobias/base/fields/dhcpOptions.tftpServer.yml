@@ -1,0 +1,3 @@
+displayName: "TFTP Servers"
+description: "IP addresses for TFTP servers available to the client"
+type: "ipAddress"

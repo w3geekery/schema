@@ -1,0 +1,3 @@
+displayName: "Log Servers"
+description: "IP addresses for UDP log servers available to the client"
+type: "ipAddress"

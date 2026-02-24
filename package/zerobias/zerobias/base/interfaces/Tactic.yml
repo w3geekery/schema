@@ -1,0 +1,19 @@
+description: Tactic
+extends:
+  - Element
+properties:
+  # Links
+  - techniques:
+    linkTo: Technique
+    multi: true
+    resourceLinkType: linked_to
+  - parentTactic:
+    linkTo: Tactic.id.subTactics
+  - subTactics:
+    linkTo: Tactic.id.parentTactic
+    multi: true
+  - mitigatedBy:
+    linkTo: Countermeasure
+    multi: true
+    t3: mitigationStrategy
+    resourceLinkType: mitigated_by

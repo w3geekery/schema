@@ -1,0 +1,5 @@
+example: "john.doe01@example.com"
+description: "An email address for a person or system"
+displayName: "E-Mail Address"
+type: "email"
+keyed: true

@@ -1,0 +1,44 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "An Object Storage Bucket / Container"
+tags: 
+  - query-folder.assets
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Region":
+    jsonata: region
+    sort: region
+  "Versioning":
+    jsonata: versioning
+    sort: versioning
+  "Public":
+    jsonata: $not(publicAccessDisabled)
+    sort: publicAccessDisabled
+  "Encrypted":
+    jsonata: cryptoEnabled
+    sort: cryptoEnabled
+extends: 
+  - Component
+  - CryptoDevice
+properties:
+  - region:
+    field: cloudRegion
+  - objectStorage: 
+    linkTo: ObjectStorage
+  - grants:
+    field: bucketGrant
+    multi: true
+  - lifecycleRules:
+    field: bucketLifecycleRule
+    multi: true
+  - corsRules:
+    field: corsRule
+    multi: true
+  - versioning:
+    field: bucket.versioning
+  - publicAccessDisabled:
+    field: bucket.publicAccessDisabled

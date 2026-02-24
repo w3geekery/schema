@@ -1,0 +1,13 @@
+description: Days of the week for time slot scheduling
+displayName: Day of Week
+values:
+  - MONDAY: 'Monday'
+  - TUESDAY: 'Tuesday'
+  - WEDNESDAY: 'Wednesday'
+  - THURSDAY: 'Thursday'
+  - FRIDAY: 'Friday'
+  - SATURDAY: 'Saturday'
+  - SUNDAY: 'Sunday'
+  - WEEKDAYS: 'Monday through Friday'
+  - WEEKENDS: 'Saturday and Sunday'
+  - ALL_DAYS: 'All days of the week'

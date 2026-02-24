@@ -1,0 +1,12 @@
+description: "Web Gateway Operation"
+properties:
+    - path:
+      field:
+        type: string
+        description: "The path of the operation"
+    - method:
+      field:
+        type: string
+        description: "The method of the operation"
+    - resource:
+      linkTo: WebGatewayResource 

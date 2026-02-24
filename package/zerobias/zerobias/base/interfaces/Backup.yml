@@ -1,0 +1,61 @@
+description: "A copy of files and programs made to facilitate recovery if necessary"
+icon: images/classes/auditmation/base/Backup.svg
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120005
+viewProperties:
+  "Name": 
+    jsonata: name
+    sort: name
+  "Description": 
+    jsonata: description
+    sort: description
+  "Backup Creation Date": 
+    jsonata: created
+    sort: created
+  "Backup Size":
+    jsonata: "(backupSize ? $round(backupSize/1073741824) : 'unknown') & ' GB'"
+    sort: backupSize
+  "Backup Type": 
+    jsonata: backupType
+    sort: backupType
+  "Encryption": 
+    jsonata: encryption
+    sort: encryption
+  "Backup Location": 
+    jsonata: backupLocation
+    sort: backupLocation
+properties:
+  - created:
+    field: dateCreated
+  - backupSize:
+    field: sizeBytes
+  - backupLocationType:
+    multi: true
+    field: backupLocationType
+  - encryption:
+    field: backup.isEncrypted
+  - backupType:
+    field: backupType
+  - mediaType:
+    field: backup.mediaType
+  - backupLocation:
+    multi: true
+    field: backup.backupLocation
+  - sourceLocation:
+    multi: true
+    field: backup.sourceLocation
+  - generation:
+    field: backup.generation
+    # Links
+  - sourceComponent:
+    multi: true
+    linkTo: Component
+    defered: true
+  - backupJob:
+    multi: true
+    linkTo: BackupJob
+  - parentBackup:
+    linkTo: Backup.id.childBackup
+  - childBackup:
+    multi: true
+    linkTo: Backup.id.parentBackup

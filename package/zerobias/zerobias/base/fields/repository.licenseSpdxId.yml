@@ -1,0 +1,4 @@
+example: "MIT"
+description: "Software Package Data Exchange (SPDX) License ID "
+displayName: "SPDX ID"
+type: "string"

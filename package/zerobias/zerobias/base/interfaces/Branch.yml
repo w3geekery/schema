@@ -1,0 +1,47 @@
+description: "A Branch of a Repository"
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120006
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Owner":
+    jsonata: owner
+    sort: owner
+  "Repository Id":
+    jsonata: repo
+    sort: repo
+  "Protected":
+    jsonata: protected
+    sort: protected
+#Todo: Organization name should be collected
+extends: 
+properties:
+  - owner:
+    linkTo: SourceCodeMgmt
+    required: true
+  - repo:
+    linkTo: Repository
+    required: true
+  - sha:
+    field: scm.sha
+  - commitsUrl:
+    field: scm.commitsUrl
+  - protectionUrl:
+    field: branch.protectionUrl
+  - protected:
+    field: branch.isProtected
+  - inPullRequest:
+    linkTo: PullRequest.id.target
+    multi: true
+  - outPullRequest:
+    linkTo: PullRequest.id.source
+    multi: true
+  - protection:
+    linkTo: BranchProtection
+  - findings:
+    linkTo: SourceCodeMgmtFinding
+    multi: true

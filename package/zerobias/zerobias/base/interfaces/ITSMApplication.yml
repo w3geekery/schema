@@ -1,0 +1,23 @@
+description: "Software Application (hosted or SaaS) providing Information Technology (IT) Service Management (ITSM) services for frameworks, processes, and models that address best practices in managing, supporting, and delivering IT services, including change management, SDLC, and incident management"
+icon: images/classes/auditmation/base/Application.svg #fixme - update with itsm app icon
+extends: Application
+properties:
+  - service: 
+    multi: true
+    field: itsmServiceType
+  - providesWorkflow:
+    multi: true
+    linkTo: Workflow
+# Links
+  - changeTickets:
+    multi: true
+    linkTo: ChangeTicket
+  - incidentTickets:
+    multi: true
+    linkTo: Incident
+#fix me future linkts to additional itsmServiceType. Update with additional ITSM purpose/types https://www.servicenow.com/products/itsm/what-is-itsm.html
+# - ChangeAndReleaseManagement: "ITSM tracks scheduled and planned infrastructure changes, including process management and planning capabilities. Change implementation is quicker and more consistent, with risks and errors minimized."
+# - ServiceLevelManagement: Track service-level commitments with customers and from vendors, so management can pinpoint weaknesses and take corrective action.
+# - RequestManagement: Manage and follow up on service requests, including requests to reset passwords, install new workstations, update personal data, or access information. Request management helps ensure that important requests are always moving forward.
+# - ConfigurationManagement: "Track all configuration items in your IT system. Identify, verify, and maintain critical configuration information for hardware, software, personnel, and documentation."
+# - TalentManagement: Place the right people with the right skills and knowledge into the roles that best suit them. Support your business objectives by correctly positioning the most talented employees to provide the best possible service.

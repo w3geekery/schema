@@ -1,0 +1,3 @@
+description: Time when the visitor checked in
+displayName: Check In Time
+type: date-time

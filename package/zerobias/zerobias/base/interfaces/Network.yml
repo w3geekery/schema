@@ -1,0 +1,39 @@
+description: "An IP network"
+displayName: "Network"
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "DHCP Options":
+    jsonata: dhcpOptions
+    sort: dhcpOptions
+  "Availability Zone":
+    jsonata: availabilityZone
+    sort: availabilityZone
+  "Status":
+    jsonata: status
+    sort: status
+properties:
+    - cidr:
+      field: network.cidr
+    - status:
+      field: operationalStatus
+    # Links
+    - environment:
+      linkTo: Environment
+    - dhcpOptions:
+      linkTo: DhcpOptions
+    - availabilityZone: 
+      linkTo: AvailabilityZone 
+    - router:
+      linkTo: Router
+      required: true
+      t3: routerAssociation
+    - firewalls:
+      linkTo: Firewall
+      multi: true

@@ -1,0 +1,19 @@
+description: "Compute attributes"
+displayName: "Compute"
+properties:
+  - cpuArchitecture:
+    field: computeCpuArchitecture
+  - cpuVendor: "CPU Vendor"
+    field: compute.cpuVendor
+  - cpuModel: "CPU Model"
+    field: compute.cpuModel
+  - socket: "Socket count"
+    field: compute.sockets
+  - cpuMHz: "CPU Clock (MHz)"
+    field: compute.cpuMhz
+  - cpuCoresLogical: "CPU Logical Core count"
+    field: compute.cpuCoresLogical
+  - cpuCoresPhysical: "CPU Physical Core count"
+    field: compute.cpuCoresPhysical
+  - memTotalkB: "CPU RAM in"
+    field: compute.memTotal

@@ -1,0 +1,5 @@
+description: "Type of X.509 Certificate"
+displayName: "Certificate Type"
+values:
+  - "CA": "Certificate Authority"
+  - "ENTITY": "End-entity Certificate (TLS)"

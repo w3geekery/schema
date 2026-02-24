@@ -1,0 +1,10 @@
+description: Virtual Machine hypervisor type
+displayName: Hypervisor
+values:
+  - XEN: "Xen"
+  - OVM: "Oracle Virtual Machine"
+  - KVM: "Kernel-based Virtual Machine"
+  - VMWARE: "VMware"
+  - HYPERV: "Microsoft Hyper-V"
+  - VIRTUALBOX: "Oracle VirtualBox"
+  - XEN_SERVER: "XenServer"

@@ -1,0 +1,29 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "IP Gateway"
+extends: Asset
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "ID":
+    jsonata: id
+    sort: id
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Routers":
+    jsonata: $count(routers)
+  "Environment":
+    jsonata: environment
+    sort: environment
+  #Todo:  bug on collector ? arn points to vpc
+properties:
+    - routers:
+      linkTo: Router
+      multi: true
+      t3: ipRoute
+    - environment:
+      linkTo: Environment
+      

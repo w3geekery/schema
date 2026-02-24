@@ -1,0 +1,17 @@
+description: "Backup Job"
+icon: images/classes/auditmation/base/BackupJob.svg
+displayName: "Backup Job"
+properties:
+  - started:
+    field: timeStarted
+  - stopped: 
+    field: timeStopped
+  - backupState:
+# Links
+  - profile:
+    linkTo: BackupProfile
+  - backup:
+    multi: true
+    linkTo: Backup
+  - app:
+    linkTo: BackupApplication

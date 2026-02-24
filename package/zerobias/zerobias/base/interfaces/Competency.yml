@@ -1,0 +1,25 @@
+description: "The capability of applying or using knowledge, skills, abilities, behaviors, and personal characteristics to successfully perform critical work tasks, specific functions, or operate in a given role or position"
+icon: images/classes/auditmation/base/Competency.svg
+properties:
+  - competencyType:
+    field: competencyType
+    multi: true
+  - baseTerm:
+    field: competencyTerm
+  - ceTerm:
+    field: competencyTerm
+  - baseCredits:
+    field: competency.credit
+  - ceTermCredits:
+    field: competency.credit
+# Links
+  - module: "All modules that can develop and demonstrate this competency"
+    linkTo: TrainingModule
+    multi: true
+#  - role: "All roles that require this competency"
+#    linkTo: Role
+#    multi: true
+#fix me/future - link to Certification
+#  - certifications: "Certifications that demonstrate this competency"
+#    multi: true
+#    linkTo: Certification

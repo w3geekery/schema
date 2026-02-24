@@ -1,0 +1,7 @@
+description: "Web Gateway"
+properties:
+  - resources:
+    linkTo: WebGatewayResource
+    multi: true
+  - type:
+    field: webGatewayType

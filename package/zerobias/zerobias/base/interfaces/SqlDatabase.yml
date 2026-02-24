@@ -1,0 +1,9 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "SQL Database"
+extends: Database
+properties:
+  - rdbms:
+    linkTo: RDBMS
+  - schemas:
+    linkTo: SqlSchema
+    multi: true

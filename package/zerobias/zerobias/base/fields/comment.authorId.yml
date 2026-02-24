@@ -1,0 +1,4 @@
+example: "123412"
+description: "Unique ID of the author of the comment"
+displayName: "Author ID"
+type: "string"

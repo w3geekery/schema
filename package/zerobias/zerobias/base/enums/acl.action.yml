@@ -1,0 +1,5 @@
+description: "ACL Action"
+displayName: "ACL Action"
+values:
+  - ALLOW: Allow
+  - DENY: Deny

@@ -1,0 +1,9 @@
+description: "Incident Ticket"
+icon: images/classes/auditmation/base/Incident.svg
+extends: Ticket
+properties:
+  - incidentType:
+  - phase:
+    field: incidentPhase
+  - ticketingSystem:
+    linkTo: ITSMApplication

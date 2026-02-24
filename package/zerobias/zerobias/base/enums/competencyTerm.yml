@@ -1,0 +1,7 @@
+description: "Competency Term"
+displayName: "Competency Term"
+values:
+  - "ANNUAL": "The annual anniversary, calendar day to calendar day (365 days)"
+  - "THREE_YEARS": "The third year anniversary"
+  - "CURRENT_CALENDAR_YEAR": "End of the current calendar year"
+  - "NEXT_CALENDAR_YEAR": "End of the next calendar year"

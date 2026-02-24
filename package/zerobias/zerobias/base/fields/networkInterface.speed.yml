@@ -1,0 +1,4 @@
+example: "100"
+description: "A numeric value indicating speed measured in bits per second (bps)"
+displayName: "Bits Per Second"
+type: "int64"

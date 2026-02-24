@@ -1,0 +1,3 @@
+displayName: "NETBIOS Name Servers"
+description: "IP addresses for NETBIOS name servers"
+type: "ipAddress"

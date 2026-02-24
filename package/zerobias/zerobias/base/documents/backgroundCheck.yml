@@ -1,0 +1,14 @@
+description: "A background check performed on a person"
+displayName: "Background Check"
+properties:
+  - type:
+    field: backgroundCheckType
+  - startDate:
+    field: dateCreated
+  - completionDate:
+    field: dateCompleted
+  - status:
+    field: investigationStatus
+  - result:
+    field: backgroundCheckResult
+

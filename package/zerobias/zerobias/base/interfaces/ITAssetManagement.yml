@@ -1,0 +1,13 @@
+description: "IT Asset Management"
+extends: Application
+properties:
+  #Links
+  - assets:
+    linkTo: Asset
+    multi: true
+  - vendors:
+    linkTo: Party
+    multi: true
+  - users:
+    linkTo: ITAssetManagementUser
+    multi: true

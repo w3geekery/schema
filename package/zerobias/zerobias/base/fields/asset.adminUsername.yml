@@ -1,0 +1,4 @@
+displayName: "Admin Username"
+description: "The master account name for this Asset"
+example: "root"
+type: "string"

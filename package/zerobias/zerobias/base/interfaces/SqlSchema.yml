@@ -1,0 +1,8 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "SQL Database"
+properties:
+  - database:
+    linkTo: SqlDatabase
+  - tables:
+    linkTo: SqlTable
+    multi: true

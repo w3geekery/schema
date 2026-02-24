@@ -1,0 +1,60 @@
+description: "Ticket (incident, work order, user story, problem, bug, ...)"
+icon: images/classes/auditmation/base/Ticket.svg
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120006
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description": 
+    jsonata: description
+    sort: description
+  "Ticket ID":
+    jsonata: id
+    sort: id
+  "Status":
+    jsonata: ticketStatus
+    sort: ticketStatus
+  "Priority":
+    jsonata: priority
+    sort: priority
+properties:
+  - ticketStatus:
+  - priority:
+  - opened:
+    field: timeOpened
+    multi: true
+  - started:
+    field: timeStarted
+    multi: true
+  - closed:
+    field: timeClosed
+    multi: true
+  - modified:
+    field: timeModified
+    multi: true
+  - stopped:
+    field: timeStopped
+    multi: true
+# Links
+  - assignee: "Assigned responsible party's for a ticket"
+    multi: true
+    linkTo: TicketingUser.id.ticketsAssigned
+    t3: componentRole
+  - reporter: "Assigned reporter for a ticket"
+    multi: true
+    linkTo: TicketingUser.id.ticketsReported
+    t3: componentRole
+  - approvers: "Assigned approver for ticket"
+    multi: true
+    linkTo: TicketingUser.id.ticketsApproved
+    t3: componentRole
+  - impactedComponent:
+    multi: true
+    linkTo: Component
+    defered: true
+  - parent:
+    linkTo: Ticket.id.subTickets
+  - subTickets:
+    linkTo: Ticket.id.parent
+    multi: true

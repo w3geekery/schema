@@ -1,0 +1,13 @@
+# Disabled by Kenji: This is causing issues with the GraphQL/schema builder, and needs to be researched, since it
+# contains no properties, just links.
+description: "Training Software Application (hosted or SaaS)"
+icon: images/classes/auditmation/base/TrainingApplication.svg
+extends: Application
+properties:
+# Links
+  - trainingRecord: "Training records provided by this Training Application"
+    multi: true
+    linkTo: TrainingRecord
+  - trainingModule: "Training modules provided by this Training Application"
+    multi: true
+    linkTo: TrainingModule

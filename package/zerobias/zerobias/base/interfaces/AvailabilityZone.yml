@@ -1,0 +1,16 @@
+description: "One or more discrete data centers with redundant power, networking, and connectivity in a given CloudRegion."
+properties:
+  - zoneId:
+    field: cloudAvailabilityZone
+  - status: 
+    field: operationalStatus 
+  - region:
+    field: cloudRegion 
+  - service:
+    linkTo: CloudService
+  - networks:
+    linkTo: Network
+    multi: true
+  - inventoryItems:
+    linkTo: InventoryItem
+    multi: true

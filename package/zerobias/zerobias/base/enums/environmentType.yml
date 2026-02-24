@@ -1,0 +1,6 @@
+description: "Whether the environment is managed by self or others"
+displayName: "Environment Type"
+values:
+  - "PHYSICAL": "Internal controlled facility and/or network assets"
+  - "VIRTUAL": "Extnernally controlled facility and network assets"
+  - "HYBRID": "Environment that spans internal and external facilites and network assets"

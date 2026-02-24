@@ -1,0 +1,7 @@
+skip: true
+icon: images/classes/auditmation/base/Datacenter.svg
+description: "Datacenter"
+extends: 
+  - Component
+  - Location
+properties:

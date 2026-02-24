@@ -1,0 +1,8 @@
+icon: images/classes/auditmation/base/Database.svg
+description: "Relational (SQL) Database Management System"
+extends: 
+  - DBMS
+properties:
+  - sqlDatabases:
+    linkTo: SqlDatabase
+    multi: true

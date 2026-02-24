@@ -1,0 +1,4 @@
+example: "de"
+description: "Country for a mailing address"
+displayName: "Country"
+type: "geoCountry"

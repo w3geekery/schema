@@ -1,0 +1,4 @@
+example: "1500"
+description: "Maximum Transmission Unit (MTU) measured in bytes"
+displayName: "MTU"
+type: "integer"

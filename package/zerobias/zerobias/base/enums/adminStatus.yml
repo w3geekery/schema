@@ -1,0 +1,6 @@
+description: "Administrative status of the Interface. Available states are: Enabled/Up (1), Disabled/Down (2), and Testing (3)"
+displayName: "Admin Status"
+values:
+  - "ENABLED": "Enabled/Up"
+  - "DISABLED": "Disabled/Down"
+  - "TESTING": "Testing"

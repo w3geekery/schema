@@ -1,0 +1,10 @@
+description: "Incident Response Lifecycle as defined by NIST"
+displayName: "Incident Phase"
+values:
+  - "PREPARATION": "Preparation Phase"
+  - "DETECTION_AND_ANALYSIS": "Detection and Analysis Phase"
+  - "MITIGATION": "Mitigation Phase"
+  - "CONTAINMENT": "Containment Phase"
+  - "ERADICATION_AND_RECOVERY": "Eradication and Recovery Phase"
+  - "POST_INCIDENT_ACTIVITY": "Post Incident Activities Phase"
+  - "REPORTING": "Reporting Phase"

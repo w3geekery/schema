@@ -1,0 +1,27 @@
+displayName: "IP Route"
+description: "An item in an IP routing table"
+properties:
+  - destination:
+    field: ipRoute.destination
+  - gateway:
+    field: ipRoute.gateway
+  - genmask:
+    field: ipRoute.genmask
+  - flags:
+    field: ipRouteFlag
+    multi: true
+  - mss:
+    field: ipRoute.mss
+  - window:
+    field: ipRoute.window
+  - irtt:
+    field: ipRoute.irtt
+  - iface:
+    field: ipRoute.iface
+  - metric:
+    field: ipRoute.metric
+  - origin:
+    field: ipRoute.origin
+  - status:
+    field: operationalStatus
+

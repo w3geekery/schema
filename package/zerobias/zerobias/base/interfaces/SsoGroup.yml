@@ -1,0 +1,5 @@
+description: SSO Group
+extends:
+  - SsoPrincipal
+  - Group
+properties:

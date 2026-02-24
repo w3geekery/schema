@@ -1,0 +1,12 @@
+description: "The type of location"
+displayName: "Location Type"
+values:
+  - "U": "Up. Route is valid"
+  - "G": "Gateway. Route is to a gateway router rather than to a directly connected network or host"
+  - "H": "Host name. Route is to a host rather than to a network"
+  - "R": "Reject. Set by ARP when an entry expires"
+  - "D": "Dynamic. Route added by a route redirect or RIP"
+  - "M": "Modified. Route modified by a route redirect"
+  - "C": "Cloning. A new route is cloned from this entry when it is used"
+  - "L": "Link. Link-level information, such as the Ethernet MAC address, is present"
+  - "S": "Static. Route added with the route command"

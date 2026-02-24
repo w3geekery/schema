@@ -1,0 +1,8 @@
+description: A CAPEC Category
+properties:
+  - status:
+    field: capecStatus
+# links
+  - members:
+    multi: true
+    linkTo: CAPEC

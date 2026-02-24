@@ -1,0 +1,4 @@
+example: "4"
+description: "CPU Physical Core count"
+displayName: "Physical Cores"
+type: "int32"

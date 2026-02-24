@@ -1,0 +1,4 @@
+example: "Dr, Capt, Mr, Ms,"
+description: "Prefix name for a person"
+displayName: "Prefix"
+type: "string"

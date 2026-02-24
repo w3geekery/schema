@@ -1,0 +1,6 @@
+skip: true
+description: "Problem Ticket"
+# icon: images/classes/auditmation/base/Incident.svg
+extends: Ticket
+properties:
+  - placeholder: #fixme

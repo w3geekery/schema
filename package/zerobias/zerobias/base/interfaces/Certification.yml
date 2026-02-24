@@ -1,0 +1,9 @@
+# Disabled by Kenji: This is causing issues with the GraphQL/schema builder, and needs to be researched, since it
+# contains no properties, just links.
+description: "Certification providing proof of competency"
+icon: images/classes/auditmation/base/Certification.svg
+properties:
+#fix me/future - link field to Competency
+#  - competencies:
+#    multi: true
+#    linkTo: Competency

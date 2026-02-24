@@ -1,0 +1,14 @@
+description: Type or category of physical entry point
+displayName: Physical Entry Type
+values:
+  - DOOR: "Standard door entry"
+  - GATE: "Gate or barrier entry"
+  - TURNSTILE: "Turnstile or revolving door"
+  - ELEVATOR: "Elevator access control"
+  - PARKING_GATE: "Parking garage gate"
+  - SECURITY_CHECKPOINT: "Security screening checkpoint"
+  - EMERGENCY_EXIT: "Emergency exit door"
+  - VEHICLE_BARRIER: "Vehicle access barrier"
+  - MANTRAP: "Security mantrap or airlock"
+  - WINDOW: "Window access point"
+  - OTHER: "Other or custom entry type"

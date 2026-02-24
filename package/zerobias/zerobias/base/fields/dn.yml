@@ -1,0 +1,5 @@
+example: "CN=Fred Smith,OU=Marketing,DC=Acme,DC=com"
+description: "A LDAP Distinguished Name (DN)"
+displayName: "DN"
+type: "string"
+keyed: true

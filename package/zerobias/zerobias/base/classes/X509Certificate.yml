@@ -1,0 +1,15 @@
+description: 'An X.509 certificate is a digital certificate that uses the X.509 public key infrastructure standard to verify that a public key belongs to the individual, organization, or device it claims to represent.'
+properties:
+  - certificate:
+    field: x509Certificate
+  - validFrom:
+    field: x509Certificate.validFrom
+  - validTo:
+    field: x509Certificate.validTo
+  - issuer:
+    field: x509Certificate.issuer
+  - trusted:
+    field: x509Certificate.trusted
+  - serviceEndpoints:
+    linkTo: ServiceEndpoint
+    multi: true

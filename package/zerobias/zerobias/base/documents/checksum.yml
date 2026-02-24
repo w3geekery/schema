@@ -1,0 +1,7 @@
+description: "A checksum algorithim and output value"
+displayName: "Checksum"
+properties:
+  - algorithimType:
+    field: checksumAlgorithmType
+  - value:
+    field: checksum.value

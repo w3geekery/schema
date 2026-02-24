@@ -1,0 +1,4 @@
+description: "Generic URL"
+displayName: "URL"
+type: "url"
+keyed: true

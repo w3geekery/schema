@@ -1,0 +1,5 @@
+# Used by Person class
+example: "2021-10-26"
+description: "Start date for an employee or contractor"
+displayName: "Hire Date"
+type: "date"

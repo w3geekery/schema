@@ -1,0 +1,15 @@
+description: A time slot defining when access is allowed within a schedule
+displayName: Time Slot
+properties:
+  - dayOfWeek:
+    field: timeSlot.dayOfWeek
+    multi: true
+  - startTime:
+    field: timeSlot.startTime
+  - endTime:
+    field: timeSlot.endTime
+  - isActive:
+    field: timeSlot.isActive
+  - exceptions:
+    field: timeSlot.exceptions
+    multi: true

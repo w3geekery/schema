@@ -1,0 +1,4 @@
+example: "Amazon"
+description: "The official legal organization/entity name"
+displayName: "Entity Name"
+type: "string"

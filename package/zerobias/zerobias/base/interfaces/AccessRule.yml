@@ -1,0 +1,14 @@
+description: A rule, policy, or directive that allows or disallows an Action to be performed on a Resource by a Principal.
+properties:
+  - resources:
+    linkTo: Resource
+    multi: true
+  - actions:
+    linkTo: Action
+    multi: true
+  - principals:
+    linkTo: Principal
+    multi: true
+  - apps:
+    linkTo: Application
+    multi: true

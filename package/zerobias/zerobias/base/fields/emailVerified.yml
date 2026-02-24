@@ -1,0 +1,4 @@
+example: true
+description: "Indicates if an e-mail address has been verified"
+displayName: "E-Mail Verified"
+type: boolean

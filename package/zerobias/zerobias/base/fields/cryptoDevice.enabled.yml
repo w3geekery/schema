@@ -1,0 +1,3 @@
+description: "Indicates whether the component is encrypted"
+displayName: "Encrypted"
+type: "boolean"

@@ -1,0 +1,4 @@
+example: "example.com"
+description: "Organization DNS Domain"
+displayName: "Domain"
+type: "string"

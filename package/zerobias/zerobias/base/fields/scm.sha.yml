@@ -1,0 +1,4 @@
+description: "SHA digest ID for SCM object"
+displayName: "SHA"
+type: "string"
+keyed: true

@@ -1,0 +1,4 @@
+description: The date when this schedule becomes effective
+displayName: Effective Date
+type: date
+example: "2021-10-26"

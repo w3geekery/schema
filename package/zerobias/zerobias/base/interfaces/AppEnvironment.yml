@@ -1,0 +1,63 @@
+description: "Runtime environment for application(s)"
+icon: images/classes/auditmation/base/AppEnvironment.svg
+displayName: "Application Environment"
+tags: 
+  - query-folder.assets
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description": 
+    jsonata: description
+    sort: description
+  "OS":
+    jsonata: "osName ? (osName & ' ' & osEdition & ' [' & osVersion & ']') : 'unknown'"
+    sort: osName
+  "NICs":
+    jsonata: $count(networkInterface)
+  "ENIs":
+    jsonata: $count(elasticInterfaces)
+  "CPU":
+    jsonata: compute.cpuArchitecture
+    sort: compute.cpuArchitecture
+  "Cores":
+    jsonata: $max($append(compute.cpuCoresLogical,compute.cpuCoresPhysical))
+  "RAM":
+    jsonata: "(compute.memTotalkB ? $round(compute.memTotalkB/1073741) : 'unknown') & ' GB'"
+    sort: compute.memTotalkB
+  "App Count":
+    jsonata: $count(app)
+  "Storage":
+    jsonata: "(filesystem.totalStorageSpace ? $round($sum(filesystem.totalStorageSpace)/1073741824) : 'unknown') & ' GB'"
+    sort: filesystem.totalStorageSpace
+properties:
+  - app: 
+    field: installedApp
+    multi: true
+  - filesystem:
+    multi: true
+  - networkInterface: "network interfaces for this app runtime"
+    multi: true
+  - compute: "CPU and Memory (compute) resources for the application environment"
+# Links
+  - machine: "The execution environment providing the resources to the application runtime. Can be a Container, Virtual Machine and/or Bare Metal"
+    linkTo: Asset
+# Note: CPE will potentially be platform responsibility. Anything "loaded" as content
+  - osCpeProduct:
+    linkTo: CpeProduct.versions
+    uniLink: true
+  - osName:
+    field:
+      description: Operating System Name
+      displayName: OS
+      example: Windows
+  - osVersion:
+    field:
+      description: Operating System Version
+      displayName: OS Version
+      example: 10.0.22000.856
+  - osEdition:
+    field:
+      description: Operating System Edition
+      displayName: OS Edition
+      example: Pro

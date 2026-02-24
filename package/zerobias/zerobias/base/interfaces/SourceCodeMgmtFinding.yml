@@ -1,0 +1,12 @@
+description: "A vulnerability or other issue that has been identified in a source code management system"
+extends: Finding
+properties:
+  - branch:
+    linkTo:
+      - Branch.id
+      - Branch.url
+  - pullRequest:
+    linkTo:
+      - PullRequest.id
+      - PullRequest.url
+      - PullRequest.htmlUrl

@@ -1,0 +1,8 @@
+description: "Specifies the Network Basic Input/Output System (NetBIOS) node type"
+displayName: "NetBIOS Node Type"
+values:
+  - "UNKNOWN": "Unknown node type (0)"
+  - "BROADCAST": "Broadcast node. Uses NetBIOS name queries. (1)"
+  - "PEER": "Peer-to-peer node. Uses NBNB/WINS. (2)"
+  - "MIXED": "Try NetBIOS name queries then use NBNB. (4)"
+  - "HYBRID": "Try to yse NBNS then NetBIOS name queries. (8)"

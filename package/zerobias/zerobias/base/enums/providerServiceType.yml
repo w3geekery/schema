@@ -1,0 +1,11 @@
+description: "Type of services provided by a given Provider"
+displayName: "Service Provider Type"
+values:
+  - MSP: "Managed Service Provider that provides network, appliciation, database, and other general IT support and services"
+  - MSSP: "Managed Security Service Provider focused on logical security"
+  - CSP: "Cloud Service Provider, such as AWS"
+  - MDR: "Managed Detection and Response Service Provider, such as FireEye"
+  - PS: "Professional Services such as a Legal Firm, Financial Firm, Consulting Firm"
+  - ISP: "Internet Service Provider such as Verizon"
+  - BS: "Business Services, such as Data and Records Management, secure shredding, etc. provided by Iron Mountain"
+  - PSP: "Payment Service Provider facilitating e-commerce transactions, such as PayPal"

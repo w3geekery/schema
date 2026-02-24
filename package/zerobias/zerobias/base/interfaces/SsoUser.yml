@@ -1,0 +1,5 @@
+description: "SSO User"
+extends:
+  - SsoPrincipal
+  - Account
+properties:

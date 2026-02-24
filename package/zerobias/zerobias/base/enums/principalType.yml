@@ -1,0 +1,15 @@
+description: A person, group, account, or application that can gain access to or perform actions on one or more Resources
+displayName: Principal Type
+values:
+  - ROOT: Built-in administrator / superuser
+  - USER: An authenticated person
+  - GROUP: A security or user group
+  - ROLE: An identity that may be assumed by another Principal
+  - SERVICE: An application or service account
+  - CREDENTIAL: A physical or digital access token that can be granted permissions
+  - FEDERATED_USER: A local representation of a user defined in another system or application
+  - DOMAIN: All members of an authentiated domain
+  - PUBLIC: All people regardless of status, or fully anonymous access
+  - AUTHENTICATED_USERS: All users who have valid accounts and are authenticated
+  - MANAGED_IDENTITY: An identity assumable by applications/resources to access other resources
+  - OTHER: Vendor-specific or unmapped Principal type

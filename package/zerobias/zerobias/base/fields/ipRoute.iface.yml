@@ -1,0 +1,3 @@
+displayName: "Interace"
+description: "Name of interface where packets will be sent"
+type: "string"

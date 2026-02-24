@@ -1,0 +1,21 @@
+description: "Change Ticket"
+icon: images/classes/auditmation/base/Incident.svg #fixme update with ChangeTicket icon
+extends: 
+  - WorkflowTicket
+properties:
+  - changeType: "Change type associated with ticket"
+  - testPlan:
+    field: placeholder #fixme (create document - plan name, type, approver)
+  - requiredApproval:
+    field: changeApprovalType
+    multi: true
+  - approval: 
+    multi: true
+    field: changeApprovalType
+# Links
+  - ticketingSystem:
+    linkTo: ITSMApplication
+  - changeStep:
+    multi: true
+    linkTo: ChangeStepTicket
+# fixme - how to say which changeticket impacts on or more boundaries. 

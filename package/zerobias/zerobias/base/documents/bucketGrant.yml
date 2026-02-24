@@ -1,0 +1,8 @@
+description: "Enables a different account/user to access a bucket"
+displayName: "Bucket Grant"
+properties:
+  - grantee:
+    field: bucket.grantee
+  - permission:
+    field: permissionType
+    

@@ -1,0 +1,4 @@
+description: "The model or part number of an asset"
+displayName: "Model"
+example: "XPS 15 9500"
+type: "string"

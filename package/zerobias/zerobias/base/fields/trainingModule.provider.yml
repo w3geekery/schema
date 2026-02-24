@@ -1,0 +1,4 @@
+example: "CompTIA, KnowBe4"
+description: "Name of a training module provider such as a credentialing organization, institution, or publisher"
+displayName: "Provider"
+type: "string"

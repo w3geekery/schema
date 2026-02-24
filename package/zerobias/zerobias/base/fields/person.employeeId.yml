@@ -1,0 +1,5 @@
+description: Identifier for an employee.
+displayName: Employee Id
+type: string
+indexed: true
+keyed: true

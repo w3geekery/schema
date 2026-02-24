@@ -1,0 +1,8 @@
+description: "Priority of a task, incident, or request"
+displayName: "Priority"
+values:
+  - "CRITICAL": "Critical"
+  - "HIGH": "High"
+  - "MEDIUM": "Medium"
+  - "LOW": "Low"
+  - "NONE": "None"

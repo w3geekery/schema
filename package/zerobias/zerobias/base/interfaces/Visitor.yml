@@ -1,0 +1,48 @@
+description: "Temporary access users with limited permissions and escort requirements"
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Visit Purpose":
+    jsonata: visitPurpose
+    sort: visitPurpose
+  "Escort Required":
+    jsonata: escortRequired
+    sort: escortRequired
+  "Valid Until":
+    jsonata: validUntil
+    sort: validUntil
+  "Host":
+    jsonata: host.name
+    sort: host
+  "Company":
+    jsonata: company
+    sort: company
+extends:
+  - Person
+  - Principal
+properties:
+  - visitPurpose:
+    field: visitor.purpose
+  - escortRequired:
+    field: visitor.escortRequired
+  - validUntil:
+    field: visitor.validUntil
+  - company:
+    field: visitor.company
+  - checkedIn:
+    field: visitor.checkedIn
+  - checkInTime:
+    field: visitor.checkInTime
+  - checkOutTime:
+    field: visitor.checkOutTime
+# Links
+  - host:
+    linkTo: PhysicalAccessManagementAccount.id.hostedVisitors
+  - visitorPass:
+    linkTo: AccessCredential.id.visitor
+  - allowedAreas:
+    linkTo: AccessZone.id.visitors
+    multi: true
+  - app:
+    linkTo: PhysicalAccessManagementApp.id.visitors

@@ -1,0 +1,15 @@
+description: "IPv4/v6 Interface Properties"
+displayName: "IPv4/6 Interface Properties"
+properties:
+  - netmask:
+    field: ipInterface.netmask
+  - gateway:
+    field: ipInterface.gateway
+  - gatewayMetric:
+    field: ipInterface.gatewayMetric
+  - nameServerIp:
+    field: ipInterface.nameServerIp
+    multi: true
+  - hostname:
+    field: ipInterface.hostname
+  - ipVersion:

@@ -1,0 +1,4 @@
+description: "The serial number for an asset"
+displayName: "Serial Number"
+example: "8YPC373"
+type: "string"

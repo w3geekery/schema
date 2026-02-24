@@ -1,0 +1,36 @@
+icon: images/classes/auditmation/base/CloudService.svg
+description: "IP Router"
+extends: Asset
+tags: 
+  - afcf9d8a-9d9d-11ee-a880-325096b39f47
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Environment":
+    jsonata: environment
+    sort: environment
+  "Manufacturer":
+    jsonata: manufacturer
+    sort: manufacturer
+  "Model":
+    jsonata: model
+    sort: model
+  "Virtual":
+    jsonata: virtual
+    sort: virtual
+properties:
+    - environment: 
+      linkTo: Environment
+      required: true
+    - routes:
+      linkTo: IpGateway
+      multi: true
+      t3: ipRoute
+    - networks:
+      linkTo: Network
+      multi: true
+      t3: routerAssociation

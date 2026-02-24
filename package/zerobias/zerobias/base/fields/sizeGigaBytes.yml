@@ -1,0 +1,4 @@
+example: "24"
+description: "The size of the capacity, in GB"
+displayName: "Size in Giga Bytes"
+type: "int64"

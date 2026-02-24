@@ -1,0 +1,59 @@
+description: "A Cryptographic Certificate"
+note: The id field of a Certificate should be the DN of the subject
+extends: Asset
+tags: 
+  - query-folder.assets
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "ID":
+    jsonata: id
+    sort: id
+  "Description":
+    jsonata: description
+    sort: description
+  "Status":
+    jsonata: status
+    sort: status
+  "Serial Number":
+    jsonata: serialNumber
+    sort: serialNumber
+  "Issuer":
+    jsonata: issuer
+    sort: issuer
+  "Issued On":
+    jsonata: timeIssued
+    sort: timeIssued
+  "Expiration":
+    jsonata: validTo
+    sort: validTo
+  "Type":
+    jsonata: assetType
+    sort: assetType
+properties:
+    - thumbprint:
+      field: certificate.thumbprint
+    - subject:
+      field: x509Subject
+    - issuer:
+      field: x509Subject
+    - subjectAltName:
+      field: x509Certificate.subjectAltName
+      multi: true
+    - asymmetricKey:
+      field: asymmetricKeyInfo
+    - signatureAlgorithm:
+      field: signatureAlgorithm
+    - status:
+      field: certificateStatus
+    - timeIssued:
+      field: timeIssued
+    - validFrom:
+      field: x509Certificate.validFrom
+    - validTo:
+      field: x509Certificate.validTo
+    - issuerCert:
+      linkTo: Certificate
+      uniLink: true
+

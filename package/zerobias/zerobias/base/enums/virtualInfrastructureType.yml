@@ -1,0 +1,8 @@
+description: "Type of virutal infrastructure"
+displayName: "Virutal Infrastructure Type"
+values:
+  - "CLUSTER"
+  - "PUBLIC_CLOUD"
+  - "PRIVATE_CLOUD"
+  - "HYBRID_CLOUD"
+  - "SERVERLESS"

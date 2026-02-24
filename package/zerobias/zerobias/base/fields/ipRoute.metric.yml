@@ -1,0 +1,3 @@
+displayName: "Metric"
+description: "Distance to target (in hops)"
+type: "integer"

@@ -1,0 +1,8 @@
+description: "IANA protocol numbers for IP traffic"
+displayName: "Internet Protocol (IP)"
+values:
+  - "ICMP": "Internet Control Message (1)"
+  - "IGMP": "Internet Group Management (2)"
+  - "TCP": "Transmission Control (6)"
+  - "UDP": "User Datagram (17)"
+  - "ALL": "All Protocols (-1)"

@@ -1,0 +1,8 @@
+description: "Type of a user or system account inside an application"
+displayName: "Account Type"
+values:
+  - "USER": "User"
+  - "SYSTEM": "System"
+  - "TEMPORARY": "Temporary"
+  - "EMERGENCY": "Emergency"
+  - "GUEST": "Guest"

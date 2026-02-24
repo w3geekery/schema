@@ -1,0 +1,35 @@
+description: "Securitry Awareness/Training Campaign"
+icon: images/classes/auditmation/base/Campaign.svg
+tags: 
+  - query-folder.hr
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Campaign Status":
+    jsonata: status
+    sort: status
+  "Start Date":
+    jsonata: startDate
+    sort: startDate
+  "End Date":
+    jsonata: endDate
+    sort: endDate
+properties:
+  - status:
+    field: campaignStatus
+  - startDate:
+    field: dateStarted
+  - endDate: 
+    field: dateCompleted
+  - durationType:
+    field: durationType
+  - duration:
+    field: campaign.duration
+  - autoEnroll:
+    field: campaign.autoEnroll
+  - allowMultiEnroll:
+    field: campaign.allowMultiEnroll

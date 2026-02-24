@@ -1,0 +1,4 @@
+example: "30D"
+description: "Duration of the campaign"
+displayName: "Campaign Duration"
+type: "duration"

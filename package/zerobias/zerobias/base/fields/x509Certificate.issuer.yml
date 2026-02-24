@@ -1,0 +1,4 @@
+displayName: "Issuer"
+description: "The name of the x509 certificate issuer."
+example: "Example Certificate Authority"
+type: string

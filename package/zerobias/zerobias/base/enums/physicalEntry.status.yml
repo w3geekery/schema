@@ -1,0 +1,11 @@
+description: Current status of the physical entry point
+displayName: Physical Entry Status
+values:
+  - OPEN: "Entry point is open and accessible"
+  - CLOSED: "Entry point is closed"
+  - LOCKED: "Entry point is locked and secured"
+  - DISABLED: "Entry point is disabled or out of service"
+  - MAINTENANCE: "Entry point is under maintenance"
+  - EMERGENCY_OPEN: "Entry point is in emergency open mode"
+  - FORCED_OPEN: "Entry point has been forced open (alarm condition)"
+  - UNKNOWN: "Status cannot be determined"

@@ -1,0 +1,7 @@
+description: CWE
+extends:
+  - Weakness
+properties:
+  - attackPatterns:
+    multi: true
+    linkTo: CAPEC # Needs moved to Weakness linkTo AttackPattern when available on platform schema

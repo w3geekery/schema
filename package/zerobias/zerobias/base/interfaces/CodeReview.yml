@@ -1,0 +1,17 @@
+description: "A Review of a Pull Request"
+tags: 
+  - 971c3b42-4058-11ee-be56-0242ac120006
+properties:
+  - pullRequest:
+    linkTo: PullRequest 
+    required: true
+  - reviewer:
+    linkTo: SourceCodeMgmtAcct
+    required: true
+  - approved:
+    field: codeReview.isApproved
+  - commitId:
+    field: scm.sha
+  - comments:
+    multi: true
+    field: comment

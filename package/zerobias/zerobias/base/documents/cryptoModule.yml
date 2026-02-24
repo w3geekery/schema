@@ -1,0 +1,15 @@
+description: "A set of hardware, software, and/or firmware that implements approved security functions (including cryptographic algorithms and key generation)."
+displayName: "Cryptographic Module"
+properties:
+  - moduleType:
+    field: cryptoModuleType
+  - certificate:
+    multi: true
+    field: x509Certificate
+  - cipherAlgorithm:
+  - cipherKeyAgreement:
+  - cipherKeyGenerator:
+  - cipherSecretKeyFactory:
+  - cipherKeyPairGenerator:
+  - cipherMode:
+  - cipherPadding:

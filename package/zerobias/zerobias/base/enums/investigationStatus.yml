@@ -1,0 +1,8 @@
+description: "Investigation Status"
+displayName: "Investigation Status"
+values:
+  - "ACTIVE": "Active"
+  - "SUSPENDED": "Suspended"
+  - "CANCELLED": "Cancelled"
+  - "COMPLETE": "Complete"
+  - "REOPENED": "Reopened"

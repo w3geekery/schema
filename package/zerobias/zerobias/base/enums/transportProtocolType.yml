@@ -1,0 +1,8 @@
+description: "Indicates the transport type as defined by IANA Service Name and Transport Protocol Port Number Registry"
+displayName: "Transport Protocol"
+deprecated: true
+values:
+  - TCP: "Transmission Control Protocol (TCP)"
+  - UDP: "User Datagram Protocol (UDP)"
+  - SCTP: "Stream Control Transmission Protocol"
+  - DCCP: "Datagram Congestion Control Protocol"

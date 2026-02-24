@@ -1,0 +1,44 @@
+description: "A named collection of permissions and access rights that can be assigned to principals"
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Role Type":
+    jsonata: roleType
+    sort: roleType
+  "Application":
+    jsonata: app
+    sort: app
+  "Priority":
+    jsonata: priority
+    sort: priority
+  "Built-in":
+    jsonata: isBuiltIn
+    sort: isBuiltIn
+  "Access Level":
+    jsonata: accessLevel
+    sort: accessLevel
+  "Assignees":
+    jsonata: $count(assignees)
+extends:
+  - Principal
+properties:
+  - roleType:
+    field: role.type
+  - priority:
+    field: priority
+  - isBuiltIn:
+    field: role.isBuiltIn
+  - accessLevel:
+    field: role.accessLevel
+# Links
+  - assignees:
+    linkTo: Principal.id.roles
+    multi: true
+  - app:
+    linkTo: Application.id.roles
+    multi: true
+  # Inherits Access Rules, groups, roles, accessCredentials links from Principals

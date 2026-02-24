@@ -1,0 +1,36 @@
+description: "DHCP Configuration Options"
+displayName: "DHCP Options"
+properties:
+  - netmask:
+    field: dhcpOptions.netmask
+  - routers:
+    field: dhcpOptions.routers
+    multi: true
+  - timeOffset:
+    field: dhcpOptions.timeOffset
+  - timeServers:
+    field: dhcpOptions.timeServers
+    multi: true
+  - dnsNameServers:
+    field: dhcpOptions.dnsNameServers
+    multi: true
+  - logServers:
+    field: dhcpOptions.logServers
+    multi: true
+  - domainName:
+    field: dhcpOptions.domainName
+    multi: true
+  - staticRoutes:
+    field: ipRoute 
+    multi: true
+  - tftpServer:
+    field: dhcpOptions.tftpServer
+  - netBiosNameServers:
+    field: dhcpOptions.netBiosNameServers
+    multi: true
+  - netBiosNodeType:
+    field: netBiosNodeType
+  # Link
+  - dhcpNetworks:
+    linkTo: Network
+    multi: true

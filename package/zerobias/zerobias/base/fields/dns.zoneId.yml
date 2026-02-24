@@ -1,0 +1,4 @@
+description: "DNS Zone Id (for instance Route 53 Hosted Zone ID, etc)"
+displayName: "DNS Zone ID"
+type: "string"
+indexed: false

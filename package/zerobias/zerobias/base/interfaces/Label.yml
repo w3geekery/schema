@@ -1,0 +1,6 @@
+description: "A user-defined Label/Tag/Category"
+properties:
+    - color: 
+      field: label.color
+    - isDefault:
+      field: label.isDefault

@@ -1,0 +1,12 @@
+description: "A copy of files and programs made to facilitate recovery if necessary"
+icon: images/classes/auditmation/base/BackupApplication.svg
+extends:
+  - CryptoDevice
+  - Application
+properties:
+  - backupProfile:
+    multi: true
+    linkTo: BackupProfile
+  - backupJobs:
+    multi: true
+    linkTo: BackupJob

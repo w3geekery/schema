@@ -1,0 +1,4 @@
+description: "The login for the entity"
+displayName: "Login"
+type: "string"
+keyed: true

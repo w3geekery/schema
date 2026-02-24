@@ -1,0 +1,7 @@
+description: "Compliance role expressed in responsibility matrix assignments responsbility to processes"
+displayName: "Compliance RASCI Role"
+properties:
+  - responsibility:
+    multi: true
+    field: responsibilityType
+#fixme / future. this will be t3 relationship between Party and a Control, Framework, Baseline, etc

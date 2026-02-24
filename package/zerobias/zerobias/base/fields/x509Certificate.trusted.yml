@@ -1,0 +1,4 @@
+displayName: "Trusted"
+description: "Wherther the x509 certificate is trusted."
+example: true
+type: boolean

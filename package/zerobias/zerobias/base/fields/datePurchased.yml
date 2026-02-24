@@ -1,0 +1,4 @@
+example: "2021-10-26"
+description: "The date when a component was purchased"
+displayName: "Date Purchased"
+type: "date"

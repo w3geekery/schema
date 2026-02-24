@@ -1,0 +1,10 @@
+description: "Enumeration store for the current status of an Certificate"
+displayName: "Certificate Status"
+values:
+  - "PENDING_VALIDATION": "The request was received and the certificate is pending validation"
+  - "ISSUED": "The certificate has been issued"
+  - "FAILED": "The request failed and the certificate could not be issued"
+  - "VALIDATION_TIMED_OUT": "The validation of the certificate timed out"
+  - "REVOKED": "The certificate has been revoked"
+  - "EXPIRED": "The certificate has expired"
+  - "INACTIVE": "The certificate is inactive"

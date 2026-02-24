@@ -1,0 +1,45 @@
+description: "A named collection of users inside an application"
+icon: images/classes/auditmation/base/Group.svg
+tags:
+  - query-folder.assets
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Description":
+    jsonata: description
+    sort: description
+  "Access Level":
+    jsonata: accessLevel
+    sort: accessLevel
+  "Application":
+    jsonata: app
+    sort: app
+  "Status":
+    jsonata: status
+    sort: status
+  "Members":
+    jsonata: $count(members)
+  #Todo:  query candidate  due to inconsisten data in links
+extends:
+  - Principal
+properties:
+  - permission:
+    field: permissionSet
+    multi: true
+  - email:
+    field: email
+    multi: true
+  - accessLevel:
+    field: accessLevel
+  - status:
+    field: accountStatus
+# Links
+  - app:
+    linkTo: Application
+    t3: permissionSet
+  - members:
+    multi: true
+    linkTo: Principal
+    t3: permissionSet
+

@@ -1,0 +1,122 @@
+description: "A component that is unqiuely identifiable (virtual or physical)"
+icon: images/classes/auditmation/base/Asset.svg
+extends: 
+  - Component
+tags: 
+  - query-folder.assets
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Asset Type":
+    jsonata: assetType
+    sort: assetType
+  "Oscal Type":
+    jsonata: oscalAssetType
+    sort: oscalAssetType
+  "Manufacturer":
+    jsonata: manufacturer
+    sort: manufacturer
+  "Model":
+    jsonata: model
+    sort: model
+  "Status":
+    jsonata: assetStatus
+    sort: assetStatus
+  "Asset Tag":
+    jsonata: assetTag
+    sort: assetTag
+  "Serial Number":
+    jsonata: serialNumber
+    sort: serialNumber
+  "Version":
+    jsonata: version
+    sort: version
+  "Backups":
+    jsonata: $count(backups)
+  "Tickets":
+    jsonata: $count(tickets)
+  "Description":
+    jsonata: description
+    sort: description
+properties:
+  - oscalAssetType:
+    field: oscalAssetType
+  - assetId:
+    field: asset.id
+  - assetTag:
+    field: asset.tag
+  - vlanId:
+    multi: true
+  - baselineConfigurationName:
+    field: asset.baselineConfigurationName
+  - virtual:
+    field: asset.isVirtual
+    defaultValue: true
+  - allowsAuthenticatedScan:
+    field: asset.allowsAuthenticatedScan
+  - preferredBackupWindow:
+    field: asset.preferredBackupWindow
+  - preferredMaintenanceWindow:
+    field: asset.preferredMaintenanceWindow
+  - backupRetentionDays:
+    field: asset.backupRetentionDays
+  - adminUsername:
+    field: asset.adminUsername
+  - serialNumber:
+    field: asset.serialNumber
+  - manufacturer:
+    field: asset.manufacturer
+  - model:
+    field: asset.model
+  - businessCriticality:
+    field: asset.criticality
+  - complianceCriticality:
+    field: asset.criticality
+  - securityCriticality:
+    field: asset.criticality
+  - safetyCriticality:
+    field: asset.criticality
+  - sustainabilityCriticality:
+    field: asset.criticality
+  - assetStatus:
+    field: asset.status
+  - purchaseDate:
+    field: datePurchased
+  - assetType:
+    field: asset.type
+  - warrantyExpires:
+    field: dateOfWarrantyExpires
+  - warrantyMonths:
+    field: asset.warrantyMonths
+# Links
+  - network:
+    multi: true
+    field: networkInterface
+  - runtime:
+    linkTo: AppEnvironment
+    multi: true
+  - configuration: 
+    multi: true
+    linkTo: Configuration
+  - assignedTo:
+    linkTo: ITAssetManagementUser
+    t3: issuedDate
+  - assetHistory:
+    multi: true
+    linkTo: AssetHistory
+  - itamApp:
+    linkTo: ITAssetManagement
+  - location:
+    linkTo: 
+      - Location.id
+      - Location.code
+#  - vulnerabilities:
+#    multi: true
+#    linkTo: Vulnerability
+  - inventoryItems:
+    multi: true
+    linkTo: InventoryItem
+  - cpeProduct:
+    linkTo: CpeProduct.versions
+    uniLink: true

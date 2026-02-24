@@ -1,0 +1,3 @@
+description: "The Distinguished Name (DN) for an X.509 Subject"
+displayName: "X509 Subject"
+type: x509Subject
