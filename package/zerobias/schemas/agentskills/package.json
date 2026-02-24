@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-zerobias-schemas-agentskills",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Schema for Agent Skills from agentskills.io",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -22,8 +22,8 @@
     "catalog.yml"
   ],
   "dependencies": {
-    "@zerobias-org/product-zerobias-schemas-agentskills": "latest",
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/product-zerobias-schemas-agentskills": "latest",
     "@zerobias-org/schema-zerobias-zerobias-base": "latest"
   },
   "zerobias": {
