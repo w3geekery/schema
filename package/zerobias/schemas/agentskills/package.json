@@ -1,0 +1,38 @@
+{
+  "name": "@zerobias-org/schema-zerobias-schemas-agentskills",
+  "version": "1.0.0-rc.1",
+  "description": "Schema for Agent Skills from agentskills.io",
+  "author": "team@zerobias.com",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zerobias-org/schema.git",
+    "directory": "package/zerobias/schemas/agentskills/"
+  },
+  "scripts": {
+    "correct:deps": "tsx ../../../../scripts/correctDeps.ts",
+    "validate": "tsx ../../../../scripts/validate.ts"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "classes/**",
+    "catalog.yml"
+  ],
+  "dependencies": {
+    "@zerobias-org/product-zerobias-schemas-agentskills": "latest",
+    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
+  },
+  "zerobias": {
+    "dataloader-version": "1.0.0",
+    "import-artifact": "schema",
+    "package": "zerobias.schemas.agentskills.schema",
+    "imports": [
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
+    ]
+  }
+}
