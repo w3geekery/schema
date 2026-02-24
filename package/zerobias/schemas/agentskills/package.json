@@ -23,14 +23,16 @@
   ],
   "dependencies": {
     "@zerobias-org/product-zerobias-schemas-agentskills": "latest",
-    "@zerobias-com/schema-zerobias-zerobias-platform": "latest"
+    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
   },
   "zerobias": {
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
     "package": "zerobias.schemas.agentskills.schema",
     "imports": [
-      "zerobias.zerobias.platform.schema"
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
     ]
   }
 }
