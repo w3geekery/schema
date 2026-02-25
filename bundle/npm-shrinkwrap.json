@@ -1,0 +1,74 @@
+{
+  "name": "@zerobias-org/schema-bundle",
+  "version": "0.0.2",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "@zerobias-org/schema-bundle",
+      "version": "0.0.2",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.0",
+        "@zerobias-org/schema-zerobias-zerobias-base": "2.0.0"
+      }
+    },
+    "node_modules/@zerobias-com/schema-zerobias-zerobias-platform": {
+      "version": "4.0.55",
+      "resolved": "https://npm.pkg.github.com/download/@zerobias-com/schema-zerobias-zerobias-platform/4.0.55/bdd27b01402b14e49c40932939612600dce17e66",
+      "integrity": "sha512-3lD7ajo4NfSMQ3lkdmTGNwHODxL+18sLDKqBoCDx3TjqthhQvyjEm0lx7ZOJrz4fT1g1kFuiF/SHqZhJFN+bIw==",
+      "license": "ISC"
+    },
+    "node_modules/@zerobias-com/tag-zerobias-global-tags": {
+      "version": "1.0.0",
+      "resolved": "https://npm.pkg.github.com/download/@zerobias-com/tag-zerobias-global-tags/1.0.0/39fc287db1ab772d5e9403ede35a092a229e4caa",
+      "integrity": "sha512-Ag/RNdRuossmZquOrtrK8YGoXwXjoPNNr5W0pAIPuJ4vG2C7Xt7W4x/cGg7SnUiSZ1NHpb4CIjVLjqWz0ZTiKg==",
+      "license": "ISC"
+    },
+    "node_modules/@zerobias-org/product-zerobias-schemas-agentskills": {
+      "version": "1.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/product-zerobias-schemas-agentskills/-/product-zerobias-schemas-agentskills-1.0.0.tgz",
+      "integrity": "sha512-/ZVM6a934w1Pqnmo7Zr2Jw5GzwbOT5srmIE/zVIr8krdXfKS8uSMQ+eSS2C+UpTx+OLv4/6Zf52p5gS+H2hm0A==",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-org/suite-zerobias-schemas": "latest"
+      }
+    },
+    "node_modules/@zerobias-org/schema-zerobias-schemas-agentskills": {
+      "version": "1.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-zerobias-schemas-agentskills/-/schema-zerobias-schemas-agentskills-1.0.0.tgz",
+      "integrity": "sha512-rWovomCUYa22TYDYAvvVechBFmG1ZlcppQfpz77mZ32tG4sWAAHJK83A97JgwGK1XmYyCDqOmGtWio0IwG19rg==",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+        "@zerobias-org/product-zerobias-schemas-agentskills": "latest",
+        "@zerobias-org/schema-zerobias-zerobias-base": "latest"
+      }
+    },
+    "node_modules/@zerobias-org/schema-zerobias-zerobias-base": {
+      "version": "2.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-zerobias-zerobias-base/-/schema-zerobias-zerobias-base-2.0.0.tgz",
+      "integrity": "sha512-xn1bZJQE6LhFFf6oP2bNg6EglFwTkuuQpNUwIP71UnlMl9Pm4B4Nm2oQvN0aMwcdEML5OdahzK8CGOcgMkeYOA==",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+        "@zerobias-com/tag-zerobias-global-tags": "^1.0.0"
+      }
+    },
+    "node_modules/@zerobias-org/suite-zerobias-schemas": {
+      "version": "1.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/suite-zerobias-schemas/-/suite-zerobias-schemas-1.0.0.tgz",
+      "integrity": "sha512-Ojdyq8aErLYMuJLONI79iTVUMN4Zcsxb0Zsl8k9Dl2oRLbhBe7xshu0dWrZNF5n2FRjS2wWnpumUHOjXUGw3Xg==",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-org/vendor-zerobias": "latest"
+      }
+    },
+    "node_modules/@zerobias-org/vendor-zerobias": {
+      "version": "1.0.6",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/vendor-zerobias/-/vendor-zerobias-1.0.6.tgz",
+      "integrity": "sha512-k9cEu70epNoV49jV4H/B7HVDEAAlGd0AupG/ErOmRRgC4HQYJW4Q1OfgF88ZSQeTO+QORs18ZSD7dOJkwAi3Yw==",
+      "license": "ISC"
+    }
+  }
+}

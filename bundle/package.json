@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "All installable zerobias-org schemas",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -17,5 +17,8 @@
     "import-artifact": "bundle",
     "dataloader-version": "1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.0",
+    "@zerobias-org/schema-zerobias-zerobias-base": "2.0.0"
+  }
 }
