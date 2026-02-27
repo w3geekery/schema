@@ -11,6 +11,7 @@
     "directory": "package/zerobias/schemas/agentskills/"
   },
   "scripts": {
+    "nx:prepublish": "../../../../scripts/prepublish.sh",
     "correct:deps": "tsx ../../../../scripts/correctDeps.ts",
     "validate": "tsx ../../../../scripts/validate.ts"
   },

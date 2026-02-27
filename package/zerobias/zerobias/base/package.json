@@ -31,8 +31,9 @@
     "README.md"
   ],
   "scripts": {
-    "correct:deps": "tsx ../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../scripts/validate.ts"
+    "nx:prepublish": "../../../../scripts/prepublish.sh",
+    "correct:deps": "tsx ../../../../scripts/correctDeps.ts",
+    "validate": "tsx ../../../../scripts/validate.ts"
   },
   "dependencies": {
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
