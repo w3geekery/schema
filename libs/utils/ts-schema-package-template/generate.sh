@@ -28,7 +28,7 @@ if [ $status -ne 0 ]; then
 fi
 
 echo "Installing dependencies..."
-npm install
+npm install --workspaces=false --install-strategy=nested
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed installing dependencies"

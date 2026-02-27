@@ -6,7 +6,8 @@
   "description": "ZeroBias open-source schema artifacts",
   "main": "main.js",
   "workspaces": [
-    "package/**"
+    "package/**",
+    "!**/ts"
   ],
   "scripts": {
     "validate": "nx run-many -t validate",
