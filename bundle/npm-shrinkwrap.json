@@ -1,16 +1,16 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@zerobias-org/schema-bundle",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "license": "ISC",
       "dependencies": {
-        "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.0",
-        "@zerobias-org/schema-zerobias-zerobias-base": "2.0.0"
+        "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.1",
+        "@zerobias-org/schema-zerobias-zerobias-base": "2.0.1"
       }
     },
     "node_modules/@zerobias-com/schema-zerobias-zerobias-platform": {
@@ -35,9 +35,9 @@
       }
     },
     "node_modules/@zerobias-org/schema-zerobias-schemas-agentskills": {
-      "version": "1.0.0",
-      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-zerobias-schemas-agentskills/-/schema-zerobias-schemas-agentskills-1.0.0.tgz",
-      "integrity": "sha512-rWovomCUYa22TYDYAvvVechBFmG1ZlcppQfpz77mZ32tG4sWAAHJK83A97JgwGK1XmYyCDqOmGtWio0IwG19rg==",
+      "version": "1.0.1",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-zerobias-schemas-agentskills/-/schema-zerobias-schemas-agentskills-1.0.1.tgz",
+      "integrity": "sha512-BoDAIx9Qt1tHVsxrhJbERJatBjm3//6+qfZZ0L8UjvVmyVMwOvlUJcX7xPwh/QgQl8qjQZkpAqa3xEOLeFQ9FA==",
       "license": "ISC",
       "dependencies": {
         "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
@@ -46,9 +46,9 @@
       }
     },
     "node_modules/@zerobias-org/schema-zerobias-zerobias-base": {
-      "version": "2.0.0",
-      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-zerobias-zerobias-base/-/schema-zerobias-zerobias-base-2.0.0.tgz",
-      "integrity": "sha512-xn1bZJQE6LhFFf6oP2bNg6EglFwTkuuQpNUwIP71UnlMl9Pm4B4Nm2oQvN0aMwcdEML5OdahzK8CGOcgMkeYOA==",
+      "version": "2.0.1",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-zerobias-zerobias-base/-/schema-zerobias-zerobias-base-2.0.1.tgz",
+      "integrity": "sha512-GHpRoIzd2grSMJKtSUvIrRdKbPOS83vU3Gcehwta8jzOktzHCUOVN1zS0nzosTRtBYiBJfIYM6eb3DYiPaFuYg==",
       "license": "ISC",
       "dependencies": {
         "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
