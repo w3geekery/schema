@@ -83,3 +83,6 @@ dbz-config.json
 
 scripts/clean**
 .nx/
+
+# Generated TS interface packages (created during prepublish, published separately)
+**/ts/
