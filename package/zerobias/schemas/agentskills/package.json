@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-zerobias-schemas-agentskills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Schema for Agent Skills from agentskills.io",
   "author": "team@zerobias.com",
   "license": "ISC",

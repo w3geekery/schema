@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.0.1 (2026-02-27)</small>
+
+* feat: add TypeScript interface generation pipeline ([927f2db](https://github.com/zerobias-org/schema/commit/927f2db))
+
+
+
+
+
 ## 2.0.0 (2026-02-25)
 
 * chore(release): bump version ([e2e0620](https://github.com/zerobias-org/schema/commit/e2e0620))
