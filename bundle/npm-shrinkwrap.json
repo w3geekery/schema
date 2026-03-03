@@ -1,16 +1,16 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@zerobias-org/schema-bundle",
-      "version": "0.0.3",
+      "version": "0.0.4",
       "license": "ISC",
       "dependencies": {
-        "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.1",
-        "@zerobias-org/schema-zerobias-zerobias-base": "2.0.1"
+        "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.2",
+        "@zerobias-org/schema-zerobias-zerobias-base": "2.0.2"
       }
     },
     "node_modules/@zerobias-com/schema-zerobias-zerobias-platform": {
