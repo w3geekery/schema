@@ -10,13 +10,13 @@ export interface Environment extends Asset, Location, Component, Object {
   /** Whether the environment is managed by self or others */
   environmentType?: EnvironmentType;
   /** The external ID that defines this object for joining purposes */
-  networks?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   gateways?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  environmentInventoryItems?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   firewalls?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   routers?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  environmentInventoryItems?: string | Array<string>;
+  networks?: string | Array<string>;
 }

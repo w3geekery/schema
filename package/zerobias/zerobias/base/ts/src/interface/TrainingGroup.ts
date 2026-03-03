@@ -6,7 +6,7 @@ import { Principal } from "../interface/Principal";
 
 export interface TrainingGroup extends Group, Principal, Object {
   /** The external ID that defines this object for joining purposes */
-  trainingCampaigns?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   phishingCampaigns?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  trainingCampaigns?: string | Array<string>;
 }

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.2 (2026-03-03)</small>
+
+* chore: update agentskills schema description ([c561c4a](https://github.com/zerobias-org/schema/commit/c561c4a))
+
+
+
+
+
 ## <small>1.0.1 (2026-02-27)</small>
 
 * feat: add TypeScript interface generation pipeline ([927f2db](https://github.com/zerobias-org/schema/commit/927f2db))

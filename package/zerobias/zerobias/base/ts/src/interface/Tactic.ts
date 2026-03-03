@@ -7,10 +7,10 @@ import { Object } from "../interface/Object";
 export interface Tactic extends Element, Object {
   /** The external ID that defines this object for joining purposes */
   techniques?: string | Array<string>;
-  /** Mitigation Strategy */
-  mitigatedBy?: string | Array<string> | T3_MitigationStrategy | Array<T3_MitigationStrategy>;
   /** The external ID that defines this object for joining purposes */
   parentTactic?: string;
   /** The external ID that defines this object for joining purposes */
   subTactics?: string | Array<string>;
+  /** Mitigation Strategy */
+  mitigatedBy?: string | Array<string> | T3_MitigationStrategy | Array<T3_MitigationStrategy>;
 }

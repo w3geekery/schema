@@ -9,14 +9,14 @@ import { Object } from "../interface/Object";
 export interface Application extends Asset, Component, Object {
   /** Describes how a system manages and checks passwords */
   passwordPolicy?: PasswordPolicy;
-  /** The external ID that defines this object for joining purposes */
-  serviceEndpoints?: string | Array<string>;
   /** List of permissions for a given principal and resource */
   groups?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
+  /** The external ID that defines this object for joining purposes */
+  roles?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  serviceEndpoints?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   accessRules?: string | Array<string>;
   /** List of permissions for a given principal and resource */
   accounts?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
-  /** The external ID that defines this object for joining purposes */
-  roles?: string | Array<string>;
 }

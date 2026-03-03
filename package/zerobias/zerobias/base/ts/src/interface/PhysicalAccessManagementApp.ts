@@ -7,15 +7,15 @@ import { Object } from "../interface/Object";
 
 export interface PhysicalAccessManagementApp extends Application, Asset, Component, Object {
   /** The external ID that defines this object for joining purposes */
-  credentials?: string | Array<string>;
+  schedules?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  zones?: string | Array<string>;
+  visitors?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  credentials?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   entries?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   sites?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  schedules?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  visitors?: string | Array<string>;
+  zones?: string | Array<string>;
 }

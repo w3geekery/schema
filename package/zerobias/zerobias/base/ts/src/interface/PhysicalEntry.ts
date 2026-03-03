@@ -19,7 +19,7 @@ export interface PhysicalEntry extends Asset, Resource, Object, Component {
   /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */
-  site?: string;
-  /** The external ID that defines this object for joining purposes */
   zone?: string;
+  /** The external ID that defines this object for joining purposes */
+  site?: string;
 }

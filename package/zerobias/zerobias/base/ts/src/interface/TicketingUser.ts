@@ -8,9 +8,9 @@ export interface TicketingUser extends Object {
   /** A valid email */
   email?: Email | Array<Email>;
   /** Role and role type(s) responsible for a component */
-  ticketsReported?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
-  /** Role and role type(s) responsible for a component */
   ticketsAssigned?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
   /** Role and role type(s) responsible for a component */
   ticketsApproved?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
+  /** Role and role type(s) responsible for a component */
+  ticketsReported?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
 }

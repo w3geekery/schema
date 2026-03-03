@@ -21,9 +21,9 @@ export interface AccessCredential extends Asset, Principal, Object, Component {
   /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */
-  visitor?: string;
-  /** The external ID that defines this object for joining purposes */
   principal?: string;
   /** The external ID that defines this object for joining purposes */
   schedules?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  visitor?: string;
 }

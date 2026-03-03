@@ -8,7 +8,7 @@ import { Object } from "../interface/Object";
 
 export interface CloudEnvironment extends Environment, Asset, Location, Object, Component {
   /** The external ID that defines this object for joining purposes */
-  cloudService?: string;
-  /** The external ID that defines this object for joining purposes */
   elasticAddress?: string;
+  /** The external ID that defines this object for joining purposes */
+  cloudService?: string;
 }

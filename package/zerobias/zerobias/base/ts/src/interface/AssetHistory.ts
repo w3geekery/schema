@@ -7,7 +7,7 @@ export interface AssetHistory extends Object {
   /** Asset History operation */
   operation?: AssetHistory_operation;
   /** The external ID that defines this object for joining purposes */
-  asset?: string;
-  /** The external ID that defines this object for joining purposes */
   assignedTo?: string;
+  /** The external ID that defines this object for joining purposes */
+  asset?: string;
 }

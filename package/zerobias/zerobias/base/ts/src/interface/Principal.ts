@@ -8,11 +8,11 @@ export interface Principal extends Object {
   /** A person, group, account, or application that can gain access to or perform actions on one or more Resources */
   principalType?: PrincipalType;
   /** The external ID that defines this object for joining purposes */
-  accessCredentials?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  roles?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   accessRules?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  accessCredentials?: string | Array<string>;
   /** List of permissions for a given principal and resource */
   groups?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
+  /** The external ID that defines this object for joining purposes */
+  roles?: string | Array<string>;
 }

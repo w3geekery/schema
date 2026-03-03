@@ -15,22 +15,22 @@ export interface Component extends Object {
   version?: string;
   /** Organization defined purpose for a given Component. */
   purpose?: string;
+  /** Role and role type(s) responsible for a component */
+  responsible?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
+  /** The external ID that defines this object for joining purposes */
+  backup?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  associatedTickets?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   tests?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   findings?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  associatedTickets?: string | Array<string>;
+  proofOfCompliance?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   cpeProduct?: string;
   /** The external ID that defines this object for joining purposes */
-  proofOfCompliance?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   validations?: string | Array<string>;
-  /** Role and role type(s) responsible for a component */
-  responsible?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
-  /** The external ID that defines this object for joining purposes */
-  backup?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   product?: string;
 }

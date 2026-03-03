@@ -5,7 +5,7 @@ import { Ticket } from "../interface/Ticket";
 
 export interface WorkflowTicket extends Ticket, Object {
   /** The external ID that defines this object for joining purposes */
-  workflow?: string;
-  /** The external ID that defines this object for joining purposes */
   stepTicket?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  workflow?: string;
 }

@@ -7,9 +7,9 @@ import { Object } from "../interface/Object";
 
 export interface DBMS extends Application, Asset, Component, Object {
   /** The external ID that defines this object for joining purposes */
-  databaseClusters?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   snapshots?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   databases?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  databaseClusters?: string | Array<string>;
 }

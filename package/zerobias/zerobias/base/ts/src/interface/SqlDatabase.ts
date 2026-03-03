@@ -8,7 +8,7 @@ import { Object } from "../interface/Object";
 
 export interface SqlDatabase extends Database, Asset, NetworkService, Component, Object {
   /** The external ID that defines this object for joining purposes */
-  rdbms?: string;
-  /** The external ID that defines this object for joining purposes */
   schemas?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  rdbms?: string;
 }

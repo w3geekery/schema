@@ -7,14 +7,14 @@ import { IpProtocol } from "../enum/IpProtocol";
 export interface Endpoint {
   /** An IPv4 or IPv6 Address */
   address?: IpAddress;
-  /** The port number of a OSI layer 4 socket address */
-  port?: number;
-  /** IANA protocol numbers for IP traffic */
-  ipProtocol?: IpProtocol;
   /** A set of hardware, software, and/or firmware that implements approved security functions (including cryptographic algorithms and key generation). */
   cryptoModule?: CryptoModule;
   /** DNS domain name for a service or host */
   hostname?: string | Array<string>;
+  /** IANA protocol numbers for IP traffic */
+  ipProtocol?: IpProtocol;
+  /** The port number of a OSI layer 4 socket address */
+  port?: number;
   /** DNS Zone Id (for instance Route 53 Hosted Zone ID, etc) */
   zoneId?: string;
 }

@@ -4,7 +4,7 @@ import { Object } from "../interface/Object";
 
 export interface SecretsContainer extends Object {
   /** The external ID that defines this object for joining purposes */
-  manager?: string;
-  /** The external ID that defines this object for joining purposes */
   secrets?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  manager?: string;
 }

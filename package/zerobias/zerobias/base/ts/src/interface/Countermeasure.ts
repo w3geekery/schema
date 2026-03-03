@@ -6,33 +6,47 @@ import { Object } from "../interface/Object";
 
 export interface Countermeasure extends Element, Object {
   /** The external ID that defines this object for joining purposes */
-  updatesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mitigations?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  filtersCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  cyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  monitorsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  obfuscatesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  usesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  evaluatesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  hardensCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayContainCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  verifiesCyberArtifacts?: string | Array<string>;
+  useLimitsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   isolatesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  regeneratesCyberArtifacts?: string | Array<string>;
+  usesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  createsCyberArtifacts?: string | Array<string>;
+  erasesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  inventoriesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  managesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  authenticatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  terminatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  verifiesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  encryptsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  updatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  spoofsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  hardensCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  monitorsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  strengthensCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  cyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  evaluatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  obfuscatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  restoresCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mapsCyberArtifacts?: string | Array<string>;
+  /** Mitigation Strategy */
+  mitigates?: string | Array<string> | T3_MitigationStrategy | Array<T3_MitigationStrategy>;
   /** The external ID that defines this object for joining purposes */
   parentCountermeasure?: string;
   /** The external ID that defines this object for joining purposes */
@@ -40,45 +54,31 @@ export interface Countermeasure extends Element, Object {
   /** The external ID that defines this object for joining purposes */
   suspendsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  authenticatesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  disablesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   deletesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  spoofsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  strengthensCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  analyzesCyberArtifacts?: string | Array<string>;
-  /** Mitigation Strategy */
-  mitigates?: string | Array<string> | T3_MitigationStrategy | Array<T3_MitigationStrategy>;
-  /** The external ID that defines this object for joining purposes */
-  inventoriesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  useLimitsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  erasesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  restoresCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayAccessCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   restrictsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  managesCyberArtifacts?: string | Array<string>;
+  modifiesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  terminatesCyberArtifacts?: string | Array<string>;
+  createsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  encryptsCyberArtifacts?: string | Array<string>;
+  disablesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  blocksCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  filtersCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  analyzesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   validatesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mapsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  modifiesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   neutralizesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  blocksCyberArtifacts?: string | Array<string>;
+  mitigations?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  regeneratesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayContainCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayAccessCyberArtifacts?: string | Array<string>;
 }

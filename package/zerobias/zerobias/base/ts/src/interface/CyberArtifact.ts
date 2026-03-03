@@ -7,7 +7,109 @@ export interface CyberArtifact extends Element, Object {
   /** The external ID that defines this object for joining purposes */
   disabledByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  interpretedByTechniques?: string | Array<string>;
+  hiddenByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  readByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  accessedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayExecuteCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeExecutedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  hasSenderCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  senderOfCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  processImagePathCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  processImagePathByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  readsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  readByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  limitedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayAddCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeAddedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  isolatedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  usedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  disablesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  disabledByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  erasedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayContainCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeContainedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  inventoriedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  parentCyberArtifact?: string;
+  /** The external ID that defines this object for joining purposes */
+  subCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  originatesFromCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  originatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeTransferredByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  instructsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  instructedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  deletesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  deletedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  modifiesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  modifiedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  unmountedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  modifiedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  managedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  injectsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  injectedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  suspendsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  suspendedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  authenticatedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  enabledByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  terminatedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  forgesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  forgedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  producedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  enumeratedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeRanByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  enumeratesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  enumeratedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  terminatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  terminatedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   ranByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
@@ -15,79 +117,59 @@ export interface CyberArtifact extends Element, Object {
   /** The external ID that defines this object for joining purposes */
   resumedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
+  mayBeModifiedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
   runsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   runByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  usesCyberArtifacts?: string | Array<string>;
+  authenticatesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  usedByCyberArtifacts?: string | Array<string>;
+  authenticatedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  verifiedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeCreatedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  encryptedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  interpretedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   updatedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  managesCyberArtifacts?: string | Array<string>;
+  spoofedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  managedByCyberArtifacts?: string | Array<string>;
+  addedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayContainCyberArtifacts?: string | Array<string>;
+  extendsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayBeContainedByCyberArtifacts?: string | Array<string>;
+  extendedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  enumeratesCyberArtifacts?: string | Array<string>;
+  mayBeExecutedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  enumeratedByCyberArtifacts?: string | Array<string>;
+  hardenedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayAccessCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayBeAccessedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  restrictsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  restrictedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   hidesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   hiddenByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  enablesCyberArtifacts?: string | Array<string>;
+  providesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  enabledByCyberArtifacts?: string | Array<string>;
+  providedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  unloadsCyberArtifacts?: string | Array<string>;
+  attachedToCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  unloadedByCyberArtifacts?: string | Array<string>;
+  attachedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  recordsCyberArtifacts?: string | Array<string>;
+  managesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  recordedByCyberArtifacts?: string | Array<string>;
+  managedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  filteredByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  hasAccountsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  accountOfCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  readsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  readByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  identifiesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  identifiedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  installsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  installedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeRanByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  countermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  enumeratedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  loadsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  loadByCyberArtifacts?: string | Array<string>;
+  mayBeAddedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayModifyCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
@@ -95,331 +177,249 @@ export interface CyberArtifact extends Element, Object {
   /** The external ID that defines this object for joining purposes */
   monitoredByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  authenticatesCyberArtifacts?: string | Array<string>;
+  restrictsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  authenticatedByCyberArtifacts?: string | Array<string>;
+  restrictedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  obfuscatedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  implementsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  implementedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeExecutedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  usedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  suspendsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  suspendedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeProducedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  communicatesWithCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  communicatedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeTransferredByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  extendsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  extendedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  evaluatedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  summarizesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  summarizedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  hasRecipientCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  recipientOfCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  producesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  producedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  connectedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  drivesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  drivenByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  hardenedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  containedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  processUserCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  processUserByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  verifiedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  controlsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  controlledByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  isolatedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayInterpretCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeInterpretedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  deletesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  deletedByCyberArtifacts?: string | Array<string>;
+  strengthenedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   createsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   createdByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  createdByTechniques?: string | Array<string>;
+  mayTransferCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  regeneratedByCountermeasures?: string | Array<string>;
+  mayBeTransferredByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  terminatesCyberArtifacts?: string | Array<string>;
+  techniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  terminatedByCyberArtifacts?: string | Array<string>;
+  unloadsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  createdByCountermeasures?: string | Array<string>;
+  unloadedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  identifiesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  identifiedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayProduceCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayBeProducedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayExecuteCyberArtifacts?: string | Array<string>;
+  producesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayBeExecutedByCyberArtifacts?: string | Array<string>;
+  producedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  countermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   copiedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  addressesCyberArtifacts?: string | Array<string>;
+  evaluatedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  addressedByCyberArtifacts?: string | Array<string>;
+  installedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  loadedByTechniques?: string | Array<string>;
+  mayBeProducedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  queriedByTechniques?: string | Array<string>;
+  hasRecipientCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayBeModifiedByTechniques?: string | Array<string>;
+  recipientOfCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  obfuscatedByTechniques?: string | Array<string>;
+  communicatesWithCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  unmountedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  interpretsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  interpretedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  forgedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayCreateCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeCreatedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  suspendedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  authenticatedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  dependentCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  dependentOfCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  copyOfCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  copiedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  modifiesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  modifiedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  disabledByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  forgesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  forgedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  providesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  providedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  configuresCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  configuredByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  usedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  obfuscatesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  obfuscatedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  injectedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  disablesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  disabledByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  processImagePathCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  processImagePathByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeAccessedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  signedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  signsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  accessesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  accessedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  deletedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  invokesCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  invokedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  spoofedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mediatesAccessToCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mediatedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  producedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeAddedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  powersCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  poweredByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeCreatedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  monitorsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  monitoredByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  strengthenedByCountermeasures?: string | Array<string>;
+  communicatedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayInvokeCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   mayBeInvokedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  hasSenderCyberArtifacts?: string | Array<string>;
+  queriesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  senderOfCyberArtifacts?: string | Array<string>;
+  queriedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  installedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  analyzedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  connectsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  connectedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  unmountsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  unmountedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  inventoriedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  injectsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  injectedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  attachedToCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  attachedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  limitedByCountermeasures?: string | Array<string>;
+  obfuscatedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   executesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   executedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  erasedByCountermeasures?: string | Array<string>;
+  recordsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  recordedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   restoredByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  queriesCyberArtifacts?: string | Array<string>;
+  unmountsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  queriedByCyberArtifacts?: string | Array<string>;
+  unmountedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayAddCyberArtifacts?: string | Array<string>;
+  createdByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayBeAddedByCyberArtifacts?: string | Array<string>;
+  connectsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  addedByTechniques?: string | Array<string>;
+  connectedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mappedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  connectedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  controlsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  controlledByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayInterpretCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeInterpretedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  obfuscatesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  obfuscatedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  addressesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  addressedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   copiesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   copiesFromCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  executedByTechniques?: string | Array<string>;
+  invokesCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayBeAccessedByCountermeasures?: string | Array<string>;
+  invokedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  restrictedByCountermeasures?: string | Array<string>;
+  suspendedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  originatesFromCyberArtifacts?: string | Array<string>;
+  configuresCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  originatesCyberArtifacts?: string | Array<string>;
+  configuredByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  managedByCountermeasures?: string | Array<string>;
+  signedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  terminatedByCountermeasures?: string | Array<string>;
+  signsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  mayBeInvokedByTechniques?: string | Array<string>;
+  forgedByTechniques?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  invokedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  parentCyberArtifact?: string;
-  /** The external ID that defines this object for joining purposes */
-  subCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  encryptedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayRunCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeRanByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayTransferCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mayBeTransferredByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  modifiedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  instructsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  instructedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  techniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  accessedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  containsCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  containedByCyberArtifacts?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  readByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  validatedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  deletedByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  mappedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  enabledByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  hiddenByTechniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  modifiedByCountermeasures?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  neutralizedByCountermeasures?: string | Array<string>;
+  deletedByCountermeasures?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   addsCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   addedByCyberArtifacts?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
+  restrictedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  drivesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  drivenByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  modifiedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  createdByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  summarizesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  summarizedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayRunCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeRanByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  disabledByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  deletedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  usesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  usedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  usedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  queriedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  monitorsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  monitoredByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  injectedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  containsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  containedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  accessesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  accessedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  loadedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
   blockedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeInvokedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  powersCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  poweredByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayCreateCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeCreatedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  enablesCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  enabledByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  filteredByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  analyzedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  validatedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  obfuscatedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  implementsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  implementedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  hasAccountsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  accountOfCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  neutralizedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeAccessedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  interpretsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  interpretedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  dependentCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  dependentOfCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  installsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  installedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  executedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  invokedByTechniques?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  regeneratedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  containedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mayBeAccessedByCountermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  processUserCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  processUserByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  copyOfCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  copiedByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  loadsCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  loadByCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mediatesAccessToCyberArtifacts?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  mediatedByCyberArtifacts?: string | Array<string>;
 }

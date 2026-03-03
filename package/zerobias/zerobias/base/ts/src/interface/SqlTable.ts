@@ -4,7 +4,7 @@ import { Object } from "../interface/Object";
 
 export interface SqlTable extends Object {
   /** The external ID that defines this object for joining purposes */
-  columns?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   schema?: string;
+  /** The external ID that defines this object for joining purposes */
+  columns?: string | Array<string>;
 }

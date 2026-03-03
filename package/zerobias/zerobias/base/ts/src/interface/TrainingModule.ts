@@ -21,9 +21,9 @@ export interface TrainingModule extends Object {
   /** The external ID that defines this object for joining purposes */
   competencies?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  campaigns?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   app?: string;
+  /** The external ID that defines this object for joining purposes */
+  campaigns?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   record?: string;
 }

@@ -4,7 +4,7 @@ import { Object } from "../interface/Object";
 
 export interface SqlSchema extends Object {
   /** The external ID that defines this object for joining purposes */
-  tables?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   database?: string;
+  /** The external ID that defines this object for joining purposes */
+  tables?: string | Array<string>;
 }

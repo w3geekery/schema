@@ -16,9 +16,9 @@ export interface Schedule extends Configuration, Object {
   /** The external ID that defines this object for joining purposes */
   entries?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  zones?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */
   credentials?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  zones?: string | Array<string>;
 }

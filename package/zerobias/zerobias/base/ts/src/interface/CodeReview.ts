@@ -11,7 +11,7 @@ export interface CodeReview extends Object {
   /** A generic comment document */
   comments?: Comment | Array<Comment>;
   /** The external ID that defines this object for joining purposes */
-  pullRequest: string;
-  /** The external ID that defines this object for joining purposes */
   reviewer: string;
+  /** The external ID that defines this object for joining purposes */
+  pullRequest: string;
 }
