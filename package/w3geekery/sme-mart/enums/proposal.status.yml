@@ -1,0 +1,7 @@
+description: Status of a proposal
+displayName: Proposal Status
+values:
+  - pending: 'Submitted, awaiting buyer review'
+  - accepted: 'Accepted by the buyer'
+  - rejected: 'Rejected by the buyer'
+  - withdrawn: 'Withdrawn by the vendor'

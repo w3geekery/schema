@@ -1,0 +1,44 @@
+description: "A buyer engagement/RFP in the SME marketplace"
+extends:
+  - Object
+properties:
+  - category:
+    field: engagement.category
+  - status:
+    field: engagement.status
+  - budgetMin:
+    field: engagement.budgetMin
+  - budgetMax:
+    field: engagement.budgetMax
+  - timeline:
+    field: engagement.timeline
+  - engagementTag:
+    field: engagement.engagementTag
+  - boundary:
+      linkTo: Boundary
+      uniLink: true
+  - masterTask:
+      linkTo: Task
+      uniLink: true
+  - proposals:
+      linkTo: Proposal
+      multi: true
+  - reviews:
+      linkTo: Review
+      multi: true
+  - notes:
+      linkTo: Note
+      multi: true
+  - documents:
+      linkTo: SmeMartDocument
+      multi: true
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Category":
+    jsonata: category
+    sort: category

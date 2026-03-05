@@ -1,0 +1,27 @@
+description: "A vendor's response to an engagement/RFP"
+extends:
+  - Object
+properties:
+  - coverLetter:
+    field: proposal.coverLetter
+  - price:
+    field: proposal.price
+  - status:
+    field: proposal.status
+  - timeline:
+    field: proposal.timeline
+  - engagement:
+      linkTo: Engagement.id.proposals
+  - serviceOffering:
+      linkTo: ServiceOffering
+      uniLink: true
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Price":
+    jsonata: price
+    sort: price
+  "Status":
+    jsonata: status
+    sort: status

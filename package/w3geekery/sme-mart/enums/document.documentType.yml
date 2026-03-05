@@ -1,0 +1,10 @@
+description: Classification of an uploaded document
+displayName: Document Type
+values:
+  - security_requirements: 'Security requirements specification'
+  - sow: 'Statement of work'
+  - budget: 'Budget or cost breakdown'
+  - legal_terms: 'Legal terms and conditions'
+  - compliance: 'Compliance documentation'
+  - functional_spec: 'Functional specification'
+  - other: 'Other document type'

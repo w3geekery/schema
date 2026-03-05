@@ -1,0 +1,18 @@
+description: "Uploaded file tracked via ZB FileService"
+extends:
+  - File
+properties:
+  - documentType:
+    field: document.documentType
+  - engagement:
+      linkTo: Engagement.id.documents
+  - relatedTask:
+      linkTo: Task
+      uniLink: true
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Type":
+    jsonata: documentType
+    sort: documentType

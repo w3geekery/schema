@@ -1,0 +1,8 @@
+description: Status of an engagement
+displayName: Engagement Status
+values:
+  - draft: 'Initial creation, not yet published'
+  - published: 'Visible to providers, accepting proposals'
+  - in_progress: 'Work underway with selected provider'
+  - completed: 'Engagement successfully completed'
+  - cancelled: 'Engagement cancelled'
