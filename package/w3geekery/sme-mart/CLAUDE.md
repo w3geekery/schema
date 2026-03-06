@@ -108,18 +108,42 @@ RFP requirements decompose into 6 typed domains (global ZB platform tags, not sc
 ## Development
 
 ```bash
-# Validate schema
+# Validate schema (always run after changes)
 cd package/w3geekery/sme-mart
 npm run validate
-
-# Verify dataloader compatibility (requires scratch DB)
-npm i -g @zerobias-com/dataloader
-dataloader
 ```
+
+### Dataloader Verification (Required After Schema Changes)
+
+After any changes to classes, fields, or enums, you MUST run the dataloader against the scratch DB to verify the schema loads correctly.
+
+```bash
+# 1. Start scratch DB (Docker — pre-built image with PG13 + plv8 + platform schema)
+docker run -d --name zb-scratch-db -p 5432:5432 zb-scratch-db:sme-mart-loaded
+
+# 2. If no saved image, use the base image and apply schema:
+docker run -d --name zb-scratch-db -p 5432:5432 zb-scratch-db:ready
+
+# 3. Install dataloader globally (if not already)
+npm i -g @zerobias-com/platform-dataloader
+
+# 4. Run dataloader against scratch DB from schema package dir
+cd package/w3geekery/sme-mart
+dataloader
+
+# 5. Verify — should complete without errors
+```
+
+**Docker images:**
+- `zb-scratch-db:ready` — base PG13 + plv8 with platform schema loaded
+- `zb-scratch-db:sme-mart-loaded` — base + SME Mart schema already applied
+- Base image: `sarumont/postgres-plus:latest` (AMD64 only, Rosetta on Apple Silicon)
+
+**Dataloader package:** `@zerobias-com/platform-dataloader` (binary: `dataloader`, v1.0.69+)
 
 ## Deployment
 
-Schema merges to `dev`/`qa`/`main` in `zerobias-org/schema` trigger automatic dataloader import into the corresponding environment's AuditgraphDB.
+Schema merges to `dev`/`qa`/`main` in `zerobias-org/schema` trigger automatic dataloader import into the corresponding environment's AuditgraphDB. After merge, verify via GraphQL introspection that new types/fields appear.
 
 ## Related
 
