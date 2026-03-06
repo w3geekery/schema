@@ -7,13 +7,13 @@ properties:
   - sortOrder:
     field: noteFolder.sortOrder
   - parent:
-      linkTo: NoteFolder.id.children
+    linkTo: NoteFolder.id.children
   - children:
-      linkTo: NoteFolder.id.parent
-      multi: true
+    linkTo: NoteFolder.id.parent
+    multi: true
   - notes:
-      linkTo: Note.id.folder
-      multi: true
+    linkTo: Note.id.folder
+    multi: true
 viewProperties:
   "Name":
     jsonata: name

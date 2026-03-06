@@ -11,10 +11,7 @@ properties:
   - timeline:
     field: proposal.timeline
   - engagement:
-      linkTo: Engagement.id.proposals
-  - serviceOffering:
-      linkTo: ServiceOffering
-      uniLink: true
+    linkTo: Engagement.id.proposals
 viewProperties:
   "Name":
     jsonata: name

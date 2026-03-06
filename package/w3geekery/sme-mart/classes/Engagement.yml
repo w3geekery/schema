@@ -14,24 +14,18 @@ properties:
     field: engagement.timeline
   - engagementTag:
     field: engagement.engagementTag
-  - boundary:
-      linkTo: Boundary
-      uniLink: true
-  - masterTask:
-      linkTo: Task
-      uniLink: true
   - proposals:
-      linkTo: Proposal
-      multi: true
+    linkTo: Proposal.id.engagement
+    multi: true
   - reviews:
-      linkTo: Review
-      multi: true
+    linkTo: Review.id.engagement
+    multi: true
   - notes:
-      linkTo: Note
-      multi: true
+    linkTo: Note.id.engagement
+    multi: true
   - documents:
-      linkTo: SmeMartDocument
-      multi: true
+    linkTo: SmeMartDocument.id.engagement
+    multi: true
 viewProperties:
   "Name":
     jsonata: name

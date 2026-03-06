@@ -5,10 +5,7 @@ properties:
   - documentType:
     field: document.documentType
   - engagement:
-      linkTo: Engagement.id.documents
-  - relatedTask:
-      linkTo: Task
-      uniLink: true
+    linkTo: Engagement.id.documents
 viewProperties:
   "Name":
     jsonata: name

@@ -9,10 +9,7 @@ properties:
   - status:
     field: review.status
   - engagement:
-      linkTo: Engagement.id.reviews
-  - approvalTask:
-      linkTo: Task
-      uniLink: true
+    linkTo: Engagement.id.reviews
 viewProperties:
   "Name":
     jsonata: name
