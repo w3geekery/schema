@@ -28,8 +28,8 @@ properties:
     field: engagement.wizardStep
   - wizardData:
     field: engagement.wizardData
-  - proposals:
-    linkTo: Proposal.id.engagement
+  - bids:
+    linkTo: Bid.id.engagement
     multi: true
   - reviews:
     linkTo: Review.id.engagement

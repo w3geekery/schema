@@ -1,5 +1,5 @@
-description: Status of a proposal
-displayName: Proposal Status
+description: Status of a bid
+displayName: Bid Status
 values:
   - pending: 'Submitted, awaiting buyer review'
   - accepted: 'Accepted by the buyer'

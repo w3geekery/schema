@@ -4,7 +4,7 @@
 
 ## Overview
 
-AuditgraphDB schema for **SME Mart** — W3Geekery's marketplace for Subject Matter Experts. Defines entity classes, fields, enums, and links for the engagement lifecycle: RFP creation, proposals, reviews, notes, documents, and service offerings.
+AuditgraphDB schema for **SME Mart** — W3Geekery's marketplace for Subject Matter Experts. Defines entity classes, fields, enums, and links for the engagement lifecycle: RFP creation, bids, reviews, notes, documents, and service offerings.
 
 **Package:** `@zerobias-org/schema-w3geekery-sme-mart`
 **Catalog:** `w3geekery.sme-mart.schema`
@@ -15,12 +15,12 @@ AuditgraphDB schema for **SME Mart** — W3Geekery's marketplace for Subject Mat
 
 ```
 Engagement (extends Object)
-  |-- proposals --> Proposal[]
+  |-- bids --> Bid[]
   |-- reviews --> Review[]
   |-- notes --> Note[]
   |-- documents --> SmeMartDocument[]
   |
-  Proposal (extends Object) --> engagement
+  Bid (extends Object) --> engagement
   Review (extends Object) --> engagement
   Note (extends Object) --> engagement, folder
   NoteFolder (extends Object) --> parent/children (self-ref), notes
@@ -33,7 +33,7 @@ Engagement (extends Object)
 | Class | Base | Purpose |
 |-------|------|---------|
 | `Engagement` | Object | Buyer RFP / engagement — full lifecycle from draft to completed |
-| `Proposal` | Object | Vendor response to an RFP |
+| `Bid` | Object | Vendor response/bid to an RFP |
 | `Review` | Object | Post-engagement provider rating |
 | `ServiceOffering` | Object | Provider catalog listing |
 | `Note` | Object | Rich-text engagement note |
@@ -47,7 +47,7 @@ Engagement (extends Object)
 | `engagement.status` | draft, open, in_progress, completed, cancelled |
 | `engagement.budgetType` | fixed, hourly, retainer, negotiable, not_specified |
 | `document.documentType` | security_requirements, sow, budget, legal_terms, compliance, functional_spec, evaluation, privacy, federal_provisions, other |
-| `proposal.status` | pending, accepted, rejected, withdrawn |
+| `bid.status` | pending, accepted, rejected, withdrawn |
 | `review.status` | pending_approval, approved, rejected |
 | `serviceOffering.pricingType` | fixed, hourly, subscription, custom |
 
@@ -58,17 +58,18 @@ Engagement (extends Object)
 | `Engagement` not `WorkRequest` | Aligns with UI/Brian terminology. GQL queries read as `query { Engagement { ... } }` |
 | `SmeMartDocument` not `Document` | Avoids collision with platform `Document` type |
 | Extends `Object` (not `Element`) | Element = formal document parts (laws, standards). Wrong for marketplace entities |
-| `open` status (not `published`) | Matches Neon DB, UI language, and Plan 032. "Open" = accepting proposals |
+| `open` status (not `published`) | Matches Neon DB, UI language, and Plan 032. "Open" = accepting bids |
 | `File` base for documents | Platform File provides fileVersionId, size, mimeType, downloadUrl |
 | RFP requirements = ZB Tasks | After wizard publish, requirements become real ZB Tasks with child_of links. No separate GQL entity needed |
 | Wizard state in `wizardData` | JSON blob on Engagement for draft persistence. Cleared on publish |
+| `Bid` not `Proposal` | Brian directive (2026-03-06): "Proposal" removed from vocabulary. Vendor response = **Bid** |
 
 ## RFP Wizard Fields (Plan 032)
 
 The Engagement class includes fields specifically for the RFP creation wizard:
 
 - `budgetType` — pricing model (fixed/hourly/retainer/negotiable)
-- `responseDeadline` — vendor proposal deadline
+- `responseDeadline` — vendor bid deadline
 - `questionsDeadline` — vendor questions deadline
 - `confidentialityRequirements` — NDA/data handling text
 - `evaluationCriteria` — JSON: weighted scoring per domain (SECURITY, COMPLIANCE, etc.)
@@ -108,38 +109,16 @@ RFP requirements decompose into 6 typed domains (global ZB platform tags, not sc
 ## Development
 
 ```bash
-# Validate schema (always run after changes)
+# Validate YAML schema (always run after changes)
 cd package/w3geekery/sme-mart
-npm run validate
+npm run verify:yaml
+
+# Full verification (YAML + dataloader against scratch DB)
+npm run verify
+
+# Rebuild scratch DB baseline (after platform updates)
+npm run update-db
 ```
-
-### Dataloader Verification (Required After Schema Changes)
-
-After any changes to classes, fields, or enums, you MUST run the dataloader against the scratch DB to verify the schema loads correctly.
-
-```bash
-# 1. Start scratch DB (Docker — pre-built image with PG13 + plv8 + platform schema)
-docker run -d --name zb-scratch-db -p 5432:5432 zb-scratch-db:sme-mart-loaded
-
-# 2. If no saved image, use the base image and apply schema:
-docker run -d --name zb-scratch-db -p 5432:5432 zb-scratch-db:ready
-
-# 3. Install dataloader globally (if not already)
-npm i -g @zerobias-com/platform-dataloader
-
-# 4. Run dataloader against scratch DB from schema package dir
-cd package/w3geekery/sme-mart
-dataloader
-
-# 5. Verify — should complete without errors
-```
-
-**Docker images:**
-- `zb-scratch-db:ready` — base PG13 + plv8 with platform schema loaded
-- `zb-scratch-db:sme-mart-loaded` — base + SME Mart schema already applied
-- Base image: `sarumont/postgres-plus:latest` (AMD64 only, Rosetta on Apple Silicon)
-
-**Dataloader package:** `@zerobias-com/platform-dataloader` (binary: `dataloader`, v1.0.69+)
 
 ## Deployment
 
@@ -152,3 +131,4 @@ Schema merges to `dev`/`qa`/`main` in `zerobias-org/schema` trigger automatic da
 - **CDPH RFP analysis:** `app/.claude/notes/cdph-rfp-analysis.md`
 - **Migration plan:** `app/.claude/plans/local/034-gql-schema-migration.md`
 - **RFP wizard plan:** `app/.claude/plans/local/032-rfp-creation-wizard.md`
+- **Scratch DB setup:** `app/.claude/notes/scratch-db-setup-steps.md`

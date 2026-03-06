@@ -1,17 +1,17 @@
-description: "A vendor's response to an engagement/RFP"
+description: "A vendor's bid/response to an engagement/RFP"
 extends:
   - Object
 properties:
   - coverLetter:
-    field: proposal.coverLetter
+    field: bid.coverLetter
   - price:
-    field: proposal.price
+    field: bid.price
   - status:
-    field: proposal.status
+    field: bid.status
   - timeline:
-    field: proposal.timeline
+    field: bid.timeline
   - engagement:
-    linkTo: Engagement.id.proposals
+    linkTo: Engagement.id.bids
 viewProperties:
   "Name":
     jsonata: name
