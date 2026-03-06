@@ -12,7 +12,12 @@
   },
   "scripts": {
     "correct:deps": "tsx ../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../scripts/validate.ts"
+    "validate": "tsx ../../../scripts/validate.ts",
+    "verify": "bash scripts/verify-schema.sh --clean",
+    "verify:keep": "bash scripts/verify-schema.sh",
+    "verify:yaml": "bash scripts/verify-schema.sh --yaml",
+    "update-db": "bash scripts/update-scratch-db.sh",
+    "update-db:skip": "bash scripts/update-scratch-db.sh --skip-update"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

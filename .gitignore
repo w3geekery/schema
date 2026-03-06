@@ -86,3 +86,6 @@ scripts/clean**
 
 # Generated TS interface packages (created during prepublish, published separately)
 **/ts/
+
+# Scratch DB dumps (pg_dump output for local schema verification)
+**/.scratch-db/
