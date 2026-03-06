@@ -6,6 +6,8 @@ properties:
     field: engagement.category
   - status:
     field: engagement.status
+  - budgetType:
+    field: engagement.budgetType
   - budgetMin:
     field: engagement.budgetMin
   - budgetMax:
@@ -14,6 +16,18 @@ properties:
     field: engagement.timeline
   - engagementTag:
     field: engagement.engagementTag
+  - responseDeadline:
+    field: engagement.responseDeadline
+  - questionsDeadline:
+    field: engagement.questionsDeadline
+  - confidentialityRequirements:
+    field: engagement.confidentialityRequirements
+  - evaluationCriteria:
+    field: engagement.evaluationCriteria
+  - wizardStep:
+    field: engagement.wizardStep
+  - wizardData:
+    field: engagement.wizardData
   - proposals:
     linkTo: Proposal.id.engagement
     multi: true
@@ -36,3 +50,6 @@ viewProperties:
   "Category":
     jsonata: category
     sort: category
+  "Budget Type":
+    jsonata: budgetType
+    sort: budgetType

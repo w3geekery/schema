@@ -1,0 +1,3 @@
+description: 'JSON-encoded weighted scoring criteria per domain'
+displayName: 'Evaluation Criteria'
+type: string
