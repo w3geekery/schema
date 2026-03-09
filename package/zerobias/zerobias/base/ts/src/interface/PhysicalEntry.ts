@@ -15,11 +15,11 @@ export interface PhysicalEntry extends Asset, Resource, Object, Component {
   /** Maximum capacity or occupancy limit */
   capacity?: number;
   /** The external ID that defines this object for joining purposes */
-  schedules?: string | Array<string>;
+  zone?: string;
   /** The external ID that defines this object for joining purposes */
-  app?: string;
+  schedules?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   site?: string;
   /** The external ID that defines this object for joining purposes */
-  zone?: string;
+  app?: string;
 }

@@ -12,7 +12,7 @@ export interface TrainingCampaign extends Campaign, Object {
   /** Date of Completion expressed according ISO 8601/RFC 3339 */
   endDate?: Date;
   /** The external ID that defines this object for joining purposes */
-  modules?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   groups?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  modules?: string | Array<string>;
 }

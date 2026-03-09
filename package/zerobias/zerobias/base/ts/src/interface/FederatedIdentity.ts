@@ -21,11 +21,11 @@ export interface FederatedIdentity extends Principal, Object {
   /** The subject of an OAUTH claim or user */
   sub?: string;
   /** The external ID that defines this object for joining purposes */
-  account?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  devices?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   idp: string;
   /** The external ID that defines this object for joining purposes */
+  account?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
   person?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  devices?: string | Array<string>;
 }

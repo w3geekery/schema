@@ -5,7 +5,7 @@ import { Object } from "../interface/Object";
 
 export interface SourceCodeMgmtFinding extends Finding, Object {
   /** The external ID that defines this object for joining purposes */
-  branch?: string;
-  /** The external ID that defines this object for joining purposes */
   pullRequest?: string;
+  /** The external ID that defines this object for joining purposes */
+  branch?: string;
 }

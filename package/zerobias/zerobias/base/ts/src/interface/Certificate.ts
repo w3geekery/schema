@@ -9,8 +9,6 @@ import { Object } from "../interface/Object";
 export interface Certificate extends Asset, Component, Object {
   /** A TLS signature algorithm */
   signatureAlgorithm?: TlsSignatureAlgorithmDef;
-  /** Enumeration store for the current status of an Certificate */
-  status?: CertificateStatus;
   /** The time at which the certificate was issued */
   timeIssued?: Date;
   /** Validity start date-time */
@@ -19,6 +17,8 @@ export interface Certificate extends Asset, Component, Object {
   validTo?: Date;
   /** An asymmetric key info, including an algorithm, number of bits, and possibly the keys themselves */
   asymmetricKey?: TlsAsymmetricKeyInfo;
+  /** Enumeration store for the current status of an Certificate */
+  status?: CertificateStatus;
   /** Certificate Thumbprint */
   thumbprint?: string;
   /** Subject alternative name */

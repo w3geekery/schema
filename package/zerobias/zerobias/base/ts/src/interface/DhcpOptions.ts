@@ -8,8 +8,6 @@ import { Object } from "../interface/Object";
 export interface DhcpOptions extends Object {
   /** the offset of the client's subnet in seconds from Coordinated Universal Time (UTC) */
   timeOffset?: number;
-  /** Specifies the Network Basic Input/Output System (NetBIOS) node type */
-  netBiosNodeType?: NetBiosNodeType;
   /** The subnet mask option specifies the client's subnet mask as per RFC 950 */
   netmask?: IpAddress;
   /** IP addresses for routers on the client's subnet */
@@ -24,10 +22,12 @@ export interface DhcpOptions extends Object {
   tftpServer?: IpAddress;
   /** IP addresses for NETBIOS name servers */
   netBiosNameServers?: IpAddress | Array<IpAddress>;
-  /** An item in an IP routing table */
-  staticRoutes?: IpRoute | Array<IpRoute>;
   /** The domain name that client should use when resolving hostnames via DNS */
   domainName?: string | Array<string>;
+  /** Specifies the Network Basic Input/Output System (NetBIOS) node type */
+  netBiosNodeType?: NetBiosNodeType;
+  /** An item in an IP routing table */
+  staticRoutes?: IpRoute | Array<IpRoute>;
   /** The external ID that defines this object for joining purposes */
   dhcpNetworks?: string | Array<string>;
 }

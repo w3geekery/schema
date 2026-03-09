@@ -51,16 +51,16 @@ export interface Repository extends Component, Object {
   licenseSpdxId?: string;
   /** Number of repository forks */
   forkCount?: number;
+  /** The external ID that defines this object for joining purposes */
+  labels?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  owner: string;
   /** List of permissions for a given principal and resource */
   user?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
+  /** The external ID that defines this object for joining purposes */
+  branches?: string | Array<string>;
   /** List of permissions for a given principal and resource */
   group?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
   /** The external ID that defines this object for joining purposes */
   pullRequests?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  owner: string;
-  /** The external ID that defines this object for joining purposes */
-  branches?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  labels?: string | Array<string>;
 }

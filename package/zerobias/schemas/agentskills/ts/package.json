@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-zerobias-schemas-agentskills-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "typescript interfaces for @zerobias-org/schema-zerobias-schemas-agentskills schemas",
   "author": "team@neverfail.com",
   "license": "ISC",

@@ -5,7 +5,7 @@ import { Object } from "../interface/Object";
 
 export interface Mitigation extends Element, Object {
   /** The external ID that defines this object for joining purposes */
-  techniques?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   countermeasures?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  techniques?: string | Array<string>;
 }

@@ -18,20 +18,20 @@ export interface Account extends Principal, Object {
   privileged?: boolean;
   /** True if the user has enabled multi-factor authentication */
   mfaEnabled?: boolean;
-  /** List of permissions for a given principal and resource */
-  permission?: PermissionSet;
   /** Authentication Mechanism */
   authType?: AuthType | Array<AuthType>;
-  /** Type of a user or system account inside an application */
-  type?: AccountType;
+  /** List of permissions for a given principal and resource */
+  permission?: PermissionSet;
   /** The login for the entity */
   login?: string;
   /** Account Access Level */
   accessLevel?: AccessLevel;
-  /** The external ID that defines this object for joining purposes */
-  identity?: string | Array<string>;
+  /** Type of a user or system account inside an application */
+  type?: AccountType;
   /** List of permissions for a given principal and resource */
   app?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
+  /** The external ID that defines this object for joining purposes */
+  identity?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   person?: string | Array<string>;
 }

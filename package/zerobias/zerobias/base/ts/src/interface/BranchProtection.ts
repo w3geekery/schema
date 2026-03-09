@@ -30,9 +30,9 @@ export interface BranchProtection extends Object {
   /** Allow Fork Syncing */
   allowForkSyncing?: string;
   /** The external ID that defines this object for joining purposes */
+  bypassPullRequestAllowances?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
   restrictions?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   branches?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  bypassPullRequestAllowances?: string | Array<string>;
 }

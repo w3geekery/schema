@@ -16,7 +16,7 @@ export interface Role extends Principal, Object {
   /** Access level classification for roles */
   accessLevel?: Role_accessLevel;
   /** The external ID that defines this object for joining purposes */
-  assignees?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   app?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  assignees?: string | Array<string>;
 }

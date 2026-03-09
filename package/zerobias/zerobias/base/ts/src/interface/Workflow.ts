@@ -4,9 +4,9 @@ import { Object } from "../interface/Object";
 
 export interface Workflow extends Object {
   /** The external ID that defines this object for joining purposes */
-  initialStep?: string;
-  /** The external ID that defines this object for joining purposes */
   workflowApplication?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  initialStep?: string;
   /** The external ID that defines this object for joining purposes */
   workflowTicket?: string | Array<string>;
 }

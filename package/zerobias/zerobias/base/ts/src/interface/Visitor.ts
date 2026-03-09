@@ -23,11 +23,11 @@ export interface Visitor extends Person, Principal, Party, Object, Contact, Loca
   /** Company or organization the visitor represents */
   company?: string;
   /** The external ID that defines this object for joining purposes */
-  allowedAreas?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  visitorPass?: string;
+  app?: string;
   /** The external ID that defines this object for joining purposes */
   host?: string;
   /** The external ID that defines this object for joining purposes */
-  app?: string;
+  allowedAreas?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  visitorPass?: string;
 }

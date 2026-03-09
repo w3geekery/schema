@@ -14,9 +14,9 @@ export interface Volume extends Asset, CryptoDevice, Object, Component {
   /** Block device */
   blockDevice?: BlockDevice | Array<BlockDevice>;
   /** The external ID that defines this object for joining purposes */
-  availabilityZone?: string;
-  /** The external ID that defines this object for joining purposes */
   snapshots?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  availabilityZone?: string;
   /** Block device */
   virtualMachine?: string | T3_BlockDevice;
 }

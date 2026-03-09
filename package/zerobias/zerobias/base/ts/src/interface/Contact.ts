@@ -11,6 +11,8 @@ export interface Contact extends Location, Object {
   preferredLanguage?: LanguageDef | Array<LanguageDef>;
   /** A valid email */
   email?: Email | Array<Email>;
+  /** Object store for a phone number: includes the number and phone type */
+  phoneInfo?: PhoneInfo | Array<PhoneInfo>;
   /** Mail Info */
   mailInfo?: MailInfo | Array<MailInfo>;
   /** Prefix name for a person */
@@ -35,6 +37,4 @@ export interface Contact extends Location, Object {
   positionTitle?: string | Array<string>;
   /** Name of a department for a business, or other entity */
   department?: string;
-  /** Object store for a phone number: includes the number and phone type */
-  phoneInfo?: PhoneInfo | Array<PhoneInfo>;
 }

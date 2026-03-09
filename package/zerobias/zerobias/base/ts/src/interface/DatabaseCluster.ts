@@ -9,7 +9,7 @@ export interface DatabaseCluster extends Asset, NetworkService, Component, Objec
   /** The external ID that defines this object for joining purposes */
   snapshots?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  databases?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   dbms?: string;
+  /** The external ID that defines this object for joining purposes */
+  databases?: string | Array<string>;
 }

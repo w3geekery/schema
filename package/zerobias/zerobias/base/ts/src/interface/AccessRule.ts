@@ -4,11 +4,11 @@ import { Object } from "../interface/Object";
 
 export interface AccessRule extends Object {
   /** The external ID that defines this object for joining purposes */
-  actions?: string | Array<string>;
+  principals?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   apps?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  principals?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   resources?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  actions?: string | Array<string>;
 }

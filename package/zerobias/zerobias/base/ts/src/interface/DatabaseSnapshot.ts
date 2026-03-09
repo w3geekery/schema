@@ -7,7 +7,7 @@ export interface DatabaseSnapshot extends Backup, Object {
   /** The external ID that defines this object for joining purposes */
   database?: string;
   /** The external ID that defines this object for joining purposes */
-  cluster?: string;
-  /** The external ID that defines this object for joining purposes */
   dbms?: string;
+  /** The external ID that defines this object for joining purposes */
+  cluster?: string;
 }

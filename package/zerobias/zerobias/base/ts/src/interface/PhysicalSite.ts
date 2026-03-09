@@ -8,9 +8,9 @@ export interface PhysicalSite extends Location, Object {
   /** A time zone name */
   timeZone?: TimeZoneDef;
   /** The external ID that defines this object for joining purposes */
+  app?: string;
+  /** The external ID that defines this object for joining purposes */
   zones?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   entries?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  app?: string;
 }

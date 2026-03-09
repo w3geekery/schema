@@ -13,6 +13,8 @@ export interface Branch extends Object {
   /** Boolean value indicating whether branch protection is enabled */
   protected?: boolean;
   /** The external ID that defines this object for joining purposes */
+  findings?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
   outPullRequest?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   owner: string;
@@ -20,8 +22,6 @@ export interface Branch extends Object {
   repo: string;
   /** The external ID that defines this object for joining purposes */
   protection?: string;
-  /** The external ID that defines this object for joining purposes */
-  findings?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   inPullRequest?: string | Array<string>;
 }

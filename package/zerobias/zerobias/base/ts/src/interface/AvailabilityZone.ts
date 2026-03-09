@@ -12,9 +12,9 @@ export interface AvailabilityZone extends Object {
   /** A Cloud Region Code */
   region?: CloudRegionDef;
   /** The external ID that defines this object for joining purposes */
-  service?: string;
-  /** The external ID that defines this object for joining purposes */
   networks?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  service?: string;
   /** The external ID that defines this object for joining purposes */
   inventoryItems?: string | Array<string>;
 }

@@ -11,8 +11,8 @@ export interface Firewall extends Asset, Component, Object {
   inRules?: Firewall_rule | Array<Firewall_rule>;
   /** Firewall Rule */
   outRules?: Firewall_rule | Array<Firewall_rule>;
-  /** The external ID that defines this object for joining purposes */
-  environment?: string;
   /** Describes relationship between a Router and Network */
   networks?: string | Array<string> | T3_RouterAssociation | Array<T3_RouterAssociation>;
+  /** The external ID that defines this object for joining purposes */
+  environment?: string;
 }

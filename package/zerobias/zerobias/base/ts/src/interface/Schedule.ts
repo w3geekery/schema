@@ -14,11 +14,11 @@ export interface Schedule extends Configuration, Object {
   /** The date and time this item is valid until */
   expirationDate?: Date;
   /** The external ID that defines this object for joining purposes */
-  entries?: string | Array<string>;
+  app?: string;
   /** The external ID that defines this object for joining purposes */
   credentials?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  zones?: string | Array<string>;
+  entries?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  app?: string;
+  zones?: string | Array<string>;
 }

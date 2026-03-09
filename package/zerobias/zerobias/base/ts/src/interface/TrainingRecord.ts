@@ -16,11 +16,11 @@ export interface TrainingRecord extends Object {
   /** Training Record Enrollment Status */
   enrollmentStatus?: EnrollmentStatus;
   /** The external ID that defines this object for joining purposes */
-  person?: string;
-  /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */
   module?: string;
   /** The external ID that defines this object for joining purposes */
   account?: string;
+  /** The external ID that defines this object for joining purposes */
+  person?: string;
 }
