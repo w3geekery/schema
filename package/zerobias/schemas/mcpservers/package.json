@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-zerobias-schemas-mcpservers",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.1",
   "description": "Schema for MCP Server and Tool definitions from the Model Context Protocol ecosystem",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
-    "@zerobias-org/product-zerobias-schemas-mcpservers": "file:../../../../../../../org/product/package/zerobias/schemas/mcpservers",
+    "@zerobias-org/product-zerobias-schemas-mcpservers": "latest",
     "@zerobias-org/schema-zerobias-zerobias-base": "latest"
   },
   "zerobias": {

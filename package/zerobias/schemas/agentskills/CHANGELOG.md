@@ -3,7 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## <small>1.0.3-rc.0 (2026-03-09)</small>
+## <small>1.0.4 (2026-03-09)</small>
+
+* chore(release): bump version ([5cf92ec](https://github.com/zerobias-org/schema/commit/5cf92ec))
+
+
+
+
+
+## <small>1.0.3 (2026-03-09)</small>
 
 **Note:** Version bump only for package @zerobias-org/schema-zerobias-schemas-agentskills
 
