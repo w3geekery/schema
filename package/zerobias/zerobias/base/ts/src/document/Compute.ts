@@ -5,18 +5,18 @@ import { ComputeCpuArchitecture } from "../enum/ComputeCpuArchitecture";
 export interface Compute {
   /** The architecture of the CPU. */
   cpuArchitecture?: ComputeCpuArchitecture;
+  /** CPU Vendor */
+  cpuVendor?: string;
+  /** CPU Model */
+  cpuModel?: string;
+  /** Socket count */
+  socket?: number;
+  /** CPU Clock (MHz) */
+  cpuMHz?: number;
   /** CPU Logical Core count */
   cpuCoresLogical?: number;
   /** CPU Physical Core count */
   cpuCoresPhysical?: number;
-  /** CPU Clock (MHz) */
-  cpuMHz?: number;
-  /** CPU Model */
-  cpuModel?: string;
-  /** CPU Vendor */
-  cpuVendor?: string;
   /** CPU RAM in */
   memTotalkB?: number;
-  /** Socket count */
-  socket?: number;
 }

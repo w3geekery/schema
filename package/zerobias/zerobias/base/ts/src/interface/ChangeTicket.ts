@@ -16,7 +16,7 @@ export interface ChangeTicket extends WorkflowTicket, Ticket, Object {
   /** Change Approval Type of roles required to approve a change in a given workflow */
   approval?: ChangeApprovalType | Array<ChangeApprovalType>;
   /** The external ID that defines this object for joining purposes */
-  changeStep?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   ticketingSystem?: string;
+  /** The external ID that defines this object for joining purposes */
+  changeStep?: string | Array<string>;
 }

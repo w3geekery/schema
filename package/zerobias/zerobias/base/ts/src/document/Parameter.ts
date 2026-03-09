@@ -4,19 +4,19 @@ import { ParameterApplyType } from "../enum/ParameterApplyType";
 
 export interface Parameter {
   /** The name of the parameter, registry key, environment variable, etc */
-  allowedValues?: string | Array<string>;
-  /** True if a static parameter has been changed but the value not yet applied */
-  applyPending?: boolean;
-  /** Whether a configuration parameter can be udpated immediately or if a restart is required */
-  applyType?: ParameterApplyType;
-  /** The (vendor-specific) data type of this parameter */
-  dataType?: string;
+  name?: string;
   /** The description of the parameter, registry key, environment variable, etc */
   description?: string;
-  /** True if a parameter allows changes or not */
-  mutable?: boolean;
-  /** The name of the parameter, registry key, environment variable, etc */
-  name?: string;
   /** The origin/source/template from which this parameter was derived */
   source?: string;
+  /** The (vendor-specific) data type of this parameter */
+  dataType?: string;
+  /** Whether a configuration parameter can be udpated immediately or if a restart is required */
+  applyType?: ParameterApplyType;
+  /** True if a static parameter has been changed but the value not yet applied */
+  applyPending?: boolean;
+  /** The name of the parameter, registry key, environment variable, etc */
+  allowedValues?: string | Array<string>;
+  /** True if a parameter allows changes or not */
+  mutable?: boolean;
 }

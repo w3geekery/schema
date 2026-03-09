@@ -8,9 +8,9 @@ export interface WebGatewayResource extends Object {
   /** The external ID that defines this object for joining purposes */
   operations?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  gateway?: string;
-  /** The external ID that defines this object for joining purposes */
   parent?: string;
   /** The external ID that defines this object for joining purposes */
   subPaths?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  gateway?: string;
 }

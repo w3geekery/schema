@@ -5,7 +5,7 @@ import { Principal } from "../interface/Principal";
 
 export interface SourceCodeMgmtPrincipal extends Principal, Object {
   /** The external ID that defines this object for joining purposes */
-  branchProtectionBypass?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   branchProtectionRestricted?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  branchProtectionBypass?: string | Array<string>;
 }

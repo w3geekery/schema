@@ -47,15 +47,9 @@ export class CAPEC implements Object {
   /** Severity/magnitude of a risk, incident, bug, or vulnerability */
   typicalSeverity?: SeverityDef;
   /** The external ID that defines this object for joining purposes */
-  parent?: string;
+  canPrecede?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  children?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  canAlsoBe?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  similarTo?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
-  weaknesses?: string | Array<string>;
+  canFollow?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   categories?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
@@ -63,9 +57,15 @@ export class CAPEC implements Object {
   /** The external ID that defines this object for joining purposes */
   peers?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  canPrecede?: string | Array<string>;
+  canAlsoBe?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  canFollow?: string | Array<string>;
+  similarTo?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  parent?: string;
+  /** The external ID that defines this object for joining purposes */
+  children?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  weaknesses?: string | Array<string>;
 
   /** @deprecated Please use Object Literal instead `var foo = { foo: "foo"}` */
   constructor(_id: string, _name: string) {

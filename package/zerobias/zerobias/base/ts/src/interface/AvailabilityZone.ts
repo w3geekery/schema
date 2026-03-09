@@ -14,7 +14,7 @@ export interface AvailabilityZone extends Object {
   /** The external ID that defines this object for joining purposes */
   service?: string;
   /** The external ID that defines this object for joining purposes */
-  inventoryItems?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   networks?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  inventoryItems?: string | Array<string>;
 }

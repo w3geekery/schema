@@ -13,7 +13,7 @@ export interface BackupProfile extends Object {
   /** A set of hardware, software, and/or firmware that implements approved security functions (including cryptographic algorithms and key generation). */
   cryptoModule?: CryptoModule;
   /** The external ID that defines this object for joining purposes */
-  backupApp?: string;
-  /** The external ID that defines this object for joining purposes */
   backupJobs?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  backupApp?: string;
 }

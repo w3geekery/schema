@@ -8,16 +8,16 @@ import { Object } from "../interface/Object";
 export interface Campaign extends Object {
   /** Enumeration store for the current status of an Campaign */
   status?: CampaignStatus;
-  /** The date when the event, ticket, or task started */
-  startDate?: Date;
-  /** Date of Completion expressed according ISO 8601/RFC 3339 */
-  endDate?: Date;
-  /** The way to determine an interval */
-  durationType?: DurationType;
   /** Duration of the campaign */
   duration?: Duration;
   /** Automatically enroll users that are added to the Campaign */
   autoEnroll?: boolean;
   /** Allow courses to be done multiple times */
   allowMultiEnroll?: boolean;
+  /** The date when the event, ticket, or task started */
+  startDate?: Date;
+  /** Date of Completion expressed according ISO 8601/RFC 3339 */
+  endDate?: Date;
+  /** The way to determine an interval */
+  durationType?: DurationType;
 }

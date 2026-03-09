@@ -7,9 +7,9 @@ import { Object } from "../interface/Object";
 
 export interface ITAssetManagement extends Application, Asset, Component, Object {
   /** The external ID that defines this object for joining purposes */
-  assets?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   vendors?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  assets?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   users?: string | Array<string>;
 }

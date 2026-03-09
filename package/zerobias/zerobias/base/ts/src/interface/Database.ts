@@ -9,7 +9,7 @@ export interface Database extends Asset, NetworkService, Component, Object {
   /** The external ID that defines this object for joining purposes */
   snapshots?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  dbms?: string;
-  /** The external ID that defines this object for joining purposes */
   cluster?: string;
+  /** The external ID that defines this object for joining purposes */
+  dbms?: string;
 }

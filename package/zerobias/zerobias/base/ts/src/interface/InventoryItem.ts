@@ -9,15 +9,15 @@ export interface InventoryItem extends Object {
   /** The quantity */
   qty?: number;
   /** The external ID that defines this object for joining purposes */
-  location?: string;
+  assets?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  cloudService?: string;
+  /** The external ID that defines this object for joining purposes */
+  environment?: string;
   /** The external ID that defines this object for joining purposes */
   availabilityZone?: string;
   /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */
-  environment?: string;
-  /** The external ID that defines this object for joining purposes */
-  cloudService?: string;
-  /** The external ID that defines this object for joining purposes */
-  assets?: string | Array<string>;
+  location?: string;
 }

@@ -7,26 +7,26 @@ import { OperationalStatus } from "../enum/OperationalStatus";
 export interface IpRoute {
   /** IP addresses for destination network */
   destination?: IpAddress;
-  /** The type of location */
-  flags?: IpRouteFlag | Array<IpRouteFlag>;
   /** Gateway address or undefined if none set */
   gateway?: IpAddress;
   /** The netmask for the destination net */
   genmask?: IpAddress;
-  /** Name of interface where packets will be sent */
-  iface?: string;
-  /** Initial Round Trip Time */
-  irtt?: number;
-  /** Distance to target (in hops) */
-  metric?: number;
+  /** The type of location */
+  flags?: IpRouteFlag | Array<IpRouteFlag>;
   /** Maximum Segment Size for TCP connections */
   mss?: number;
+  /** Default window size for TCP connections */
+  window?: number;
+  /** Initial Round Trip Time */
+  irtt?: number;
+  /** Name of interface where packets will be sent */
+  iface?: string;
+  /** Distance to target (in hops) */
+  metric?: number;
   /** The origin of a route */
   origin?: string;
   /** Current operational state of a resource or interface. */
   status?: OperationalStatus;
-  /** Default window size for TCP connections */
-  window?: number;
 }
 
 export interface T3_IpRoute {

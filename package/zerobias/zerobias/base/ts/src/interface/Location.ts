@@ -9,7 +9,7 @@ export interface Location extends Object {
   /** Physical Location */
   locations?: LocationInfo | Array<LocationInfo>;
   /** The external ID that defines this object for joining purposes */
-  inventoryItems?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   assets?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  inventoryItems?: string | Array<string>;
 }

@@ -8,7 +8,7 @@ import { Object } from "../interface/Object";
 
 export interface BackupApplication extends Application, CryptoDevice, Asset, Component, Object {
   /** The external ID that defines this object for joining purposes */
-  backupJobs?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   backupProfile?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  backupJobs?: string | Array<string>;
 }

@@ -10,8 +10,6 @@ export interface Network extends Object {
   cidr?: Cidr;
   /** Current operational state of a resource or interface. */
   status?: OperationalStatus;
-  /** The external ID that defines this object for joining purposes */
-  dhcpOptions?: string;
   /** Describes relationship between a Router and Network */
   router: string | T3_RouterAssociation;
   /** Describes relationship between a Router and Network */
@@ -20,4 +18,6 @@ export interface Network extends Object {
   availabilityZone?: string;
   /** The external ID that defines this object for joining purposes */
   environment?: string;
+  /** The external ID that defines this object for joining purposes */
+  dhcpOptions?: string;
 }

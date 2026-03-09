@@ -10,11 +10,11 @@ export interface CloudService extends Application, Asset, Component, Object {
   /** A Cloud Provider */
   provider?: CloudProviderDef;
   /** The external ID that defines this object for joining purposes */
-  objectStorage?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   availabilityZones?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  inventoryItems?: string | Array<string>;
+  objectStorage?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   environments?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  inventoryItems?: string | Array<string>;
 }

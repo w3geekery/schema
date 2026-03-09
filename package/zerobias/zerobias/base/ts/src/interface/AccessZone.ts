@@ -12,11 +12,11 @@ export interface AccessZone extends Asset, Resource, Object, Component {
   /** Account Access Level */
   accessLevel?: AccessLevel;
   /** The external ID that defines this object for joining purposes */
-  site?: string;
+  visitors?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   schedules?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  visitors?: string | Array<string>;
+  site?: string;
   /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */

@@ -4,7 +4,7 @@ import { Object } from "../interface/Object";
 
 export interface RepoLabel extends Object {
   /** The external ID that defines this object for joining purposes */
-  pullRequests?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   repo: string;
+  /** The external ID that defines this object for joining purposes */
+  pullRequests?: string | Array<string>;
 }

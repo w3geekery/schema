@@ -15,13 +15,13 @@ export interface Branch extends Object {
   /** The external ID that defines this object for joining purposes */
   outPullRequest?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
-  findings?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   owner: string;
+  /** The external ID that defines this object for joining purposes */
+  repo: string;
   /** The external ID that defines this object for joining purposes */
   protection?: string;
   /** The external ID that defines this object for joining purposes */
-  repo: string;
+  findings?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   inPullRequest?: string | Array<string>;
 }

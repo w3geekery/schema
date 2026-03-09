@@ -10,9 +10,9 @@ export interface ITSMApplication extends Application, Asset, Component, Object {
   /** ITSM Services implemented by Organization */
   service?: ItsmServiceType | Array<ItsmServiceType>;
   /** The external ID that defines this object for joining purposes */
-  providesWorkflow?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   incidentTickets?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  providesWorkflow?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   changeTickets?: string | Array<string>;
 }

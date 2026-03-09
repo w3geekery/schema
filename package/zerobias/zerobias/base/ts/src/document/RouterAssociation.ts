@@ -6,10 +6,10 @@ import { RouterAssociationType } from "../enum/RouterAssociationType";
 export interface RouterAssociation {
   /** Unique ID for this association */
   id?: string;
-  /** Current operational state of a resource or interface. */
-  status?: OperationalStatus;
   /** The type of relationship between a router and subnet */
   type?: RouterAssociationType;
+  /** Current operational state of a resource or interface. */
+  status?: OperationalStatus;
 }
 
 export interface T3_RouterAssociation {

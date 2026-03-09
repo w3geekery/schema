@@ -9,20 +9,20 @@ import { Object } from "../interface/Object";
 export interface AppEnvironment extends Object {
   /** Application installed within Application Environment */
   app?: InstalledApp | Array<InstalledApp>;
-  /** A software mechanism that defines the way that files are named, stored, organized, and accessed on logical volumes of partitioned memory */
-  filesystem?: Filesystem | Array<Filesystem>;
   /** A network interface is the point of interconnection between a computer and a private or public network. A network interface is generally a network interface card (NIC), but does not have to have a physical form. Instead, the network interface can be implemented in software virtualization */
   networkInterface?: NetworkInterface | Array<NetworkInterface>;
-  /** Compute attributes */
-  compute?: Compute;
+  /** A software mechanism that defines the way that files are named, stored, organized, and accessed on logical volumes of partitioned memory */
+  filesystem?: Filesystem | Array<Filesystem>;
   /** Operating System Name */
   osName?: string;
   /** Operating System Version */
   osVersion?: string;
   /** Operating System Edition */
   osEdition?: string;
-  /** The external ID that defines this object for joining purposes */
-  machine?: string;
+  /** Compute attributes */
+  compute?: Compute;
   /** The external ID that defines this object for joining purposes */
   osCpeProduct?: string;
+  /** The external ID that defines this object for joining purposes */
+  machine?: string;
 }

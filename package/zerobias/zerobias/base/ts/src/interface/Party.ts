@@ -10,10 +10,10 @@ import { Object } from "../interface/Object";
 export interface Party extends Contact, Location, Object {
   /** Types of responsible parties */
   partyType?: PartyType;
-  /** Role and role type(s) responsible for a component */
-  responsibleForComponent?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
-  /** Compliance role expressed in responsibility matrix assignments responsbility to processes */
-  workflowStep?: string | T3_PartyRole;
   /** The external ID that defines this object for joining purposes */
   itamApp?: string;
+  /** Compliance role expressed in responsibility matrix assignments responsbility to processes */
+  workflowStep?: string | T3_PartyRole;
+  /** Role and role type(s) responsible for a component */
+  responsibleForComponent?: string | Array<string> | T3_ComponentRole | Array<T3_ComponentRole>;
 }

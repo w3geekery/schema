@@ -10,12 +10,12 @@ export interface ObjectLinkMatchInfo {
   linkClassName?: UUID;
   /** The name (.ie ['accounts', 'members']) of the property on the local object. */
   linkPropertyName?: string;
+  /** Link match type */
+  matchType: Link_matchType;
   /** The id (.ie id of ['id', 'email']) of the property on this side of the link used to create this link. */
   matchPropertyId?: UUID;
   /** The name (.ie ['id', 'email']) of the property on this side of the link used to create this link. */
   matchPropertyName?: string;
-  /** Link match type */
-  matchType: Link_matchType;
   /** The local values that matched, when creating the link. * An array of one element on the link match. i.e. [foo@acme.org] * An array of one element or the original array of values that was used to create the link when `multi`. i.e. [foo@acme.org, bar@acme.org] * An empty array otherwise */
   matchValue?: string;
   /** The id of the object on the other side of this link. This is only set on the remote side of the link. */

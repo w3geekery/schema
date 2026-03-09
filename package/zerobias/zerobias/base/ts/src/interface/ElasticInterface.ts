@@ -10,7 +10,7 @@ export interface ElasticInterface extends Object {
   /** Current operational state of a resource or interface. */
   operationalStatus?: OperationalStatus;
   /** The external ID that defines this object for joining purposes */
-  elasticAddresses?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   virtualMachines?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  elasticAddresses?: string | Array<string>;
 }

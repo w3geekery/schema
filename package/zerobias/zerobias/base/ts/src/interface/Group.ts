@@ -17,7 +17,7 @@ export interface Group extends Principal, Object {
   /** Status of a user or system account inside an application */
   status?: AccountStatus;
   /** List of permissions for a given principal and resource */
-  app?: string | T3_PermissionSet;
-  /** List of permissions for a given principal and resource */
   members?: string | Array<string> | T3_PermissionSet | Array<T3_PermissionSet>;
+  /** List of permissions for a given principal and resource */
+  app?: string | T3_PermissionSet;
 }

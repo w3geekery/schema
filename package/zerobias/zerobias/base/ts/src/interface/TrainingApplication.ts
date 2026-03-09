@@ -7,7 +7,7 @@ import { Object } from "../interface/Object";
 
 export interface TrainingApplication extends Application, Asset, Component, Object {
   /** The external ID that defines this object for joining purposes */
-  trainingModule?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   trainingRecord?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
+  trainingModule?: string | Array<string>;
 }

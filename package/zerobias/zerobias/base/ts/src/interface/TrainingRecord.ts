@@ -20,7 +20,7 @@ export interface TrainingRecord extends Object {
   /** The external ID that defines this object for joining purposes */
   app?: string;
   /** The external ID that defines this object for joining purposes */
-  account?: string;
-  /** The external ID that defines this object for joining purposes */
   module?: string;
+  /** The external ID that defines this object for joining purposes */
+  account?: string;
 }

@@ -7,7 +7,7 @@ export interface ElasticAddress extends Object {
   /** An IPv4 or IPv6 Address */
   ipAddress?: IpAddress;
   /** The external ID that defines this object for joining purposes */
-  environment?: string;
-  /** The external ID that defines this object for joining purposes */
   elasticInterface?: string;
+  /** The external ID that defines this object for joining purposes */
+  environment?: string;
 }

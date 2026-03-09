@@ -21,38 +21,38 @@ export interface PullRequest extends Object {
   commentsUrl?: URL;
   /** URL for the status(es) of an SCM object */
   statusUrl?: URL;
-  /** Pull Request Status */
-  state?: PullRequestState;
   /** Whether a Pull Request is locked or not */
   locked?: boolean;
-  /** Reason why a Pull Request is locked */
-  lockReason?: string;
-  /** Timestamp in RFC339/ISO8601 date-time string when a PR closed */
-  dateClosed?: Date;
-  /** Timestamp in RFC339/ISO8601 date-time string when a PR was merged */
-  dateMerged?: Date;
-  /** SHA digest ID for SCM object */
-  mergeCommitSha?: string;
   /** Whether auto-merge is enabled for a Pull Request */
   autoMerge?: boolean;
   /** Whether a Pull Request is a draft */
   draft?: boolean;
-  /** The external ID that defines this object for joining purposes */
-  reviewer?: string | Array<string>;
+  /** Pull Request Status */
+  state?: PullRequestState;
+  /** Timestamp in RFC339/ISO8601 date-time string when a PR closed */
+  dateClosed?: Date;
+  /** Timestamp in RFC339/ISO8601 date-time string when a PR was merged */
+  dateMerged?: Date;
+  /** Reason why a Pull Request is locked */
+  lockReason?: string;
+  /** SHA digest ID for SCM object */
+  mergeCommitSha?: string;
   /** The external ID that defines this object for joining purposes */
   source: string;
-  /** The external ID that defines this object for joining purposes */
-  reviews?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   assignee?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   repo: string;
   /** The external ID that defines this object for joining purposes */
+  reviewer?: string | Array<string>;
+  /** The external ID that defines this object for joining purposes */
   group?: string;
+  /** The external ID that defines this object for joining purposes */
+  reviews?: string | Array<string>;
   /** The external ID that defines this object for joining purposes */
   findings?: string;
   /** The external ID that defines this object for joining purposes */
-  labels?: string | Array<string>;
-  /** The external ID that defines this object for joining purposes */
   target: string;
+  /** The external ID that defines this object for joining purposes */
+  labels?: string | Array<string>;
 }
