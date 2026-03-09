@@ -1,0 +1,39 @@
+{
+  "name": "@zerobias-org/schema-zerobias-schemas-mcpservers",
+  "version": "1.0.0-rc.1",
+  "description": "Schema for MCP Server and Tool definitions from the Model Context Protocol ecosystem",
+  "author": "team@zerobias.com",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zerobias-org/schema.git",
+    "directory": "package/zerobias/schemas/mcpservers/"
+  },
+  "scripts": {
+    "nx:prepublish": "../../../../scripts/prepublish.sh",
+    "correct:deps": "tsx ../../../../scripts/correctDeps.ts",
+    "validate": "tsx ../../../../scripts/validate.ts"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "classes/**",
+    "catalog.yml"
+  ],
+  "dependencies": {
+    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/product-zerobias-schemas-mcpservers": "file:../../../../../../../org/product/package/zerobias/schemas/mcpservers",
+    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
+  },
+  "zerobias": {
+    "dataloader-version": "1.0.0",
+    "import-artifact": "schema",
+    "package": "zerobias.schemas.mcpservers.schema",
+    "imports": [
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
+    ]
+  }
+}

@@ -169,7 +169,7 @@ For creating schemas from ZeroBias tasks, use the skill:
 /create-schema [task-id]
 ```
 
-See **[.claude/skills/create-schema.md](.claude/skills/create-schema.md)** for the complete workflow.
+See **[.claude/skills/create-schema/SKILL.md](.claude/skills/create-schema/SKILL.md)** for the complete workflow.
 
 ### Quick Reference
 

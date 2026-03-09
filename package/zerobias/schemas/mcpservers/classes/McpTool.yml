@@ -1,0 +1,42 @@
+description: "A tool exposed by an MCP server — a callable function that an AI agent can invoke"
+extends:
+  - Element
+properties:
+  - serverName:
+    field:
+      type: string
+      description: Name of the MCP server that exposes this tool
+
+  - inputSchema:
+    field:
+      type: string
+      description: JSON Schema describing the tool input parameters
+
+  - category:
+    field:
+      type: string
+      description: Functional category of the tool (e.g., read, write, query, manage)
+
+  - isDestructive:
+    field:
+      type: boolean
+      description: Whether this tool performs destructive or write operations
+
+  - requiresAuth:
+    field:
+      type: boolean
+      description: Whether this tool requires authentication credentials
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Server":
+    jsonata: serverName
+    sort: serverName
+  "Category":
+    jsonata: category
+    sort: category
+  "Destructive":
+    jsonata: isDestructive
+    sort: isDestructive

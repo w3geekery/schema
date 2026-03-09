@@ -1,0 +1,91 @@
+description: "A Model Context Protocol (MCP) server that exposes tools, resources, and prompts to AI agents"
+extends:
+  - Element
+properties:
+  - vendor:
+    field:
+      type: string
+      description: Vendor or author of the MCP server (e.g., Amazon, Microsoft, Anthropic)
+
+  - sourceRepo:
+    field:
+      type: string
+      description: GitHub repository URL for the server source code
+
+  - transportTypes:
+    field:
+      type: string
+      description: Supported transport types (e.g., stdio, sse, streamable-http)
+
+  - category:
+    field:
+      type: string
+      description: Functional category (e.g., cloud, database, devtools, ai-ml, messaging)
+
+  - license:
+    field:
+      type: string
+      description: License identifier (e.g., Apache-2.0, MIT)
+
+  - serverVersion:
+    field:
+      type: string
+      description: Version of the MCP server
+
+  - protocolVersion:
+    field:
+      type: string
+      description: MCP protocol version supported
+
+  - authType:
+    field:
+      type: string
+      description: Authentication type required (e.g., api-key, oauth2, iam-role, none)
+
+  - toolCount:
+    field:
+      type: integer
+      description: Number of tools exposed by this server
+
+  - resourceCount:
+    field:
+      type: integer
+      description: Number of resources exposed by this server
+
+  - promptCount:
+    field:
+      type: integer
+      description: Number of prompts exposed by this server
+
+  - isOfficial:
+    field:
+      type: boolean
+      description: Whether this is an official vendor-maintained server
+
+  - packageName:
+    field:
+      type: string
+      description: NPM or distribution package name (e.g., @awslabs/mcp-server-eks)
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Vendor":
+    jsonata: vendor
+    sort: vendor
+  "Category":
+    jsonata: category
+    sort: category
+  "Tools":
+    jsonata: toolCount
+    sort: toolCount
+  "Transport":
+    jsonata: transportTypes
+    sort: transportTypes
+  "Official":
+    jsonata: isOfficial
+    sort: isOfficial
+  "License":
+    jsonata: license
+    sort: license

@@ -1,0 +1,5 @@
+Schema:
+  name: "MCP Servers Schema"
+  package: "zerobias.schemas.mcpservers.schema"
+  description: |-
+    AuditgraphDB schema for Model Context Protocol servers and tools
