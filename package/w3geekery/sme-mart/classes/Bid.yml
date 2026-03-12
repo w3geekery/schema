@@ -10,8 +10,23 @@ properties:
     field: bid.status
   - timeline:
     field: bid.timeline
+  - executiveSummary:
+    field: bid.executiveSummary
+  - teamDescription:
+    field: bid.teamDescription
+  - totalEstimatedHours:
+    field: bid.totalEstimatedHours
+  - pricingBreakdown:
+    field: bid.pricingBreakdown
+  - wizardData:
+    field: bid.wizardData
+  - wizardStep:
+    field: bid.wizardStep
   - engagement:
     linkTo: Engagement.id.bids
+  - responses:
+    linkTo: BidResponse.id.bid
+    multi: true
 viewProperties:
   "Name":
     jsonata: name

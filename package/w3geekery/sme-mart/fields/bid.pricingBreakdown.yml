@@ -1,0 +1,3 @@
+description: 'JSON-encoded pricing breakdown by task type (hours, cost, notes per line item)'
+displayName: 'Pricing Breakdown'
+type: string

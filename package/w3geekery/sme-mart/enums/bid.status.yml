@@ -1,6 +1,7 @@
 description: Status of a bid
 displayName: Bid Status
 values:
+  - draft: 'Initial creation, not yet submitted'
   - pending: 'Submitted, awaiting buyer review'
   - accepted: 'Accepted by the buyer'
   - rejected: 'Rejected by the buyer'

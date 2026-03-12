@@ -1,0 +1,3 @@
+description: 'Compliance status for this requirement'
+displayName: 'Compliance Status'
+type: string

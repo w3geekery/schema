@@ -1,0 +1,29 @@
+description: "A vendor's compliance response to a single RFP requirement"
+extends:
+  - Object
+properties:
+  - requirementId:
+    field: bidResponse.requirementId
+  - complianceStatus:
+    field: bidResponse.complianceStatus
+  - responseText:
+    field: bidResponse.responseText
+  - estimatedHours:
+    field: bidResponse.estimatedHours
+  - estimatedCost:
+    field: bidResponse.estimatedCost
+  - certificationRef:
+    field: bidResponse.certificationRef
+  - readyDate:
+    field: bidResponse.readyDate
+  - bid:
+    linkTo: Bid.id.responses
+viewProperties:
+  "Requirement":
+    jsonata: requirementId
+  "Status":
+    jsonata: complianceStatus
+    sort: complianceStatus
+  "Hours":
+    jsonata: estimatedHours
+    sort: estimatedHours
