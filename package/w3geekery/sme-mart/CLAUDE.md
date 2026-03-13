@@ -44,12 +44,13 @@ Engagement (extends Object)
 
 | Enum | Values |
 |------|--------|
-| `engagement.status` | draft, open, in_progress, completed, cancelled |
-| `engagement.budgetType` | fixed, hourly, retainer, negotiable, not_specified |
-| `document.documentType` | security_requirements, sow, budget, legal_terms, compliance, functional_spec, evaluation, privacy, federal_provisions, other |
-| `bid.status` | pending, accepted, rejected, withdrawn |
-| `review.status` | pending_approval, approved, rejected |
-| `serviceOffering.pricingType` | fixed, hourly, subscription, custom |
+| `engagement.status` | DRAFT, OPEN, IN_PROGRESS, COMPLETED, CANCELLED |
+| `engagement.budgetType` | FIXED, HOURLY, RETAINER, NEGOTIABLE, NOT_SPECIFIED |
+| `document.documentType` | SECURITY_REQUIREMENTS, SOW, BUDGET, LEGAL_TERMS, COMPLIANCE, FUNCTIONAL_SPEC, EVALUATION, PRIVACY, FEDERAL_PROVISIONS, OTHER |
+| `bid.status` | DRAFT, PENDING, ACCEPTED, REJECTED, WITHDRAWN |
+| `bidResponse.complianceStatus` | MET, PARTIALLY_MET, NOT_MET, NOT_APPLICABLE, PLANNED |
+| `review.status` | PENDING_APPROVAL, APPROVED, REJECTED |
+| `serviceOffering.pricingType` | FIXED, HOURLY, SUBSCRIPTION, CUSTOM |
 
 ## Key Design Decisions
 
@@ -131,4 +132,4 @@ Schema merges to `dev`/`qa`/`main` in `zerobias-org/schema` trigger automatic da
 - **CDPH RFP analysis:** `app/.claude/notes/cdph-rfp-analysis.md`
 - **Migration plan:** `app/.claude/plans/local/034-gql-schema-migration.md`
 - **RFP wizard plan:** `app/.claude/plans/local/032-rfp-creation-wizard.md`
-- **Scratch DB setup:** `app/.claude/notes/scratch-db-setup-steps.md`
+- **Scratch DB setup:** Uses `npx @zerobias-org/util-content-dev-schema` (Supabase PG17, port 15432, database content_dev)
