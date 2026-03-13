@@ -110,13 +110,15 @@ Define complex nested object structures.
 ### Enums (`enums/`) - Optional
 Define enumerated value sets.
 
+**IMPORTANT: Enum values MUST be ALL_CAPS** matching `[A-Z][A-Z0-9_]*`. The dataloader enforces this constraint. Lowercase values will fail at load time.
+
 ```yaml
 # enums/team.privacy.yml
 description: The level of privacy this team should have.
 displayName: Privacy
 values:
-  - secret: 'Only visible to organization owners and members of this team.'
-  - closed: 'Visible to all members of this organization.'
+  - SECRET: 'Only visible to organization owners and members of this team.'
+  - CLOSED: 'Visible to all members of this organization.'
 ```
 
 ## Validation
@@ -128,6 +130,11 @@ The validation script checks:
 - `catalog.yml` has `Schema` section with `name`, `package`, `description`
 - `.npmrc` file exists
 - At least one of `classes/`, `interfaces/`, or `fields/` directories exists
+
+**Not currently validated by the script (but enforced by dataloader):**
+- Enum values must be ALL_CAPS (`[A-Z][A-Z0-9_]*`)
+- `.npmrc` must point to `pkg.zerobias.org` (not `npm.pkg.github.com`)
+- Required dependencies and imports must be present
 
 ### Package Naming
 - Package names: `@zerobias-org/schema-{vendor}-{code}`
@@ -145,9 +152,43 @@ The validation script checks:
 6. Validate: `npm run validate`
 
 ### Dependencies
-- Schema packages depend on their product package: `@zerobias-org/product-{vendor}-{code}`
-- Schema packages import platform schema for base classes: `@auditmation/schema-auditmation-auditmation-platform`
-- The `zerobias.imports` array lists schema packages providing base classes
+
+**Required `dependencies` in `package.json`:**
+- `@zerobias-com/schema-zerobias-zerobias-platform`: `"latest"` — platform base classes (`Object`, `File`, etc.)
+- `@zerobias-org/schema-zerobias-zerobias-base`: `"latest"` — base schema classes
+- `@zerobias-org/product-{vendor}-{code}`: `"latest"` — your product package
+
+**Required `zerobias.imports` in `package.json`:**
+- `"zerobias.zerobias.platform.schema"` — always required (provides `Object`, `File`, etc.)
+- `"zerobias.zerobias.base.schema"` — required if extending base schema classes
+
+### Required Scripts
+
+Every schema package must include these scripts in `package.json`:
+
+```json
+"scripts": {
+  "nx:prepublish": "../../../scripts/prepublish.sh",
+  "correct:deps": "tsx ../../../scripts/correctDeps.ts",
+  "validate": "tsx ../../../scripts/validate.ts"
+}
+```
+
+- **`nx:prepublish`**: Generates the `-ts` companion package on publish. Path depth depends on package location (use `../../../` for `package/{vendor}/{code}/`, `../../../../` for deeper nesting).
+- **`correct:deps`**: Fixes dependency declarations.
+- **`validate`**: Validates schema YAML files.
+
+### `.npmrc` Template
+
+All packages must use the ZeroBias Package Registry. Copy this exactly:
+
+```
+@auditlogic:registry=https://pkg.zerobias.org
+@zerobias-org:registry=https://pkg.zerobias.org
+@zerobias-com:registry=https://pkg.zerobias.org
+//pkg.zerobias.org/:always-auth=true
+//pkg.zerobias.org/:_authToken=${ZB_TOKEN}
+```
 
 ## Commit and Versioning
 - Follow Conventional Commits: `<type>(<scope>): <subject>`
