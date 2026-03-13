@@ -18,7 +18,7 @@
     "verify:keep": "bash scripts/verify-schema.sh",
     "verify:yaml": "bash scripts/verify-schema.sh --yaml",
     "update-db": "bash scripts/update-scratch-db.sh",
-    "update-db:skip": "bash scripts/update-scratch-db.sh --skip-update"
+    "update-db:only": "bash scripts/update-scratch-db.sh --db-only"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
