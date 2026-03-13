@@ -63,6 +63,37 @@ else
   fail "YAML validation failed — fix schema errors before running dataloader"
 fi
 
+# ---------------------------------------------------------------------------
+# Step 1b: Enum casing validation (dataloader enforces [A-Z][A-Z0-9_]*)
+# ---------------------------------------------------------------------------
+log "Checking enum values are ALL_CAPS..."
+ENUM_ERRORS=0
+for enum_file in "$PKG_DIR"/enums/*.yml; do
+  [ -f "$enum_file" ] || continue
+  # Extract YAML map keys under 'values:' — enum value names are the keys
+  in_values=false
+  while IFS= read -r line; do
+    if echo "$line" | grep -q '^values:'; then
+      in_values=true
+      continue
+    fi
+    if $in_values; then
+      # Lines like "  - SOME_VALUE: 'description'" — extract the key
+      key=$(echo "$line" | sed -n "s/^[[:space:]]*- \([^:]*\):.*/\1/p")
+      if [ -n "$key" ]; then
+        if ! echo "$key" | grep -qE '^[A-Z][A-Z0-9_]*$'; then
+          warn "Enum value '$key' in $(basename "$enum_file") must be ALL_CAPS (e.g., $(echo "$key" | tr '[:lower:]' '[:upper:]'))"
+          ENUM_ERRORS=$((ENUM_ERRORS + 1))
+        fi
+      fi
+    fi
+  done < "$enum_file"
+done
+if [ "$ENUM_ERRORS" -gt 0 ]; then
+  fail "Found $ENUM_ERRORS enum values that are not ALL_CAPS — dataloader requires [A-Z][A-Z0-9_]*"
+fi
+ok "Enum casing check passed"
+
 if $YAML_ONLY; then
   ok "YAML-only mode — skipping dataloader. Done."
   exit 0

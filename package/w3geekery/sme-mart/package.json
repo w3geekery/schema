@@ -11,6 +11,7 @@
     "directory": "package/w3geekery/sme-mart/"
   },
   "scripts": {
+    "nx:prepublish": "../../../scripts/prepublish.sh",
     "correct:deps": "tsx ../../../scripts/correctDeps.ts",
     "validate": "tsx ../../../scripts/validate.ts",
     "verify": "bash scripts/verify-schema.sh --clean",
@@ -29,14 +30,17 @@
     "catalog.yml"
   ],
   "dependencies": {
-    "@zerobias-com/schema-zerobias-zerobias-platform": "latest"
+    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/product-w3geekery-sme-mart": "latest",
+    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
   },
   "zerobias": {
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
     "package": "w3geekery.sme-mart.schema",
     "imports": [
-      "zerobias.zerobias.platform.schema"
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
     ]
   }
 }

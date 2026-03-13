@@ -1,6 +1,6 @@
 description: Approval status of a review
 displayName: Review Status
 values:
-  - pending_approval: 'Submitted, awaiting admin approval'
-  - approved: 'Approved and visible'
-  - rejected: 'Rejected by admin'
+  - PENDING_APPROVAL: 'Submitted, awaiting admin approval'
+  - APPROVED: 'Approved and visible'
+  - REJECTED: 'Rejected by admin'
