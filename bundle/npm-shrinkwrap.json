@@ -1,15 +1,15 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@zerobias-org/schema-bundle",
-      "version": "0.0.8",
+      "version": "0.0.9",
       "license": "ISC",
       "dependencies": {
-        "@zerobias-org/schema-w3geekery-sme-mart": "1.0.0",
+        "@zerobias-org/schema-w3geekery-sme-mart": "1.0.1",
         "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.6",
         "@zerobias-org/schema-zerobias-schemas-mcpservers": "1.0.2",
         "@zerobias-org/schema-zerobias-zerobias-base": "2.0.6"
@@ -55,9 +55,9 @@
       }
     },
     "node_modules/@zerobias-org/schema-w3geekery-sme-mart": {
-      "version": "1.0.0",
-      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-w3geekery-sme-mart/-/schema-w3geekery-sme-mart-1.0.0.tgz",
-      "integrity": "sha512-gn3bcz1Yk91yXFFO9DNMC6ePBIUihTKgfbfAYjqzqMoujYNu2phQPU6Ok1FMU1W7o1mtcLK2EURSHfqtc2s0Rg==",
+      "version": "1.0.1",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-w3geekery-sme-mart/-/schema-w3geekery-sme-mart-1.0.1.tgz",
+      "integrity": "sha512-1OFoNJBb3c2Il+2pYltyIIUefExtG2DQCQSO+vBz38939hqMxv2enDnC+cxGtWfiAHIPTlYwYPQP4vIB9ZM/mQ==",
       "license": "ISC",
       "dependencies": {
         "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
