@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.1 (2026-03-16)</small>
+
+* chore(sme-mart): update catalog name ([cd549fa](https://github.com/zerobias-org/schema/commit/cd549fa))
+
+
+
+
+
 ## 1.0.0 (2026-03-16)
 
 * chore: merge dev into qa ([d49086b](https://github.com/zerobias-org/schema/commit/d49086b))
