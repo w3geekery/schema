@@ -1,15 +1,12 @@
-# CLAUDE.md - ZeroBias-Org Schema Repository
+# CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with schema definitions in this repository.
-
-**NOTE:** For best results, run Claude Code from meta-repo root (`~/zerobias`) to ensure access to all platform context and cross-module documentation.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
 
-This is a Lerna-managed monorepo containing **open-source AuditgraphDB schema packages** under the `@zerobias-org` organization. Schema packages define object types (classes, interfaces, fields, documents, enums) that are loaded into AuditgraphDB by the dataloader.
+This is a Lerna-managed monorepo containing AuditgraphDB schema packages under the `@zerobias-org` organization. Schema packages define object types (classes, interfaces, fields, documents, enums) that are loaded into AuditgraphDB by the dataloader.
 
-**Repository Role:** Community-contributed schema definitions for AuditgraphDB
-**Closed-source counterpart:** `auditlogic/schema` (`@auditlogic` scope)
+**NOTE:** For best results, run Claude Code from meta-repo root (`~/zerobias`) to ensure access to all platform context and cross-module documentation.
 
 ## Common Development Commands
 
@@ -27,17 +24,18 @@ This is a Lerna-managed monorepo containing **open-source AuditgraphDB schema pa
 - **Version packages**: `npm run lerna:version`
 
 ### Individual Package Commands
-When working in a specific schema package (e.g., `package/zerobias/schemas/mcpservers/`):
+When working in a specific schema package (e.g., `package/github/github/`):
 - **Validate schema**: `npm run validate`
 - **Correct dependencies**: `npm run correct:deps`
 
-## Repository Structure
+## Repository Architecture
 
 ### Monorepo Structure
 - **`package/`**: Contains all schema packages organized by vendor/code
   - Structure: `package/{vendor}/{code}/`
-  - Example: `package/zerobias/schemas/agentskills/`, `package/zerobias/schemas/mcpservers/`
-- **`scripts/`**: Build and utility scripts (validate.ts, createNewSchema.sh, etc.)
+  - Example: `package/github/github/`, `package/agentskills/agentskills/`
+- **`scripts/`**: Build and utility scripts
+- **`templates/`**: Template files for creating new schema packages
 - **`bundle/`**: Bundled package artifacts
 
 ### Schema Package Structure
@@ -47,11 +45,11 @@ package/{vendor}/{code}/
 ├── package.json          # @zerobias-org/schema-{vendor}-{code}
 ├── catalog.yml           # Schema catalog entry
 ├── .npmrc                # Registry configuration
-├── classes/              # AuditgraphDB class definitions (YAML) - PascalCase
-├── interfaces/           # Interface definitions (YAML) - PascalCase
-├── fields/               # Field definitions (YAML) - camelCase dot-notation
-├── documents/            # Document type definitions (optional, YAML)
-└── enums/                # Enum type definitions (optional, YAML)
+├── classes/              # AuditgraphDB class definitions (YAML)
+├── interfaces/           # Interface definitions (YAML)
+├── fields/               # Field definitions (YAML)
+├── documents/            # Document type definitions (optional)
+└── enums/                # Enum type definitions (optional)
 ```
 
 ### Technology Stack
@@ -61,429 +59,146 @@ package/{vendor}/{code}/
 - **YAML**: Schema definition format
 - **Husky**: Git hooks for commit validation
 
----
-
-## Schema Definition Reference
+## Schema Definition Format
 
 ### Classes (`classes/`)
-
-Concrete classes define AuditgraphDB object types. They represent real objects collected from external systems.
-
-**Filename:** PascalCase matching class name (e.g., `McpServer.yml`)
+Define AuditgraphDB object types. PascalCase naming.
 
 ```yaml
-description: "An MCP Server definition"                # REQUIRED
-extends:                                               # Optional (defaults to 'Object')
-  - Element                                            # Can extend INTERFACES only (not other classes)
-icon: images/classes/vendor/ClassName.svg               # Optional icon URL
-shared: false                                          # Optional (default: false)
-tags:                                                  # Optional tags for categorization
-  - query-folder.servers
-properties:                                            # Optional (must be array if present)
-  - vendor:
-    field:                                             # Inline field definition
-      type: string
-      description: "Vendor name"
-  - license:
-    field:
-      type: string
-      description: "License name or reference"
-  - toolCount:
-    field:
-      type: integer
-      description: "Number of tools"
-  - members:                                           # Multi-valued link
-    multi: true
-    linkTo: McpTool
-viewProperties:                                        # Optional UI display config
-  "Name":
-    jsonata: name                                      # JSONata expression
-    sort: name                                         # Sortable column
-  "Vendor":
-    jsonata: vendor
-  "Tools":
-    jsonata: $count(tools)                             # Computed property
-```
-
-**Class Rules (enforced by dataloader):**
-- `description` is **required**
-- `properties` must be an **array** if present
-- Class names are **globally unique**
-- Classes can only extend **interfaces** (not other concrete classes)
-- If no `extends`, defaults to extending `Object` (for non-platform schemas)
-- Property names must be **unique** within the class (including inherited properties)
-- Cannot overload an extended class's property field with a link
-- Cannot `skip` and `deprecate` simultaneously
-
-### Interfaces (`interfaces/`)
-
-Interfaces define shared property contracts that classes and other interfaces can extend.
-
-**Filename:** PascalCase matching interface name (e.g., `Account.yml`)
-
-```yaml
-description: "A user or system account"      # REQUIRED
+# classes/GitHubRepository.yml
+description: Describes a GitHub Repository Store
 extends:
-  - Principal                                 # Can extend OTHER INTERFACES only
+  - Repository
+  - GitHubObject
+properties:
+  - fullName:
+    field: repository.fullName
+  - gitUrl:
+    field: repository.gitUrl
 viewProperties:
   "Name":
     jsonata: name
     sort: name
-properties:
-  - login:
-    field: account.login
-  - email:
-    field: email
-    multi: true
-  - identity:                                 # Link with multiple target types
-    multi: true
-    linkTo:
-      - FederatedIdentity.id
-      - FederatedIdentity.email
 ```
 
-**Interface Rules (enforced by dataloader):**
-- `description` is **required**
-- Interface names are **globally unique**
-- Interfaces can extend **other interfaces** only (not concrete classes)
-- **No circular extends chains** (loop detection enforced)
-- Property names must be **unique** within the interface
+### Interfaces (`interfaces/`)
+Define shared property contracts. PascalCase naming.
+
+```yaml
+# interfaces/GitHubObject.yml
+description: "Common properties for GitHub resources"
+properties:
+  - nodeId:
+    field: team.nodeId
+```
 
 ### Fields (`fields/`)
-
-Fields define atomic, reusable property types.
-
-**Filename:** camelCase with dot-notation: `{parentType}.{fieldName}.yml` (e.g., `account.login.yml`)
+Define atomic properties with types. camelCase dot-notation naming.
 
 ```yaml
-description: "The login identifier"    # Optional (defaults to field name)
-displayName: "Login"                   # Optional (defaults to field name)
-type: "string"                         # REQUIRED
-keyed: true                            # Optional (default: false) - searchable
-indexed: true                          # Optional (default: true) - keyed overrides to true
-reserved: false                        # Optional (default: false) - protected field
-defaultValue: "unknown"                # Optional
-example: "admin@company.com"           # Optional
+# fields/repository.fullName.yml
+description: 'The full name of the repository (owner/name)'
+displayName: 'Full Name'
+type: string
 ```
 
-**Supported Types:** `string`, `boolean`, `number`, `integer`, `date`, `datetime`
-
-**Field Rules (enforced by dataloader):**
-- `type` is **required** and must be non-empty
-- Field names are **globally unique**
-- Cannot be named `enum` (use enums/ directory instead)
-- `keyed` and `indexed` must be boolean if specified
-- `keyed: true` automatically sets `indexed: true`
-- Reserved fields cannot also be keyed
-
-### Enums (`enums/`)
-
-Enums define enumerated value sets.
-
-**Filename:** camelCase with dot-notation: `{parentType}.{enumName}.yml`
-
-```yaml
-description: "Asset Status"                # Optional
-displayName: "Asset Status"                # Optional
-values:                                    # REQUIRED (must be non-empty array)
-  - ACTIVE: "Asset is active and in use"
-  - AVAILABLE: "Asset is available"
-  - RETIRED: "Asset is retired"
-```
-
-**Enum Rules (enforced by dataloader):**
-- `values` array is **required** and cannot be empty
-- Values can be simple strings or `{KEY: description}` objects
-- Value names must be **ALL CAPS** with underscores only (`[A-Z][A-Z0-9_]*`)
-- Value names must start with a **letter or underscore**
-- Values cannot **repeat** within the same enum
-- Enum names are **globally unique**
+**Supported types:** `string`, `boolean`, `number`, `integer`, `date`, `datetime`
 
 ### Documents (`documents/`) - Optional
+Define complex nested object structures.
 
-Documents define complex nested object structures.
+### Enums (`enums/`) - Optional
+Define enumerated value sets.
 
-```yaml
-description: "Organization billing plan"
-displayName: "Plan"
-properties:                                  # REQUIRED (must be array)
-  - company:
-    field:
-      type: string
-  - seats:
-    field:
-      type: int
-```
-
-**Document Rules:** Properties must be an array; top-level names cannot repeat; document links require `uniLink: true`.
-
-### Deprecated File (`deprecated.yml`)
-
-Lists deleted classes/fields/enums/documents for dataloader cleanup.
+**IMPORTANT: Enum values MUST be ALL_CAPS** matching `[A-Z][A-Z0-9_]*`. The dataloader enforces this constraint. Lowercase values will fail at load time.
 
 ```yaml
-classes:
-  - OldClassName
-fields:
-  - old.fieldName
-enums:
-  - old.enumName
+# enums/team.privacy.yml
+description: The level of privacy this team should have.
+displayName: Privacy
+values:
+  - SECRET: 'Only visible to organization owners and members of this team.'
+  - CLOSED: 'Visible to all members of this organization.'
 ```
 
----
+## Validation
 
-## Link Field Configuration
-
-Links create graph relationships between classes. They are defined within `properties` arrays.
-
-### Link Patterns
-
-```yaml
-properties:
-  # Simple link (bidirectional by default)
-  - enterprise:
-    linkTo: GitHubEnterprise
-
-  # Multi-valued link
-  - members:
-    multi: true
-    linkTo: GitHubUser
-
-  # Bidirectional link (explicit both sides)
-  - parent:
-    linkTo: CAPEC.id.children
-  - children:
-    multi: true
-    linkTo: CAPEC.id.parent
-
-  # Multiple target types
-  - identity:
-    multi: true
-    linkTo:
-      - FederatedIdentity.id
-      - FederatedIdentity.email
-
-  # Unidirectional link
-  - cpeProduct:
-    linkTo: CpeProduct.versions
-    uniLink: true
-
-  # Temporal relationship
-  - assignedTo:
-    linkTo: ITAssetManagementUser
-    t3: issuedDate
-
-  # Deferred link (resolved in future schema load)
-  - externalRef:
-    linkTo: ExternalClass
-    defered: true
-```
-
-### Link Rules (enforced by dataloader)
-- `linkTo` as array **cannot** use `patternMatch`
-- `linkTo` array **cannot** be empty; items must include a **period**
-- Property names in array **cannot repeat**
-- Both sides of bidirectional links **must match**
-- `t3` fields must exist and match on both sides
-- If no match found and `defered` is not true, throws an error
-
----
-
-## Property Definition Patterns
-
-### Reference Existing Field
-```yaml
-- login:
-  field: account.login              # References fields/account.login.yml
-```
-
-### Inline Field Definition
-```yaml
-- kev:
-  field:
-    type: boolean                   # Required for inline
-    description: "Known Exploited"  # Required for inline
-```
-
-### Property-to-Field Preference Order
-1. **Use base schema fields** when possible (e.g., `email`, `url`, `name`)
-2. **Inline field** if unique to this class and used only once
-3. **Package field** (`fields/`) if used in multiple classes within the package
-4. **Enums and documents** must always be declared in their directories
-
----
-
-## View Properties (Dashboard Configuration)
-
-```yaml
-viewProperties:
-  "Column Header":
-    jsonata: propertyName           # JSONata expression
-    sort: propertyName              # Optional: enables sorting
-  "Computed":
-    jsonata: $count(members)        # JSONata functions supported
-```
-
-**Rules:** Sort column max 3 levels deep; must exist in class or extended schema.
-
----
-
-## Package Configuration
-
-### package.json
-
-Use `"zerobias"` as the config key for all packages.
-
-```json
-{
-  "name": "@zerobias-org/schema-{vendor}-{code}",
-  "description": "Schemas for {description}.",
-  "version": "1.0.0-rc.1",
-  "zerobias": {
-    "dataloader-version": "1.0.0",
-    "import-artifact": "schema",
-    "package": "{vendor}.{code}.schema",
-    "imports": [
-      "zerobias.zerobias.platform.schema",
-      "zerobias.zerobias.base.schema"
-    ]
-  },
-  "files": [
-    "classes/**",
-    "interfaces/**",
-    "fields/**",
-    "documents/**",
-    "enums/**",
-    "catalog.yml"
-  ],
-  "scripts": {
-    "validate": "tsx ../../../../scripts/validate.ts",
-    "correct:deps": "tsx ../../../../scripts/correctDeps.ts"
-  },
-  "dependencies": {
-    "@zerobias-org/product-{vendor}-{code}": "^1.0.0",
-    "@zerobias-org/schema-zerobias-zerobias-base": "^2.0.0",
-    "@zerobias-com/schema-zerobias-zerobias-platform": "^1.0.0"
-  }
-}
-```
-
-### catalog.yml
-
-```yaml
-Schema:
-  name: "Schema Display Name"
-  package: "{vendor}.{code}.schema"
-  description: |-
-    AuditgraphDB schema for ...
-```
-
-**Required fields:** `name`, `package`, `description` (all must be non-placeholder values)
-
-### Naming Conventions
-
-| Item | Format | Example |
-|------|--------|---------|
-| NPM package | `@zerobias-org/schema-{vendor}-{code}` | `@zerobias-org/schema-zerobias-schemas-mcpservers` |
-| Catalog package | `{vendor}.{code}.schema` | `zerobias.schemas.mcpservers.schema` |
-| Directory | `package/{vendor}/{code}/` | `package/zerobias/schemas/mcpservers/` |
-
-## Validation & Testing
-
-### Static Validation (`scripts/validate.ts`)
-
-```bash
-# Validate all packages
-npm run validate
-
-# Validate a single package
-cd package/{vendor}/{code} && npm run validate
-```
-
-Checks:
+### Validation Script (`scripts/validate.ts`)
+The validation script checks:
 - Package name matches `@zerobias-org/schema-*`
-- `zerobias` (or `auditmation`) section exists with `import-artifact: "schema"`, `package`, `dataloader-version`
-- `catalog.yml` has `Schema` section with `name`, `package`, `description` (non-placeholder values)
+- `zerobias` (or `auditmation`) section exists with `import-artifact: "schema"`
+- `catalog.yml` has `Schema` section with `name`, `package`, `description`
 - `.npmrc` file exists
 - At least one of `classes/`, `interfaces/`, or `fields/` directories exists
 
-### Dataloader Validation
+**Not currently validated by the script (but enforced by dataloader):**
+- Enum values must be ALL_CAPS (`[A-Z][A-Z0-9_]*`)
+- `.npmrc` must point to `pkg.zerobias.org` (not `npm.pkg.github.com`)
+- Required dependencies and imports must be present
 
-Run the dataloader against a schema package directory to validate all YAML definitions:
-
-```bash
-dataloader -d package/{vendor}/{code} --skip-pgboss
-```
-
-This validates all class/interface/field/enum/document definitions, inheritance chains, link matching, property uniqueness, field types, enum format, and viewProperties.
-
-### Common Validation Errors and Fixes
-
-| Error | Cause | Fix |
-|-------|-------|-----|
-| `properties is not an array` | Properties defined as object | Use array syntax: `- propName:` |
-| `description is missing` | No description in class/interface | Add `description: "..."` |
-| `extended interface does not exist` | Typo in extends | Check interface name spelling |
-| `extends logic loop found` | Circular inheritance | Remove circular reference |
-| `cannot overload extended properties field with a link` | Link uses inherited property name | Rename the link property |
-| `No matching link` | Bidirectional link missing other side | Add link on target class or use `uniLink: true` or `defered: true` |
-| `Enumeration value must start with letter` | Lowercase or numeric enum value | Use ALL_CAPS format |
-| `Field type not specified` | Missing type in field | Add `type: string` (or other type) |
-
----
+### Package Naming
+- Package names: `@zerobias-org/schema-{vendor}-{code}`
+- Catalog package: `{vendor}.{code}.schema`
+- Config key: `zerobias` (not `auditmation` for new packages)
 
 ## Development Workflow
 
 ### Creating a New Schema Package
-1. **Verify dependencies** - Vendor and product must exist in the platform
-2. **Create directory:** `mkdir -p package/{vendor}/{code}`
-3. **Use script:** `scripts/createNewSchema.sh package/{vendor}/{code}` (copies templates, generates UUID)
-4. **Replace placeholders** in package.json and catalog.yml: `{vendor}`, `{code}`, `{name}`, `{description}`
-5. **Create schema files** in `classes/`, `interfaces/`, `fields/`
-6. **Install:** `cd package/{vendor}/{code} && npm install`
-7. **Validate:** `npm run validate`
-
-### Inheritance Design Guidelines
-- **Use base interfaces** from `zerobias.zerobias.base` (Account, Asset, Repository, Application, etc.)
-- **Create vendor-specific interfaces** for properties shared across multiple classes from the same vendor
-- **Multiple inheritance** supported - combine base + vendor interfaces
-- **Extending `Element`** base class enables framework linking without additional schema changes
+1. Create directory: `mkdir -p package/{vendor}/{code}`
+2. Copy templates: Use `scripts/createNewSchema.sh` or copy from `templates/`
+3. Replace placeholders: `{vendor}`, `{code}`, `{name}`, `{description}`
+4. Create schema files in `classes/`, `interfaces/`, `fields/`
+5. Install: `cd package/{vendor}/{code} && npm install`
+6. Validate: `npm run validate`
 
 ### Dependencies
-- Schema packages depend on their product package: `@zerobias-org/product-{vendor}-{code}`
-- Import platform schema for base classes via `zerobias.imports` array
-- Dependency chain: `Vendor → [Suite] → [Product] → Schema → CollectorBot → Pipeline`
 
-**CRITICAL:** Vendor is required; suite and product are optional. Check/create dependencies first.
+**Required `dependencies` in `package.json`:**
+- `@zerobias-com/schema-zerobias-zerobias-platform`: `"latest"` — platform base classes (`Object`, `File`, etc.)
+- `@zerobias-org/schema-zerobias-zerobias-base`: `"latest"` — base schema classes
+- `@zerobias-org/product-{vendor}-{code}`: `"latest"` — your product package
 
-## TypeScript Packages (`-ts`)
+**Required `zerobias.imports` in `package.json`:**
+- `"zerobias.zerobias.platform.schema"` — always required (provides `Object`, `File`, etc.)
+- `"zerobias.zerobias.base.schema"` — required if extending base schema classes
 
-On publish, each schema package automatically generates a companion TypeScript package with typed interfaces. These are published as a separate NPM package with a `-ts` suffix.
+### Required Scripts
 
-- **Naming:** `@zerobias-org/schema-{vendor}-{code}-ts` (e.g., `@zerobias-org/schema-zerobias-schemas-mcpservers-ts`)
-- **Generated during:** `nx:prepublish` → `scripts/prepublish.sh`
-- **Published during:** `scripts/postpublish.sh` (same version as the schema package)
-- **Contents:** TypeScript interfaces generated by `@zerobias-com/platform-schema-ts-generator`
-- **Skipped** when `zerobias.deprecated: true`
+Every schema package must include these scripts in `package.json`:
 
-These `-ts` packages are consumed by collector bots and other TypeScript code that needs type-safe access to schema objects.
+```json
+"scripts": {
+  "nx:prepublish": "../../../scripts/prepublish.sh",
+  "correct:deps": "tsx ../../../scripts/correctDeps.ts",
+  "validate": "tsx ../../../scripts/validate.ts"
+}
+```
+
+- **`nx:prepublish`**: Generates the `-ts` companion package on publish. Path depth depends on package location (use `../../../` for `package/{vendor}/{code}/`, `../../../../` for deeper nesting).
+- **`correct:deps`**: Fixes dependency declarations.
+- **`validate`**: Validates schema YAML files.
+
+### `.npmrc` Template
+
+All packages must use the ZeroBias Package Registry. Copy this exactly:
+
+```
+@auditlogic:registry=https://pkg.zerobias.org
+@zerobias-org:registry=https://pkg.zerobias.org
+@zerobias-com:registry=https://pkg.zerobias.org
+//pkg.zerobias.org/:always-auth=true
+//pkg.zerobias.org/:_authToken=${ZB_TOKEN}
+```
 
 ## Commit and Versioning
 - Follow Conventional Commits: `<type>(<scope>): <subject>`
 - Types: feat, fix, docs, style, refactor, perf, test, chore
 - Lerna handles versioning and changelog generation
 - No manual version bumps in pull requests
-- Schema versions start at `1.0.0-rc.1`
 
 ## Authentication
 - Set `ZB_TOKEN` environment variable for NPM registry authentication
 - Packages publish to ZeroBias Package Registry: `https://pkg.zerobias.org/`
-
-## Important Notes
-- Always run `npm install` in root directory first to setup husky hooks
-- PRs must target the `dev` branch (not `main`)
-- Validation scripts ensure schema integrity before publication
-- Use `"zerobias"` config key in package.json (dataloader supports both `zerobias` and `auditmation`)
 
 ---
 
@@ -509,6 +224,8 @@ See **[.claude/skills/create-schema/SKILL.md](.claude/skills/create-schema/SKILL
 Standards workflow:  vendor → [suite] → [product] → framework/standard/benchmark → crosswalk
 Data workflow:       vendor → [suite] → [product] → schema → collectorbot → pipeline
 ```
+
+**CRITICAL:** Schemas are on the data workflow. Vendor is required; suite and product are optional. Check/create dependencies first.
 
 ### Key APIs
 
@@ -542,12 +259,18 @@ zerobias_execute("platform.Task.update", {
 
 ---
 
+## Important Notes
+- Always run `npm install` in root directory first to setup husky hooks
+- PRs must target the `dev` branch (not `main`)
+- Schema versions start at `1.0.0-rc.1` and are managed by Lerna
+- Validation scripts ensure schema integrity before publication
+- Schema packages use the `zerobias` config key (dataloader supports both `zerobias` and `auditmation`)
+- Extending `Element` base class enables framework linking without schema changes
+
 ## Related Documentation
 - **Meta-repo CLAUDE.md:** `../../CLAUDE.md`
 - **Architecture.md:** `../../Architecture.md`
-- **ContentArtifacts.md:** `../../ContentArtifacts.md`
 - **Vendor repo:** `../vendor/CLAUDE.md`
 - **Product repo:** `../product/`
 - **Collector bot repo:** `../collectorbot/`
-- **Auditlogic schema (closed-source):** `../../auditlogic/schema/CLAUDE.md`
-- **Dataloader processor:** `../../com/platform/dataloader/src/processors/schemas/`
+- **Existing schema examples:** `../../auditlogic/schema/package/` (e.g., `github/github/`)
