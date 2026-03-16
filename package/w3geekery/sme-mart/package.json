@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
-    "@zerobias-org/product-w3geekery-sme-mart": "latest",
+    "@zerobias-org/product-w3geekery-smemart": "latest",
     "@zerobias-org/schema-zerobias-zerobias-base": "latest"
   },
   "zerobias": {
