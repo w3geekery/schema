@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "All installable zerobias-org schemas",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -18,8 +18,8 @@
     "dataloader-version": "1.0.0"
   },
   "dependencies": {
-    "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.4",
+    "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.5",
     "@zerobias-org/schema-zerobias-schemas-mcpservers": "1.0.1",
-    "@zerobias-org/schema-zerobias-zerobias-base": "2.0.4"
+    "@zerobias-org/schema-zerobias-zerobias-base": "2.0.5"
   }
 }

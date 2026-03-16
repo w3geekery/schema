@@ -27,7 +27,7 @@ psql -d $SU_DB -c 'CREATE ROLE "00000000-0000-0000-0000-000000000000"' || echo "
 
 TMPDIR=$(mktemp -d)
 cd $TMPDIR
-npm pack $CONTENT_PACKAGE@latest --loglevel=error --silent
+npm pack $CONTENT_PACKAGE@1.0.70 --loglevel=error --silent
 tar xf zerobias-com-platform-content*.tgz
 
 echo "### Applying schema ${CONTENT_PACKAGE} to database ${PGDATABASE}"
