@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.5 (2026-03-16)</small>
+
+* chore: remove generated ts/ files from tracking (already in .gitignore) ([6fb1bf3](https://github.com/zerobias-org/schema/commit/6fb1bf3))
+* chore: trigger ([a086df2](https://github.com/zerobias-org/schema/commit/a086df2))
+* chore(release): bump version ([7041c86](https://github.com/zerobias-org/schema/commit/7041c86))
+* chore(release): bump version ([5cf92ec](https://github.com/zerobias-org/schema/commit/5cf92ec))
+
+
+
+
+
 ## <small>1.0.4 (2026-03-09)</small>
 
 * chore(release): bump version ([5cf92ec](https://github.com/zerobias-org/schema/commit/5cf92ec))
