@@ -1,0 +1,8 @@
+description: Compliance status for a bid response to a requirement
+displayName: Compliance Status
+values:
+  - MET: 'Requirement fully met'
+  - PARTIALLY_MET: 'Requirement partially met with gaps'
+  - NOT_MET: 'Requirement not met'
+  - NOT_APPLICABLE: 'Requirement not applicable to this bid'
+  - PLANNED: 'Not yet met but planned for implementation'

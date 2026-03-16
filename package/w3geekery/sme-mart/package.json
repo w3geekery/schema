@@ -1,0 +1,46 @@
+{
+  "name": "@zerobias-org/schema-w3geekery-sme-mart",
+  "version": "1.0.0-rc.2",
+  "description": "SME Mart marketplace schema for Subject Matter Expert engagements",
+  "author": "W3Geekery <clark@w3geekery.com>",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zerobias-org/schema.git",
+    "directory": "package/w3geekery/sme-mart/"
+  },
+  "scripts": {
+    "nx:prepublish": "../../../scripts/prepublish.sh",
+    "correct:deps": "tsx ../../../scripts/correctDeps.ts",
+    "validate": "tsx ../../../scripts/validate.ts",
+    "verify": "bash scripts/verify-schema.sh --clean",
+    "verify:keep": "bash scripts/verify-schema.sh",
+    "verify:yaml": "bash scripts/verify-schema.sh --yaml",
+    "update-db": "bash scripts/update-scratch-db.sh",
+    "update-db:only": "bash scripts/update-scratch-db.sh --db-only"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "classes/**",
+    "fields/**",
+    "enums/**",
+    "catalog.yml"
+  ],
+  "dependencies": {
+    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/product-w3geekery-smemart": "latest",
+    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
+  },
+  "zerobias": {
+    "dataloader-version": "1.0.0",
+    "import-artifact": "schema",
+    "package": "w3geekery.sme-mart.schema",
+    "imports": [
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
+    ]
+  }
+}

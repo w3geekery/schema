@@ -1,0 +1,3 @@
+description: 'Platform tag ID linking the engagement hierarchy'
+displayName: 'Engagement Tag'
+type: string

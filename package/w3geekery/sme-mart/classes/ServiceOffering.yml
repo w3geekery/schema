@@ -1,0 +1,22 @@
+description: "A provider's catalog listing in the SME marketplace"
+extends:
+  - Object
+properties:
+  - category:
+    field: serviceOffering.category
+  - pricingType:
+    field: serviceOffering.pricingType
+  - price:
+    field: serviceOffering.price
+  - deliveryTime:
+    field: serviceOffering.deliveryTime
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Category":
+    jsonata: category
+    sort: category
+  "Pricing":
+    jsonata: pricingType
+    sort: pricingType

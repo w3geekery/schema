@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.6-rc.0 (2026-03-16)</small>
+
+**Note:** Version bump only for package @zerobias-org/schema-zerobias-schemas-agentskills
+
+
+
+
+
 ## <small>1.0.5 (2026-03-16)</small>
 
 * chore: remove generated ts/ files from tracking (already in .gitignore) ([6fb1bf3](https://github.com/zerobias-org/schema/commit/6fb1bf3))

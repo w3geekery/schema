@@ -1,0 +1,39 @@
+description: "A vendor's bid/response to an engagement/RFP"
+extends:
+  - Object
+properties:
+  - coverLetter:
+    field: bid.coverLetter
+  - price:
+    field: bid.price
+  - status:
+    field: bid.status
+  - timeline:
+    field: bid.timeline
+  - executiveSummary:
+    field: bid.executiveSummary
+  - teamDescription:
+    field: bid.teamDescription
+  - totalEstimatedHours:
+    field: bid.totalEstimatedHours
+  - pricingBreakdown:
+    field: bid.pricingBreakdown
+  - wizardData:
+    field: bid.wizardData
+  - wizardStep:
+    field: bid.wizardStep
+  - engagement:
+    linkTo: Engagement.id.bids
+  - responses:
+    linkTo: BidResponse.id.bid
+    multi: true
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Price":
+    jsonata: price
+    sort: price
+  "Status":
+    jsonata: status
+    sort: status

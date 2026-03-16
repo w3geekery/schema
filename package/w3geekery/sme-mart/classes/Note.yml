@@ -1,0 +1,19 @@
+description: "Rich-text engagement note"
+extends:
+  - Object
+properties:
+  - content:
+    field: note.content
+  - accessLevel:
+    field: note.accessLevel
+  - folder:
+    linkTo: NoteFolder.id.notes
+  - engagement:
+    linkTo: Engagement.id.notes
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Access":
+    jsonata: accessLevel
+    sort: accessLevel

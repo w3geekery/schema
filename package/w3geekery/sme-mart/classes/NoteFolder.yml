@@ -1,0 +1,20 @@
+description: "Hierarchical folder structure for notes"
+extends:
+  - Object
+properties:
+  - color:
+    field: noteFolder.color
+  - sortOrder:
+    field: noteFolder.sortOrder
+  - parent:
+    linkTo: NoteFolder.id.children
+  - children:
+    linkTo: NoteFolder.id.parent
+    multi: true
+  - notes:
+    linkTo: Note.id.folder
+    multi: true
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name

@@ -1,0 +1,22 @@
+description: "Post-engagement review/rating of a provider"
+extends:
+  - Object
+properties:
+  - rating:
+    field: review.rating
+  - reviewText:
+    field: review.reviewText
+  - status:
+    field: review.status
+  - engagement:
+    linkTo: Engagement.id.reviews
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Rating":
+    jsonata: rating
+    sort: rating
+  "Status":
+    jsonata: status
+    sort: status

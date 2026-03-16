@@ -1,0 +1,3 @@
+description: 'Last completed wizard step (0-based)'
+displayName: 'Wizard Step'
+type: integer

@@ -1,0 +1,3 @@
+description: 'Detailed response text explaining how the requirement is met'
+displayName: 'Response Text'
+type: string
