@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.0.6 (2026-03-16)</small>
+
+* chore: merge dev into qa ([d49086b](https://github.com/zerobias-org/schema/commit/d49086b))
+
+
+
+
+
 ## <small>2.0.6-rc.0 (2026-03-16)</small>
 
 **Note:** Version bump only for package @zerobias-org/schema-zerobias-zerobias-base

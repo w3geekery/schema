@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0 (2026-03-16)
+
+* chore: merge dev into qa ([d49086b](https://github.com/zerobias-org/schema/commit/d49086b))
+
+
+
+
+
 ## 1.0.0-rc.2 (2026-03-16)
 
 * fix(w3geekery): address Daniel's PR review — registry, deps, enums, prepublish ([acea0ea](https://github.com/zerobias-org/schema/commit/acea0ea))
