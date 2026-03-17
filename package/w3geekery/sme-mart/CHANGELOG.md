@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.2-rc.0 (2026-03-17)</small>
+
+* chore(w3geekery): remove custom verify/update scripts ([88fbb5a](https://github.com/zerobias-org/schema/commit/88fbb5a))
+* fix(w3geekery): correct schema package name to vendor.product.type convention ([53fbeeb](https://github.com/zerobias-org/schema/commit/53fbeeb))
+
+
+
+
+
 ## <small>1.0.1 (2026-03-16)</small>
 
 * chore(sme-mart): update catalog name ([cd549fa](https://github.com/zerobias-org/schema/commit/cd549fa))
