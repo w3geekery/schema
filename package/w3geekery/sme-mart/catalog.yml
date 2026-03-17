@@ -1,5 +1,5 @@
 Schema:
   name: "SME Mart"
-  package: "w3geekery.sme-mart.schema"
+  package: "w3geekery.smemart.schema"
   description: |-
     Marketplace entities for Subject Matter Expert engagements (W3Geekery)

@@ -151,7 +151,17 @@ if [ -z "$EXISTING" ]; then
 
   log "Setting up Supabase scratch DB via @zerobias-org/util-content-dev-schema..."
   log "(This creates a PG17 container with full platform DDL, hydra, and migrations)"
-  npx @zerobias-org/util-content-dev-schema 2>&1 || {
+  # Run setup.sh from its package directory (npx has a path resolution bug
+  # where it resolves resources relative to bin/ instead of the package dir)
+  CONTENT_DEV_PKG=$(node -e "try{console.log(require.resolve('@zerobias-org/util-content-dev-schema/setup.sh').replace('/setup.sh',''))}catch{}" 2>/dev/null)
+  if [ -z "$CONTENT_DEV_PKG" ]; then
+    # Fallback: find it in the global npm prefix
+    CONTENT_DEV_PKG="$(npm prefix -g)/lib/node_modules/@zerobias-org/util-content-dev-schema"
+  fi
+  if [ ! -f "$CONTENT_DEV_PKG/setup.sh" ]; then
+    fail "content-dev-schema not found. Install: npm i -g @zerobias-org/util-content-dev-schema@latest"
+  fi
+  (cd "$CONTENT_DEV_PKG" && bash setup.sh) 2>&1 || {
     fail "content-dev-schema setup failed — see output above"
   }
   ok "Supabase scratch DB ready"
