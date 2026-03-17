@@ -1,0 +1,3 @@
+description: 'Board partition for UI grouping (buyer, provider, shared)'
+displayName: 'Partition'
+type: string

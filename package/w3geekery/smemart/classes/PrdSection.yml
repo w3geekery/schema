@@ -1,0 +1,24 @@
+description: "Section within a PRD (overview, objectives, requirements, etc.)"
+extends:
+  - Object
+properties:
+  - sectionType:
+    field: prdSection.sectionType
+  - title:
+    field: prdSection.title
+  - content:
+    field: prdSection.content
+  - sortOrder:
+    field: prdSection.sortOrder
+  - prd:
+    linkTo: ProjectPrd.id.sections
+viewProperties:
+  "Title":
+    jsonata: title
+    sort: title
+  "Type":
+    jsonata: sectionType
+    sort: sectionType
+  "Sort Order":
+    jsonata: sortOrder
+    sort: sortOrder

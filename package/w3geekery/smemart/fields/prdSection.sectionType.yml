@@ -1,0 +1,3 @@
+description: 'Type of PRD section (overview, objectives, requirements, etc.)'
+displayName: 'Section Type'
+type: string

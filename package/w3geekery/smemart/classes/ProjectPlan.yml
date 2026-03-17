@@ -1,0 +1,26 @@
+description: "Project plan — informational layer capturing HOW/WHEN work will be done"
+extends:
+  - Object
+properties:
+  - title:
+    field: plan.title
+  - approach:
+    field: plan.approach
+  - estimatedDuration:
+    field: plan.estimatedDuration
+  - teamStructure:
+    field: plan.teamStructure
+  - project:
+    linkTo: SmeMartProject.id.plans
+  - milestones:
+    linkTo: PlanMilestone.id.plan
+    multi: true
+viewProperties:
+  "Title":
+    jsonata: title
+    sort: title
+  "Duration":
+    jsonata: estimatedDuration
+  "Name":
+    jsonata: name
+    sort: name

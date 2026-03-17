@@ -1,0 +1,3 @@
+description: 'Target completion date for the milestone'
+displayName: 'Target Date'
+type: date
