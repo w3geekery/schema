@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-hl7-fhir",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "AuditgraphDB schema for HL7 FHIR R4 healthcare resources",
   "author": "team@zerobias.com",
   "license": "ISC",
