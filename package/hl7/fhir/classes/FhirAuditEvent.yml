@@ -1,0 +1,62 @@
+description: "FHIR AuditEvent — a record of an event made for purposes of maintaining a security log"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (AuditEvent)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - action:
+    field:
+      type: string
+      description: Type of action performed (C, R, U, D, E)
+
+  - outcome:
+    field:
+      type: string
+      description: Whether the event succeeded or failed
+
+  - recorded:
+    field:
+      type: date
+      description: Time when the event was recorded
+
+  - agentName:
+    field:
+      type: string
+      description: Name of the agent involved in the event
+
+  - agentRole:
+    field:
+      type: string
+      description: Role of the agent (e.g., source, destination, witness)
+
+  - sourceObserver:
+    field:
+      type: string
+      description: Identity of the audit source
+
+  - entityReference:
+    field:
+      type: string
+      description: Reference to the entity involved in the event
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Action":
+    jsonata: action
+    sort: action
+  "Outcome":
+    jsonata: outcome
+    sort: outcome
+  "Recorded":
+    jsonata: recorded
+    sort: recorded

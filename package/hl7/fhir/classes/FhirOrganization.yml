@@ -1,0 +1,54 @@
+description: "FHIR Organization — a formally or informally recognized grouping of people or organizations"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Organization)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - active:
+    field:
+      type: boolean
+      description: Whether the organization record is active
+
+  - organizationType:
+    field:
+      type: string
+      description: Kind of organization (prov, dept, team, govt, ins, etc.)
+
+  - partOf:
+    linkTo: FhirOrganization.id.subOrganizations
+    multi: false
+
+  - patients:
+    linkTo: FhirPatient.id.managingOrganization
+    multi: true
+
+  - subOrganizations:
+    linkTo: FhirOrganization.id.partOf
+    multi: true
+
+  - consents:
+    linkTo: FhirConsent.id.organization
+    multi: true
+
+  - encounters:
+    linkTo: FhirEncounter.id.serviceProvider
+    multi: true
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Type":
+    jsonata: organizationType
+    sort: organizationType
+  "Active":
+    jsonata: active
+    sort: active

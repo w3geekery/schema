@@ -1,0 +1,70 @@
+description: "FHIR Observation — measurements and simple assertions made about a patient or other subject"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Observation)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - status:
+    field:
+      type: string
+      description: Observation status (registered, preliminary, final, amended, corrected, cancelled, entered-in-error, unknown)
+
+  - category:
+    field:
+      type: string
+      description: Classification of type of observation (vital-signs, laboratory, etc.)
+
+  - observationCode:
+    field:
+      type: string
+      description: Type of observation (LOINC code)
+
+  - effectiveDateTime:
+    field:
+      type: date
+      description: Clinically relevant time for the observation
+
+  - valueString:
+    field:
+      type: string
+      description: Observation result as string
+
+  - valueQuantity:
+    field:
+      type: string
+      description: Observation result as quantity (value + unit, JSON-encoded)
+
+  - interpretation:
+    field:
+      type: string
+      description: High, low, normal, etc.
+
+  - subject:
+    linkTo: FhirPatient.id.observations
+    multi: false
+
+  - encounter:
+    linkTo: FhirEncounter.id.observations
+    multi: false
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Code":
+    jsonata: observationCode
+    sort: observationCode
+  "Effective":
+    jsonata: effectiveDateTime
+    sort: effectiveDateTime

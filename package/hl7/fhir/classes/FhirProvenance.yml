@@ -1,0 +1,49 @@
+description: "FHIR Provenance — tracking of the origin and history of a resource"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Provenance)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - recorded:
+    field:
+      type: date
+      description: When the activity was recorded
+
+  - activity:
+    field:
+      type: string
+      description: Activity that occurred (e.g., create, revise, delete)
+
+  - agentType:
+    field:
+      type: string
+      description: Type of agent involved (author, performer, verifier, etc.)
+
+  - agentWho:
+    field:
+      type: string
+      description: Reference to the agent who participated
+
+  - targetReference:
+    field:
+      type: string
+      description: Reference to the target resource(s) of this provenance
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Activity":
+    jsonata: activity
+    sort: activity
+  "Recorded":
+    jsonata: recorded
+    sort: recorded
