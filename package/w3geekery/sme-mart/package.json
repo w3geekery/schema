@@ -37,7 +37,7 @@
   "zerobias": {
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
-    "package": "w3geekery.sme-mart.schema",
+    "package": "w3geekery.smemart.schema",
     "imports": [
       "zerobias.zerobias.platform.schema",
       "zerobias.zerobias.base.schema"
