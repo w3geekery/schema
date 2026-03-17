@@ -1,0 +1,77 @@
+description: "FHIR Encounter — an interaction between a patient and healthcare provider for the purpose of providing services"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Encounter)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - status:
+    field:
+      type: string
+      description: Encounter status (planned, arrived, triaged, in-progress, onleave, finished, cancelled, entered-in-error, unknown)
+
+  - encounterClass:
+    field:
+      type: string
+      description: Classification of the encounter (AMB, EMER, IMP, etc.)
+
+  - priority:
+    field:
+      type: string
+      description: Urgency of the encounter
+
+  - periodStart:
+    field:
+      type: date
+      description: Start time of the encounter
+
+  - periodEnd:
+    field:
+      type: date
+      description: End time of the encounter
+
+  - reasonCode:
+    field:
+      type: string
+      description: Coded reason the encounter takes place
+
+  - subject:
+    linkTo: FhirPatient.id.encounters
+    multi: false
+
+  - serviceProvider:
+    linkTo: FhirOrganization.id.encounters
+    multi: false
+
+  - observations:
+    linkTo: FhirObservation.id.encounter
+    multi: true
+
+  - conditions:
+    linkTo: FhirCondition.id.encounter
+    multi: true
+
+  - medicationRequests:
+    linkTo: FhirMedicationRequest.id.encounter
+    multi: true
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Class":
+    jsonata: encounterClass
+    sort: encounterClass
+  "Start":
+    jsonata: periodStart
+    sort: periodStart

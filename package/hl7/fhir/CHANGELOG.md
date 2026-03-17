@@ -1,0 +1,10 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.0-rc.0 (2026-03-16)
+
+### Features
+
+* Initial creation of HL7 FHIR schema with 10 resource classes

@@ -1,0 +1,55 @@
+description: "FHIR Consent — a record of a healthcare consumer's choices regarding authorized or restricted actions"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Consent)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - status:
+    field:
+      type: string
+      description: Consent status (draft, proposed, active, rejected, inactive, entered-in-error)
+
+  - scope:
+    field:
+      type: string
+      description: Consent scope (adr, research, patient-privacy, treatment)
+
+  - category:
+    field:
+      type: string
+      description: Classification of the consent statement
+
+  - dateTime:
+    field:
+      type: date
+      description: When this consent was issued or captured
+
+  - patient:
+    linkTo: FhirPatient.id.consents
+    multi: false
+
+  - organization:
+    linkTo: FhirOrganization.id.consents
+    multi: false
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Scope":
+    jsonata: scope
+    sort: scope
+  "Date":
+    jsonata: dateTime
+    sort: dateTime

@@ -1,0 +1,70 @@
+description: "FHIR Condition — a clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Condition)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - clinicalStatus:
+    field:
+      type: string
+      description: Clinical status (active, recurrence, relapse, inactive, remission, resolved)
+
+  - verificationStatus:
+    field:
+      type: string
+      description: Verification status (unconfirmed, provisional, differential, confirmed, refuted, entered-in-error)
+
+  - category:
+    field:
+      type: string
+      description: Category of condition (problem-list-item, encounter-diagnosis)
+
+  - conditionSeverity:
+    field:
+      type: string
+      description: Severity of the condition (severe, moderate, mild)
+
+  - conditionCode:
+    field:
+      type: string
+      description: Identification of the condition (SNOMED CT, ICD-10)
+
+  - onsetDateTime:
+    field:
+      type: date
+      description: Estimated or actual date the condition began
+
+  - abatementDateTime:
+    field:
+      type: date
+      description: When the condition resolved or went into remission
+
+  - subject:
+    linkTo: FhirPatient.id.conditions
+    multi: false
+
+  - encounter:
+    linkTo: FhirEncounter.id.conditions
+    multi: false
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Clinical Status":
+    jsonata: clinicalStatus
+    sort: clinicalStatus
+  "Severity":
+    jsonata: conditionSeverity
+    sort: conditionSeverity
+  "Code":
+    jsonata: conditionCode
+    sort: conditionCode

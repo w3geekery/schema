@@ -1,0 +1,69 @@
+description: "FHIR MedicationRequest — an order or request for supply of medication and instructions for administration"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (MedicationRequest)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - status:
+    field:
+      type: string
+      description: Status of the prescription (active, on-hold, cancelled, completed, entered-in-error, stopped, draft, unknown)
+
+  - intent:
+    field:
+      type: string
+      description: Intent of the request (proposal, plan, order, original-order, reflex-order, filler-order, instance-order, option)
+
+  - priority:
+    field:
+      type: string
+      description: Priority of the request (routine, urgent, asap, stat)
+
+  - medicationCode:
+    field:
+      type: string
+      description: Medication being requested (RxNorm, SNOMED CT code)
+
+  - authoredOn:
+    field:
+      type: date
+      description: When the request was initially authored
+
+  - dosageInstruction:
+    field:
+      type: string
+      description: Dosage instructions (JSON-encoded)
+
+  - subject:
+    linkTo: FhirPatient.id.medicationRequests
+    multi: false
+
+  - encounter:
+    linkTo: FhirEncounter.id.medicationRequests
+    multi: false
+
+  - requester:
+    linkTo: FhirPractitioner.id.medicationRequests
+    multi: false
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Intent":
+    jsonata: intent
+    sort: intent
+  "Medication":
+    jsonata: medicationCode
+    sort: medicationCode

@@ -1,0 +1,7 @@
+Schema:
+  name: "HL7 FHIR Schema"
+  package: "hl7.fhir.schema"
+  description: |-
+    AuditgraphDB schema for HL7 FHIR R4 healthcare resources including
+    Patient, Practitioner, Organization, AuditEvent, Consent, Provenance,
+    Encounter, Observation, Condition, and MedicationRequest.

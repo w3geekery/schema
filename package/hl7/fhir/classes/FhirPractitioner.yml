@@ -1,0 +1,48 @@
+description: "FHIR Practitioner — a person who is involved in the provisioning of healthcare"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Practitioner)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - gender:
+    field:
+      type: string
+      description: Gender of the practitioner
+
+  - birthDate:
+    field:
+      type: string
+      description: Date of birth (YYYY-MM-DD)
+
+  - active:
+    field:
+      type: boolean
+      description: Whether the practitioner record is active
+
+  - qualification:
+    field:
+      type: string
+      description: Qualifications and certifications (JSON-encoded)
+
+  - medicationRequests:
+    linkTo: FhirMedicationRequest.id.requester
+    multi: true
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Gender":
+    jsonata: gender
+    sort: gender
+  "Active":
+    jsonata: active
+    sort: active

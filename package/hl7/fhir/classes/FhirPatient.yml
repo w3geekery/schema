@@ -1,0 +1,76 @@
+description: "FHIR Patient — demographics and administrative information about an individual receiving care"
+extends:
+  - Element
+properties:
+  - resourceType:
+    field:
+      type: string
+      description: FHIR resource type (Patient)
+
+  - fhirId:
+    field:
+      type: string
+      description: FHIR resource logical ID
+
+  - gender:
+    field:
+      type: string
+      description: Gender of the patient (male, female, other, unknown)
+
+  - birthDate:
+    field:
+      type: string
+      description: Date of birth (YYYY-MM-DD)
+
+  - active:
+    field:
+      type: boolean
+      description: Whether the patient record is active
+
+  - deceasedBoolean:
+    field:
+      type: boolean
+      description: Whether the patient is deceased
+
+  - maritalStatus:
+    field:
+      type: string
+      description: Marital status code
+
+  - managingOrganization:
+    linkTo: FhirOrganization.id.patients
+    multi: false
+
+  - conditions:
+    linkTo: FhirCondition.id.subject
+    multi: true
+
+  - observations:
+    linkTo: FhirObservation.id.subject
+    multi: true
+
+  - encounters:
+    linkTo: FhirEncounter.id.subject
+    multi: true
+
+  - consents:
+    linkTo: FhirConsent.id.patient
+    multi: true
+
+  - medicationRequests:
+    linkTo: FhirMedicationRequest.id.subject
+    multi: true
+
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Gender":
+    jsonata: gender
+    sort: gender
+  "Birth Date":
+    jsonata: birthDate
+    sort: birthDate
+  "Active":
+    jsonata: active
+    sort: active
