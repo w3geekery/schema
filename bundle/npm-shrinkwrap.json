@@ -1,14 +1,15 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@zerobias-org/schema-bundle",
-      "version": "0.0.9",
+      "version": "0.0.10",
       "license": "ISC",
       "dependencies": {
+        "@zerobias-org/schema-hl7-fhir": "1.0.0",
         "@zerobias-org/schema-w3geekery-sme-mart": "1.0.1",
         "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.6",
         "@zerobias-org/schema-zerobias-schemas-mcpservers": "1.0.2",
@@ -26,6 +27,15 @@
       "resolved": "https://npm.pkg.github.com/download/@zerobias-com/tag-zerobias-global-tags/1.0.0/39fc287db1ab772d5e9403ede35a092a229e4caa",
       "integrity": "sha512-Ag/RNdRuossmZquOrtrK8YGoXwXjoPNNr5W0pAIPuJ4vG2C7Xt7W4x/cGg7SnUiSZ1NHpb4CIjVLjqWz0ZTiKg==",
       "license": "ISC"
+    },
+    "node_modules/@zerobias-org/product-hl7-fhir": {
+      "version": "1.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/product-hl7-fhir/-/product-hl7-fhir-1.0.0.tgz",
+      "integrity": "sha512-jFu13FCqQ3OXdeLDOncSpTaS+Fr2wMa+vAqUEobAat+5KI13skf2n0SHjkeBTTSi068FXASuFQvfDiiKKZPVeA==",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-org/vendor-hl7": "latest"
+      }
     },
     "node_modules/@zerobias-org/product-w3geekery-smemart": {
       "version": "1.0.0",
@@ -52,6 +62,17 @@
       "license": "ISC",
       "dependencies": {
         "@zerobias-org/suite-zerobias-schemas": "latest"
+      }
+    },
+    "node_modules/@zerobias-org/schema-hl7-fhir": {
+      "version": "1.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-hl7-fhir/-/schema-hl7-fhir-1.0.0.tgz",
+      "integrity": "sha512-3LkArM8huQKK4oJ2uWpqay93S32w62rqx6bZQcTs3Uq4Jxofy08Or98nSjJ4uTB8W0WUjB3aVLAa4SNooY1pFA==",
+      "license": "ISC",
+      "dependencies": {
+        "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+        "@zerobias-org/product-hl7-fhir": "latest",
+        "@zerobias-org/schema-zerobias-zerobias-base": "latest"
       }
     },
     "node_modules/@zerobias-org/schema-w3geekery-sme-mart": {
@@ -105,6 +126,12 @@
       "dependencies": {
         "@zerobias-org/vendor-zerobias": "latest"
       }
+    },
+    "node_modules/@zerobias-org/vendor-hl7": {
+      "version": "1.0.6",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/vendor-hl7/-/vendor-hl7-1.0.6.tgz",
+      "integrity": "sha512-ZZfiYVkCSC+v6JWNc3o02ZpCNbs60n7yCr0Kre6ayMDTGjQfbBsE/HmlY+PRHCQ2ogVZ/iZ36eKAT6rQZw/sMA==",
+      "license": "ISC"
     },
     "node_modules/@zerobias-org/vendor-w3geekery": {
       "version": "1.0.0",
