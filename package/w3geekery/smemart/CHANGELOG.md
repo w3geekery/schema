@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.1 (2026-03-18)</small>
+
+* chore(release): bump version ([78bc05d](https://github.com/zerobias-org/schema/commit/78bc05d))
+* feat(w3geekery): add Project, Board, Activity, Workflow, Task, PRD, Plan schema entities ([56e3e14](https://github.com/zerobias-org/schema/commit/56e3e14))
+
+
+
+
+
 ## <small>1.0.1-rc.0 (2026-03-18)</small>
 
 * feat(w3geekery): add Project, Board, Activity, Workflow, Task, PRD, Plan schema entities ([56e3e14](https://github.com/zerobias-org/schema/commit/56e3e14))
