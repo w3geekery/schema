@@ -1,7 +1,8 @@
 {
   "name": "@zerobias-org/schema-w3geekery-sme-mart",
-  "version": "1.0.2",
-  "description": "SME Mart marketplace schema for Subject Matter Expert engagements",
+  "version": "1.0.4-rc.0",
+  "deprecated": "Renamed to @zerobias-org/schema-w3geekery-smemart. Use the new package.",
+  "description": "DEPRECATED — use @zerobias-org/schema-w3geekery-smemart instead",
   "author": "W3Geekery <clark@w3geekery.com>",
   "license": "ISC",
   "type": "module",
@@ -19,23 +20,13 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "files": [
-    "classes/**",
-    "fields/**",
-    "enums/**",
     "catalog.yml"
   ],
-  "dependencies": {
-    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
-    "@zerobias-org/product-w3geekery-smemart": "latest",
-    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
-  },
   "zerobias": {
+    "deprecated": true,
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
-    "package": "w3geekery.smemart.schema",
-    "imports": [
-      "zerobias.zerobias.platform.schema",
-      "zerobias.zerobias.base.schema"
-    ]
+    "package": "w3geekery.sme-mart.schema",
+    "imports": []
   }
 }
