@@ -259,6 +259,23 @@ zerobias_execute("platform.Task.update", {
 
 ---
 
+## Naming Rules (CRITICAL)
+
+The `{vendor}` and `{code}` segments must be **identical** across all identifiers. The `validate` script enforces this automatically.
+
+```
+npm package:   @zerobias-org/schema-{vendor}-{code}
+catalog.yml:   {vendor}.{code}.schema
+directory:     package/{vendor}/{code}/
+product dep:   @zerobias-org/product-{vendor}-{code}
+zb.package:    {vendor}.{code}.schema
+```
+
+**Rules:**
+- `{vendor}` and `{code}` must match `^[a-z0-9]+$` — **lowercase alphanumeric only. No hyphens, no underscores, no dots.** This matches the ZB platform UI's `vspCodeValidator` constraint on product/vendor/suite codes. The API does not enforce this server-side, but the ecosystem (catalog package names, dataloader artifact resolution) requires it.
+- **NEVER rename** a published schema package without coordinating with the platform team (Chris/Kevin). Renaming after classes are registered requires manual ownership transfer on the platform side. The dataloader cannot automatically reassign class ownership between packages.
+- Enum values **MUST be ALL_CAPS** matching `[A-Z][A-Z0-9_]*`. The dataloader enforces this — lowercase values fail at load time.
+
 ## Important Notes
 - Always run `npm install` in root directory first to setup husky hooks
 - PRs must target the `dev` branch (not `main`)
