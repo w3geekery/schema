@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-w3geekery-sme-mart",
-  "version": "1.0.3",
+  "version": "1.0.4-rc.0",
   "deprecated": "Renamed to @zerobias-org/schema-w3geekery-smemart. Use the new package.",
   "description": "DEPRECATED — use @zerobias-org/schema-w3geekery-smemart instead",
   "author": "W3Geekery <clark@w3geekery.com>",
@@ -22,7 +22,6 @@
   "files": [
     "catalog.yml"
   ],
-  "dependencies": {},
   "zerobias": {
     "deprecated": true,
     "dataloader-version": "1.0.0",
