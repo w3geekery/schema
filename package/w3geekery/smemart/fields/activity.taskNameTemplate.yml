@@ -1,0 +1,3 @@
+description: 'Template for auto-generating task names under this activity'
+displayName: 'Task Name Template'
+type: string

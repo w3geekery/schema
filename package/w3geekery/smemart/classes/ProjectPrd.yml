@@ -1,0 +1,20 @@
+description: "Product Requirements Document — informational layer capturing WHAT needs to be done"
+extends:
+  - Object
+properties:
+  - title:
+    field: prd.title
+  - summary:
+    field: prd.summary
+  - project:
+    linkTo: SmeMartProject.id.prds
+  - sections:
+    linkTo: PrdSection.id.prd
+    multi: true
+viewProperties:
+  "Title":
+    jsonata: title
+    sort: title
+  "Name":
+    jsonata: name
+    sort: name

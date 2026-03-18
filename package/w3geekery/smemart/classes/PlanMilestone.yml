@@ -1,0 +1,25 @@
+description: "Individual milestone within a project plan"
+extends:
+  - Object
+properties:
+  - targetDate:
+    field: milestone.targetDate
+  - status:
+    field: milestone.status
+  - sortOrder:
+    field: milestone.sortOrder
+  - plan:
+    linkTo: ProjectPlan.id.milestones
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Target Date":
+    jsonata: targetDate
+    sort: targetDate
+  "Sort Order":
+    jsonata: sortOrder
+    sort: sortOrder

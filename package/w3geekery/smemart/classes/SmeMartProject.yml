@@ -1,0 +1,33 @@
+description: "Scoped work container owned by an org or boundary. Children inherit permissions."
+extends:
+  - Object
+properties:
+  - status:
+    field: project.status
+  - ownerType:
+    field: project.ownerType
+  - startDate:
+    field: project.startDate
+  - targetEndDate:
+    field: project.targetEndDate
+  - engagement:
+    linkTo: Engagement.id.projects
+  - boards:
+    linkTo: SmeMartBoard.id.project
+    multi: true
+  - prds:
+    linkTo: ProjectPrd.id.project
+    multi: true
+  - plans:
+    linkTo: ProjectPlan.id.project
+    multi: true
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Owner Type":
+    jsonata: ownerType
+    sort: ownerType
