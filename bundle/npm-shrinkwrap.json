@@ -1,16 +1,17 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@zerobias-org/schema-bundle",
-      "version": "0.0.11",
+      "version": "0.0.12",
       "license": "ISC",
       "dependencies": {
         "@zerobias-org/schema-hl7-fhir": "1.0.0",
-        "@zerobias-org/schema-w3geekery-sme-mart": "1.0.2",
+        "@zerobias-org/schema-w3geekery-sme-mart": "1.0.4",
+        "@zerobias-org/schema-w3geekery-smemart": "1.0.0",
         "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.6",
         "@zerobias-org/schema-zerobias-schemas-mcpservers": "1.0.2",
         "@zerobias-org/schema-zerobias-zerobias-base": "2.0.6"
@@ -76,9 +77,16 @@
       }
     },
     "node_modules/@zerobias-org/schema-w3geekery-sme-mart": {
-      "version": "1.0.2",
-      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-w3geekery-sme-mart/-/schema-w3geekery-sme-mart-1.0.2.tgz",
-      "integrity": "sha512-ROPQjImt+EamUZWq1tDxaj85eLr1495a0a55O2PbTzRVXfQlFPLwRLkdB32l+1L1ZpT8jXmvFaXHebO+0aWe5g==",
+      "version": "1.0.4",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-w3geekery-sme-mart/-/schema-w3geekery-sme-mart-1.0.4.tgz",
+      "integrity": "sha512-qqMg+j62D+Z59zBeulRZNWsfE/5PoQuxKwZ3F5V7e9k4/sxs3dv+lj1GEj52U3qZqIOiT4br41Odetwj9KfFoQ==",
+      "deprecated": "Renamed to @zerobias-org/schema-w3geekery-smemart. Use the new package.",
+      "license": "ISC"
+    },
+    "node_modules/@zerobias-org/schema-w3geekery-smemart": {
+      "version": "1.0.0",
+      "resolved": "https://pkg.zerobias.org/@zerobias-org/schema-w3geekery-smemart/-/schema-w3geekery-smemart-1.0.0.tgz",
+      "integrity": "sha512-rpH/9p8DsalhcrKNrofGK7nvntpwMdCKJl//mvr9U/Qmp3PH3nOHsoYHv4ljxiohkJPm9jzTJX0RXrTHHgqvoQ==",
       "license": "ISC",
       "dependencies": {
         "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
