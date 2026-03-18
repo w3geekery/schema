@@ -6,10 +6,10 @@
 
 AuditgraphDB schema for **SME Mart** — W3Geekery's marketplace for Subject Matter Experts. Defines entity classes, fields, enums, and links for the engagement lifecycle: RFP creation, bids, reviews, notes, documents, and service offerings.
 
-**Package:** `@zerobias-org/schema-w3geekery-sme-mart`
-**Catalog:** `w3geekery.sme-mart.schema`
+**Package:** `@zerobias-org/schema-w3geekery-smemart`
+**Catalog:** `w3geekery.smemart.schema`
 **PR:** https://github.com/zerobias-org/schema/pull/3
-**Branch:** `feat/w3geekery-sme-mart-schema`
+**Branch:** `fix/schema-smemart-rename`
 
 ## Entity Model
 
