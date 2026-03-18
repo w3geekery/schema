@@ -109,6 +109,9 @@ package/{vendorCode}/{schemaCode}/
 
 **Key conventions:**
 - Package name: `@zerobias-org/schema-{vendorCode}-{schemaCode}`
+- `{vendorCode}` and `{schemaCode}` must match `^[a-z0-9]+$` — **lowercase alphanumeric only, no hyphens/underscores/dots** (matches ZB platform `vspCodeValidator`)
+- `{schemaCode}` must be identical across npm package, catalog, directory, and product dependency
+- Enum values **MUST be ALL_CAPS** (`[A-Z][A-Z0-9_]*`) — dataloader rejects lowercase
 - Config key: `zerobias` (not `auditmation`)
 - Dataloader version: `"1.0.0"`
 - Platform schema dep: `@zerobias-com/schema-zerobias-zerobias-platform`
@@ -116,6 +119,7 @@ package/{vendorCode}/{schemaCode}/
 - Scripts use `tsx`
 - Starting version: `"1.0.0-rc.1"`
 - Must include `nx:prepublish` script
+- **NEVER rename** a published schema package without platform team coordination (see repo CLAUDE.md)
 
 ### Step 7: Install and Validate
 

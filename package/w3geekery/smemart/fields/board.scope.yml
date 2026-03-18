@@ -1,0 +1,3 @@
+description: 'Parent scope of the board (org, boundary, project, user)'
+displayName: 'Scope'
+type: string

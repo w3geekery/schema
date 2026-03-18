@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.1-rc.0 (2026-03-18)</small>
+
+* feat(w3geekery): add Project, Board, Activity, Workflow, Task, PRD, Plan schema entities ([56e3e14](https://github.com/zerobias-org/schema/commit/56e3e14))
+
+
+
+
+
 ## 1.0.0 (2026-03-18)
 
 * chore(release): bump version ([74c38b3](https://github.com/zerobias-org/schema/commit/74c38b3))

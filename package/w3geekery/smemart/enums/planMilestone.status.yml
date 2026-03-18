@@ -1,0 +1,6 @@
+description: Status of a plan milestone
+displayName: Milestone Status
+values:
+  - PLANNED: 'Not yet started'
+  - ACTIVE: 'Currently in progress'
+  - COMPLETED: 'Milestone achieved'

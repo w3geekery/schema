@@ -40,6 +40,9 @@ properties:
   - documents:
     linkTo: SmeMartDocument.id.engagement
     multi: true
+  - projects:
+    linkTo: SmeMartProject.id.engagement
+    multi: true
 viewProperties:
   "Name":
     jsonata: name

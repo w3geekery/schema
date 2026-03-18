@@ -1,0 +1,10 @@
+description: Type of PRD section
+displayName: PRD Section Type
+values:
+  - OVERVIEW: 'Executive overview'
+  - OBJECTIVES: 'Project objectives and goals'
+  - REQUIREMENTS: 'Functional and non-functional requirements'
+  - CONSTRAINTS: 'Known constraints and limitations'
+  - ASSUMPTIONS: 'Working assumptions'
+  - ACCEPTANCE_CRITERIA: 'Criteria for project acceptance'
+  - OUT_OF_SCOPE: 'Explicitly excluded items'
