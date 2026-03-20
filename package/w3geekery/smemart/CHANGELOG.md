@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.2 (2026-03-20)</small>
+
+* chore(release): bump version ([299eaa5](https://github.com/zerobias-org/schema/commit/299eaa5))
+* feat(w3geekery): add filterable scalar properties to all SME Mart classes ([c61b738](https://github.com/zerobias-org/schema/commit/c61b738))
+
+
+
+
+
 ## <small>1.0.2-rc.0 (2026-03-20)</small>
 
 * feat(w3geekery): add filterable scalar properties to all SME Mart classes ([c61b738](https://github.com/zerobias-org/schema/commit/c61b738))
