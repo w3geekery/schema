@@ -1,0 +1,3 @@
+description: 'ID of the provider being reviewed'
+displayName: 'Provider ID'
+type: string

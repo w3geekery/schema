@@ -2,6 +2,16 @@ description: "A buyer engagement/RFP in the SME marketplace"
 extends:
   - Object
 properties:
+  - buyerZerobiasUserId:
+    field: engagement.buyerZerobiasUserId
+  - buyerZerobiasOrgId:
+    field: engagement.buyerZerobiasOrgId
+  - zerobiasTagId:
+    field: engagement.zerobiasTagId
+  - zerobiasBoundaryId:
+    field: engagement.zerobiasBoundaryId
+  - zerobiasTaskId:
+    field: engagement.zerobiasTaskId
   - category:
     field: engagement.category
   - status:
@@ -42,6 +52,9 @@ properties:
     multi: true
   - projects:
     linkTo: SmeMartProject.id.engagement
+    multi: true
+  - noteFolders:
+    linkTo: NoteFolder.id.engagement
     multi: true
 viewProperties:
   "Name":

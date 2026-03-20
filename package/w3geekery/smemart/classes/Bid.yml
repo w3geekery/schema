@@ -2,6 +2,10 @@ description: "A vendor's bid/response to an engagement/RFP"
 extends:
   - Object
 properties:
+  - engagementId:
+    field: bid.engagementId
+  - providerId:
+    field: bid.providerId
   - coverLetter:
     field: bid.coverLetter
   - price:

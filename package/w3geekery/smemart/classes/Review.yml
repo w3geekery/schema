@@ -2,6 +2,12 @@ description: "Post-engagement review/rating of a provider"
 extends:
   - Object
 properties:
+  - providerId:
+    field: review.providerId
+  - engagementId:
+    field: review.engagementId
+  - reviewerZerobiasUserId:
+    field: review.reviewerZerobiasUserId
   - rating:
     field: review.rating
   - reviewText:
