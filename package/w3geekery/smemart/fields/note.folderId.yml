@@ -1,0 +1,3 @@
+description: 'ID of the note folder containing this note'
+displayName: 'Folder ID'
+type: string

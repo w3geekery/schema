@@ -1,0 +1,3 @@
+description: 'ID of the provider offering this service'
+displayName: 'Provider ID'
+type: string

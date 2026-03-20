@@ -1,0 +1,3 @@
+description: 'ID of the provider submitting the bid'
+displayName: 'Provider ID'
+type: string

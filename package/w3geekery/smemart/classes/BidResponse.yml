@@ -2,6 +2,8 @@ description: "A vendor's compliance response to a single RFP requirement"
 extends:
   - Object
 properties:
+  - bidId:
+    field: bidResponse.bidId
   - requirementId:
     field: bidResponse.requirementId
   - complianceStatus:
