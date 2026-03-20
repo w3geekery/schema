@@ -2,6 +2,20 @@ description: "Rich-text engagement note"
 extends:
   - Object
 properties:
+  - engagementId:
+    field: note.engagementId
+  - folderId:
+    field: note.folderId
+  - archived:
+    field: note.archived
+  - authorZerobiasUserId:
+    field: note.authorZerobiasUserId
+  - isMeetingMinutes:
+    field: note.isMeetingMinutes
+  - boundaryId:
+    field: note.boundaryId
+  - projectId:
+    field: note.projectId
   - content:
     field: note.content
   - accessLevel:

@@ -2,10 +2,18 @@ description: "Hierarchical folder structure for notes"
 extends:
   - Object
 properties:
+  - engagementId:
+    field: noteFolder.engagementId
+  - createdByZerobiasUserId:
+    field: noteFolder.createdByZerobiasUserId
+  - accessLevel:
+    field: noteFolder.accessLevel
   - color:
     field: noteFolder.color
   - sortOrder:
     field: noteFolder.sortOrder
+  - engagement:
+    linkTo: Engagement.id.noteFolders
   - parent:
     linkTo: NoteFolder.id.children
   - children:

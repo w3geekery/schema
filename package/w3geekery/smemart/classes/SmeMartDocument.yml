@@ -2,6 +2,14 @@ description: "Uploaded file tracked via ZB FileService"
 extends:
   - File
 properties:
+  - engagementId:
+    field: document.engagementId
+  - archived:
+    field: document.archived
+  - displayName:
+    field: document.displayName
+  - uploadedByZerobiasUserId:
+    field: document.uploadedByZerobiasUserId
   - documentType:
     field: document.documentType
   - engagement:
