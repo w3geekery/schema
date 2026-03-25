@@ -14,9 +14,6 @@ properties:
     field: engagement.status
   - engagementTag:
     field: engagement.engagementTag
-  - bids:
-    linkTo: Bid.id.engagement
-    multi: true
   - reviews:
     linkTo: Review.id.engagement
     multi: true

@@ -1,4 +1,4 @@
-description: "Post-engagement review/rating of a provider"
+description: "Review/rating of a provider, scoped to engagement and/or project"
 extends:
   - Object
 properties:
@@ -16,6 +16,8 @@ properties:
     field: review.status
   - engagement:
     linkTo: Engagement.id.reviews
+  - project:
+    linkTo: SmeMartProject.id.reviews
 viewProperties:
   "Name":
     jsonata: name
