@@ -1,4 +1,4 @@
-description: "Hierarchical folder structure for notes"
+description: "Hierarchical folder structure for notes, scoped to engagement and/or project"
 extends:
   - Object
 properties:
@@ -16,6 +16,8 @@ properties:
     field: noteFolder.parentId
   - engagement:
     linkTo: Engagement.id.noteFolders
+  - project:
+    linkTo: SmeMartProject.id.noteFolders
   - parent:
     linkTo: NoteFolder.id.children
   - children:
