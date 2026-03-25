@@ -1,4 +1,4 @@
-description: "Structural container for tasks. Provides rank, issue numbering, and permission inheritance from parent."
+description: "Structural container for tasks. Provides rank, issue numbering, and permission inheritance from boundary."
 extends:
   - Object
 properties:
@@ -6,6 +6,8 @@ properties:
     field: board.scope
   - partition:
     field: board.partition
+  - boundaryId:
+    field: board.boundaryId
   - project:
     linkTo: SmeMartProject.id.boards
   - tasks:

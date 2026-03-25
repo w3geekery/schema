@@ -1,4 +1,4 @@
-description: "A buyer engagement/RFP in the SME marketplace"
+description: "Corp-to-corp agreement between buyer and provider orgs in the SME marketplace"
 extends:
   - Object
 properties:
@@ -8,36 +8,12 @@ properties:
     field: engagement.buyerZerobiasOrgId
   - zerobiasTagId:
     field: engagement.zerobiasTagId
-  - zerobiasBoundaryId:
-    field: engagement.zerobiasBoundaryId
   - zerobiasTaskId:
     field: engagement.zerobiasTaskId
-  - category:
-    field: engagement.category
   - status:
     field: engagement.status
-  - budgetType:
-    field: engagement.budgetType
-  - budgetMin:
-    field: engagement.budgetMin
-  - budgetMax:
-    field: engagement.budgetMax
-  - timeline:
-    field: engagement.timeline
   - engagementTag:
     field: engagement.engagementTag
-  - responseDeadline:
-    field: engagement.responseDeadline
-  - questionsDeadline:
-    field: engagement.questionsDeadline
-  - confidentialityRequirements:
-    field: engagement.confidentialityRequirements
-  - evaluationCriteria:
-    field: engagement.evaluationCriteria
-  - wizardStep:
-    field: engagement.wizardStep
-  - wizardData:
-    field: engagement.wizardData
   - bids:
     linkTo: Bid.id.engagement
     multi: true
@@ -63,9 +39,6 @@ viewProperties:
   "Status":
     jsonata: status
     sort: status
-  "Category":
-    jsonata: category
-    sort: category
-  "Budget Type":
-    jsonata: budgetType
-    sort: budgetType
+  "Tag":
+    jsonata: engagementTag
+    sort: engagementTag

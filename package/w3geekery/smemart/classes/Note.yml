@@ -1,4 +1,4 @@
-description: "Rich-text engagement note"
+description: "Rich-text note scoped to engagement and/or project"
 extends:
   - Object
 properties:
@@ -24,6 +24,8 @@ properties:
     linkTo: NoteFolder.id.notes
   - engagement:
     linkTo: Engagement.id.notes
+  - project:
+    linkTo: SmeMartProject.id.notes
 viewProperties:
   "Name":
     jsonata: name
