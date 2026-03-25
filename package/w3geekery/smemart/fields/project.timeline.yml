@@ -1,0 +1,3 @@
+description: 'Expected project duration (e.g., "4 weeks", "3 months")'
+displayName: 'Timeline'
+type: string

@@ -1,4 +1,4 @@
-description: "Scoped work container. Owned by Org or User. Related to Engagements via platform resource links (relates_to), not parent-child. References 0+ ZB Boundaries."
+description: "Scoped work container. Owned by Org or User. Related to Engagements via platform resource links (relates_to), not parent-child. References 0+ ZB Boundaries. Also serves as RFP when in draft/published status."
 extends:
   - Object
 properties:
@@ -14,6 +14,36 @@ properties:
     field: project.targetEndDate
   - boundaryIds:
     field: project.boundaryIds
+  - industry:
+    field: project.industry
+  - complianceFrameworkIds:
+    field: project.complianceFrameworkIds
+  - category:
+    field: project.category
+  - budgetType:
+    field: project.budgetType
+  - budgetMin:
+    field: project.budgetMin
+  - budgetMax:
+    field: project.budgetMax
+  - timeline:
+    field: project.timeline
+  - responseDeadline:
+    field: project.responseDeadline
+  - questionsDeadline:
+    field: project.questionsDeadline
+  - evaluationCriteria:
+    field: project.evaluationCriteria
+  - wizardStep:
+    field: project.wizardStep
+  - wizardData:
+    field: project.wizardData
+  - bids:
+    linkTo: Bid.id.project
+    multi: true
+  - reviews:
+    linkTo: Review.id.project
+    multi: true
   - boards:
     linkTo: SmeMartBoard.id.project
     multi: true
@@ -39,6 +69,9 @@ viewProperties:
   "Status":
     jsonata: status
     sort: status
+  "Category":
+    jsonata: category
+    sort: category
   "Owner Type":
     jsonata: ownerType
     sort: ownerType

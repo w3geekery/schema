@@ -1,9 +1,7 @@
-description: "A vendor's bid/response to an engagement/RFP"
+description: "A vendor's bid on an RFP (SmeMartProject in published status)"
 extends:
   - Object
 properties:
-  - engagementId:
-    field: bid.engagementId
   - providerId:
     field: bid.providerId
   - coverLetter:
@@ -26,8 +24,8 @@ properties:
     field: bid.wizardData
   - wizardStep:
     field: bid.wizardStep
-  - engagement:
-    linkTo: Engagement.id.bids
+  - project:
+    linkTo: SmeMartProject.id.bids
   - responses:
     linkTo: BidResponse.id.bid
     multi: true
