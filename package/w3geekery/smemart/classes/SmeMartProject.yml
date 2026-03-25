@@ -1,9 +1,11 @@
-description: "Scoped work container under an Engagement. References 1+ ZB Boundaries. Children inherit permissions."
+description: "Scoped work container. Owned by Org or User. Related to Engagements via platform resource links (relates_to), not parent-child. References 0+ ZB Boundaries."
 extends:
   - Object
 properties:
   - status:
     field: project.status
+  - ownerId:
+    field: project.ownerId
   - ownerType:
     field: project.ownerType
   - startDate:
@@ -12,8 +14,6 @@ properties:
     field: project.targetEndDate
   - boundaryIds:
     field: project.boundaryIds
-  - engagement:
-    linkTo: Engagement.id.projects
   - boards:
     linkTo: SmeMartBoard.id.project
     multi: true
