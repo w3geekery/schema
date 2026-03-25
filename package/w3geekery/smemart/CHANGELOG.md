@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.5 (2026-03-25)</small>
+
+* chore(release): bump version ([442a18d](https://github.com/zerobias-org/schema/commit/442a18d))
+* fix(w3geekery): project-engagement is relates_to, not parent-child ([e2566d3](https://github.com/zerobias-org/schema/commit/e2566d3))
+
+
+
+
+
 ## <small>1.0.5-rc.0 (2026-03-25)</small>
 
 * fix(w3geekery): project-engagement is relates_to, not parent-child ([e2566d3](https://github.com/zerobias-org/schema/commit/e2566d3))
