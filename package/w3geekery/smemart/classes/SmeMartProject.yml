@@ -1,4 +1,4 @@
-description: "Scoped work container owned by an org or boundary. Children inherit permissions."
+description: "Scoped work container under an Engagement. References 1+ ZB Boundaries. Children inherit permissions."
 extends:
   - Object
 properties:
@@ -10,6 +10,8 @@ properties:
     field: project.startDate
   - targetEndDate:
     field: project.targetEndDate
+  - boundaryIds:
+    field: project.boundaryIds
   - engagement:
     linkTo: Engagement.id.projects
   - boards:
@@ -20,6 +22,15 @@ properties:
     multi: true
   - plans:
     linkTo: ProjectPlan.id.project
+    multi: true
+  - notes:
+    linkTo: Note.id.project
+    multi: true
+  - documents:
+    linkTo: SmeMartDocument.id.project
+    multi: true
+  - noteFolders:
+    linkTo: NoteFolder.id.project
     multi: true
 viewProperties:
   "Name":

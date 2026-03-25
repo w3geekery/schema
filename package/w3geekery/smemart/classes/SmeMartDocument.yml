@@ -1,4 +1,4 @@
-description: "Uploaded file tracked via ZB FileService"
+description: "Uploaded file tracked via ZB FileService, scoped to engagement and/or project"
 extends:
   - File
 properties:
@@ -14,6 +14,8 @@ properties:
     field: document.documentType
   - engagement:
     linkTo: Engagement.id.documents
+  - project:
+    linkTo: SmeMartProject.id.documents
 viewProperties:
   "Name":
     jsonata: name
