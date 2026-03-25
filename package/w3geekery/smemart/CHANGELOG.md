@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.6 (2026-03-25)</small>
+
+* chore(release): bump version ([b88c02d](https://github.com/zerobias-org/schema/commit/b88c02d))
+* feat(w3geekery): RFP fields on SmeMartProject, bids link to projects ([8b1b5f3](https://github.com/zerobias-org/schema/commit/8b1b5f3))
+
+
+
+
+
 ## <small>1.0.6-rc.0 (2026-03-25)</small>
 
 * feat(w3geekery): RFP fields on SmeMartProject, bids link to projects ([8b1b5f3](https://github.com/zerobias-org/schema/commit/8b1b5f3))
