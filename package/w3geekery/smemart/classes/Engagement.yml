@@ -26,6 +26,9 @@ properties:
   - noteFolders:
     linkTo: NoteFolder.id.engagement
     multi: true
+  - vettingItems:
+    linkTo: EngagementVettingItem.id.engagement
+    multi: true
 viewProperties:
   "Name":
     jsonata: name
