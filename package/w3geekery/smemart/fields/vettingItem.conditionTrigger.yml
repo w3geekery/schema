@@ -1,0 +1,3 @@
+description: 'Description of condition that triggers this requirement (null for always-required items)'
+displayName: 'Condition Trigger'
+type: string

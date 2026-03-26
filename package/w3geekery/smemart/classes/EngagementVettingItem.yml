@@ -1,0 +1,49 @@
+description: "Corporate vetting checklist item for an engagement (D&B, MSA, insurance, etc.). Bidirectional: buyer and provider each have requirements."
+extends:
+  - Object
+properties:
+  - engagementId:
+    field: vettingItem.engagementId
+  - category:
+    field: vettingItem.category
+  - vettingType:
+    field: vettingItem.vettingType
+  - evidenceType:
+    field: vettingItem.evidenceType
+  - status:
+    field: vettingItem.status
+  - direction:
+    field: vettingItem.direction
+  - conditionTrigger:
+    field: vettingItem.conditionTrigger
+  - documentIds:
+    field: vettingItem.documentIds
+  - submittedAt:
+    field: vettingItem.submittedAt
+  - verifiedAt:
+    field: vettingItem.verifiedAt
+  - verifiedBy:
+    field: vettingItem.verifiedBy
+  - expiresAt:
+    field: vettingItem.expiresAt
+  - rejectionReason:
+    field: vettingItem.rejectionReason
+  - waivedReason:
+    field: vettingItem.waivedReason
+  - notes:
+    field: vettingItem.notes
+  - engagement:
+    linkTo: Engagement.id.vettingItems
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Category":
+    jsonata: category
+    sort: category
+  "Direction":
+    jsonata: direction
+    sort: direction
