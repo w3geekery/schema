@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.8 (2026-03-26)</small>
+
+* chore(release): bump version ([23521d2](https://github.com/zerobias-org/schema/commit/23521d2))
+* feat: add EngagementVettingItem schema class (Plan 063) ([fd514e2](https://github.com/zerobias-org/schema/commit/fd514e2))
+
+
+
+
+
 ## <small>1.0.8-rc.0 (2026-03-26)</small>
 
 * feat: add EngagementVettingItem schema class (Plan 063) ([fd514e2](https://github.com/zerobias-org/schema/commit/fd514e2))
