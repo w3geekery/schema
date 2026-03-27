@@ -1,0 +1,3 @@
+description: 'Project type: rfp (marketplace listing), pilot (test/POC during vetting), project (active work)'
+displayName: 'Project Type'
+type: string

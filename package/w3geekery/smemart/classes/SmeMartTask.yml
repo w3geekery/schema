@@ -16,6 +16,8 @@ properties:
     field: task.dueDate
   - sourceDocument:
     field: task.sourceDocument
+  - transparencyConfig:
+    field: task.transparencyConfig
   - board:
     linkTo: SmeMartBoard.id.tasks
   - activity:

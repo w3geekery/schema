@@ -14,6 +14,10 @@ properties:
     field: engagement.status
   - engagementTag:
     field: engagement.engagementTag
+  - facilitatorUserId:
+    field: engagement.facilitatorUserId
+  - communicationMode:
+    field: engagement.communicationMode
   - reviews:
     linkTo: Review.id.engagement
     multi: true

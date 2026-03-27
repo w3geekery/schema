@@ -24,6 +24,10 @@ properties:
     field: bid.wizardData
   - wizardStep:
     field: bid.wizardStep
+  - pricingModel:
+    field: bid.pricingModel
+  - bidValidUntil:
+    field: bid.bidValidUntil
   - project:
     linkTo: SmeMartProject.id.bids
   - responses:

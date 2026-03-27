@@ -38,6 +38,10 @@ properties:
     field: project.wizardStep
   - wizardData:
     field: project.wizardData
+  - engagementId:
+    field: project.engagementId
+  - projectType:
+    field: project.projectType
   - bids:
     linkTo: Bid.id.project
     multi: true
@@ -75,3 +79,6 @@ viewProperties:
   "Owner Type":
     jsonata: ownerType
     sort: ownerType
+  "Project Type":
+    jsonata: projectType
+    sort: projectType
