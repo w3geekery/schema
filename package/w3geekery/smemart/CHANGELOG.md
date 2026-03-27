@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.10 (2026-03-27)</small>
+
+* chore(release): bump version ([8b9baed](https://github.com/zerobias-org/schema/commit/8b9baed))
+* feat: batch schema updates — 7 new fields across 4 entities ([d7c0452](https://github.com/zerobias-org/schema/commit/d7c0452))
+
+
+
+
+
 ## <small>1.0.10-rc.0 (2026-03-27)</small>
 
 * feat: batch schema updates — 7 new fields across 4 entities ([d7c0452](https://github.com/zerobias-org/schema/commit/d7c0452))
