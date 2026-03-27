@@ -1,0 +1,3 @@
+description: 'Pricing model: fixed, hourly, milestone, nrc_arc (non-recurring + annual recurring)'
+displayName: 'Pricing Model'
+type: string
