@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "All installable zerobias-org schemas",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@zerobias-org/schema-hl7-fhir": "1.0.0",
     "@zerobias-org/schema-w3geekery-sme-mart": "1.0.4",
-    "@zerobias-org/schema-w3geekery-smemart": "1.0.8",
+    "@zerobias-org/schema-w3geekery-smemart": "1.0.10",
     "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.6",
     "@zerobias-org/schema-zerobias-schemas-mcpservers": "1.0.2",
     "@zerobias-org/schema-zerobias-zerobias-base": "2.0.6"
