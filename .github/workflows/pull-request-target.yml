@@ -24,3 +24,4 @@ jobs:
     with:
       run-integration-tests: 'false'
       use-neon: true
+      test-timeout: '900'
