@@ -1,0 +1,9 @@
+description: 'Profile section categories'
+displayName: 'Marketplace Profile Section'
+values:
+  - CORPORATE_IDENTITY: 'Legal registration, tax ID, DBA, incorporation info'
+  - ATTESTATION: 'Licenses, certifications, accreditations, professional designations'
+  - INSURANCE: 'D&O, general liability, professional liability, COI'
+  - REFERENCE: 'Client/project references, case studies, testimonials'
+  - PERSONNEL: 'Key personnel profiles, resumes, background checks'
+  - FINANCIAL: 'Financial statements, bank statements, credit reports'
