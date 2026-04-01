@@ -1,0 +1,3 @@
+description: 'ISO 8601 date when credential expires'
+displayName: 'Expires At'
+type: string
