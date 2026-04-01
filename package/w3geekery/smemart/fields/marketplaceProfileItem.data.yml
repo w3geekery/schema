@@ -1,0 +1,3 @@
+description: 'JSON-serialized section-specific data blob (insurance policy details, cert info, etc.)'
+displayName: 'Data'
+type: string
