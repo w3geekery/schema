@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.11-rc.1 (2026-04-01)</small>
+
+* chore(release): bump version ([6fe4408](https://github.com/zerobias-org/schema/commit/6fe4408))
+* feat(w3geekery): add MarketplaceProfileItem schema class with section enum and JSON data field ([40d3ef4](https://github.com/zerobias-org/schema/commit/40d3ef4))
+
+
+
+
+
 ## <small>1.0.11-rc.0 (2026-04-01)</small>
 
 * feat(w3geekery): add MarketplaceProfileItem schema class with section enum and JSON data field ([40d3ef4](https://github.com/zerobias-org/schema/commit/40d3ef4))
