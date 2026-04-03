@@ -1,0 +1,3 @@
+description: 'Invitation status: pending, accepted, declined, revoked, expired, or requested'
+displayName: 'Status'
+type: string
