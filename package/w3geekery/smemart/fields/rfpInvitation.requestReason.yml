@@ -1,0 +1,3 @@
+description: 'Optional reason if vendor requested an invitation'
+displayName: 'Request Reason'
+type: string

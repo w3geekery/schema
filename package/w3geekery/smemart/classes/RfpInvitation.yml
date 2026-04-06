@@ -1,0 +1,28 @@
+description: "Invitation to submit a bid on an invitation-only RFP"
+extends:
+  - Object
+properties:
+  - vendorOrgId:
+    field: rfpInvitation.vendorOrgId
+  - status:
+    field: rfpInvitation.status
+  - invitedAt:
+    field: rfpInvitation.invitedAt
+  - respondedAt:
+    field: rfpInvitation.respondedAt
+  - invitationMessage:
+    field: rfpInvitation.invitationMessage
+  - requestReason:
+    field: rfpInvitation.requestReason
+  - project:
+    linkTo: SmeMartProject.id.rfpInvitations
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Status":
+    jsonata: status
+    sort: status
+  "Vendor Org":
+    jsonata: vendorOrgId
+    sort: vendorOrgId

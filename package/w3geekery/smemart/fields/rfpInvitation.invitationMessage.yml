@@ -1,0 +1,3 @@
+description: 'Optional personalized message from buyer to vendor'
+displayName: 'Invitation Message'
+type: string

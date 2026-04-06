@@ -32,6 +32,8 @@ properties:
     field: vettingItem.waivedReason
   - notes:
     field: vettingItem.notes
+  - profileItemId:
+    field: vettingItem.profileItemId
   - engagement:
     linkTo: Engagement.id.vettingItems
 viewProperties:

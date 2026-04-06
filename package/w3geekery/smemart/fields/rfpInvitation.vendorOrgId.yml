@@ -1,0 +1,3 @@
+description: 'Invited vendor organization UUID'
+displayName: 'Vendor Org ID'
+type: string
