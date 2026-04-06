@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.12 (2026-04-06)</small>
+
+* chore(release): bump version ([2ac16c1](https://github.com/zerobias-org/schema/commit/2ac16c1))
+* feat(smemart): add profileItemId field to EngagementVettingItem ([293b022](https://github.com/zerobias-org/schema/commit/293b022))
+* feat(w3geekery): add RfpInvitation schema class with invitation controls ([2a550b1](https://github.com/zerobias-org/schema/commit/2a550b1))
+
+
+
+
+
 ## <small>1.0.12-rc.0 (2026-04-06)</small>
 
 * feat(smemart): add profileItemId field to EngagementVettingItem ([293b022](https://github.com/zerobias-org/schema/commit/293b022))
