@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.13 (2026-04-07)</small>
+
+* chore(release): bump version ([1a3c4c2](https://github.com/zerobias-org/schema/commit/1a3c4c2))
+* fix(w3geekery): add missing vettingItem.profileItemId field definition ([510934b](https://github.com/zerobias-org/schema/commit/510934b))
+
+
+
+
+
 ## <small>1.0.13-rc.0 (2026-04-07)</small>
 
 * fix(w3geekery): add missing vettingItem.profileItemId field definition ([510934b](https://github.com/zerobias-org/schema/commit/510934b))
