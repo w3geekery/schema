@@ -43,6 +43,9 @@ if [ $status -ne 0 ]; then
   exit 1
 fi
 
+echo "Fixing relative imports for ESM (.js extensions)"
+find src -name "*.ts" -exec sed -i'' -E "s|from ['\"](\.\./[^'\"]+)(?<!\.js)['\"]|from '\1.js'|g; s|from ['\"](\./[^'\"]+)(?<!\.js)['\"]|from '\1.js'|g; s|\.js\.js|.js|g" {} \;
+
 echo "Transpiling generated code"
 npm run transpile
 status=$?
