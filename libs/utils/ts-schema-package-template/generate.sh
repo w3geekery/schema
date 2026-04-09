@@ -44,7 +44,10 @@ if [ $status -ne 0 ]; then
 fi
 
 echo "Fixing relative imports for ESM (.js extensions)"
-find src -name "*.ts" -exec sed -i'' -E "s|from ['\"](\.\./[^'\"]+)(?<!\.js)['\"]|from '\1.js'|g; s|from ['\"](\./[^'\"]+)(?<!\.js)['\"]|from '\1.js'|g; s|\.js\.js|.js|g" {} \;
+find src -name "*.ts" | while read -r f; do
+  sed -E -i.bak "s|from '(\.\./[^']+)';|from '\1.js';|g; s|from '(\./[^']+)';|from '\1.js';|g; s|\.js\.js|.js|g" "$f"
+  rm -f "$f.bak"
+done
 
 echo "Transpiling generated code"
 npm run transpile
