@@ -1,4 +1,4 @@
-description: "Corp-to-corp agreement between buyer and provider orgs. Projects relate via platform resource links (relates_to), not parent-child."
+description: "Corp-to-corp agreement between a buyer org and a provider org in the SME Mart marketplace. Projects relate to an engagement via platform resource links (relates_to), not parent-child."
 extends:
   - Object
 properties:
