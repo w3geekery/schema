@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.14 (2026-04-10)</small>
+
+* chore(release): bump version ([033efd3](https://github.com/zerobias-org/schema/commit/033efd3))
+* feat(w3geekery): clarify Engagement class description ([ce905e4](https://github.com/zerobias-org/schema/commit/ce905e4))
+
+
+
+
+
 ## <small>1.0.14-rc.0 (2026-04-10)</small>
 
 * feat(w3geekery): clarify Engagement class description ([ce905e4](https://github.com/zerobias-org/schema/commit/ce905e4))
