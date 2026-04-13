@@ -10,7 +10,7 @@ If you are a ZeroBias employee with access to internal tooling, you may have add
 
 ## Why this guide exists
 
-Two recent third-party PRs were merged in a structurally-broken state because contributors relied on signals that looked green but were not actually validating the schema:
+Two recent PRs were merged in a structurally-broken state because the signals contributors (and their AI agents) trusted looked green but did not actually validate the schema:
 
 1. `npm run validate` passed, even though class YAMLs referenced fields that had no corresponding `fields/*.yml`. The validate script does not check field references — see [The three validation layers](#the-three-validation-layers).
 2. CI showed no failures, because the PR was unlabeled and the dataloader job was **skipped** rather than run. Skipped is not the same as passed — see [The `approved` label CI gate](#the-approved-label-ci-gate).
@@ -121,11 +121,13 @@ Local validation is a **fast smoke test**, not a CI parity check.
 | Baseline data | Empty / minimal | Production-shape content |
 | Dataloader flags | `--content-dev --skip-pgboss --skip-dynamo` | Different set of flags |
 | Trigger | You, manually | Automatic on `synchronize` once `approved` label is present |
+| Class IDs | Same as CI / prod (deterministic UUID v5 from YAML content) | Same as local / prod |
 
 Implications:
 
 - **Local passing does not guarantee CI will pass.** Production-shape data sometimes surfaces conflicts (e.g., an existing class your new schema collides with) that an empty scratch DB cannot.
 - **Local failing is almost always a real bug.** Fix it before pushing — there is no scenario where a clean CI run "rescues" a local failure caused by a missing field or bad link.
+- **Class IDs are deterministic.** Each class gets a UUID v5 derived from its YAML content, so the ID your local dataloader assigns is the same ID CI and production will assign. App-side code can register class ID constants from a successful local run and trust them across environments — as long as the YAML doesn't change before merge.
 - The full Neon-branch CI is the authoritative gate. It runs **only when a maintainer adds the `approved` label** to your PR (see next section).
 
 ## The `approved` label CI gate
@@ -203,7 +205,16 @@ Before opening a PR:
 - [ ] Connection env vars are exported (`PGHOST`, `PGPORT=15432`, `PGUSER`, `PGPASSWORD`, `PGDATABASE=content_dev`, `PGSSLMODE=disable`).
 - [ ] `dataloader --content-dev --skip-pgboss --skip-dynamo -d ./` ends with `Importer finished successfully` and exit code `0`.
 - [ ] Commit follows Conventional Commits (`feat:`, `fix:`, `docs:`, …).
-- [ ] PR targets the `dev` branch (not `main`).
+- [ ] PR is opened **cross-fork** against `zerobias-org/schema:dev`, not against your fork's `dev`. From a fork checkout, the explicit command is:
+  ```sh
+  gh pr create \
+    --repo zerobias-org/schema \
+    --base dev \
+    --head <your-fork-owner>:<your-branch> \
+    --title "..." \
+    --body "..."
+  ```
+  Without `--repo`, `gh` defaults to your fork and the PR will not reach upstream.
 - [ ] PR description notes that local dataloader passed, so a maintainer knows it is safe to add the `approved` label.
 
 After the PR is open, wait for a maintainer to add `approved`, then watch the `Test` check. Treat skipped as "did not run," not as "passed."
