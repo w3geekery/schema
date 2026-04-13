@@ -33,6 +33,8 @@ properties:
   - responses:
     linkTo: BidResponse.id.bid
     multi: true
+  - formSubmission:
+    linkTo: FormSubmission.id.bid
 viewProperties:
   "Name":
     jsonata: name

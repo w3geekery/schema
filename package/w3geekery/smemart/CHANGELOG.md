@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.15-rc.2 (2026-04-13)</small>
+
+* feat: add DocumentTemplate and DocumentInstance schema classes ([1240e4e](https://github.com/zerobias-org/schema/commit/1240e4e))
+* feat(sme-mart): add FormSubmission class and formConfig field ([b38b711](https://github.com/zerobias-org/schema/commit/b38b711))
+* feat(w3geekery): add FormSubmission class and formConfig field ([8f073ac](https://github.com/zerobias-org/schema/commit/8f073ac))
+* fix(w3geekery): document templates — remove inherited base props, add field defs ([9c81a4e](https://github.com/zerobias-org/schema/commit/9c81a4e)), closes [#41](https://github.com/zerobias-org/schema/issues/41)
+* chore(release): bump version ([988ca25](https://github.com/zerobias-org/schema/commit/988ca25))
+* chore(release): bump version ([7812e21](https://github.com/zerobias-org/schema/commit/7812e21))
+* Revert "Merge pull request #42 from w3geekery/feat/form-submission-entity" ([8565e4e](https://github.com/zerobias-org/schema/commit/8565e4e)), closes [#42](https://github.com/zerobias-org/schema/issues/42)
+
+
+
+
+
+## <small>1.0.15-rc.1 (2026-04-13)</small>
+
+* Revert "Merge pull request #42 from w3geekery/feat/form-submission-entity" ([8565e4e](https://github.com/zerobias-org/schema/commit/8565e4e)), closes [#42](https://github.com/zerobias-org/schema/issues/42)
+* chore(release): bump version ([7812e21](https://github.com/zerobias-org/schema/commit/7812e21))
+* feat(sme-mart): add FormSubmission class and formConfig field ([b38b711](https://github.com/zerobias-org/schema/commit/b38b711))
+
+
+
+
+
+## <small>1.0.15-rc.0 (2026-04-13)</small>
+
+* feat(sme-mart): add FormSubmission class and formConfig field ([b38b711](https://github.com/zerobias-org/schema/commit/b38b711))
+
+
+
+
+
 ## <small>1.0.14 (2026-04-10)</small>
 
 * chore(release): bump version ([033efd3](https://github.com/zerobias-org/schema/commit/033efd3))
