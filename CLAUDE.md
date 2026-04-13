@@ -123,6 +123,11 @@ values:
 
 ## Validation
 
+> **`npm run validate` checks package structure only — it does NOT validate schema correctness.**
+> In particular, it does not check that `field:` references in classes resolve to a real `fields/*.yml`, that `linkTo` targets exist, that bidirectional links are consistent, that enum values are ALL_CAPS, or that field types are used consistently. Those are caught only by running the **dataloader** locally (or in CI).
+>
+> A clean `npm run validate` is necessary but not sufficient. Always run the local dataloader before pushing. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full validation workflow — required reading for third-party contributors working from a fork.
+
 ### Validation Script (`scripts/validate.ts`)
 The validation script checks:
 - Package name matches `@zerobias-org/schema-*`
@@ -132,6 +137,9 @@ The validation script checks:
 - At least one of `classes/`, `interfaces/`, or `fields/` directories exists
 
 **Not currently validated by the script (but enforced by dataloader):**
+- Field references in class YAMLs (`field: foo.bar`) — no check that `fields/foo.bar.yml` exists
+- `linkTo` targets — no check that the referenced class exists or is imported
+- Bidirectional link consistency — no check that both sides agree
 - Enum values must be ALL_CAPS (`[A-Z][A-Z0-9_]*`)
 - `.npmrc` must point to `pkg.zerobias.org` (not `npm.pkg.github.com`)
 - Required dependencies and imports must be present
