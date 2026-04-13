@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.15-rc.0 (2026-04-13)</small>
+
+* feat(sme-mart): add FormSubmission class and formConfig field ([b38b711](https://github.com/zerobias-org/schema/commit/b38b711))
+
+
+
+
+
 ## <small>1.0.14 (2026-04-10)</small>
 
 * chore(release): bump version ([033efd3](https://github.com/zerobias-org/schema/commit/033efd3))
