@@ -1,0 +1,3 @@
+description: 'Version of the template at the time this instance was created'
+displayName: 'Template Version'
+type: number

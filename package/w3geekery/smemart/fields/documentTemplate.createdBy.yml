@@ -1,0 +1,3 @@
+description: 'Party UUID of the user who created the template'
+displayName: 'Created By'
+type: string

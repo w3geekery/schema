@@ -1,0 +1,3 @@
+description: 'UUID of the SmeMartProject containing the form definition'
+displayName: 'Project ID'
+type: string
