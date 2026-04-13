@@ -44,8 +44,6 @@ properties:
     field: project.projectType
   - isInvitationOnly:
     field: project.isInvitationOnly
-  - formConfig:
-    field: project.formConfig
   - bids:
     linkTo: Bid.id.project
     multi: true
@@ -72,9 +70,6 @@ properties:
     multi: true
   - rfpInvitations:
     linkTo: RfpInvitation.id.project
-    multi: true
-  - formSubmissions:
-    linkTo: FormSubmission.id.project
     multi: true
 viewProperties:
   "Name":
