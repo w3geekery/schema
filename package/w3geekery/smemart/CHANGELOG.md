@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.15-rc.1 (2026-04-13)</small>
+
+* Revert "Merge pull request #42 from w3geekery/feat/form-submission-entity" ([8565e4e](https://github.com/zerobias-org/schema/commit/8565e4e)), closes [#42](https://github.com/zerobias-org/schema/issues/42)
+* chore(release): bump version ([7812e21](https://github.com/zerobias-org/schema/commit/7812e21))
+* feat(sme-mart): add FormSubmission class and formConfig field ([b38b711](https://github.com/zerobias-org/schema/commit/b38b711))
+
+
+
+
+
 ## <small>1.0.15-rc.0 (2026-04-13)</small>
 
 * feat(sme-mart): add FormSubmission class and formConfig field ([b38b711](https://github.com/zerobias-org/schema/commit/b38b711))
