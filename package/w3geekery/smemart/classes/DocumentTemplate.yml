@@ -2,10 +2,6 @@ description: "Org-level reusable document template with variable placeholders"
 extends:
   - Object
 properties:
-  - name:
-    field: documentTemplate.name
-  - description:
-    field: documentTemplate.description
   - documentType:
     field: documentTemplate.documentType
   - content:
