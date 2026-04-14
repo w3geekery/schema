@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.16-rc.0 (2026-04-14)</small>
+
+* fix(w3geekery): remove inherited name/description from document classes ([4e237b8](https://github.com/zerobias-org/schema/commit/4e237b8))
+
+
+
+
+
 ## <small>1.0.15 (2026-04-13)</small>
 
 * chore(release): bump version ([181e6a9](https://github.com/zerobias-org/schema/commit/181e6a9))
