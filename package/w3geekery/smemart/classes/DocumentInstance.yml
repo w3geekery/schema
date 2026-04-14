@@ -2,10 +2,6 @@ description: "Engagement/project/notes-scoped instance of a document template wi
 extends:
   - Object
 properties:
-  - name:
-    field: documentInstance.name
-  - description:
-    field: documentInstance.description
   - documentType:
     field: documentInstance.documentType
   - content:
