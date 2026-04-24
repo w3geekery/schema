@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.18-rc.0 (2026-04-24)</small>
+
+* fix(w3geekery): mark SecurityCredential.frameworkIds and qualifiesForRoleIds as multi ([ecd3dd1](https://github.com/zerobias-org/schema/commit/ecd3dd1))
+* fix(w3geekery): mark SmeMartProject.boundaryIds and complianceFrameworkIds as multi ([1927088](https://github.com/zerobias-org/schema/commit/1927088))
+
+
+
+
+
 ## <small>1.0.17 (2026-04-24)</small>
 
 * chore(release): bump version ([20a8883](https://github.com/zerobias-org/schema/commit/20a8883))
