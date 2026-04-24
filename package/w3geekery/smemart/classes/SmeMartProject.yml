@@ -14,10 +14,12 @@ properties:
     field: project.targetEndDate
   - boundaryIds:
     field: project.boundaryIds
+    multi: true
   - industry:
     field: project.industry
   - complianceFrameworkIds:
     field: project.complianceFrameworkIds
+    multi: true
   - category:
     field: project.category
   - budgetType:
