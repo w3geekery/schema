@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.0.17-rc.0 (2026-04-24)</small>
+
+* feat(w3geekery): add SecurityCredential, UserCredential, OrgCredential classes ([00d95a6](https://github.com/zerobias-org/schema/commit/00d95a6)), closes [#090](https://github.com/zerobias-org/schema/issues/090)
+
+
+
+
+
 ## <small>1.0.16 (2026-04-14)</small>
 
 * chore(release): bump version ([faf427a](https://github.com/zerobias-org/schema/commit/faf427a))
