@@ -1,28 +1,28 @@
 {
-  "name": "@zerobias-org/schema-bundle",
-  "version": "0.0.28",
-  "description": "All installable zerobias-org schemas",
-  "author": "team@zerobias.com",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:zerobias-org/schema.git",
-    "directory": "bundle/"
+  "name" : "@zerobias-org/schema-bundle",
+  "version" : "1.0.0",
+  "description" : "All installable zerobias-org schemas",
+  "author" : "team@zerobias.com",
+  "license" : "ISC",
+  "repository" : {
+    "type" : "git",
+    "url" : "git@github.com:zerobias-org/schema.git",
+    "directory" : "bundle/"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+  "publishConfig" : {
+    "registry" : "https://npm.pkg.github.com/"
   },
-  "zerobias": {
-    "package": "bundle.all-schemas",
-    "import-artifact": "bundle",
-    "dataloader-version": "1.0.0"
+  "zerobias" : {
+    "package" : "bundle.all-schemas",
+    "import-artifact" : "bundle",
+    "dataloader-version" : "1.0.0"
   },
-  "dependencies": {
-    "@zerobias-org/schema-hl7-fhir": "1.0.0",
-    "@zerobias-org/schema-w3geekery-sme-mart": "1.0.4",
-    "@zerobias-org/schema-w3geekery-smemart": "1.0.18",
-    "@zerobias-org/schema-zerobias-schemas-agentskills": "1.0.6",
-    "@zerobias-org/schema-zerobias-schemas-mcpservers": "1.0.2",
-    "@zerobias-org/schema-zerobias-zerobias-base": "2.0.6"
+  "dependencies" : {
+    "@zerobias-org/schema-hl7-fhir" : "2.0.0",
+    "@zerobias-org/schema-w3geekery-sme-mart" : "2.0.0",
+    "@zerobias-org/schema-w3geekery-smemart" : "2.0.0",
+    "@zerobias-org/schema-zerobias-schemas-agentskills" : "2.0.0",
+    "@zerobias-org/schema-zerobias-schemas-mcpservers" : "2.0.0",
+    "@zerobias-org/schema-zerobias-zerobias-base" : "3.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-hl7-fhir",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "AuditgraphDB schema for HL7 FHIR R4 healthcare resources",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -11,9 +11,7 @@
     "directory": "package/hl7/fhir/"
   },
   "scripts": {
-    "nx:prepublish": "../../../scripts/prepublish.sh",
-    "correct:deps": "tsx ../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../scripts/validate.ts"
+    "correct:deps": "tsx ../../../scripts/correctDeps.ts"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

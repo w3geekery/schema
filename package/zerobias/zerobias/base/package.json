@@ -1,22 +1,14 @@
 {
   "name": "@zerobias-org/schema-zerobias-zerobias-base",
   "description": "Base Schema for Zerobias Platform.",
-  "version": "2.0.6",
+  "version": "3.0.0",
   "author": "team@zerobias.com",
   "license": "ISC",
   "type": "module",
-  "auditmation": {
-    "package": "zerobias.zerobias.base.schema",
-    "dataloader-version": "1.0.0",
-    "import-artifact": "schema",
-    "imports": [
-      "zerobias.zerobias.platform.schema"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:zerobias-org/schema.git",
-    "directory": "package/zerobias/base"
+    "directory": "package/zerobias/zerobias/base/"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -31,12 +23,18 @@
     "README.md"
   ],
   "scripts": {
-    "nx:prepublish": "../../../../scripts/prepublish.sh",
-    "correct:deps": "tsx ../../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../../scripts/validate.ts"
+    "correct:deps": "tsx ../../../../scripts/correctDeps.ts"
   },
   "dependencies": {
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
     "@zerobias-com/tag-zerobias-global-tags": "^1.0.0"
+  },
+  "zerobias": {
+    "package": "zerobias.zerobias.base.schema",
+    "dataloader-version": "1.0.0",
+    "import-artifact": "schema",
+    "imports": [
+      "zerobias.zerobias.platform.schema"
+    ]
   }
 }

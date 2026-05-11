@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-w3geekery-sme-mart",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "deprecated": "Renamed to @zerobias-org/schema-w3geekery-smemart. Use the new package.",
   "description": "DEPRECATED — use @zerobias-org/schema-w3geekery-smemart instead",
   "author": "W3Geekery <clark@w3geekery.com>",
@@ -12,9 +12,7 @@
     "directory": "package/w3geekery/sme-mart/"
   },
   "scripts": {
-    "nx:prepublish": "../../../scripts/prepublish.sh",
-    "correct:deps": "tsx ../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../scripts/validate.ts"
+    "correct:deps": "tsx ../../../scripts/correctDeps.ts"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

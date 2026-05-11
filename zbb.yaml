@@ -1,0 +1,61 @@
+name: "@zerobias-org/schema"
+version: "1.0.0"
+
+# Schema packages publish two npm artifacts at the same version:
+#   @zerobias-org/schema-{v}-{p}      (YAML schema definitions)
+#   @zerobias-org/schema-{v}-{p}-ts   (TypeScript interfaces generated
+#                                      from the loaded schema)
+#
+# The TS twin is generated at gate time inside the same Neon branch
+# that dataloader uses (only place where the schema is queryable by
+# schema-ts-generator). Plugin: zb.schema.
+
+env:
+  NEON_API_KEY:
+    source: vault
+    vault: "operations-kv/neon/content.api-key"
+    mask: true
+
+  NEON_PROJECT_ID:
+    source: vault
+    vault: "operations-kv/neon/content.project-id"
+
+  NEON_PARENT_BRANCH:
+    type: string
+    default: "content-master"
+    description: Neon parent branch to create test branches from
+
+  NEON_DB_ROLE:
+    type: string
+    default: "neondb_owner"
+    description: Neon database role
+
+  NEON_DB_NAME:
+    type: string
+    default: "zerobias"
+    description: Neon database name
+
+# ── Lifecycle ────────────────────────────────────────────────────────
+# Schema packages have no Docker phase. The TS-twin publish runs inside
+# `publish` (wired into the publishNpm aggregate by zb.schema).
+#
+# `version:` is required by the new zbb model (0.3.63+). The reusable
+# workflow's `version` job calls `zbb version --modules=$PACKAGES`,
+# which dispatches here → versionStandardPackages aggregates all module
+# version bumps into a single commit pre-matrix. Without this entry,
+# the workflow's version job fails.
+lifecycle:
+  clean:     ./gradlew clean
+  build:     ./gradlew build
+  test:      ./gradlew test
+  gate:      ./gradlew gate
+  gateCheck: ./gradlew gateCheck
+  version:   ./gradlew versionStandardPackages
+  publish:   ./gradlew publish
+
+require:
+  - tool: dataloader
+    check: "dataloader --version 2>&1"
+    parse: "Dataloader v(\\S+)"
+    version: ">=1.0.87"
+    install: "npm i -g @zerobias-com/platform-dataloader"

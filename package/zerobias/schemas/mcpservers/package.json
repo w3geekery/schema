@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-zerobias-schemas-mcpservers",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Schema for MCP Server and Tool definitions from the Model Context Protocol ecosystem",
   "author": "team@zerobias.com",
   "license": "ISC",
@@ -11,9 +11,7 @@
     "directory": "package/zerobias/schemas/mcpservers/"
   },
   "scripts": {
-    "nx:prepublish": "../../../../scripts/prepublish.sh",
-    "correct:deps": "tsx ../../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../../scripts/validate.ts"
+    "correct:deps": "tsx ../../../../scripts/correctDeps.ts"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

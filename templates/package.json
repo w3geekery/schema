@@ -11,8 +11,7 @@
     "directory": "package/{vendor}/{code}/"
   },
   "scripts": {
-    "correct:deps": "tsx ../../../scripts/correctDeps.ts",
-    "validate": "tsx ../../../scripts/validate.ts"
+    "correct:deps": "tsx ../../../scripts/correctDeps.ts"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -26,10 +25,16 @@
     "catalog.yml",
     "README.md"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@zerobias-org/schema-zerobias-zerobias-base": "^3.0.0"
+  },
   "zerobias": {
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
-    "package": "{vendor}.{code}.schema"
+    "package": "{vendor}.{code}.schema",
+    "imports": [
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
+    ]
   }
 }

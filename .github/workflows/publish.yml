@@ -1,24 +1,70 @@
-name: Publish
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+name: Publish Schema
 
-concurrency:
-  group: publish-${{ github.ref }}
-  cancel-in-progress: true
+on:
+  push:
+    branches: [main, qa, dev, uat]
+    paths:
+      - 'package/**'
+      - 'bundle/**'
+      - '.github/workflows/publish.yml'
+  workflow_dispatch:
+    inputs:
+      schema:
+        description: 'Schema to publish (e.g. hl7/fhir, zerobias/zerobias/base). Leave blank for all changed.'
+        required: false
 
 permissions:
   contents: write
-  id-token: write
   packages: write
-  pull-requests: write
+  id-token: write
 
 jobs:
   publish:
-    uses: zerobias-org/devops/.github/workflows/content-release-reusable.yml@main
-    secrets: inherit
+    uses: zerobias-org/devops/.github/workflows/zbb-publish-reusable.yml@main
     with:
-      skip-publish-announcement: 'false'
-      test-timeout: 900
+      ghcr-namespace: zerobias-org
+      dispatch-input-name: schema
+      dispatch-input-value: ${{ inputs.schema }}
+    secrets: inherit
+
+  # ── Bundle update — runs after publish matrix completes on main ──
+  # The reusable workflow doesn't touch bundle/package.json. We refresh
+  # it here so the bundle always pins the just-published versions.
+  update-bundle:
+    needs: publish
+    if: |
+      github.ref == 'refs/heads/main' &&
+      needs.publish.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Refresh bundle/package.json
+        run: ./gradlew updateBundle --no-daemon
+
+      - name: Commit + push bundle update if changed
+        run: |
+          if git diff --quiet bundle/package.json; then
+            echo "bundle/package.json unchanged — nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bundle/package.json
+          git commit -m "chore(bundle): refresh deps after publish [skip ci]"
+          git push origin HEAD:main
