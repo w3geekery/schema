@@ -55,6 +55,13 @@ jobs:
         run: chmod +x gradlew
 
       - name: Refresh bundle/package.json
+        env:
+          # settings.gradle.kts's GH Packages Maven repo reads its
+          # credentials from these env vars (READ_TOKEN, NPM_TOKEN, or
+          # GITHUB_TOKEN). Without auth, zb.workspace resolution fails.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
         run: ./gradlew updateBundle --no-daemon
 
       - name: Commit + push bundle update if changed
