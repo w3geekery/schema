@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0-uat.0",
-  "branch": "feat/gradle-bootstrap",
-  "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "version": "2.0.0",
+  "branch": "main",
+  "sourceHash": "387d3d8aee505f9d06bbd330a6198f7b6846a173e0ff51bc6c9634bf2f581d0e",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",
