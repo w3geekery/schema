@@ -30,7 +30,7 @@ properties:
   - sourcePath:
     field:
       type: string
-      description: Path within repo (e.g., "skills/pdf/SKILL.md")
+      description: Path to SKILL.md within the source repository (e.g., "skills/pdf/SKILL.md")
 
   - allowedTools:
     field:
