@@ -1,6 +1,6 @@
 {
   "version": "2.0.0-uat.0",
-  "branch": "feat/gradle-bootstrap",
+  "branch": "feat/sme-mart-schema-deprecation-29-5",
   "sourceHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {

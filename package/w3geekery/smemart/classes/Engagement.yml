@@ -1,4 +1,5 @@
-description: "Corp-to-corp agreement between a buyer org and a provider org in the SME Mart marketplace. Projects relate to an engagement via platform resource links (relates_to), not parent-child."
+description: "Corp-to-corp agreement between a buyer org and a provider org in the SME Mart marketplace. Projects relate to an engagement via platform resource links (relates_to), not parent-child. **DEPRECATED (Phase 29.5):** Use `platform.Project` instead (top-level Project: parentId=null, ownerId=buyerOrgId, identity tag via tagId). This class is retained during the dual-read window (Phases 29.5–31) to support legacy data. Delete is deferred to post-closure once all readers have migrated (see backlog SCHEMA-RETIREMENT-DELETE-1)."
+deprecated: true
 extends:
   - Object
 properties:

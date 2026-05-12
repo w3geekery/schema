@@ -1,4 +1,5 @@
-description: "Corporate vetting checklist item for an engagement (D&B, MSA, insurance, etc.). Bidirectional: buyer and provider each have requirements."
+description: "Corporate vetting checklist item for an engagement (D&B, MSA, insurance, etc.). Bidirectional: buyer and provider each have requirements. **DEPRECATED (Phase 29.5):** Use paired `platform.Task` on a `platform.Board` (boardType='list') instead — parent task + one subtask per side (buyer/provider). This class is retained during the dual-read window (Phases 29.5–31) to support legacy data. Delete is deferred to post-closure once all readers have migrated (see backlog SCHEMA-RETIREMENT-DELETE-1)."
+deprecated: true
 extends:
   - Object
 properties:
