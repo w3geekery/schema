@@ -15,7 +15,7 @@ properties:
   - author:
     field:
       type: string
-      description: Skill author from metadata
+      description: Author of the skill, taken from SKILL.md frontmatter
 
   - skillVersion:
     field:
