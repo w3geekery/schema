@@ -11,9 +11,6 @@
     "url": "git@github.com:zerobias-org/schema.git",
     "directory": "package/w3geekery/sme-mart/"
   },
-  "scripts": {
-    "correct:deps": "tsx ../../../scripts/correctDeps.ts"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

@@ -22,9 +22,6 @@
     "catalog.yml",
     "README.md"
   ],
-  "scripts": {
-    "correct:deps": "tsx ../../../../scripts/correctDeps.ts"
-  },
   "dependencies": {
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
     "@zerobias-com/tag-zerobias-global-tags": "^1.0.0"
