@@ -4,47 +4,62 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a Lerna-managed monorepo containing AuditgraphDB schema packages under the `@zerobias-org` organization. Schema packages define object types (classes, interfaces, fields, documents, enums) that are loaded into AuditgraphDB by the dataloader.
+Open-source monorepo for AuditgraphDB schema packages under the `@zerobias-org` organization. Schema packages define object types (classes, interfaces, fields, documents, enums) that are loaded into AuditgraphDB by the dataloader.
+
+Build + publish pipeline: **gradle (`zb.schema` plugin) + `zbb-publish-reusable.yml`** — no lerna, no nx. The proprietary counterpart is `auditlogic/schema` (`@auditlogic` scope).
 
 **NOTE:** For best results, run Claude Code from meta-repo root (`~/zerobias`) to ensure access to all platform context and cross-module documentation.
 
 ## Common Development Commands
 
 ### Setup and Installation
-- **Initial setup**: `npm install` (run in root directory first to setup husky hooks)
-- **Install dependencies**: `npm install` (in individual package directories)
+- **Initial setup**: `npm install` (refreshes root lockfile for commitlint + tsx dev deps).
 
-### Building and Testing
-- **Validate all schemas**: `npm run validate`
-- **Clean build artifacts**: `npm run clean`
-- **Full reset**: `npm run reset` (clean, reinstall)
+### Per-package validation
+Each schema package's gradle path mirrors its directory:
+```bash
+./gradlew :{vendor}:{code}:gate                  # depth 2 (e.g. :hl7:fhir)
+./gradlew :{vendor}:{group}:{code}:gate          # depth 3 (e.g. :zerobias:zerobias:base)
+```
+`gate` chains `validate` → `lint` → `compile` → `test*` → `buildArtifacts` → `testIntegrationDataloader` → `writeGateStamp`. Without `NEON_API_KEY` / `NEON_PROJECT_ID` in env, `testIntegrationDataloader` is skipped (not failed) and the stamp still gets written. CI re-runs the full gate against an ephemeral Neon branch on push.
 
-### Lerna Operations
-- **Dry run version bump**: `npm run lerna:dry-run`
-- **Version packages**: `npm run lerna:version`
+### Repo-wide tasks
+- `./gradlew validateUniquePackageNames` — fails if two schemas share the same `zerobias.package` block name.
+- `./gradlew projectPaths` — used by zbb to map gradle project paths to disk locations.
+- `./gradlew changedModules` — lists schemas modified since the last version tag.
 
-### Individual Package Commands
-When working in a specific schema package (e.g., `package/github/github/`):
-- **Validate schema**: `npm run validate`
-- **Correct dependencies**: `npm run correct:deps`
+### Lifecycle through `zbb`
+The same commands the CI workflow runs (per `zbb.yaml`):
+```bash
+zbb gate           # → ./gradlew gate
+zbb gateCheck      # → ./gradlew gateCheck
+zbb version        # → ./gradlew versionStandardPackages (single-writer, main only)
+zbb publish        # → ./gradlew publish
+```
+
+### Per-package helpers
+Each schema package ships a `correct:deps` script (`tsx ../../../scripts/correctDeps.ts`) for fixing dependency declarations. Other npm scripts have been removed — the publish flow is fully gradle-driven.
 
 ## Repository Architecture
 
 ### Monorepo Structure
-- **`package/`**: Contains all schema packages organized by vendor/code
-  - Structure: `package/{vendor}/{code}/`
-  - Example: `package/github/github/`, `package/agentskills/agentskills/`
-- **`scripts/`**: Build and utility scripts
-- **`templates/`**: Template files for creating new schema packages
-- **`bundle/`**: Bundled package artifacts
+- **`package/`**: schema packages organized by vendor/code (e.g. `hl7/fhir`, `zerobias/zerobias/base`).
+- **`scripts/`**: dev helpers (`correctDeps.ts`, `createNewSchema.sh`).
+- **`templates/`**: starter files for new schemas (`catalog.yml`, `package.json`).
+- **`bundle/`**: `@zerobias-org/schema-bundle` aggregate; auto-refreshed by the publish workflow's `update-bundle` step.
+- **`build.gradle.kts`** + **`settings.gradle.kts`**: root validator + auto-discovery of schemas by `build.gradle.kts` marker.
+- **`zbb.yaml`**: lifecycle map between zbb commands and gradle tasks.
+- **`gradle.properties` / `gradle-ci.properties`**: shared + CI properties (vault refs).
 
 ### Schema Package Structure
 Each schema package follows this structure:
 ```
 package/{vendor}/{code}/
+├── build.gradle.kts      # one-liner: plugins { id("zb.schema") }
 ├── package.json          # @zerobias-org/schema-{vendor}-{code}
-├── catalog.yml           # Schema catalog entry
+├── catalog.yml           # Schema catalog entry (name, package, description)
 ├── .npmrc                # Registry configuration
+├── gate-stamp.json       # Committed; preflight rejects packages without one
 ├── classes/              # AuditgraphDB class definitions (YAML)
 ├── interfaces/           # Interface definitions (YAML)
 ├── fields/               # Field definitions (YAML)
@@ -53,11 +68,12 @@ package/{vendor}/{code}/
 ```
 
 ### Technology Stack
-- **Lerna 9.x**: Monorepo management and versioning (independent mode)
-- **Nx 22.x**: Build system and caching
-- **TypeScript/tsx**: Validation scripts and tooling
-- **YAML**: Schema definition format
-- **Husky**: Git hooks for commit validation
+- **Gradle**: build + publish orchestration via the `zb.workspace` + per-package `zb.schema` plugin family.
+- **zbb**: CLI that translates lifecycle commands (gate, version, publish) to gradle tasks.
+- **`zbb-publish-reusable.yml`**: shared GitHub Actions workflow that runs gate-check, version-bump (single-writer on main), matrix publish, bundle refresh, and slot sync.
+- **TypeScript twin**: each schema publishes a companion `-ts` npm package generated by `@zerobias-com/platform-schema-ts-generator` against the schema loaded into an ephemeral Neon Postgres branch.
+- **TypeScript / tsx**: used by the per-package `correct:deps` helper.
+- **YAML**: schema definition format.
 
 ## Schema Definition Format
 
@@ -123,68 +139,65 @@ values:
 
 ## Validation
 
-> **`npm run validate` checks package structure only — it does NOT validate schema correctness.**
-> In particular, it does not check that `field:` references in classes resolve to a real `fields/*.yml`, that `linkTo` targets exist, that bidirectional links are consistent, that enum values are ALL_CAPS, or that field types are used consistently. Those are caught only by running the **dataloader** locally (or in CI).
->
-> A clean `npm run validate` is necessary but not sufficient. Always run the local dataloader before pushing. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full validation workflow — required reading for third-party contributors working from a fork.
+> **Always run `./gradlew :{...}:gate` (or `zbb gate`) before pushing.**
+> Local file-checks alone are not enough — schema correctness (class extends chains, field references, link bidirectionality, enum format, etc.) is only enforced by the dataloader. `gate` runs both the local validator AND the dataloader against an ephemeral Neon branch. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full validation workflow — required reading for third-party contributors working from a fork.
 
-### Validation Script (`scripts/validate.ts`)
-The validation script checks:
-- Package name matches `@zerobias-org/schema-*`
-- `zerobias` (or `auditmation`) section exists with `import-artifact: "schema"`
-- `catalog.yml` has `Schema` section with `name`, `package`, `description`
-- `.npmrc` file exists
-- At least one of `classes/`, `interfaces/`, or `fields/` directories exists
+### Validator (in repo)
 
-**Not currently validated by the script (but enforced by dataloader):**
-- Field references in class YAMLs (`field: foo.bar`) — no check that `fields/foo.bar.yml` exists
-- `linkTo` targets — no check that the referenced class exists or is imported
-- Bidirectional link consistency — no check that both sides agree
-- Enum values must be ALL_CAPS (`[A-Z][A-Z0-9_]*`)
-- `.npmrc` must point to `pkg.zerobias.org` (not `npm.pkg.github.com`)
-- Required dependencies and imports must be present
+`build.gradle.kts` defines a per-package `contentValidator` that checks the things the dataloader cannot or does not:
+
+- `catalog.yml`, `package.json`, and `.npmrc` exist at the schema root.
+- At least one of `{classes, interfaces, fields, enums, documents}` contains a `.yml` definition (skipped for `zerobias.deprecated: true` packages).
+- **Filesystem ↔ npm ↔ zerobias-block triangulation**: `package.json` `name` and `zerobias.package` match the directory layout. For umbrella schemas (directories ending in `/schema`), the trailing segment is dropped before deriving the expected names.
+
+The repo-wide `:validateUniquePackageNames` task fails if two schemas share the same `zerobias.package` block name.
+
+### Gate (full validation)
+
+`./gradlew :{...}:gate` runs the full pipeline:
+
+1. `validateContent` — the per-package validator above.
+2. `:validateUniquePackageNames` — repo-wide cross-cut.
+3. `testIntegrationDataloader` — loads the schema into an ephemeral Neon branch and validates everything the dataloader checks (extends chains, link bidirectionality, enum format, viewProperties, etc.). Skipped (not failed) when `NEON_API_KEY` is absent locally; CI runs it on every push.
+4. `writeGateStamp` — writes `gate-stamp.json`. **`publishGuard` rejects packages without a committed, valid stamp.**
 
 ### Package Naming
-- Package names: `@zerobias-org/schema-{vendor}-{code}`
-- Catalog package: `{vendor}.{code}.schema`
-- Config key: `zerobias` (not `auditmation` for new packages)
+- npm name: `@zerobias-org/schema-{parts joined with -}` (e.g. `@zerobias-org/schema-hl7-fhir`, `@zerobias-org/schema-zerobias-zerobias-base`).
+- `zerobias.package` block: `{parts joined with .}.schema` (e.g. `hl7.fhir.schema`, `zerobias.zerobias.base.schema`).
+- For umbrella schemas (`package/{vendor}/{product}/schema/`), the trailing `schema/` is dropped from the npm name; the block uses `{parent}.schema`.
 
 ## Development Workflow
 
 ### Creating a New Schema Package
-1. Create directory: `mkdir -p package/{vendor}/{code}`
-2. Copy templates: Use `scripts/createNewSchema.sh` or copy from `templates/`
-3. Replace placeholders: `{vendor}`, `{code}`, `{name}`, `{description}`
-4. Create schema files in `classes/`, `interfaces/`, `fields/`
-5. Install: `cd package/{vendor}/{code} && npm install`
-6. Validate: `npm run validate`
+1. Create directory: `mkdir -p package/{vendor}/{code}` (or `package/{vendor}/{group}/{code}`).
+2. Copy templates: `scripts/createNewSchema.sh {vendor}/{code}` (uses `templates/catalog.yml` + `templates/package.json` with `{code}` placeholders).
+3. Drop the gradle marker:
+   ```kotlin
+   // package/{vendor}/{code}/build.gradle.kts
+   plugins { id("zb.schema") }
+   ```
+4. Define schema content under `classes/`, `interfaces/`, `fields/`, `enums/`, `documents/`.
+5. Run `./gradlew :{vendor}:{code}:gate` and commit the generated `gate-stamp.json`.
 
 ### Dependencies
 
 **Required `dependencies` in `package.json`:**
-- `@zerobias-com/schema-zerobias-zerobias-platform`: `"latest"` — platform base classes (`Object`, `File`, etc.)
-- `@zerobias-org/schema-zerobias-zerobias-base`: `"latest"` — base schema classes
-- `@zerobias-org/product-{vendor}-{code}`: `"latest"` — your product package
+- `@zerobias-org/product-{vendor}-{code}` — your product package.
+- `@zerobias-org/schema-zerobias-zerobias-base` (`^3.0.0`) — base schema classes, if extending base.
 
 **Required `zerobias.imports` in `package.json`:**
-- `"zerobias.zerobias.platform.schema"` — always required (provides `Object`, `File`, etc.)
-- `"zerobias.zerobias.base.schema"` — required if extending base schema classes
+- `"zerobias.zerobias.platform.schema"` — always required (provides `Object`, `File`, etc.).
+- `"zerobias.zerobias.base.schema"` — required if extending base schema classes (`Asset`, `Account`, `Repository`, etc.).
 
-### Required Scripts
+### Per-package scripts
 
-Every schema package must include these scripts in `package.json`:
-
+The only npm script kept in migrated packages is the dev helper:
 ```json
 "scripts": {
-  "nx:prepublish": "../../../scripts/prepublish.sh",
-  "correct:deps": "tsx ../../../scripts/correctDeps.ts",
-  "validate": "tsx ../../../scripts/validate.ts"
+  "correct:deps": "tsx ../../../scripts/correctDeps.ts"
 }
 ```
-
-- **`nx:prepublish`**: Generates the `-ts` companion package on publish. Path depth depends on package location (use `../../../` for `package/{vendor}/{code}/`, `../../../../` for deeper nesting).
-- **`correct:deps`**: Fixes dependency declarations.
-- **`validate`**: Validates schema YAML files.
+There are no `nx:prepublish` / `nx:publish` / `validate` scripts — gradle's `zb.schema` plugin handles all of that.
 
 ### `.npmrc` Template
 
