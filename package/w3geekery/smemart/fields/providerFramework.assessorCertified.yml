@@ -1,0 +1,3 @@
+description: 'Whether the org holds an assessor certification for this framework'
+displayName: 'Assessor Certified'
+type: boolean

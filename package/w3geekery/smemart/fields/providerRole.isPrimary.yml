@@ -1,0 +1,3 @@
+description: 'Whether this is a primary role for the org'
+displayName: 'Is Primary'
+type: boolean

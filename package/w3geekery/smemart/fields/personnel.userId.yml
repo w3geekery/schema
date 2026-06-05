@@ -1,0 +1,3 @@
+description: 'Optional UUID of the platform User (when the person has an account); person credentials hang off UserCredential via this id'
+displayName: 'User ID'
+type: string

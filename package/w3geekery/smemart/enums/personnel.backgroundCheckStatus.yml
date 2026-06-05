@@ -1,0 +1,7 @@
+description: Background check state for a person
+displayName: Background Check Status
+values:
+  - NOT_STARTED: 'No background check initiated'
+  - PENDING: 'Background check in progress'
+  - CLEARED: 'Background check passed'
+  - FLAGGED: 'Background check returned a finding'

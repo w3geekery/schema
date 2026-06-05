@@ -1,0 +1,38 @@
+description: "Typed client/project reference for an Org. Distinct from Review (which is platform-mediated reputation) — a ClientReference is a provider-supplied case study/testimonial with a contact. Verification metadata supports asserted-vs-verified (D-53)."
+extends:
+  - Object
+properties:
+  - orgId:
+    field: clientReference.orgId
+  - clientName:
+    field: clientReference.clientName
+  - projectName:
+    field: clientReference.projectName
+  - contactName:
+    field: clientReference.contactName
+  - contactEmail:
+    field: clientReference.contactEmail
+  - contactPhone:
+    field: clientReference.contactPhone
+  - relationship:
+    field: clientReference.relationship
+  - summary:
+    field: clientReference.summary
+  - startDate:
+    field: clientReference.startDate
+  - endDate:
+    field: clientReference.endDate
+  - verified:
+    field: clientReference.verified
+  - verificationSource:
+    field: clientReference.verificationSource
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Client":
+    jsonata: clientName
+    sort: clientName
+  "Verified":
+    jsonata: verified
+    sort: verified

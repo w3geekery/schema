@@ -1,0 +1,10 @@
+classes:
+  - MarketplaceProfileItem
+fields:
+  - marketplaceProfileItem.section
+  - marketplaceProfileItem.expiresAt
+  - marketplaceProfileItem.status
+  - marketplaceProfileItem.orgId
+  - marketplaceProfileItem.data
+enums:
+  - marketplaceProfileItem.section

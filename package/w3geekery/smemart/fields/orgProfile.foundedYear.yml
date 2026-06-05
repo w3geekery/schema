@@ -1,0 +1,3 @@
+description: 'Year founded (1800-current); years-in-business derived on read'
+displayName: 'Founded Year'
+type: integer

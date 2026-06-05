@@ -1,0 +1,3 @@
+description: 'Background check state (see backgroundCheckStatus enum)'
+displayName: 'Background Check Status'
+type: string

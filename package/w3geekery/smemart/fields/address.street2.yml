@@ -1,0 +1,3 @@
+description: 'Street address line 2 (suite, unit, etc.)'
+displayName: 'Street 2'
+type: string

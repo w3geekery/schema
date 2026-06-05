@@ -1,0 +1,10 @@
+description: Type of insurance coverage
+displayName: Coverage Type
+values:
+  - GENERAL_LIABILITY: 'Commercial general liability'
+  - PROFESSIONAL_LIABILITY: 'Professional liability / errors and omissions'
+  - DIRECTORS_OFFICERS: 'Directors and officers (D&O)'
+  - CYBER: 'Cyber / data breach liability'
+  - WORKERS_COMP: 'Workers compensation'
+  - UMBRELLA: 'Umbrella / excess liability'
+  - OTHER: 'Other coverage type'

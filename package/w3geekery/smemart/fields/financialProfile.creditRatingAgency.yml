@@ -1,0 +1,3 @@
+description: 'Agency that issued the credit score (D&B, Experian, etc.)'
+displayName: 'Credit Rating Agency'
+type: string

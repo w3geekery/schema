@@ -1,0 +1,3 @@
+description: 'UUID of the Catalog Service-type Segment offered'
+displayName: 'Service Segment ID'
+type: string

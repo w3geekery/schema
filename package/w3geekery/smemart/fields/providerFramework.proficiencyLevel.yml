@@ -1,0 +1,3 @@
+description: 'Claimed proficiency (see proficiencyLevel enum)'
+displayName: 'Proficiency Level'
+type: string

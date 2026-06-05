@@ -1,0 +1,34 @@
+description: "Typed financial disclosure for an Org. 1:1 per org. Sensitive — disclosure is gated at the read/UI layer (033 owns the gate), not via a field on this class. Verification metadata supports asserted-vs-verified (D-53)."
+extends:
+  - Object
+properties:
+  - orgId:
+    field: financialProfile.orgId
+  - annualRevenue:
+    field: financialProfile.annualRevenue
+  - revenueCurrency:
+    field: financialProfile.revenueCurrency
+  - creditScore:
+    field: financialProfile.creditScore
+  - creditRatingAgency:
+    field: financialProfile.creditRatingAgency
+  - bankName:
+    field: financialProfile.bankName
+  - dunsNumber:
+    field: financialProfile.dunsNumber
+  - yearEndMonth:
+    field: financialProfile.yearEndMonth
+  - verified:
+    field: financialProfile.verified
+  - verificationSource:
+    field: financialProfile.verificationSource
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Annual Revenue":
+    jsonata: annualRevenue
+    sort: annualRevenue
+  "Verified":
+    jsonata: verified
+    sort: verified
