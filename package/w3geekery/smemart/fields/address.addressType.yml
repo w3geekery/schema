@@ -1,0 +1,3 @@
+description: 'Machine-routable address category (see addressType enum)'
+displayName: 'Address Type'
+type: string

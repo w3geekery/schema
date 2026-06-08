@@ -1,3 +1,0 @@
-description: 'Item lifecycle status (active, expired, draft, archived)'
-displayName: 'Status'
-type: string

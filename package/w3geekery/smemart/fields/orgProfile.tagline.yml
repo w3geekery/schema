@@ -1,0 +1,3 @@
+description: 'Short marketing tagline (<= 200 chars)'
+displayName: 'Tagline'
+type: string

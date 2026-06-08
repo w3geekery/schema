@@ -1,0 +1,3 @@
+description: 'Whether this is a primary capability segment'
+displayName: 'Is Primary'
+type: boolean

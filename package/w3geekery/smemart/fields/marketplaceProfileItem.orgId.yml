@@ -1,3 +1,0 @@
-description: 'UUID of owning organization (scoping via scalar, not link)'
-displayName: 'Organization ID'
-type: string

@@ -1,0 +1,3 @@
+description: 'Insurance carrier / underwriter name'
+displayName: 'Carrier'
+type: string

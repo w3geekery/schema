@@ -1,0 +1,6 @@
+description: Claimed proficiency level
+displayName: Proficiency Level
+values:
+  - BEGINNER: 'Beginner / foundational'
+  - INTERMEDIATE: 'Intermediate / working proficiency'
+  - EXPERT: 'Expert / advanced'

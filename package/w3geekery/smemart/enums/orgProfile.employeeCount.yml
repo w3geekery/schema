@@ -1,0 +1,8 @@
+description: Employee headcount band
+displayName: Employee Count
+values:
+  - BAND_1_10: '1-10 employees'
+  - BAND_11_50: '11-50 employees'
+  - BAND_51_200: '51-200 employees'
+  - BAND_201_500: '201-500 employees'
+  - BAND_500_PLUS: '500+ employees'

@@ -1,0 +1,3 @@
+description: 'UUID of the Catalog Product'
+displayName: 'Product ID'
+type: string

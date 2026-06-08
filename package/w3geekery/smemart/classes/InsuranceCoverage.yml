@@ -1,0 +1,39 @@
+description: "Typed insurance policy held by an Org. One row per policy. Covers D&O, general/professional liability, cyber, etc. Certificate-of-insurance document referenced by URL. Verification metadata supports asserted-vs-verified (D-53)."
+extends:
+  - Object
+properties:
+  - orgId:
+    field: insuranceCoverage.orgId
+  - coverageType:
+    field: insuranceCoverage.coverageType
+  - carrier:
+    field: insuranceCoverage.carrier
+  - policyNumber:
+    field: insuranceCoverage.policyNumber
+  - coverageAmount:
+    field: insuranceCoverage.coverageAmount
+  - currency:
+    field: insuranceCoverage.currency
+  - effectiveDate:
+    field: insuranceCoverage.effectiveDate
+  - expiresAt:
+    field: insuranceCoverage.expiresAt
+  - certificateUrl:
+    field: insuranceCoverage.certificateUrl
+  - verified:
+    field: insuranceCoverage.verified
+  - verificationSource:
+    field: insuranceCoverage.verificationSource
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Type":
+    jsonata: coverageType
+    sort: coverageType
+  "Carrier":
+    jsonata: carrier
+    sort: carrier
+  "Expires":
+    jsonata: expiresAt
+    sort: expiresAt

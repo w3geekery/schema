@@ -1,0 +1,3 @@
+description: 'Employee headcount band (see employeeCount enum)'
+displayName: 'Employee Count'
+type: string

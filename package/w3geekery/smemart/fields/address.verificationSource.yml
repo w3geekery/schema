@@ -1,0 +1,3 @@
+description: 'Source used for verification (KYB provider, manual, etc.)'
+displayName: 'Verification Source'
+type: string

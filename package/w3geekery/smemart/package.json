@@ -17,7 +17,8 @@
     "classes/**",
     "fields/**",
     "enums/**",
-    "catalog.yml"
+    "catalog.yml",
+    "deprecated.yml"
   ],
   "dependencies": {
     "@zerobias-com/schema-zerobias-zerobias-platform": "latest",

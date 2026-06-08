@@ -1,7 +1,7 @@
 {
-  "version": "2.0.2",
-  "branch": "main",
-  "sourceHash": "d2015d6800f8bfb94c04d9fb438620b3fc76f521870d0d3fdd63a3bd7bab5f49",
+  "version": "2.0.2-uat.0",
+  "branch": "feat/w3geekery-smemart-profile-consolidation",
+  "sourceHash": "818c1820375f7d5d86b6a373f7a3481cb132fc91c4d140b84222262fcc68e21e",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",

@@ -1,0 +1,3 @@
+description: 'Free-text certification detail (cert name, level, etc.)'
+displayName: 'Certification Details'
+type: string

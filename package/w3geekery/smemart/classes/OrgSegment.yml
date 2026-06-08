@@ -1,0 +1,24 @@
+description: "Org-scoped marketplace classification: links a platform Org to a Catalog Segment (Domain or Category) — replaces the free-text 'industry' field. Applies to BOTH buyer and provider orgs. One row per (org, segment) claim, carrying its own verification provenance (D-53). Segment type/name resolved from the Catalog on read (not denormalized). Distinct from ProviderSegment (expertise) — OrgSegment is universal classification."
+extends:
+  - Object
+properties:
+  - orgId:
+    field: orgSegment.orgId
+  - segmentId:
+    field: orgSegment.segmentId
+  - isPrimary:
+    field: orgSegment.isPrimary
+  - verified:
+    field: orgSegment.verified
+  - verificationSource:
+    field: orgSegment.verificationSource
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Primary":
+    jsonata: isPrimary
+    sort: isPrimary
+  "Verified":
+    jsonata: verified
+    sort: verified

@@ -1,0 +1,3 @@
+description: 'UUID of the platform Org this claim belongs to'
+displayName: 'Org ID'
+type: string
