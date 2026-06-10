@@ -3,12 +3,6 @@ extends:
  - Campaign
 icon: images/classes/auditmation/base/Campaign.svg
 properties:
-  - status:
-    field: campaignStatus
-  - startDate:
-    field: dateStarted
-  - endDate: 
-    field: dateCompleted
 # Links
   - groups:
     multi: true

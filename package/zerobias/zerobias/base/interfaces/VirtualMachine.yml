@@ -8,9 +8,6 @@ tags:
 properties:
   - hypervisor:
     field: vm.hypervisor
-  - boundaryComponent:
-    field: component.boundaryComponent
-    defaultValue: true
   # Links
   - elasticInterfaces:
     linkTo: ElasticInterface

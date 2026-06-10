@@ -61,9 +61,6 @@ properties:
     field: repository.licenseUrl
   - licenseHtmlUrl:
     field: repository.HtmlUrl
-  - boundaryComponent:
-    field: component.boundaryComponent
-    defaultValue: true
   - vulnerabilityAlertsEnabled:
     field: repository.vulnerabilityAlertsEnabled
 # Links

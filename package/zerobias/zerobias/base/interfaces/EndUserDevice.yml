@@ -66,12 +66,6 @@ properties:
     field: endUserDeviceOwnerType
   - registrationState:
     field: endUserDeviceRegistrationState
-  - virtual:
-    field: asset.isVirtual
-    defaultValue: false
-  - componentType:
-    field: oscalComponentType
-    defaultValue: hardware
   - enrollmentDate:
     field:
         displayName: Enrollment Date
