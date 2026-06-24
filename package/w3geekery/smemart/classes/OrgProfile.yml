@@ -1,4 +1,4 @@
-description: "1:1 typed company profile for a platform Org in SME Mart — identity, marketing, and discovery fields layered above the platform Org's identity. One per org (orgId unique). Addresses live in the Address class; industry/classification lives in OrgSegment; private onboarding state lives in PKV. Read name/avatar/slug from the platform Org, not here."
+description: "1:1 typed company profile for a platform Org in SME Mart — identity, marketing, and discovery fields layered above the platform Org's identity. One per org (orgId unique). Addresses live in the Address class; industry/service-segment classification lives in OrgSegment (company ownership type is the businessClassification field here); private onboarding state lives in PKV. Read name/avatar/slug from the platform Org, not here."
 extends:
   - Object
 properties:
@@ -20,6 +20,8 @@ properties:
     field: orgProfile.logoUrl
   - employeeCount:
     field: orgProfile.employeeCount
+  - businessClassification:
+    field: orgProfile.businessClassification
   - foundedYear:
     field: orgProfile.foundedYear
   - primaryContactUserId:
@@ -37,3 +39,6 @@ viewProperties:
   "Employees":
     jsonata: employeeCount
     sort: employeeCount
+  "Classification":
+    jsonata: businessClassification
+    sort: businessClassification
