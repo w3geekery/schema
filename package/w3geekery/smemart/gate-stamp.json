@@ -1,7 +1,7 @@
 {
   "version": "2.0.6",
-  "branch": "feat/w3geekery-smemart-org-business-classification",
-  "sourceHash": "80feaba046c80bd9747f9109cdfbed982fd40273b278307d899a658c2394318f",
+  "branch": "main",
+  "sourceHash": "073a82000dfd09ad6d5210066fe200e11000fe0b96d0cdf6ca8fc0317ba38c18",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",
