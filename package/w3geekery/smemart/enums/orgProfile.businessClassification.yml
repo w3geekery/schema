@@ -1,0 +1,10 @@
+description: Company ownership/structure classification for an org. Shared 7-value taxonomy with the contact-us CRM "Business Classification" field. Distinct from OrgSegment (industry/service classification).
+displayName: Business Classification
+values:
+  - NONPROFIT: 'Nonprofit / Not-for-profit'
+  - GOVERNMENT: 'Government'
+  - HOSPITAL_HEALTHCARE: 'Hospital/Healthcare Institution'
+  - PUBLICLY_TRADED: 'Publicly-traded Company'
+  - PE_BACKED: 'PE-backed Company'
+  - PRIVATELY_HELD: 'Privately-held Company'
+  - INDIVIDUAL_SOLE_PROPRIETOR: 'Individual / Sole Proprietor'

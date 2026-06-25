@@ -1,8 +1,8 @@
-description: Employee headcount band
+description: Employee headcount band. Boundary at 100 aligns with the ZeroBias Foundation/Guild eligibility cutoff (<100 emp) so guildEligible is derivable from the band. Matches the contact-us CRM Number_of_Employees picklist 1:1 — do not re-band without updating both.
 displayName: Employee Count
 values:
   - BAND_1_10: '1-10 employees'
   - BAND_11_50: '11-50 employees'
-  - BAND_51_200: '51-200 employees'
-  - BAND_201_500: '201-500 employees'
+  - BAND_51_100: '51-100 employees'
+  - BAND_101_500: '101-500 employees'
   - BAND_500_PLUS: '500+ employees'
