@@ -15,18 +15,75 @@ Build + publish pipeline: **gradle (`zb.schema` plugin) + `zbb-publish-reusable.
 ### Setup and Installation
 - **Initial setup**: `npm install` (refreshes root lockfile for commitlint + tsx dev deps).
 
-### Per-package validation
-Each schema package's gradle path mirrors its directory:
-```bash
-./gradlew :{vendor}:{code}:gate                  # depth 2 (e.g. :hl7:fhir)
-./gradlew :{vendor}:{group}:{code}:gate          # depth 3 (e.g. :zerobias:zerobias:base)
+### zbb setup — do this before any gate
+
+`zbb` is the build CLI for this repo ([`zerobias-org/util`](https://github.com/zerobias-org/util/tree/main/packages/zbb),
+`packages/zbb`). Install/upgrade with `npm i -g @zerobias-org/zbb`.
+
+**Lifecycle commands require a loaded slot.** A slot is a named local environment holding port
+allocations, generated secrets, and the env vars declared across every `zbb.yaml`. Without one,
+`zbb gate` refuses:
+
 ```
-`gate` chains `validate` → `lint` → `compile` → `test*` → `buildArtifacts` → `testIntegrationDataloader` → `writeGateStamp`. Without `NEON_API_KEY` / `NEON_PROJECT_ID` in env, `testIntegrationDataloader` is skipped (not failed) and the stamp still gets written. CI re-runs the full gate against an ephemeral Neon branch on push.
+Not inside a loaded slot. Run: zbb slot load <name>
+```
+
+First time on a machine:
+```bash
+zbb slot create local     # scans zbb.yaml files, allocates ports, pulls env/secrets
+zbb slot load local       # runs preflight tool checks, spawns a subshell with env loaded
+```
+`slot load` drops you into a subshell with the prompt `[zb:local]:path$`. Work normally inside it —
+gradle, npm, and docker all see the slot env. `exit` leaves; `zbb slot load local` reconnects
+instantly. Re-running `zbb slot load` with no args re-evaluates from the current directory, picking
+up newly-declared vars. `zbb slot list` shows existing slots.
+
+Schema is a content repo — it defines no long-running services, so **no stack needs to be started**.
+A loaded slot is sufficient.
+
+> **Exception:** explicitly-pathed gradle tasks (`zbb :hl7:fhir:gate`) are passed straight through to
+> gradle and work **without** a slot. Bare lifecycle names (`zbb gate`, `zbb gateCheck`,
+> `zbb publish`) are the ones that require it. If you get the "not inside a loaded slot" error, that
+> is what you hit.
+
+### Per-package validation
+
+**Run gates through `zbb`, never `./gradlew` directly.** `zbb` wraps the gradle wrapper and pins the
+JDK toolchain to Java 21. A bare `./gradlew` picks up whatever JDK is on `PATH`; on JDK 25 Gradle
+8.10.2 aborts with an opaque `25.0.2` and nothing else. That is **not** a missing-JDK problem and
+does **not** mean you should install a different JDK — it means `zbb` was bypassed.
+
+**Preferred — `cd` into the package and run the bare task.** `zbb` walks up to the gradle root,
+detects the current subproject from cwd, and prefixes the task name for you:
+```bash
+cd package/hl7/fhir && zbb gate          # runs :hl7:fhir:gate
+```
+This works at any depth and needs no hand-typed gradle path.
+
+Explicit paths also work from the repo root. Each schema's gradle path mirrors its directory:
+```bash
+zbb :{vendor}:{code}:gate                  # depth 2 (e.g. :hl7:fhir)
+zbb :{vendor}:{group}:{code}:gate          # depth 3 (e.g. :zerobias:zerobias:base)
+```
+Either way, keep the gate scoped to one package. A bare `zbb gate` from the repo root runs every
+schema and rewrites every `gate-stamp.json`.
+
+`gate` chains `validate` → `lint` → `compile` → `test*` → `buildArtifacts` → `testDataloader` →
+`writeGateStamp`.
+
+`testDataloader` loads the schema into an ephemeral Neon branch via the **remote dataloader service**
+(`DATALOADER_SERVICE_URL`, default `https://app.zerobias.com/api/dataloader`), authenticated by
+`ZB_TOKEN`. No local Neon credentials are involved — `NEON_API_KEY` / `NEON_PROJECT_ID` are not read
+by the gate.
+
+> **If `ZB_TOKEN` is unset or blank, `testDataloader` is skipped (not failed) and the gate still
+> writes a stamp.** The stamp records this honestly as `"testDataloader": "skipped"` rather than
+> `"passed"` — so check that field before trusting a green gate. Skipped is not passed.
 
 ### Repo-wide tasks
-- `./gradlew validateUniquePackageNames` — fails if two schemas share the same `zerobias.package` block name.
-- `./gradlew projectPaths` — used by zbb to map gradle project paths to disk locations.
-- `./gradlew changedModules` — lists schemas modified since the last version tag.
+- `zbb validateUniquePackageNames` — fails if two schemas share the same `zerobias.package` block name.
+- `zbb projectPaths` — used by zbb to map gradle project paths to disk locations.
+- `zbb changedModules` — lists schemas modified since the last version tag.
 
 ### Lifecycle through `zbb`
 The same commands the CI workflow runs (per `zbb.yaml`):
@@ -38,13 +95,15 @@ zbb publish        # → ./gradlew publish
 ```
 
 ### Per-package helpers
-Each schema package ships a `correct:deps` script (`tsx ../../../scripts/correctDeps.ts`) for fixing dependency declarations. Other npm scripts have been removed — the publish flow is fully gradle-driven.
+Schema packages carry **no npm scripts at all** — the publish flow is fully gradle-driven. (Earlier
+revisions of this file described a `correct:deps` helper backed by `scripts/correctDeps.ts`; both the
+script and the package.json entries are gone.)
 
 ## Repository Architecture
 
 ### Monorepo Structure
 - **`package/`**: schema packages organized by vendor/code (e.g. `hl7/fhir`, `zerobias/zerobias/base`).
-- **`scripts/`**: dev helpers (`correctDeps.ts`, `createNewSchema.sh`).
+- **`scripts/`**: dev helpers (`createNewSchema.sh`).
 - **`templates/`**: starter files for new schemas (`catalog.yml`, `package.json`).
 - **`bundle/`**: `@zerobias-org/schema-bundle` aggregate; auto-refreshed by the publish workflow's `update-bundle` step.
 - **`build.gradle.kts`** + **`settings.gradle.kts`**: root validator + auto-discovery of schemas by `build.gradle.kts` marker.
@@ -72,7 +131,6 @@ package/{vendor}/{code}/
 - **zbb**: CLI that translates lifecycle commands (gate, version, publish) to gradle tasks.
 - **`zbb-publish-reusable.yml`**: shared GitHub Actions workflow that runs gate-check, version-bump (single-writer on main), matrix publish, bundle refresh, and slot sync.
 - **TypeScript twin**: each schema publishes a companion `-ts` npm package generated by `@zerobias-com/platform-schema-ts-generator` against the schema loaded into an ephemeral Neon Postgres branch.
-- **TypeScript / tsx**: used by the per-package `correct:deps` helper.
 - **YAML**: schema definition format.
 
 ## Schema Definition Format
@@ -139,8 +197,9 @@ values:
 
 ## Validation
 
-> **Always run `./gradlew :{...}:gate` (or `zbb gate`) before pushing.**
-> Local file-checks alone are not enough — schema correctness (class extends chains, field references, link bidirectionality, enum format, etc.) is only enforced by the dataloader. `gate` runs both the local validator AND the dataloader against an ephemeral Neon branch. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full validation workflow — required reading for third-party contributors working from a fork.
+> **Always gate your package before pushing** — `cd` into it and run `zbb gate` (see
+> [Per-package validation](#per-package-validation)). Do not invoke `./gradlew` directly.
+> Local file-checks alone are not enough — schema correctness (class extends chains, field references, link bidirectionality, enum format, etc.) is only enforced by the dataloader. `gate` runs the local validator, and runs the dataloader against an ephemeral Neon branch **provided `ZB_TOKEN` is set** — without it that step is silently skipped. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the full validation workflow — required reading for third-party contributors working from a fork.
 
 ### Validator (in repo)
 
@@ -154,12 +213,16 @@ The repo-wide `:validateUniquePackageNames` task fails if two schemas share the 
 
 ### Gate (full validation)
 
-`./gradlew :{...}:gate` runs the full pipeline:
+`zbb gate` (from inside the package) runs the full pipeline:
 
 1. `validateContent` — the per-package validator above.
 2. `:validateUniquePackageNames` — repo-wide cross-cut.
-3. `testIntegrationDataloader` — loads the schema into an ephemeral Neon branch and validates everything the dataloader checks (extends chains, link bidirectionality, enum format, viewProperties, etc.). Skipped (not failed) when `NEON_API_KEY` is absent locally; CI runs it on every push.
-4. `writeGateStamp` — writes `gate-stamp.json`. **`publishGuard` rejects packages without a committed, valid stamp.**
+3. `testDataloader` — loads the schema into an ephemeral Neon branch via the remote dataloader service and validates everything the dataloader checks (extends chains, link bidirectionality, enum format, viewProperties, etc.). **Skipped (not failed) when `ZB_TOKEN` is unset or blank**; CI runs it on every push.
+4. `writeGateStamp` — writes `gate-stamp.json`, recording each step's status (`passed` / `skipped` / `up-to-date` / …). **`publishGuard` rejects packages without a committed, valid stamp.**
+
+To confirm the dataloader actually ran, check the stamp: `"testDataloader": "passed"` means it ran,
+`"skipped"` means it did not. Verify the stamp with `zbb gateCheck` (cheap — no build or vault
+needed).
 
 ### Package Naming
 - npm name: `@zerobias-org/schema-{parts joined with -}` (e.g. `@zerobias-org/schema-hl7-fhir`, `@zerobias-org/schema-zerobias-zerobias-base`).
@@ -170,14 +233,15 @@ The repo-wide `:validateUniquePackageNames` task fails if two schemas share the 
 
 ### Creating a New Schema Package
 1. Create directory: `mkdir -p package/{vendor}/{code}` (or `package/{vendor}/{group}/{code}`).
-2. Copy templates: `scripts/createNewSchema.sh {vendor}/{code}` (uses `templates/catalog.yml` + `templates/package.json` with `{code}` placeholders).
+2. Copy templates: `scripts/createNewSchema.sh package/{vendor}/{code}` — the path is repo-root-relative and **must include the `package/` prefix**; the script exits if the directory does not already exist (step 1 creates it). Uses `templates/catalog.yml` + `templates/package.json` with `{code}` placeholders.
 3. Drop the gradle marker:
    ```kotlin
    // package/{vendor}/{code}/build.gradle.kts
    plugins { id("zb.schema") }
    ```
 4. Define schema content under `classes/`, `interfaces/`, `fields/`, `enums/`, `documents/`.
-5. Run `./gradlew :{vendor}:{code}:gate` and commit the generated `gate-stamp.json`.
+5. `cd package/{vendor}/{code}` and run `zbb gate`, then commit the generated `gate-stamp.json`.
+   (Not `./gradlew` — see [Per-package validation](#per-package-validation).)
 
 ### Dependencies
 
@@ -191,13 +255,10 @@ The repo-wide `:validateUniquePackageNames` task fails if two schemas share the 
 
 ### Per-package scripts
 
-The only npm script kept in migrated packages is the dev helper:
-```json
-"scripts": {
-  "correct:deps": "tsx ../../../scripts/correctDeps.ts"
-}
-```
-There are no `nx:prepublish` / `nx:publish` / `validate` scripts — gradle's `zb.schema` plugin handles all of that.
+Migrated packages have **no `scripts` block** in `package.json`. There are no `nx:prepublish` /
+`nx:publish` / `validate` / `correct:deps` scripts — gradle's `zb.schema` plugin handles all of it.
+If you need to validate a package, run the gate (see
+[Per-package validation](#per-package-validation)), not an npm script.
 
 ### `.npmrc` Template
 
@@ -214,7 +275,10 @@ All packages must use the ZeroBias Package Registry. Copy this exactly:
 ## Commit and Versioning
 - Follow Conventional Commits: `<type>(<scope>): <subject>`
 - Types: feat, fix, docs, style, refactor, perf, test, chore
-- Lerna handles versioning and changelog generation
+- Versioning is gradle-driven: `zbb version` → `versionStandardPackages`, which bumps each changed
+  package's `package.json` and commits as `chore(release): <pkg> vX.Y.Z`. Single-writer, `main` only.
+- Changelogs are **not** generated. The `CHANGELOG.md` files still present in some packages are
+  legacy lerna artifacts and are no longer updated by the release flow.
 - No manual version bumps in pull requests
 
 ## Authentication
@@ -298,10 +362,14 @@ zb.package:    {vendor}.{code}.schema
 - Enum values **MUST be ALL_CAPS** matching `[A-Z][A-Z0-9_]*`. The dataloader enforces this — lowercase values fail at load time.
 
 ## Important Notes
-- Always run `npm install` in root directory first to setup husky hooks
+- `npm install` at the repo root only refreshes the lockfile for the commitlint dev deps. Commitlint
+  is configured (`.commitlintrc.json`), but there is no `.husky/` directory and no `prepare` script,
+  so **nothing enforces commit-message format locally** — follow the convention by hand.
 - PRs must target the `dev` branch (not `main`)
-- Schema versions start at `1.0.0-rc.1` and are managed by Lerna
-- Validation scripts ensure schema integrity before publication
+- Versions are managed by gradle (`zbb version`), not Lerna. Packages migrated to the gradle
+  pipeline take a major bump on their first gradle publish, so live versions are `2.x` / `3.x` —
+  not the `1.0.0-rc.1` start of the old lerna flow.
+- The gate — not an npm script — is what ensures schema integrity before publication
 - Schema packages use the `zerobias` config key (dataloader supports both `zerobias` and `auditmation`)
 - Extending `Element` base class enables framework linking without schema changes
 

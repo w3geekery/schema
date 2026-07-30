@@ -12,7 +12,7 @@ If you are a ZeroBias employee with access to internal tooling, you may have add
 
 Two recent PRs were merged in a structurally-broken state because the signals contributors (and their AI agents) trusted looked green but did not actually validate the schema:
 
-1. `npm run validate` passed, even though class YAMLs referenced fields that had no corresponding `fields/*.yml`. The validate script does not check field references — see [The three validation layers](#the-three-validation-layers).
+1. The structure validator (then `npm run validate`, now `zbb validateContent`) passed, even though class YAMLs referenced fields that had no corresponding `fields/*.yml`. Structure validation does not check field references — see [The three validation layers](#the-three-validation-layers).
 2. CI showed no failures, because the PR was unlabeled and the dataloader job was **skipped** rather than run. Skipped is not the same as passed — see [The `approved` label CI gate](#the-approved-label-ci-gate).
 
 Following the steps below catches both classes of error before you push.
@@ -23,11 +23,34 @@ Schemas are validated at three different layers, each catching different problem
 
 | Layer | Command | What it checks | Speed | Required before push? |
 |---|---|---|---|---|
-| **1. Package structure** | `npm run validate` | `package.json` shape, `catalog.yml` shape, `.npmrc` presence, naming consistency between npm name / catalog package / directory / product dependency | seconds | Yes |
+| **1. Package structure** | `zbb validateContent` | `package.json` shape, `catalog.yml` shape, `.npmrc` presence, naming consistency between npm name / catalog package / directory / product dependency | seconds | Yes |
 | **2. Local dataloader** | `dataloader --content-dev …` against a local Supabase scratch DB | Field references resolve, `linkTo` targets exist, bidirectional links are consistent, enum values are ALL_CAPS, types are valid, imports cover everything you extend | ~30s–2m | **Yes** |
-| **3. CI dataloader** | Triggered automatically once a maintainer adds the `approved` label | Same dataloader, but run against a **Neon branch cloned from `content-master`** with production-shape data | minutes | Triggered for you; you cannot run it locally |
+| **3. Neon-branch dataloader** | `zbb gate` locally (needs `ZB_TOKEN`), and automatically in CI once a maintainer adds the `approved` label | Same dataloader, run against an ephemeral **Neon branch cloned from `content-master`** with production-shape data | minutes | Run it if you can; CI is authoritative |
 
-Layer 1 alone will let many real bugs through. Layer 2 is the smallest local check that catches what production cares about. Layer 3 is authoritative but only runs when a maintainer opts you in.
+Layer 1 alone will let many real bugs through. Layer 2 is the smallest local check that catches what production cares about. Layer 3 is authoritative.
+
+**All three run for you as part of `zbb gate`** — from inside your package directory:
+
+```sh
+cd package/<vendor>/<code>
+zbb gate
+```
+
+Use `zbb`, never `./gradlew` directly: `zbb` pins the JDK toolchain to Java 21, and a bare
+`./gradlew` on JDK 25 fails with an opaque `25.0.2` and nothing else.
+
+`zbb gate` requires a **loaded slot** — see [Setting up `zbb`](#setting-up-zbb) below. If you cannot
+create one, use the explicitly-pathed form instead, which is passed straight through to gradle and
+needs no slot:
+
+```sh
+zbb :<vendor>:<code>:gate      # from the repo root, e.g. zbb :hl7:fhir:gate
+```
+
+> **`zbb gate`'s dataloader step needs `ZB_TOKEN`.** If it is unset or blank, the step is
+> **skipped, not failed**, and the gate still writes `gate-stamp.json`. The stamp records
+> `"testDataloader": "skipped"` rather than `"passed"` — check that field. Skipped is not passed.
+> You will still want Layer 2 as a local check whenever the Neon step is skipped.
 
 ## Prerequisites
 
@@ -43,12 +66,50 @@ Install once per machine:
   ```sh
   npm i -g @zerobias-com/platform-dataloader@latest
   ```
+- **`zbb`**, the ZeroBias build CLI — runs the gate, and wraps gradle with a pinned Java 21 toolchain:
+  ```sh
+  npm i -g @zerobias-org/zbb
+  ```
+  Source: [`zerobias-org/util`](https://github.com/zerobias-org/util/tree/main/packages/zbb) (`packages/zbb`).
 
-Verify the install:
+Verify the installs:
 
 ```sh
 dataloader --help
+zbb --version
 ```
+
+## Setting up `zbb`
+
+Bare lifecycle commands (`zbb gate`, `zbb gateCheck`, `zbb publish`) run inside a **slot** — a named
+local environment holding port allocations, generated secrets, and the env vars declared across the
+repo's `zbb.yaml` files. Without one you get:
+
+```
+Not inside a loaded slot. Run: zbb slot load <name>
+```
+
+Create and enter one:
+
+```sh
+zbb slot create local     # scans zbb.yaml files, allocates ports, pulls env/secrets
+zbb slot load local       # preflight tool checks, then a subshell with slot env loaded
+```
+
+`slot load` spawns a subshell with the prompt `[zb:local]:path$` — run the gate from inside it.
+`exit` returns to your normal shell; `zbb slot load local` reconnects instantly. `zbb slot list`
+shows what exists. This repo defines no long-running services, so **no stack needs to be started**.
+
+> **If you cannot create a slot** — `zbb slot create` pulls some values from internal infrastructure
+> that external contributors may not be able to reach — skip it and use the explicitly-pathed form,
+> which bypasses the slot requirement entirely:
+>
+> ```sh
+> zbb :<vendor>:<code>:gate
+> ```
+>
+> Layer 2 (the local scratch-DB dataloader below) also needs no slot, and remains the reliable
+> local check from a fork.
 
 ## Local dataloader setup
 
@@ -80,7 +141,7 @@ From within your schema package directory:
 ```sh
 cd package/<vendor>/<code>
 npm install
-npm run validate
+zbb validateContent
 dataloader --content-dev --skip-pgboss --skip-dynamo -d ./
 ```
 
@@ -94,9 +155,9 @@ and exits with status `0`. Anything else — non-zero exit code, an error stack,
 
 A typical schema runs in well under two minutes locally. If it hangs longer than that, the scratch DB or a missing dependency is the usual cause.
 
-## What the dataloader catches that `npm run validate` doesn't
+## What the dataloader catches that `validateContent` doesn't
 
-`npm run validate` only checks package structure. The dataloader actually loads your YAML into the graph and rejects it on:
+`zbb validateContent` only checks package structure. The dataloader actually loads your YAML into the graph and rejects it on:
 
 - **Missing field YAMLs** — a class declares `field: repository.fullName` but `fields/repository.fullName.yml` does not exist in your package or any imported package.
 - **Bad `linkTo` targets** — a property links to a class that is not defined in your schema or any package listed in `zerobias.imports`.
@@ -167,7 +228,7 @@ Top five issues seen on third-party PRs, with concrete symptoms and fixes.
 
 ### 1. Class references a field that has no `fields/*.yml`
 
-**Symptom:** Local dataloader prints something like `field "engagement.budgetType" not found` and exits non-zero. `npm run validate` was clean.
+**Symptom:** Local dataloader prints something like `field "engagement.budgetType" not found` and exits non-zero. `zbb validateContent` was clean.
 
 **Fix:** Either create `fields/engagement.budgetType.yml` with the correct `type` and `description`, or remove the reference from the class.
 
@@ -187,7 +248,7 @@ Top five issues seen on third-party PRs, with concrete symptoms and fixes.
 
 **Symptom:** Dataloader rejects the enum at load with a regex error like `value "active" does not match [A-Z][A-Z0-9_]*`.
 
-**Fix:** Rename the value to ALL_CAPS (`ACTIVE`, `IN_PROGRESS`, `NOT_APPLICABLE`). The validate script does not catch this — only the dataloader does.
+**Fix:** Rename the value to ALL_CAPS (`ACTIVE`, `IN_PROGRESS`, `NOT_APPLICABLE`). `validateContent` does not catch this — only the dataloader does.
 
 ### 5. Missing entry in `zerobias.imports`
 
@@ -200,10 +261,13 @@ Top five issues seen on third-party PRs, with concrete symptoms and fixes.
 Before opening a PR:
 
 - [ ] `npm install` succeeds in your package directory.
-- [ ] `npm run validate` exits `0`.
-- [ ] Local scratch DB is running (`npx @zerobias-org/util-content-dev-schema`).
-- [ ] Connection env vars are exported (`PGHOST`, `PGPORT=15432`, `PGUSER`, `PGPASSWORD`, `PGDATABASE=content_dev`, `PGSSLMODE=disable`).
-- [ ] `dataloader --content-dev --skip-pgboss --skip-dynamo -d ./` ends with `Importer finished successfully` and exit code `0`.
+- [ ] `zbb gate` exits `0` from inside your package directory (`cd package/<vendor>/<code> && zbb gate`).
+- [ ] `gate-stamp.json` shows `"testDataloader": "passed"` — **not** `"skipped"`. Skipped means `ZB_TOKEN` was missing and the dataloader never ran.
+- [ ] `gate-stamp.json` is committed.
+- [ ] **If `testDataloader` was skipped**, run the Layer 2 local dataloader instead:
+  - [ ] Local scratch DB is running (`npx @zerobias-org/util-content-dev-schema`).
+  - [ ] Connection env vars are exported (`PGHOST`, `PGPORT=15432`, `PGUSER`, `PGPASSWORD`, `PGDATABASE=content_dev`, `PGSSLMODE=disable`).
+  - [ ] `dataloader --content-dev --skip-pgboss --skip-dynamo -d ./` ends with `Importer finished successfully` and exit code `0`.
 - [ ] Commit follows Conventional Commits (`feat:`, `fix:`, `docs:`, …).
 - [ ] PR is opened **cross-fork** against `zerobias-org/schema:dev`, not against your fork's `dev`. From a fork checkout, the explicit command is:
   ```sh

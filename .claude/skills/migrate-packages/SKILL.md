@@ -1,6 +1,6 @@
 ---
 name: migrate-packages
-description: Migrate the next batch of packages within an already-gradle-bootstrapped repo. Drops per-package build.gradle.kts marker, ensures .npmrc, major-bumps the version, runs ./gradlew :<path>:gate, and commits per-package.
+description: Migrate the next batch of packages within an already-gradle-bootstrapped repo. Drops per-package build.gradle.kts marker, ensures .npmrc, major-bumps the version, runs zbb gate, and commits per-package.
 argument-hint: "[<package-path>...] [--batch=N] [--dry-run]"
 ---
 
@@ -44,13 +44,17 @@ plugins { id("zb.schema") }
 ### 2. Ensure `.npmrc`
 If `<package>/.npmrc` doesn't exist, copy from a sibling already-migrated package (or from the repo root). Validators require it.
 
-### 3. Run **full** `:gate` (NOT just `:validateContent`)
+### 3. Run **full** `gate` (NOT just `validateContent`)
 ```bash
-./gradlew :<project:path>:gate
+cd <package> && zbb gate
 ```
-**Why full `:gate` matters:** the publish workflow's preflight rejects any package without a committed `gate-stamp.json`. The stamp is written by `:writeGateStamp` at the end of `:gate`. `:validateContent` alone does NOT produce a stamp — the package will pass local file-checks but fail in CI with `gate-stamp.json is missing or invalid`.
+**Use `zbb`, never `./gradlew` directly** — `zbb` pins the JDK toolchain to Java 21. A bare `./gradlew` uses whatever JDK is on `PATH`, and on JDK 25 Gradle 8.10.2 aborts with a bare `25.0.2` and no other output. That means zbb was bypassed, not that a different JDK is needed. Run from inside the package directory and `zbb` prefixes the task with the right project path automatically.
 
-Without `NEON_API_KEY` / `NEON_PROJECT_ID` in env, `testIntegrationDataloader` is skipped (not failed) — and the TS-twin generation step is skipped along with it (it's a post-load action inside the same task). The stamp still gets written, and CI re-runs the full gate with Neon on push.
+**A loaded slot is required** for the bare `zbb gate` form. If you see `Not inside a loaded slot. Run: zbb slot load <name>`, run `zbb slot create local` (first time only) then `zbb slot load local`, and re-run the gate from inside the resulting subshell. Alternatively use the explicitly-pathed form `zbb :<project:path>:gate`, which passes straight through to gradle and needs no slot. See the repo's CLAUDE.md → "zbb setup" for detail.
+
+**Why full `gate` matters:** the publish workflow's preflight rejects any package without a committed `gate-stamp.json`. The stamp is written by `writeGateStamp` at the end of `gate`. `validateContent` alone does NOT produce a stamp — the package will pass local file-checks but fail in CI with `gate-stamp.json is missing or invalid`.
+
+If **`ZB_TOKEN`** is unset or blank, `testDataloader` is skipped (not failed) — and TS-twin generation is skipped along with it (it's a post-load action inside the same task). The stamp still gets written, recording `"testDataloader": "skipped"` instead of `"passed"`. Check that field before assuming the package validated; CI re-runs the full gate on push.
 
 The validator surfaces drift. Common fixes for schemas:
 - `package.json name` doesn't match the directory-derived formula → rename to match (don't change the directory). Mixed-depth supported: `package/{v}/{p}` → `@zerobias-org/schema-{v}-{p}`; `package/{v}/{g}/{p}` → `@zerobias-org/schema-{v}-{g}-{p}`.
