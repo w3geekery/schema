@@ -1,6 +1,7 @@
 description: "Org-scoped expertise junction: a provider Org's claimed capability in a Catalog Segment (Domain/Category). One row per (org, segment) claim with its own verification provenance (D-53). Segment name resolved from the Catalog on read (not denormalized). Distinct from OrgSegment (universal classification) — this is provider-capability."
 extends:
   - Object
+  - Verifiable
 properties:
   - orgId:
     field: providerSegment.orgId
@@ -8,10 +9,6 @@ properties:
     field: providerSegment.segmentId
   - isPrimary:
     field: providerSegment.isPrimary
-  - verified:
-    field: providerSegment.verified
-  - verificationSource:
-    field: providerSegment.verificationSource
 viewProperties:
   "Name":
     jsonata: name

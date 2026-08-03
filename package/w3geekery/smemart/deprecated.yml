@@ -19,5 +19,25 @@ fields:
   - personnel.verificationSource
   - financialProfile.verified
   - financialProfile.verificationSource
+  # Retired by Verifiable interface adoption (commit 3b). Same mechanic as the 8 above, but these
+  # six classes take Verifiable DIRECTLY rather than via VendorAttestationBase — they are not
+  # attestations. OrgSegment/ProviderSegment/ProviderRole/ProviderServiceSegment are Catalog-keyed
+  # membership claims and OrgCredential/UserCredential are credential holdings; provenance applies
+  # to all of them, attestation-ness does not.
+  # NOT in this set, deliberately: Address (out of scope entirely) and ProviderSkill /
+  # ProviderProduct / ProviderFramework (retired wholesale by the Cluster B *Proficiency renames,
+  # so they keep their own declarations until then and are never edited here).
+  - orgCredential.verified
+  - orgCredential.verificationSource
+  - orgSegment.verified
+  - orgSegment.verificationSource
+  - providerRole.verified
+  - providerRole.verificationSource
+  - providerSegment.verified
+  - providerSegment.verificationSource
+  - providerServiceSegment.verified
+  - providerServiceSegment.verificationSource
+  - userCredential.verified
+  - userCredential.verificationSource
 enums:
   - marketplaceProfileItem.section
