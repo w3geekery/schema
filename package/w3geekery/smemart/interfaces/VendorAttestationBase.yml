@@ -1,0 +1,33 @@
+# ┌─────────────────────────────────────────────────────────────────────────────────────┐
+# │ THE EMPTINESS IS INTENTIONAL. DO NOT ADD PROPERTIES TO THIS INTERFACE.               │
+# └─────────────────────────────────────────────────────────────────────────────────────┘
+#
+# A pure marker. It exists to say "this class is a vendor ATTESTATION", which is a different
+# statement from "this class has provenance" — and the two must stay separable.
+#
+# WHY IT DECLARES NOTHING (measured, not assumed):
+#   The four shipped attestation flavors — InsuranceCoverage, ClientReference, Personnel,
+#   FinancialProfile — share exactly THREE properties: orgId, verified, verificationSource.
+#   The latter two moved to Verifiable. `orgId` stays per-class (each flavor names its own
+#   field file, e.g. `personnel.orgId`). That leaves nothing in common to declare here.
+#
+# WHY NOT JUST USE Verifiable DIRECTLY:
+#   Provenance is orthogonal to attestation-ness. Asserted-vs-verified (D-53) applies to
+#   IDENTITY as much as to attestations — OrgProfile takes Verifiable (commit 4 / R3) without
+#   thereby becoming an attestation. Collapsing these two interfaces would make it one.
+#   Correspondingly, the provenance interface must NOT carry "Vendor" or "Attestation" in its
+#   name; that is why `Verifiable` is named as it is.
+#
+# PRECEDENT for a propertyless marker that extends another interface — all live, none skipped,
+# in package/zerobias/zerobias/base/interfaces/:
+#   SsoPrincipal.yml (extends Principal) · SsoGroup.yml · SsoUser.yml · AppEnvironmentBaseline.yml
+#   All declare `properties:` with nothing under it. This file follows that exact shape.
+#
+#   Do NOT take Certification.yml as a counter-example. It is disabled for having "no properties,
+#   just links" — but it declares NO `extends` either, so it is genuinely empty at the GQL
+#   surface. This interface inherits five properties from Verifiable and is not.
+description: "Marker for vendor attestation records — a claim an Org makes about itself that is subject to verification. Carries no properties of its own; the provenance envelope comes from Verifiable."
+displayName: "Vendor Attestation Base"
+extends:
+  - Verifiable
+properties:

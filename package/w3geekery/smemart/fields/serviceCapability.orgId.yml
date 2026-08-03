@@ -1,0 +1,3 @@
+description: 'UUID of the Org claiming this capability'
+displayName: 'Org ID'
+type: string

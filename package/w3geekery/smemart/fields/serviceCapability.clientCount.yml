@@ -1,0 +1,3 @@
+description: 'Number of clients the Org claims to have served in this service type; null if not stated'
+displayName: 'Client Count'
+type: integer

@@ -15,6 +15,7 @@
   },
   "files": [
     "classes/**",
+    "interfaces/**",
     "fields/**",
     "enums/**",
     "catalog.yml",

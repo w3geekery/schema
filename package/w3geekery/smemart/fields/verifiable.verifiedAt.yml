@@ -1,0 +1,3 @@
+description: 'Date the record was verified'
+displayName: 'Verified At'
+type: date
