@@ -1,3 +1,0 @@
-description: 'What the buyer gets, as free text (carried from ServiceOffering.serviceIncludes)'
-displayName: 'Includes'
-type: string

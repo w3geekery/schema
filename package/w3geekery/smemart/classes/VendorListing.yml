@@ -53,12 +53,12 @@ properties:
     multi: true
   - terms:
     field: vendorListing.terms
-  - includes:
-    field: vendorListing.includes
+  - includesSummary:
+    field: vendorListing.includesSummary
   - deliveryTime:
     field: vendorListing.deliveryTime
-  - buyerRequirements:
-    field: vendorListing.buyerRequirements
+  - prerequisitesSummary:
+    field: vendorListing.prerequisitesSummary
   - version:
     field: vendorListing.version
   - publishedAt:

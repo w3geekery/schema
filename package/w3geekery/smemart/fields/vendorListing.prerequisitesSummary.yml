@@ -1,0 +1,19 @@
+# ┌───────────────────────────────────────────────────────────────────────────────────────┐
+# │ THIS IS FREE-TEXT LISTING COPY. IT IS NOT A Requirement. DO NOT STRUCTURE IT.          │
+# └───────────────────────────────────────────────────────────────────────────────────────┘
+# Renamed from buyerRequirements before this batch shipped (Clark, 2026-08-03), deliberately, to
+# get the word "requirement" out of it. That word is already spoken for:
+#   platform BoundaryRequirement  — ships today
+#   ProjectRequirement            — the entangled req/sat model, named around that same collision
+# and the direction of travel is that ALL requirements are req/sat tasks via entangled
+# Engagement + Project + Task, never ad-hoc lists.
+#
+# A field called "requirements" invites the obvious improvement: make it structured, then typed,
+# then give it satisfaction state — and that grows a COMPETING requirements model inside a listing
+# without anyone experiencing it as a decision. "buyerRequirements" was worse still: it made
+# marketing prose read as a party-scoped obligation, which is exactly what a real Requirement is.
+#
+# Singular string, matching the donor (serviceOffering.serviceRequirements, type: string).
+description: 'Free-text summary of what the buyer needs to supply for delivery, as written by the seller. Listing copy, NOT a Requirement in the req/sat sense (carried from ServiceOffering.serviceRequirements)'
+displayName: 'Prerequisites Summary'
+type: string
