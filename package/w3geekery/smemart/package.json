@@ -16,6 +16,7 @@
   "files": [
     "classes/**",
     "interfaces/**",
+    "documents/**",
     "fields/**",
     "enums/**",
     "catalog.yml",

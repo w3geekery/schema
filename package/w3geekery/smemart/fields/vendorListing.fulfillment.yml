@@ -1,0 +1,3 @@
+description: 'How a purchase is delivered; paired to family and validated on write, not freely set (see vendorListing.fulfillment enum)'
+displayName: 'Fulfillment'
+type: string

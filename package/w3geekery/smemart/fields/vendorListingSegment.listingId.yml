@@ -1,0 +1,3 @@
+description: 'UUID of the VendorListing this segment assignment belongs to'
+displayName: 'Listing ID'
+type: string

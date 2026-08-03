@@ -1,0 +1,19 @@
+# FOUR values, taken from the spec — gsd-plan/u1-seller-listing-spec.md:50 declares
+#   type ListingLifecycle = 'draft' | 'listed' | 'suspended' | 'retired';
+# This set is TRANSCRIBED from that line, not invented. (A three-value set omitting SUSPENDED was
+# proposed and corrected 2026-08-03 once the spec line was found.)
+#
+# SUSPENDED IS NOT REDUNDANT. It is unreachable by combining the others: DRAFT is never-published,
+# RETIRED is end-of-life, and pulled-from-sale-but-not-dead is neither. A seller pausing a listing,
+# or an admin suspending one pending a vetting failure, lands here — which makes it plausibly
+# load-bearing for the U3/U4 verification work rather than decorative.
+#
+# DISTINCT FROM `active`. lifecycle is the EDITORIAL state of the listing; active is whether it is
+# currently visible to buyers. A LISTED listing can be inactive.
+description: Editorial state of a listing
+displayName: Lifecycle
+values:
+  - DRAFT: 'Being authored; never published'
+  - LISTED: 'Published and available to buyers'
+  - SUSPENDED: 'Pulled from sale but not retired — seller-paused or admin-suspended, e.g. pending a vetting failure'
+  - RETIRED: 'End of life; no longer offered'

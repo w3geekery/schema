@@ -1,0 +1,19 @@
+# An ENUM rather than a free string, deliberately (ruled 2026-08-03). The tradeoff was framed as
+# "an open-ended enum is a maintenance liability, a string is untyped" -- and the asymmetry decides
+# it: ADDING an enum value is purely additive and costs nothing, REMOVING one costs a deprecated
+# recipe, and a string can never be validated at all. So the liability sits in the cheap direction.
+#
+# REVISIT CONDITION, stated so it is recognised if it arrives: if third parties are ever meant to
+# define their own listing kinds, this becomes a string. That is a real change, and it is not U1.
+#
+# Each value belongs to exactly one family (see vendorListing.family).
+description: Sub-type of a listing within its family
+displayName: Listing Kind
+values:
+  - BESPOKE_SERVICE: 'family SERVICE -- human-delivered custom work'
+  - FRAMEWORK: 'family LICENSED_GOOD -- a compliance or control framework'
+  - ASSESSOR_LOGIC: 'family LICENSED_GOOD -- packaged assessor rules/logic'
+  - BOM: 'family LICENSED_GOOD -- a bill of materials'
+  - FEATURE_PACK: 'family LICENSED_GOOD -- a bundled feature set'
+  - APP: 'family PRODUCTIZED -- an installable application'
+  - AGENT: 'family PRODUCTIZED -- an installable agent'

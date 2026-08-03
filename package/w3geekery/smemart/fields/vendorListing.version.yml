@@ -1,0 +1,3 @@
+description: 'Monotonic version, bumped on any buyer-visible edit. U2 pins this at transaction time so a buyer can prove WHAT THEY BOUGHT'
+displayName: 'Version'
+type: integer

@@ -1,0 +1,3 @@
+description: 'UUID of the provider Org that owns this listing (the seller); one-sided — buyers do not own listings'
+displayName: 'Owner ID'
+type: string

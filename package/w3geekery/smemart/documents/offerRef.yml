@@ -1,0 +1,26 @@
+# A DOCUMENT, NOT A CLASS — and that is a deliberate reversal (ruled 2026-08-03).
+#
+# WHY A DOCUMENT: this is a pointer plus a display label. The IDENTITY belongs to the Offer that
+# offerId points at, never to the ref itself — nothing ever needs to address an OfferRef. A ref is
+# definitionally a value, and documents are how this schema expresses embedded values.
+#
+# WHY NOT A CLASS: this is a TEMPORARY SEAM SHAPE. U1 carries the pointer with a mocked picker; U2
+# makes it act by wiring these to real Offers. When that happens a document simply stops being
+# referenced — nothing to retire. Two classes would each cost a deprecated.yml recipe plus
+# SME_MART_CLASS_IDS churn plus a reader sweep. Free now, expensive later.
+#
+# NO MONEY IS STORED HERE. The Ledger owns pricing; this carries a pointer to it and a label for
+# display. Do not add amount/currency/pricingModel to this shape — that would fork the source of
+# truth for money, which is the seam this document exists to avoid.
+#
+# Mechanism (precedent: zerobias/base): a document defines a shape, a field then takes
+# `type: <documentName>`, and a class or another document declares that field. Multi-valued
+# documents are proven — base/documents/locationInfo.yml declares `field: location.address` with
+# `multi: true`.
+description: "Pointer to a Ledger Offer that prices this listing, plus a display label. Carries no money — the Ledger is the source of truth for pricing."
+displayName: "Offer Reference"
+properties:
+  - offerId:
+    field: offerRef.offerId
+  - label:
+    field: offerRef.label
