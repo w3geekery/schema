@@ -1,25 +1,24 @@
+# Renamed from ProviderFramework (Cluster B, D-61 + #343). NOT a rename in place — see
+# ProviderSkillProficiency.yml for why these three are new files rather than edits.
 description: "Org-scoped expertise junction: a provider Org's claimed experience with a Catalog Framework (CMMC, FedRAMP, ISO 27001, etc.). One row per (org, framework) claim with its own verification provenance (D-53). Framework name resolved from the Catalog on read (not denormalized)."
 extends:
   - Object
+  - Verifiable
 properties:
   - orgId:
-    field: providerFramework.orgId
+    field: providerFrameworkProficiency.orgId
   - frameworkId:
-    field: providerFramework.frameworkId
+    field: providerFrameworkProficiency.frameworkId
   - proficiencyLevel:
-    field: providerFramework.proficiencyLevel
+    field: providerFrameworkProficiency.proficiencyLevel
   - yearsExperience:
-    field: providerFramework.yearsExperience
+    field: providerFrameworkProficiency.yearsExperience
   - assessorCertified:
-    field: providerFramework.assessorCertified
+    field: providerFrameworkProficiency.assessorCertified
   - implementationExperience:
-    field: providerFramework.implementationExperience
+    field: providerFrameworkProficiency.implementationExperience
   - auditExperience:
-    field: providerFramework.auditExperience
-  - verified:
-    field: providerFramework.verified
-  - verificationSource:
-    field: providerFramework.verificationSource
+    field: providerFrameworkProficiency.auditExperience
 viewProperties:
   "Name":
     jsonata: name

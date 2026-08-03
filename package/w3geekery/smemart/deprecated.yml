@@ -1,5 +1,16 @@
 classes:
   - MarketplaceProfileItem
+  # Cluster B renames (commit 5, D-61 + #343). NOT renamed in place -- class IDs are derived from
+  # content, so each became a NEW *Proficiency class and the original is retired whole here. The
+  # old class files were never edited; they kept their own verified/verificationSource declarations
+  # right up to deletion, which is why they were deliberately excluded from commit 3b.
+  #   ProviderSkill     -> ProviderSkillProficiency
+  #   ProviderProduct   -> ProviderProductProficiency
+  #   ProviderFramework -> ProviderFrameworkProficiency
+  # The app's SME_MART_CLASS_IDS registry needs the new platform-assigned IDs once these land.
+  - ProviderSkill
+  - ProviderProduct
+  - ProviderFramework
 fields:
   - marketplaceProfileItem.section
   - marketplaceProfileItem.expiresAt
@@ -39,5 +50,36 @@ fields:
   - providerServiceSegment.verificationSource
   - userCredential.verified
   - userCredential.verificationSource
+  # Cluster B rename (commit 5) -- all 23 field files of the three retired classes. Their
+  # replacements are the providerSkillProficiency.* / providerProductProficiency.* /
+  # providerFrameworkProficiency.* files, minus verified + verificationSource, which the new
+  # classes inherit from Verifiable rather than declare.
+  - providerSkill.orgId
+  - providerSkill.skillId
+  - providerSkill.proficiencyLevel
+  - providerSkill.yearsExperience
+  - providerSkill.verified
+  - providerSkill.verificationSource
+  - providerProduct.orgId
+  - providerProduct.productId
+  - providerProduct.proficiencyLevel
+  - providerProduct.yearsExperience
+  - providerProduct.certified
+  - providerProduct.certificationDetails
+  - providerProduct.verified
+  - providerProduct.verificationSource
+  - providerFramework.orgId
+  - providerFramework.frameworkId
+  - providerFramework.proficiencyLevel
+  - providerFramework.yearsExperience
+  - providerFramework.assessorCertified
+  - providerFramework.implementationExperience
+  - providerFramework.auditExperience
+  - providerFramework.verified
+  - providerFramework.verificationSource
 enums:
   - marketplaceProfileItem.section
+  # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.
+  - providerSkill.proficiencyLevel
+  - providerProduct.proficiencyLevel
+  - providerFramework.proficiencyLevel

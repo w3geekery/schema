@@ -1,7 +1,7 @@
 {
-  "version": "2.0.6",
-  "branch": "main",
-  "sourceHash": "073a82000dfd09ad6d5210066fe200e11000fe0b96d0cdf6ca8fc0317ba38c18",
+  "version": "2.0.6-uat.0",
+  "branch": "feat/mp-schema-batch-vendor-provenance",
+  "sourceHash": "9d12933b4521f8efd7451f22175299a93cf7493d057591d972cc53c766180437",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",
