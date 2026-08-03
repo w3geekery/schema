@@ -23,6 +23,8 @@ properties:
     field: personnel.isKeyPersonnel
   - backgroundCheckStatus:
     field: personnel.backgroundCheckStatus
+  - roleId:
+    field: personnel.roleId
 viewProperties:
   "Name":
     jsonata: name
