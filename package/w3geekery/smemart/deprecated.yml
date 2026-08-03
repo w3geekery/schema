@@ -6,5 +6,18 @@ fields:
   - marketplaceProfileItem.status
   - marketplaceProfileItem.orgId
   - marketplaceProfileItem.data
+  # Retired by Verifiable interface adoption (commit 3a). These 8 became orphaned when
+  # InsuranceCoverage / ClientReference / Personnel / FinancialProfile stopped declaring
+  # verified + verificationSource themselves and took them from VendorAttestationBase ->
+  # Verifiable instead. The properties still exist on every one of those classes, by
+  # inheritance, under the same names — this retires the per-class FIELD FILES, not the data.
+  - insuranceCoverage.verified
+  - insuranceCoverage.verificationSource
+  - clientReference.verified
+  - clientReference.verificationSource
+  - personnel.verified
+  - personnel.verificationSource
+  - financialProfile.verified
+  - financialProfile.verificationSource
 enums:
   - marketplaceProfileItem.section
