@@ -1,3 +1,0 @@
-description: 'JSON blob storing full RFP wizard state for draft persistence'
-displayName: 'Wizard Data'
-type: string

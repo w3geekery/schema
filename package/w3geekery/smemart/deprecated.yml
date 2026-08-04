@@ -77,9 +77,33 @@ fields:
   - providerFramework.auditExperience
   - providerFramework.verified
   - providerFramework.verificationSource
+  # SR-1 -- 12 ALREADY-ORPHANED Engagement field files, plus the enum that went with one of them.
+  # These were orphaned before this batch: Engagement.yml stopped declaring them at some earlier
+  # point and the field files were never cleaned up. Verified 2026-08-03: each is referenced by
+  # ZERO classes, zero interfaces, zero documents. Deletion-only -- no class was edited, and
+  # Engagement keeps its remaining 8 declared properties untouched.
+  #
+  # Engagement itself is deprecated: true and slated for deletion (Phase 29.5 -- use platform.Project;
+  # retained for the dual-read window, delete deferred to post-closure). This retires dead field
+  # files hanging off a dying class. If anything suggests ADDING to Engagement, that source is stale.
+  - engagement.budgetMax
+  - engagement.budgetMin
+  - engagement.budgetType
+  - engagement.category
+  - engagement.confidentialityRequirements
+  - engagement.evaluationCriteria
+  - engagement.questionsDeadline
+  - engagement.responseDeadline
+  - engagement.timeline
+  - engagement.wizardData
+  - engagement.wizardStep
+  - engagement.zerobiasBoundaryId
 enums:
   - marketplaceProfileItem.section
   # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.
   - providerSkill.proficiencyLevel
   - providerProduct.proficiencyLevel
   - providerFramework.proficiencyLevel
+  # SR-1 -- orphaned with its field (engagement.budgetType). The brief scoped SR-1 as "12 field
+  # files"; this enum rides along, since nothing references it once that field is gone.
+  - engagement.budgetType
