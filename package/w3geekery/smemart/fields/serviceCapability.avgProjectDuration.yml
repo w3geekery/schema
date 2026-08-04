@@ -1,0 +1,11 @@
+# FREE TEXT ON PURPOSE — do not "fix" this into a number.
+# This field already ships in the app as vendor-authored free text: the profile form renders a
+# plain `<input type="text">` with no validation (vendor-profile-form.component.html:90), the model
+# types it `avgProjectDuration?: string` (marketplace-profile-item.model.ts:48), and real values
+# look like "8 weeks" / "3-6 months". Nothing computes with it; it is displayed back.
+# Typing it numeric would fail to migrate every existing blob value.
+# Contrast its siblings: yearsExperience and clientCount ARE numeric in the app (`type="number"`),
+# and are typed integer here accordingly.
+description: 'Typical engagement length, as stated by the vendor in free text (e.g. "8 weeks", "3-6 months"); null if not stated'
+displayName: 'Avg Project Duration'
+type: string

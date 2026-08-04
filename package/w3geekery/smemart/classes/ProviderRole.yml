@@ -1,6 +1,7 @@
 description: "Org-scoped expertise junction: a provider Org's claimed Catalog Role. One row per (org, role) claim with its own verification provenance (D-53). Role name resolved from the Catalog on read (not denormalized)."
 extends:
   - Object
+  - Verifiable
 properties:
   - orgId:
     field: providerRole.orgId
@@ -10,10 +11,6 @@ properties:
     field: providerRole.isPrimary
   - yearsInRole:
     field: providerRole.yearsInRole
-  - verified:
-    field: providerRole.verified
-  - verificationSource:
-    field: providerRole.verificationSource
 viewProperties:
   "Name":
     jsonata: name

@@ -1,0 +1,3 @@
+description: 'Display label for the offer, denormalized for listing render; the Ledger Offer remains the source of truth'
+displayName: 'Label'
+type: string

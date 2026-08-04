@@ -1,0 +1,3 @@
+description: 'UUID of the Catalog entry this listing is ABOUT; null for pure-bespoke listings with no catalog anchor; resolved from Catalog on read'
+displayName: 'Catalog Ref'
+type: string

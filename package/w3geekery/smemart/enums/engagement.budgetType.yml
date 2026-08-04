@@ -1,8 +1,0 @@
-description: Pricing model for the engagement
-displayName: Budget Type
-values:
-  - FIXED: 'Fixed price for the full engagement'
-  - HOURLY: 'Billed per hour worked'
-  - RETAINER: 'Recurring retainer fee'
-  - NEGOTIABLE: 'Pricing to be negotiated'
-  - NOT_SPECIFIED: 'Budget type not yet determined'

@@ -1,6 +1,7 @@
 description: "Typed key-personnel record for an Org. One row per person. Person-held credentials/certs are NOT stored here — they hang off UserCredential via userId. Background-check state captured as a typed enum. Verification metadata supports asserted-vs-verified (D-53)."
 extends:
   - Object
+  - VendorAttestationBase
 properties:
   - orgId:
     field: personnel.orgId
@@ -22,10 +23,8 @@ properties:
     field: personnel.isKeyPersonnel
   - backgroundCheckStatus:
     field: personnel.backgroundCheckStatus
-  - verified:
-    field: personnel.verified
-  - verificationSource:
-    field: personnel.verificationSource
+  - roleId:
+    field: personnel.roleId
 viewProperties:
   "Name":
     jsonata: name

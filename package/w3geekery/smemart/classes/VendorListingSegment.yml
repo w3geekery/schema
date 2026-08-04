@@ -1,0 +1,39 @@
+# A JUNCTION CLASS — one row per (listing, segment). This is how this package expresses
+# "a thing has many Catalog refs", and it is neither an array nor a scalar.
+#
+# FIVE SHIPPED PRECEDENTS, all the same shape:
+#   OrgSegment                 links a platform Org to a Catalog Segment
+#   ProviderSegment            one row per (org, segment) claim
+#   ProviderSkillProficiency   one row per (org, skill) claim  (renamed from ProviderSkill in
+#                              commit 5; the pattern predates the rename)
+#   ProviderRole               a provider Org's claimed Catalog Role
+#   ProviderServiceSegment     one row per (org, serviceSegment) claim
+#
+# WHY NOT type: array — there is ZERO array precedent across this package, and a net-new class is
+# the wrong place to introduce the first one. The junction avoids it entirely.
+# WHY NOT A SINGLE segmentId SCALAR — that would assume a listing sits in exactly one segment, and
+# nobody has established that. The junction makes the cardinality question moot.
+#
+# ┌───────────────────────────────────────────────────────────────────────────────────────┐
+# │ DO NOT PUT Verifiable ON THIS CLASS.                                                   │
+# └───────────────────────────────────────────────────────────────────────────────────────┘
+# The five precedents above carry provenance because they are CLAIMS ABOUT CAPABILITY that
+# someone verifies — "this org can do X". A seller filing their own listing under a discovery
+# facet is not a claim of that kind; there is nothing to verify and nothing would ever write
+# verified/verificationSource here. Adding it would recreate the "settable fields nothing writes"
+# objection that already kept VendorListing itself off Verifiable. (Ruled 2026-08-03.)
+description: "Files a VendorListing under a Catalog Segment for discovery. One row per (listing, segment). A seller-chosen classification facet, NOT a verifiable claim — unlike the org-level segment junctions, this class deliberately carries no provenance."
+extends:
+  - Object
+properties:
+  - listingId:
+    field: vendorListingSegment.listingId
+  - segmentId:
+    field: vendorListingSegment.segmentId
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Segment":
+    jsonata: segmentId
+    sort: segmentId

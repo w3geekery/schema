@@ -1,0 +1,78 @@
+# THE KEYSTONE. U2's entire schema exposure rides on this class — dropping it silently drops U2.
+#
+# ┌───────────────────────────────────────────────────────────────────────────────────────┐
+# │ THIS CLASS DELIBERATELY DOES NOT EXTEND Verifiable.                                    │
+# └───────────────────────────────────────────────────────────────────────────────────────┘
+# A `verification` badge was CONSIDERED AND OMITTED (ruled 2026-08-03). The spec describes it as
+# DERIVED from the seller's attestations and vetting (U3/U4) and populated read-through — meaning
+# no writer exists. Storing settable provenance fields that nothing ever writes is the identical
+# shape to the 4-state `verificationStatus` deliberately omitted from Verifiable one commit
+# earlier; adding it here and omitting it there would be incoherent within one batch.
+# Populate verification on read from the seller's ServiceCapability / attestation records.
+# Adding it later is purely additive — this comment exists so nobody adds it as a "fix."
+#
+# NO MONEY IS STORED HERE. Pricing lives in the Ledger; `offers` carries pointers (OfferRef).
+# `pricingType` is a Ledger concern via offers[], NOT a discriminator on the listing — the
+# product-vs-service distinction is `family`.
+#
+# family <-> fulfillment IS A LOAD-BEARING PAIRING, validated on write, not free:
+#   SERVICE        -> ENGAGEMENT          (Projects houses a buyer->provider engagement)
+#   LICENSED_GOOD  -> ENTITLEMENT_GRANT   (Ledger records the entitlement)
+#   PRODUCTIZED    -> ENTITLEMENT_GRANT   (Ledger entitlement + delivery)
+# The schema cannot enforce it; the app's write path owns that validation.
+#
+# `version` + `publishedAt` exist to pin WHAT A BUYER ACTUALLY BOUGHT. version is monotonic and
+# bumps on any buyer-visible edit; U2 pins it at transaction time. Do not treat them as audit
+# decoration — without them a listing edited after purchase silently rewrites history.
+#
+# Segments are NOT a field here — see VendorListingSegment, the junction class.
+description: "A seller's marketplace listing: what is offered, what it is about, how it is delivered, and what it costs (by pointer). One per offering, owned by a provider Org. Carries no money — pricing lives in the Ledger via offers. Verification is derived on read from the seller's attestations, not stored here."
+extends:
+  - Object
+properties:
+  - ownerId:
+    field: vendorListing.ownerId
+  - family:
+    field: vendorListing.family
+  - kind:
+    field: vendorListing.kind
+  - title:
+    field: vendorListing.title
+  - summary:
+    field: vendorListing.summary
+  - catalogRef:
+    field: vendorListing.catalogRef
+  - fulfillment:
+    field: vendorListing.fulfillment
+  - lifecycle:
+    field: vendorListing.lifecycle
+  - active:
+    field: vendorListing.active
+  - offers:
+    field: vendorListing.offers
+    multi: true
+  - terms:
+    field: vendorListing.terms
+  - includesSummary:
+    field: vendorListing.includesSummary
+  - deliveryTime:
+    field: vendorListing.deliveryTime
+  - prerequisitesSummary:
+    field: vendorListing.prerequisitesSummary
+  - version:
+    field: vendorListing.version
+  - publishedAt:
+    field: vendorListing.publishedAt
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Family":
+    jsonata: family
+    sort: family
+  "Kind":
+    jsonata: kind
+    sort: kind
+  "Active":
+    jsonata: active
+    sort: active

@@ -1,0 +1,8 @@
+# PAIRED TO family, not freely set: SERVICE -> ENGAGEMENT; LICENSED_GOOD and PRODUCTIZED ->
+# ENTITLEMENT_GRANT. The schema cannot enforce that pairing -- it is a write-path validation the
+# app owns. Do not read this enum as independent of family.
+description: How a purchased listing is delivered
+displayName: Fulfillment
+values:
+  - ENGAGEMENT: 'Originates a bilateral buyer-to-provider engagement; the engagement itself is created by U2, not minted here'
+  - ENTITLEMENT_GRANT: 'Ledger records an entitlement; scope resolved via Boundary/Catalog'

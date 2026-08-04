@@ -1,0 +1,31 @@
+# INSTANCE-LEVEL, and a plain string UUID for consistency with five shipped precedents.
+#
+# WHAT THIS HOLDS: a specific Service-type Segment INSTANCE — not a segmentType.
+# It CANNOT be the segmentType enum. ServiceCapability is by definition about services, so its
+# segmentType would be Service (402da727-ad36-4620-bfd7-b5841ba6263c) on every row ever written.
+# A value that cannot vary is a class invariant, not a field. (An enum was raised and closed on
+# this argument, 2026-08-03.)
+#
+# WHY type: string — every Catalog-keyed field in this package already is one, with the Catalog
+# meaning carried in the description and resolved on read:
+#   providerServiceSegment.serviceSegmentId · orgSegment.segmentId · providerSegment.segmentId
+#   providerRole.roleId · providerSkill.skillId
+# Ruled Clark 2026-08-03. The typing argument was dropped deliberately — do not re-derive it.
+#
+# WHY NOT A TYPED REFERENCE — "not yet", never "impossible":
+#   No Segment class or interface exists in the base package, so a typed reference would require
+#   authoring one first, and that is out of scope for this batch. Cross-package linkTo DOES work,
+#   and the documented way to make a platform entity linkable in GraphQL is to author a
+#   Class/Interface for it (Christopher Scarola, 2026-08-03). Related artifacts that DO exist:
+#   base/interfaces/Role.yml and base/interfaces/Competency.yml; Segment itself lives in its own
+#   repo, zerobias-org/segment. If a Segment class is ever authored, revisiting this is legitimate.
+#
+# WHY IT SHARES A NAME WITH providerServiceSegment.serviceSegmentId — deliberately. Same key,
+# different payload, which is the F6(a) three-way split made visible in the schema:
+#   ProviderServiceSegment = a MEMBERSHIP CLAIM        — which Catalog segment this org sits in
+#   ServiceCapability      = an ATTESTED CAPABILITY    — what it claims it can do, and who checked
+# Same key on different classes is normal and legible (cf. bid.projectId, note.projectId). A name
+# that disagrees with its own description is not — which is why this is no longer "serviceType".
+description: 'UUID of the Catalog Service-type Segment this capability covers; type/name resolved from Catalog on read'
+displayName: 'Service Segment ID'
+type: string

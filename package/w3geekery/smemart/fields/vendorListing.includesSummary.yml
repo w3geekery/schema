@@ -1,0 +1,7 @@
+# FREE-TEXT LISTING COPY. Shop-window prose, not structured data.
+# Singular string, deliberately — the donor ships serviceOffering.serviceIncludes as type: string,
+# and the TS sketch's string[] was aspirational. Nothing reads this, nothing branches on it.
+# Named ...Summary to say plainly that it is a blurb, so the next reader does not structure it.
+description: 'Free-text summary of what the buyer gets, as written by the seller. Listing copy, not structured data (carried from ServiceOffering.serviceIncludes)'
+displayName: 'Includes Summary'
+type: string

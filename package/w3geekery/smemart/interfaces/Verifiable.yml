@@ -1,0 +1,36 @@
+# Provenance contract: "who checked this claim, when, against what, and until when."
+#
+# Owns the five provenance properties once, so implementing classes declare NONE of them.
+# Adopting classes carry `extends: Verifiable` and nothing else — see the removal note below.
+#
+# No explicit `extends:` — interfaces implicitly extend Object (proven by the commit-1 spike,
+# 2026-07-29: SpikeVerifiable declared no extends and generated as `extends Object`).
+#
+# NAMING — `verificationExpiresAt`, NOT `expiresAt` (RULED: Clark, 2026-07-29).
+#   Four shipped field files already carry a DOMAIN `expiresAt` with a different meaning:
+#   insuranceCoverage (policy lapse), orgCredential + userCredential (credential expiry),
+#   vettingItem (vetting expiry). InsuranceCoverage adopts this interface, so a bare
+#   `expiresAt` here would make one class carry one name for two concepts. Nothing shipped
+#   gets renamed.
+#
+# `verified` IS A BOOLEAN, AND STAYS ONE — do not add a `verificationStatus`.
+#   A 4-state enum (unverified / pending / verified / failed) was considered and DELIBERATELY
+#   OMITTED (ruled gsd-plan, accepted zb-org-app, 2026-07-31). Reasons: no writer exists today,
+#   the FR that asked for it was cancelled as misfiled, and adding it later is purely additive.
+#   This comment exists because without it someone will "fix" the boolean.
+#
+# Inherited properties generate as OPTIONAL, which is why adopting all five is harmless for
+# classes that only ever populated two of them.
+description: "Provenance envelope for a claim that can be checked against an authoritative source. Normalizes the three verification shapes already diverged across this package into one contract (D-53, asserted-vs-verified)."
+displayName: "Verifiable"
+properties:
+  - verified:
+    field: verifiable.verified
+  - verificationSource:
+    field: verifiable.verificationSource
+  - verifiedAt:
+    field: verifiable.verifiedAt
+  - verifiedBy:
+    field: verifiable.verifiedBy
+  - verificationExpiresAt:
+    field: verifiable.verificationExpiresAt

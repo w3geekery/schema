@@ -1,0 +1,41 @@
+# Net-new (2026-08-03). The only class in this batch born on the interface — nothing to remove.
+#
+# THREE CLASSES ANSWER "what services does this org do?", AND THAT IS DELIBERATE (F6(a), ruled
+# zb-org-app 2026-07-31). The split is carried by these descriptions, NOT by the schema:
+#   ServiceOffering         = a PRICED OFFER          — what it costs and what you get
+#   ProviderServiceSegment  = a CATALOG-KEYED CLAIM   — which Catalog segment this org sits in
+#   ServiceCapability       = an ATTESTED CAPABILITY  — what the org claims it can do, and who checked
+#
+# NO certifications[] AND NO specializations[] — omitted deliberately (F6(b), ruled 2026-07-31):
+#   1. Personnel precedent, already shipped and directly on point — its own class doc says
+#      person-held credentials/certs are NOT stored on it, they hang off UserCredential.
+#      Org-held certifications are OrgCredential rows. Same argument, same cluster.
+#   2. Zero precedent — `grep -rl 'type: array' fields/` over all 38 classes returns nothing.
+#      A net-new class is the wrong place to introduce the package's first array field.
+#   3. Additive later costs nothing; removing a shipped property costs a deprecated.yml recipe
+#      plus a reader sweep.
+description: "An attested capability an Org claims — what it says it can do, and who verified that claim. Distinct from ServiceOffering (a priced offer) and ProviderServiceSegment (a Catalog-keyed membership claim): this is the ATTESTATION, and its provenance comes from VendorAttestationBase. One row per (org, serviceSegmentId) claim."
+extends:
+  - Object
+  - VendorAttestationBase
+properties:
+  - orgId:
+    field: serviceCapability.orgId
+  - serviceSegmentId:
+    field: serviceCapability.serviceSegmentId
+  - yearsExperience:
+    field: serviceCapability.yearsExperience
+  - clientCount:
+    field: serviceCapability.clientCount
+  - avgProjectDuration:
+    field: serviceCapability.avgProjectDuration
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Years Experience":
+    jsonata: yearsExperience
+    sort: yearsExperience
+  "Clients":
+    jsonata: clientCount
+    sort: clientCount

@@ -1,0 +1,6 @@
+# type is the DOCUMENT NAME — this is how the schema's type vocabulary extends past scalars.
+# Precedent: base/fields/location.address.yml is `type: "address"`, consuming documents/address.yml.
+# Declared multi: true on the class (proven by base/documents/locationInfo.yml).
+description: 'Pointers to the Ledger Offers that price this listing; no money is stored on the listing'
+displayName: 'Offers'
+type: "offerRef"

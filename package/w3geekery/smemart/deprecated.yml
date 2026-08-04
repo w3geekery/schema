@@ -1,10 +1,109 @@
 classes:
   - MarketplaceProfileItem
+  # Cluster B renames (commit 5, D-61 + #343). NOT renamed in place -- class IDs are derived from
+  # content, so each became a NEW *Proficiency class and the original is retired whole here. The
+  # old class files were never edited; they kept their own verified/verificationSource declarations
+  # right up to deletion, which is why they were deliberately excluded from commit 3b.
+  #   ProviderSkill     -> ProviderSkillProficiency
+  #   ProviderProduct   -> ProviderProductProficiency
+  #   ProviderFramework -> ProviderFrameworkProficiency
+  # The app's SME_MART_CLASS_IDS registry needs the new platform-assigned IDs once these land.
+  - ProviderSkill
+  - ProviderProduct
+  - ProviderFramework
 fields:
   - marketplaceProfileItem.section
   - marketplaceProfileItem.expiresAt
   - marketplaceProfileItem.status
   - marketplaceProfileItem.orgId
   - marketplaceProfileItem.data
+  # Retired by Verifiable interface adoption (commit 3a). These 8 became orphaned when
+  # InsuranceCoverage / ClientReference / Personnel / FinancialProfile stopped declaring
+  # verified + verificationSource themselves and took them from VendorAttestationBase ->
+  # Verifiable instead. The properties still exist on every one of those classes, by
+  # inheritance, under the same names — this retires the per-class FIELD FILES, not the data.
+  - insuranceCoverage.verified
+  - insuranceCoverage.verificationSource
+  - clientReference.verified
+  - clientReference.verificationSource
+  - personnel.verified
+  - personnel.verificationSource
+  - financialProfile.verified
+  - financialProfile.verificationSource
+  # Retired by Verifiable interface adoption (commit 3b). Same mechanic as the 8 above, but these
+  # six classes take Verifiable DIRECTLY rather than via VendorAttestationBase — they are not
+  # attestations. OrgSegment/ProviderSegment/ProviderRole/ProviderServiceSegment are Catalog-keyed
+  # membership claims and OrgCredential/UserCredential are credential holdings; provenance applies
+  # to all of them, attestation-ness does not.
+  # NOT in this set, deliberately: Address (out of scope entirely) and ProviderSkill /
+  # ProviderProduct / ProviderFramework (retired wholesale by the Cluster B *Proficiency renames,
+  # so they keep their own declarations until then and are never edited here).
+  - orgCredential.verified
+  - orgCredential.verificationSource
+  - orgSegment.verified
+  - orgSegment.verificationSource
+  - providerRole.verified
+  - providerRole.verificationSource
+  - providerSegment.verified
+  - providerSegment.verificationSource
+  - providerServiceSegment.verified
+  - providerServiceSegment.verificationSource
+  - userCredential.verified
+  - userCredential.verificationSource
+  # Cluster B rename (commit 5) -- all 23 field files of the three retired classes. Their
+  # replacements are the providerSkillProficiency.* / providerProductProficiency.* /
+  # providerFrameworkProficiency.* files, minus verified + verificationSource, which the new
+  # classes inherit from Verifiable rather than declare.
+  - providerSkill.orgId
+  - providerSkill.skillId
+  - providerSkill.proficiencyLevel
+  - providerSkill.yearsExperience
+  - providerSkill.verified
+  - providerSkill.verificationSource
+  - providerProduct.orgId
+  - providerProduct.productId
+  - providerProduct.proficiencyLevel
+  - providerProduct.yearsExperience
+  - providerProduct.certified
+  - providerProduct.certificationDetails
+  - providerProduct.verified
+  - providerProduct.verificationSource
+  - providerFramework.orgId
+  - providerFramework.frameworkId
+  - providerFramework.proficiencyLevel
+  - providerFramework.yearsExperience
+  - providerFramework.assessorCertified
+  - providerFramework.implementationExperience
+  - providerFramework.auditExperience
+  - providerFramework.verified
+  - providerFramework.verificationSource
+  # SR-1 -- 12 ALREADY-ORPHANED Engagement field files, plus the enum that went with one of them.
+  # These were orphaned before this batch: Engagement.yml stopped declaring them at some earlier
+  # point and the field files were never cleaned up. Verified 2026-08-03: each is referenced by
+  # ZERO classes, zero interfaces, zero documents. Deletion-only -- no class was edited, and
+  # Engagement keeps its remaining 8 declared properties untouched.
+  #
+  # Engagement itself is deprecated: true and slated for deletion (Phase 29.5 -- use platform.Project;
+  # retained for the dual-read window, delete deferred to post-closure). This retires dead field
+  # files hanging off a dying class. If anything suggests ADDING to Engagement, that source is stale.
+  - engagement.budgetMax
+  - engagement.budgetMin
+  - engagement.budgetType
+  - engagement.category
+  - engagement.confidentialityRequirements
+  - engagement.evaluationCriteria
+  - engagement.questionsDeadline
+  - engagement.responseDeadline
+  - engagement.timeline
+  - engagement.wizardData
+  - engagement.wizardStep
+  - engagement.zerobiasBoundaryId
 enums:
   - marketplaceProfileItem.section
+  # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.
+  - providerSkill.proficiencyLevel
+  - providerProduct.proficiencyLevel
+  - providerFramework.proficiencyLevel
+  # SR-1 -- orphaned with its field (engagement.budgetType). The brief scoped SR-1 as "12 field
+  # files"; this enum rides along, since nothing references it once that field is gone.
+  - engagement.budgetType

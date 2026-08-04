@@ -1,0 +1,3 @@
+description: 'UUID of the Catalog Role this person holds; type/name resolved from Catalog on read'
+displayName: 'Role ID'
+type: string

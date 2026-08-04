@@ -1,0 +1,6 @@
+description: What KIND OF THING a listing is, which determines how it is delivered
+displayName: Listing Family
+values:
+  - SERVICE: 'Human-delivered work; fulfilled by an engagement'
+  - LICENSED_GOOD: 'Licensed artifact such as a framework, assessor logic, BOM or feature pack; fulfilled by an entitlement grant'
+  - PRODUCTIZED: 'Installable app or agent; fulfilled by an entitlement grant plus delivery'

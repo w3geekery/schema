@@ -1,0 +1,3 @@
+description: 'Short buyer-facing description of the listing'
+displayName: 'Summary'
+type: string

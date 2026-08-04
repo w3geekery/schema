@@ -1,0 +1,29 @@
+# Renamed from ProviderProduct (Cluster B, D-61 + #343). NOT a rename in place — see
+# ProviderSkillProficiency.yml for why these three are new files rather than edits.
+description: "Org-scoped expertise junction: a provider Org's claimed proficiency with a Catalog Product. One row per (org, product) claim with its own verification provenance (D-53). Product name resolved from the Catalog on read (not denormalized)."
+extends:
+  - Object
+  - Verifiable
+properties:
+  - orgId:
+    field: providerProductProficiency.orgId
+  - productId:
+    field: providerProductProficiency.productId
+  - proficiencyLevel:
+    field: providerProductProficiency.proficiencyLevel
+  - yearsExperience:
+    field: providerProductProficiency.yearsExperience
+  - certified:
+    field: providerProductProficiency.certified
+  - certificationDetails:
+    field: providerProductProficiency.certificationDetails
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Proficiency":
+    jsonata: proficiencyLevel
+    sort: proficiencyLevel
+  "Certified":
+    jsonata: certified
+    sort: certified

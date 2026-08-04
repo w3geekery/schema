@@ -1,3 +1,0 @@
-description: 'Whether the claim has been verified against an authoritative source (nullable until vetted, D-53)'
-displayName: 'Verified'
-type: boolean

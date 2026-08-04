@@ -1,0 +1,31 @@
+# Renamed from ProviderSkill (Cluster B, D-61 + #343). NOT a rename in place — class IDs are
+# derived from content, so this is a NEW class file and ProviderSkill is retired whole via
+# deprecated.yml. The old file is never edited.
+#
+# Born with extends: Verifiable, so it has no removal step and no reader risk. That is precisely
+# why these three were held out of commit 3b: adding extends and dropping declarations inside the
+# dangerous removal half, on files scheduled for deletion two commits later, would have been pure
+# churn concentrated in the one place this batch could silently break.
+description: "Org-scoped expertise junction: a provider Org's claimed proficiency in a Catalog Skill. One row per (org, skill) claim with its own verification provenance (D-53). Skill name resolved from the Catalog on read (not denormalized). Buyer orgs have zero of these."
+extends:
+  - Object
+  - Verifiable
+properties:
+  - orgId:
+    field: providerSkillProficiency.orgId
+  - skillId:
+    field: providerSkillProficiency.skillId
+  - proficiencyLevel:
+    field: providerSkillProficiency.proficiencyLevel
+  - yearsExperience:
+    field: providerSkillProficiency.yearsExperience
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Proficiency":
+    jsonata: proficiencyLevel
+    sort: proficiencyLevel
+  "Verified":
+    jsonata: verified
+    sort: verified

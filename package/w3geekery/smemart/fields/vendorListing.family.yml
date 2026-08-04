@@ -1,0 +1,3 @@
+description: 'What kind of thing this listing is, which determines how it is delivered (see vendorListing.family enum)'
+displayName: 'Family'
+type: string

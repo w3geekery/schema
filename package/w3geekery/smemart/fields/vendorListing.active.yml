@@ -1,0 +1,3 @@
+description: 'Whether the listing is currently visible to buyers; distinct from lifecycle, which is the editorial state'
+displayName: 'Active'
+type: boolean

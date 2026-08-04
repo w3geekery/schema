@@ -1,0 +1,14 @@
+# Mirrors OfferRef exactly — same reasoning, same shape. See OfferRef.yml for why these are
+# documents rather than classes (identity belongs to the referent; temporary seam shape).
+#
+# SCOPE: this is a minimal per-listing terms POINTER. The full legal facet — ODRL/DPV policy
+# expression, permissions/prohibitions/duties — is its own cross-cutting design and is explicitly
+# NOT U1. Do not grow this shape into one; when the legal facet lands it will supersede this
+# document rather than extend it.
+description: "Pointer to the terms governing this listing, plus a display label. Minimal by design — the full ODRL/DPV legal facet is a later, separate design."
+displayName: "Terms Reference"
+properties:
+  - termsId:
+    field: termsRef.termsId
+  - label:
+    field: termsRef.label
