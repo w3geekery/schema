@@ -10,11 +10,11 @@ properties:
     field: plan.estimatedDuration
   - teamStructure:
     field: plan.teamStructure
-  - project:
-    linkTo: SmeMartProject.id.plans
   - milestones:
     linkTo: PlanMilestone.id.plan
     multi: true
+  - projectId:
+    field: plan.projectId
 viewProperties:
   "Title":
     jsonata: title

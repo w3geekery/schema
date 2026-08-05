@@ -1,3 +1,0 @@
-description: 'Optional free-text label to disambiguate multiple addresses of the same type (display-only, never routed on)'
-displayName: 'User Label'
-type: string

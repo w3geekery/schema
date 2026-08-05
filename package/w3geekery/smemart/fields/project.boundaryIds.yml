@@ -1,4 +1,0 @@
-description: 'ZB Boundary IDs associated with this project (1 or more)'
-displayName: 'Boundary IDs'
-type: string
-multi: true

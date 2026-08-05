@@ -1,3 +1,0 @@
-description: 'Communication mode: direct (buyer↔provider), mediated (all comms through facilitator)'
-displayName: 'Communication Mode'
-type: string

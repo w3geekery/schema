@@ -1,3 +1,0 @@
-description: 'Whether this service offering is currently active'
-displayName: 'Is Active'
-type: boolean

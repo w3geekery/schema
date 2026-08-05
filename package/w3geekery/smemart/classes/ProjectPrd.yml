@@ -6,11 +6,11 @@ properties:
     field: prd.title
   - summary:
     field: prd.summary
-  - project:
-    linkTo: SmeMartProject.id.prds
   - sections:
     linkTo: PrdSection.id.prd
     multi: true
+  - projectId:
+    field: prd.projectId
 viewProperties:
   "Title":
     jsonata: title

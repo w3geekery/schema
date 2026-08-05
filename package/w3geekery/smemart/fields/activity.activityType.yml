@@ -1,3 +1,0 @@
-description: 'Type of activity (task, escalation, approval, etc.)'
-displayName: 'Activity Type'
-type: string

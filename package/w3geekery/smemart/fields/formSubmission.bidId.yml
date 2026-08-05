@@ -1,3 +1,0 @@
-description: 'UUID of the Bid this form submission is attached to'
-displayName: 'Bid ID'
-type: string

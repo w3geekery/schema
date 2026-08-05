@@ -1,6 +1,0 @@
-description: Kind of entity that owns an address
-displayName: Address Owner Type
-values:
-  - ORG: 'Platform Org (provider or buyer)'
-  - PERSONNEL: 'Reserved — org personnel record'
-  - USER: 'Reserved — platform User'

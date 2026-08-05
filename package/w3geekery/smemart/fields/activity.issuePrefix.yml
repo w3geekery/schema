@@ -1,3 +1,0 @@
-description: 'Issue code prefix declared by this activity (e.g., sec-, gap-, mst-)'
-displayName: 'Issue Prefix'
-type: string

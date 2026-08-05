@@ -1,3 +1,0 @@
-description: 'ISO 8601 timestamp when evidence was submitted'
-displayName: 'Submitted At'
-type: string

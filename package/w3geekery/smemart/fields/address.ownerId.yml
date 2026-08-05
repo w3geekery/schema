@@ -1,3 +1,0 @@
-description: 'UUID of the owning entity (an Org now; personnel/user later)'
-displayName: 'Owner ID'
-type: string

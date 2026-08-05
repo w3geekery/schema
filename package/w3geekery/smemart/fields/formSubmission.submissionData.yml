@@ -1,3 +1,0 @@
-description: 'JSON-encoded map of fieldId to submitted value for all fields in the form'
-displayName: 'Submission Data'
-type: string

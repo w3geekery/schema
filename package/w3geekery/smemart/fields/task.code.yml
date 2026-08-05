@@ -1,3 +1,0 @@
-description: 'Issue code (activity prefix + org-scoped counter, e.g., sec-12345)'
-displayName: 'Code'
-type: string

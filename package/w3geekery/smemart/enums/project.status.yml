@@ -1,8 +1,0 @@
-description: Status of a project
-displayName: Project Status
-values:
-  - PLANNING: 'Initial planning phase'
-  - ACTIVE: 'Work underway'
-  - REVIEW: 'Under review before completion'
-  - COMPLETED: 'Project successfully completed'
-  - CANCELLED: 'Project cancelled'

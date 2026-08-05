@@ -1,3 +1,0 @@
-description: 'ID of the parent folder (null for root/notebook-level folders)'
-displayName: 'Parent Folder ID'
-type: string

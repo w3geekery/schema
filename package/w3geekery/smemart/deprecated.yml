@@ -11,6 +11,54 @@ classes:
   - ProviderSkill
   - ProviderProduct
   - ProviderFramework
+  # ── 2026-08-05 RETIREMENT WAVE (Clark) ──────────────────────────────────────────────────────
+  # Fourteen classes retired in one batch. Three distinct reasons, recorded per class because
+  # "it duplicates a platform primitive" is NOT sufficient on its own -- each had to be shown.
+  #
+  # A. ABSORBED BY A PLATFORM PRIMITIVE. The platform now does what these were invented to do.
+  #    Engagement / SmeMartProject -> platform.Project (projectType enum carries engagement/rfp/pilot).
+  #    SmeMartBoard -> platform.Board (strict superset; scope was redundant against Board's own
+  #      ownerId/parentId/boundaryId/orgId, and partition was dead twice over -- schema said
+  #      buyer/provider/shared, the app union said demand/supply/execution/P1, zero overlap).
+  #    SmeMartTask / SmeMartActivity / SmeMartWorkflow -> platform Task / Activity / Workflow.
+  #    SmeMartDocument -> FileService (it already extended File).
+  #    Address -> the platform base `address` document; use the platform shape, do not re-declare it.
+  - Engagement
+  - SmeMartProject
+  - SmeMartBoard
+  - SmeMartTask
+  - SmeMartActivity
+  - SmeMartWorkflow
+  - SmeMartDocument
+  - Address
+  #
+  # B. WRONG STORE. These are not GQL-shaped data.
+  #    Note / NoteFolder -> FileService. The zb/com/ui Projects App Notes tab already does
+  #      everything smemart's Note did; NoteFolder had no non-self link except Note.id.folder, so
+  #      without Note it is an empty folder tree.
+  #    FormSubmission -> PKV shape, not GQL (Clark 2026-08-05).
+  - Note
+  - NoteFolder
+  - FormSubmission
+  #
+  # C. REQUIREMENT<>SATISFACTION SHAPE, or cruft from a plan that will not be built.
+  #    EngagementVettingItem was already deprecated: true in-tree, replacement documented as paired
+  #      platform.Task on a platform.Board(boardType=list). It is req<>sat shape (Clark).
+  #    DocumentTemplate / DocumentInstance were added 2026-04-10 for the Plan 015 / Phase 15
+  #      document-templating system. That system will not be built. BACKLOG 054 (D2) and 087 both
+  #      reference it and are now partly stale -- see the note filed with this batch.
+  - EngagementVettingItem
+  - DocumentTemplate
+  - DocumentInstance
+  #
+  # D. SUPERSEDED BY A CLASS WE SHIPPED THE SAME DAY.
+  #    ServiceOffering -> VendorListing (shipped in 2.0.7). Every field maps with nothing left over:
+  #      isActive->active, deliveryTime->deliveryTime, providerId->ownerId,
+  #      serviceIncludes->includesSummary, serviceRequirements->prerequisitesSummary,
+  #      category/subcategory->family/kind/catalogRef, price/pricingType->offers (offerRef document).
+  #      The listing-copy rename in PR #67 (includesSummary / prerequisitesSummary) was alignment with
+  #      the class it replaces.
+  - ServiceOffering
 fields:
   - marketplaceProfileItem.section
   - marketplaceProfileItem.expiresAt
@@ -98,6 +146,144 @@ fields:
   - engagement.wizardData
   - engagement.wizardStep
   - engagement.zerobiasBoundaryId
+  # ── 2026-08-05 RETIREMENT WAVE -- all 123 field files of the fourteen retired classes, plus
+  # bid.engagementId, a TRUE ORPHAN referenced by no class, document or interface (same category as
+  # the SR-1 twelve). Every field was verified consumed ONLY by classes inside the retirement set
+  # before deletion -- zero were shared with a survivor. Fields created and removed within this same
+  # unshipped branch are deliberately NOT listed: they never shipped, so there is nothing to retire.
+  - activity.activityType
+  - activity.estimatedTime
+  - activity.issuePrefix
+  - activity.packageCode
+  - activity.taskNameTemplate
+  - address.addressType
+  - address.city
+  - address.country
+  - address.isPrimary
+  - address.ownerId
+  - address.ownerType
+  - address.postalCode
+  - address.region
+  - address.street1
+  - address.street2
+  - address.userLabel
+  - address.verificationSource
+  - address.verified
+  - address.verifiedAt
+  - bid.engagementId
+  - board.boundaryId
+  - board.partition
+  - board.scope
+  - document.archived
+  - document.displayName
+  - document.documentType
+  - document.engagementId
+  - document.uploadedByZerobiasUserId
+  - documentInstance.content
+  - documentInstance.documentType
+  - documentInstance.engagementId
+  - documentInstance.projectId
+  - documentInstance.status
+  - documentInstance.templateId
+  - documentInstance.templateVersion
+  - documentInstance.variableValues
+  - documentTemplate.content
+  - documentTemplate.createdBy
+  - documentTemplate.documentType
+  - documentTemplate.orgId
+  - documentTemplate.status
+  - documentTemplate.variableSchema
+  - documentTemplate.version
+  - engagement.buyerZerobiasOrgId
+  - engagement.buyerZerobiasUserId
+  - engagement.communicationMode
+  - engagement.engagementTag
+  - engagement.facilitatorUserId
+  - engagement.status
+  - engagement.zerobiasTagId
+  - engagement.zerobiasTaskId
+  - formSubmission.bidId
+  - formSubmission.projectId
+  - formSubmission.reviewedAt
+  - formSubmission.reviewedBy
+  - formSubmission.status
+  - formSubmission.submissionData
+  - formSubmission.submittedAt
+  - note.accessLevel
+  - note.archived
+  - note.authorZerobiasUserId
+  - note.boundaryId
+  - note.content
+  - note.engagementId
+  - note.folderId
+  - note.isMeetingMinutes
+  - note.projectId
+  - noteFolder.accessLevel
+  - noteFolder.color
+  - noteFolder.createdByZerobiasUserId
+  - noteFolder.engagementId
+  - noteFolder.parentId
+  - noteFolder.sortOrder
+  - project.boundaryIds
+  - project.budgetMax
+  - project.budgetMin
+  - project.budgetType
+  - project.category
+  - project.complianceFrameworkIds
+  - project.engagementId
+  - project.evaluationCriteria
+  - project.formConfig
+  - project.industry
+  - project.isInvitationOnly
+  - project.ownerId
+  - project.ownerType
+  - project.projectType
+  - project.questionsDeadline
+  - project.responseDeadline
+  - project.startDate
+  - project.status
+  - project.targetEndDate
+  - project.timeline
+  - project.wizardData
+  - project.wizardStep
+  - task.code
+  - task.dueDate
+  - task.phaseCode
+  - task.priority
+  - task.rank
+  - task.sourceDocument
+  - task.status
+  - task.transparencyConfig
+  - vettingItem.category
+  - vettingItem.conditionTrigger
+  - vettingItem.direction
+  - vettingItem.documentIds
+  - vettingItem.engagementId
+  - vettingItem.evidenceType
+  - vettingItem.expiresAt
+  - vettingItem.notes
+  - vettingItem.profileItemId
+  - vettingItem.rejectionReason
+  - vettingItem.status
+  - vettingItem.submittedAt
+  - vettingItem.verifiedAt
+  - vettingItem.verifiedBy
+  - vettingItem.vettingType
+  - vettingItem.waivedReason
+  - workflow.defaults
+  - workflow.packageCode
+  - workflow.statuses
+  - workflow.transitions
+  # ServiceOffering retirement (2026-08-05) -- superseded by VendorListing.
+  - serviceOffering.category
+  - serviceOffering.deliveryTime
+  - serviceOffering.isActive
+  - serviceOffering.price
+  - serviceOffering.pricingType
+  - serviceOffering.providerId
+  - serviceOffering.serviceIncludes
+  - serviceOffering.serviceRequirements
+  - serviceOffering.subcategory
 enums:
   - marketplaceProfileItem.section
   # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.
@@ -107,3 +293,12 @@ enums:
   # SR-1 -- orphaned with its field (engagement.budgetType). The brief scoped SR-1 as "12 field
   # files"; this enum rides along, since nothing references it once that field is gone.
   - engagement.budgetType
+  # ── 2026-08-05 RETIREMENT WAVE -- orphaned with their fields.
+  - address.addressType
+  - address.ownerType
+  - board.partition
+  - board.scope
+  - document.documentType
+  - engagement.status
+  - project.status
+  - serviceOffering.pricingType

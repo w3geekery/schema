@@ -1,7 +1,0 @@
-description: Parent scope of a board
-displayName: Board Scope
-values:
-  - ORG: 'Board owned by an organization'
-  - BOUNDARY: 'Board owned by a boundary'
-  - PROJECT: 'Board owned by a project'
-  - USER: 'Board owned by a user'

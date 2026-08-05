@@ -1,7 +1,0 @@
-description: Pricing model for a service offering
-displayName: Pricing Type
-values:
-  - FIXED: 'Flat rate per project'
-  - HOURLY: 'Hourly consulting rate'
-  - SUBSCRIPTION: 'Recurring monthly/yearly'
-  - CUSTOM: 'Quote-based, negotiated per engagement'

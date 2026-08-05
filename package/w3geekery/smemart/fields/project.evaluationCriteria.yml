@@ -1,3 +1,0 @@
-description: 'JSON array of evaluation criteria with name, weight, and description'
-displayName: 'Evaluation Criteria'
-type: string

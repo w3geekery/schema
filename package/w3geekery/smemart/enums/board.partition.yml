@@ -1,9 +1,0 @@
-description: Board partition for UI grouping
-displayName: Board Partition
-values:
-  - BUYER: 'Demand-side requirements'
-  - PROVIDER: 'Supply-side deliverables'
-  - SHARED: 'Joint milestones visible to both parties'
-  - ENGAGEMENT_SETUP: 'Corp-to-corp vetting and onboarding'
-  - CLOSEOUT: 'Engagement closure and sign-off'
-  - AUDIT: 'Third-party assessor tasks'

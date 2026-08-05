@@ -1,3 +1,0 @@
-description: 'ID of the parent engagement (corp-to-corp agreement). Scalar mirror of the engagement link for GQL filtering.'
-displayName: 'Engagement ID'
-type: string

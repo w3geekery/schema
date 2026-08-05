@@ -1,3 +1,0 @@
-description: 'Type of entity that owns the project (org or boundary)'
-displayName: 'Owner Type'
-type: string
