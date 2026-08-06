@@ -1,3 +1,0 @@
-description: 'Workflow transitions as JSON (array of {name, status, fromStatus[], approval, notification, escalation})'
-displayName: 'Transitions'
-type: string

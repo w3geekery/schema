@@ -1,4 +1,0 @@
-description: 'Boundary standard baseline IDs for compliance frameworks applicable to this project'
-displayName: 'Compliance Framework IDs'
-type: string
-multi: true

@@ -1,3 +1,0 @@
-description: 'Task priority as JSON ({label, value, ownerId})'
-displayName: 'Priority'
-type: string

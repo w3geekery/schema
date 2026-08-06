@@ -14,10 +14,8 @@ properties:
     field: review.reviewText
   - status:
     field: review.status
-  - engagement:
-    linkTo: Engagement.id.reviews
-  - project:
-    linkTo: SmeMartProject.id.reviews
+  - projectId:
+    field: review.projectId
 viewProperties:
   "Name":
     jsonata: name

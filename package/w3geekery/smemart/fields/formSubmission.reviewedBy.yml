@@ -1,3 +1,0 @@
-description: 'Party UUID of the buyer who marked the submission as reviewed'
-displayName: 'Reviewed By'
-type: string

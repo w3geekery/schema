@@ -1,3 +1,0 @@
-description: 'Whether the address has been verified against an authoritative source (nullable until KYB)'
-displayName: 'Verified'
-type: boolean

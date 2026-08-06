@@ -1,3 +1,0 @@
-description: 'JSON transparency publishing controls for entangled task pairs. Controls which fields are shared via the transparency bridge.'
-displayName: 'Transparency Config'
-type: string

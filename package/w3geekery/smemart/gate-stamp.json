@@ -1,7 +1,7 @@
 {
-  "version": "2.0.7",
-  "branch": "feat/mp-schema-batch-vendor-provenance",
-  "sourceHash": "1cb6859b9e89feed3263366858094604987034211963bb9c7ba78d3e6ed45bda",
+  "version": "2.0.7-uat.0",
+  "branch": "feat/retire-engagement-smemartproject",
+  "sourceHash": "96117df8ea7bd65afaa28e3ac7d9d76851701cf2b8daf7cd818c0c183b23a9ba",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",

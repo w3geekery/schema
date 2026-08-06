@@ -14,8 +14,8 @@ properties:
     field: rfpInvitation.invitationMessage
   - requestReason:
     field: rfpInvitation.requestReason
-  - project:
-    linkTo: SmeMartProject.id.rfpInvitations
+  - projectId:
+    field: rfpInvitation.projectId
 viewProperties:
   "Name":
     jsonata: name

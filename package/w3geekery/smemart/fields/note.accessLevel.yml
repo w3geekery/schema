@@ -1,3 +1,0 @@
-description: 'Visibility level of the note (private, shared, public)'
-displayName: 'Access Level'
-type: string

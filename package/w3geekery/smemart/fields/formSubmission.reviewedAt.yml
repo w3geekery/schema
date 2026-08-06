@@ -1,3 +1,0 @@
-description: 'ISO 8601 timestamp when buyer marked submission as reviewed'
-displayName: 'Reviewed At'
-type: string

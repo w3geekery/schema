@@ -1,3 +1,0 @@
-description: 'UUID of the DocumentTemplate this instance was created from'
-displayName: 'Template ID'
-type: string

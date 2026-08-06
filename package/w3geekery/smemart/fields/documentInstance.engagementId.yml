@@ -1,3 +1,0 @@
-description: 'UUID of the Engagement this document instance is scoped to (optional)'
-displayName: 'Engagement ID'
-type: string

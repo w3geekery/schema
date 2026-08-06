@@ -28,13 +28,11 @@ properties:
     field: bid.pricingModel
   - bidValidUntil:
     field: bid.bidValidUntil
-  - project:
-    linkTo: SmeMartProject.id.bids
   - responses:
     linkTo: BidResponse.id.bid
     multi: true
-  - formSubmission:
-    linkTo: FormSubmission.id.bid
+  - projectId:
+    field: bid.projectId
 viewProperties:
   "Name":
     jsonata: name

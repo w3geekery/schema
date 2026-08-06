@@ -1,8 +1,0 @@
-description: Status of an engagement
-displayName: Engagement Status
-values:
-  - DRAFT: 'Initial creation, not yet visible to providers'
-  - OPEN: 'Accepting bids from providers'
-  - IN_PROGRESS: 'Work underway with selected provider'
-  - COMPLETED: 'Engagement successfully completed'
-  - CANCELLED: 'Engagement cancelled'

@@ -1,3 +1,0 @@
-description: 'Workflow status: not_started, submitted, under_review, verified, rejected, expired, waived'
-displayName: 'Status'
-type: string

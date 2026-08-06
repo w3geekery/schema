@@ -1,3 +1,0 @@
-description: 'ISO 8601 timestamp when item was verified'
-displayName: 'Verified At'
-type: string

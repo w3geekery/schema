@@ -1,3 +1,0 @@
-description: 'ISO 8601 timestamp when vendor clicked Submit (not present for drafts)'
-displayName: 'Submitted At'
-type: string

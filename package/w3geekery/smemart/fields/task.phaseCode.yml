@@ -1,3 +1,0 @@
-description: 'Current phase (kanban column). Rank applies within phase.'
-displayName: 'Phase'
-type: string

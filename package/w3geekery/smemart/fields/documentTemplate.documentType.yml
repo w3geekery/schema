@@ -1,3 +1,0 @@
-description: 'Document type category (e.g., nda, msa, sow, proposal)'
-displayName: 'Document Type'
-type: string

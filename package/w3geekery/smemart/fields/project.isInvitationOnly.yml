@@ -1,3 +1,0 @@
-description: 'Boolean flag marking this RFP as invitation-only (no open bidding)'
-displayName: 'Invitation Only'
-type: boolean
