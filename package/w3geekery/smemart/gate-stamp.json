@@ -1,5 +1,5 @@
 {
-  "version": "2.0.8-uat.0",
+  "version": "2.0.9",
   "branch": "feat/security-credential-issuer-multi",
   "sourceHash": "c2f631b38ab6effbd6b68098de1d874270e3696fc41496a2cbd11df5c63d35bf",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
