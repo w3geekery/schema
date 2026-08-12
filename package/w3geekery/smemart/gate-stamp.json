@@ -1,7 +1,7 @@
 {
-  "version": "2.0.8",
-  "branch": "feat/retire-engagement-smemartproject",
-  "sourceHash": "96117df8ea7bd65afaa28e3ac7d9d76851701cf2b8daf7cd818c0c183b23a9ba",
+  "version": "2.0.8-uat.0",
+  "branch": "feat/security-credential-issuer-multi",
+  "sourceHash": "c2f631b38ab6effbd6b68098de1d874270e3696fc41496a2cbd11df5c63d35bf",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",
