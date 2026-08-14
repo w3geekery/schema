@@ -1,6 +1,6 @@
 {
   "name": "@zerobias-org/schema-w3geekery-smemart",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "SME Mart marketplace schema for Subject Matter Expert engagements.",
   "author": "W3Geekery <clark@w3geekery.com>",
   "license": "ISC",
