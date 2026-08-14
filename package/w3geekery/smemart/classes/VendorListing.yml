@@ -16,7 +16,7 @@
 # product-vs-service distinction is `family`.
 #
 # family <-> fulfillment IS A LOAD-BEARING PAIRING, validated on write, not free:
-#   SERVICE        -> ENGAGEMENT          (Projects houses a buyer->provider engagement)
+#   SERVICE        -> ENGAGEMENT          (Projects houses a buyer->vendor engagement)
 #   LICENSED_GOOD  -> ENTITLEMENT_GRANT   (Ledger records the entitlement)
 #   PRODUCTIZED    -> ENTITLEMENT_GRANT   (Ledger entitlement + delivery)
 # The schema cannot enforce it; the app's write path owns that validation.
@@ -26,7 +26,7 @@
 # decoration — without them a listing edited after purchase silently rewrites history.
 #
 # Segments are NOT a field here — see VendorListingSegment, the junction class.
-description: "A seller's marketplace listing: what is offered, what it is about, how it is delivered, and what it costs (by pointer). One per offering, owned by a provider Org. Carries no money — pricing lives in the Ledger via offers. Verification is derived on read from the seller's attestations, not stored here."
+description: "A seller's marketplace listing: what is offered, what it is about, how it is delivered, and what it costs (by pointer). One per offering, owned by a vendor Org. Carries no money — pricing lives in the Ledger via offers. Verification is derived on read from the seller's attestations, not stored here."
 extends:
   - Object
 properties:

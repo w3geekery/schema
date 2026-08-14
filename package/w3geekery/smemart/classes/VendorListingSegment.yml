@@ -3,11 +3,11 @@
 #
 # FIVE SHIPPED PRECEDENTS, all the same shape:
 #   OrgSegment                 links a platform Org to a Catalog Segment
-#   ProviderSegment            one row per (org, segment) claim
-#   ProviderSkillProficiency   one row per (org, skill) claim  (renamed from ProviderSkill in
-#                              commit 5; the pattern predates the rename)
-#   ProviderRole               a provider Org's claimed Catalog Role
-#   ProviderServiceSegment     one row per (org, serviceSegment) claim
+#   VendorSegment              one row per (org, segment) claim
+#   VendorSkillProficiency     one row per (org, skill) claim  (renamed from ProviderSkill, then
+#                              ProviderSkillProficiency; the pattern predates both renames)
+#   VendorRole                 a vendor Org's claimed Catalog Role
+#   VendorServiceSegment       one row per (org, serviceSegment) claim
 #
 # WHY NOT type: array — there is ZERO array precedent across this package, and a net-new class is
 # the wrong place to introduce the first one. The junction avoids it entirely.
