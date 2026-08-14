@@ -4,5 +4,5 @@
 description: How a purchased listing is delivered
 displayName: Fulfillment
 values:
-  - ENGAGEMENT: 'Originates a bilateral buyer-to-provider engagement; the engagement itself is created by U2, not minted here'
+  - ENGAGEMENT: 'Originates a bilateral buyer-to-vendor engagement; the engagement itself is created by U2, not minted here'
   - ENTITLEMENT_GRANT: 'Ledger records an entitlement; scope resolved via Boundary/Catalog'

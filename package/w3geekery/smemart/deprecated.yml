@@ -59,6 +59,27 @@ classes:
   #      The listing-copy rename in PR #67 (includesSummary / prerequisitesSummary) was alignment with
   #      the class it replaces.
   - ServiceOffering
+  # ── 2026-08-13 Provider* -> Vendor* RENAME (Clark) ───────────────────────────────────────────
+  # Reverses the 2026-08-04 non-sweep fence in _coord/MODEL-CHANGELOG.md, which held these back
+  # when Seller* -> Vendor* swept everything else. Clark 2026-08-13: "rename with Vendor is a
+  # thumbs up so we're consistent while we're gutting everything." The fence existed only because
+  # Cluster B had renamed these two days earlier and a second class-ID churn looked expensive;
+  # "churn cost is not really a cost" and the junctions hold NO DATA, so nothing strands.
+  # Same mechanic as Cluster B above: NOT renamed in place -- class IDs derive from content, so
+  # each became a NEW Vendor* class file and the Provider* name is retired whole here.
+  #   ProviderRole                 -> VendorRole
+  #   ProviderSegment              -> VendorSegment
+  #   ProviderServiceSegment       -> VendorServiceSegment
+  #   ProviderSkillProficiency     -> VendorSkillProficiency
+  #   ProviderProductProficiency   -> VendorProductProficiency
+  #   ProviderFrameworkProficiency -> VendorFrameworkProficiency
+  # The app's SME_MART_CLASS_IDS registry needs the new platform-assigned IDs once these land.
+  - ProviderRole
+  - ProviderSegment
+  - ProviderServiceSegment
+  - ProviderSkillProficiency
+  - ProviderProductProficiency
+  - ProviderFrameworkProficiency
 fields:
   - marketplaceProfileItem.section
   - marketplaceProfileItem.expiresAt
@@ -284,6 +305,41 @@ fields:
   - serviceOffering.serviceIncludes
   - serviceOffering.serviceRequirements
   - serviceOffering.subcategory
+  # ── 2026-08-13 Provider* -> Vendor* RENAME -- the 27 junction fields, retired with their classes.
+  - providerFrameworkProficiency.assessorCertified
+  - providerFrameworkProficiency.auditExperience
+  - providerFrameworkProficiency.frameworkId
+  - providerFrameworkProficiency.implementationExperience
+  - providerFrameworkProficiency.orgId
+  - providerFrameworkProficiency.proficiencyLevel
+  - providerFrameworkProficiency.yearsExperience
+  - providerProductProficiency.certificationDetails
+  - providerProductProficiency.certified
+  - providerProductProficiency.orgId
+  - providerProductProficiency.productId
+  - providerProductProficiency.proficiencyLevel
+  - providerProductProficiency.yearsExperience
+  - providerRole.isPrimary
+  - providerRole.orgId
+  - providerRole.roleId
+  - providerRole.yearsInRole
+  - providerSegment.isPrimary
+  - providerSegment.orgId
+  - providerSegment.segmentId
+  - providerServiceSegment.isPrimary
+  - providerServiceSegment.orgId
+  - providerServiceSegment.serviceSegmentId
+  - providerSkillProficiency.orgId
+  - providerSkillProficiency.proficiencyLevel
+  - providerSkillProficiency.skillId
+  - providerSkillProficiency.yearsExperience
+  # Same wave, but a PROPERTY rename on two classes that KEEP their names and IDs (Bid, Review).
+  # Clark 2026-08-13, on the same clean-slate call: a Review/Bid pointing at a "provider" was the
+  # last misleading prop name in the package.
+  #   bid.providerId    -> bid.vendorId
+  #   review.providerId -> review.vendorId
+  - bid.providerId
+  - review.providerId
 enums:
   - marketplaceProfileItem.section
   # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.
@@ -302,3 +358,9 @@ enums:
   - engagement.status
   - project.status
   - serviceOffering.pricingType
+  # ── 2026-08-13 Provider* -> Vendor* RENAME -- replaced by vendor*Proficiency.proficiencyLevel,
+  # same values. Note the Cluster B entries above retire the provider{Skill,Product,Framework}
+  # forms; these retire the *Proficiency forms that replaced them two days later.
+  - providerSkillProficiency.proficiencyLevel
+  - providerProductProficiency.proficiencyLevel
+  - providerFrameworkProficiency.proficiencyLevel

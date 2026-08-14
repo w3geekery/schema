@@ -1,7 +1,7 @@
 {
-  "version": "2.0.10",
-  "branch": "feat/security-credential-issuer-multi",
-  "sourceHash": "c2f631b38ab6effbd6b68098de1d874270e3696fc41496a2cbd11df5c63d35bf",
+  "version": "2.0.10-uat.0",
+  "branch": "refactor/provider-to-vendor-rename",
+  "sourceHash": "f3578de26309bf6f91ed2778b0c7aa31e49b43748b8919df572cc4323bcdb5bb",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",

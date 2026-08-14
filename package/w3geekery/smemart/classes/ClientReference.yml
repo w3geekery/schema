@@ -1,4 +1,4 @@
-description: "Typed client/project reference for an Org. Distinct from Review (which is platform-mediated reputation) — a ClientReference is a provider-supplied case study/testimonial with a contact. Verification metadata supports asserted-vs-verified (D-53)."
+description: "Typed client/project reference for an Org. Distinct from Review (which is platform-mediated reputation) — a ClientReference is a vendor-supplied case study/testimonial with a contact. Verification metadata supports asserted-vs-verified (D-53)."
 extends:
   - Object
   - VendorAttestationBase

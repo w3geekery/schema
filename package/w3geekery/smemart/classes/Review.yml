@@ -1,9 +1,9 @@
-description: "Review/rating of a provider, scoped to engagement and/or project"
+description: "Review/rating of a vendor, scoped to engagement and/or project"
 extends:
   - Object
 properties:
-  - providerId:
-    field: review.providerId
+  - vendorId:
+    field: review.vendorId
   - engagementId:
     field: review.engagementId
   - reviewerZerobiasUserId:

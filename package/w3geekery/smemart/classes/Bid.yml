@@ -2,8 +2,8 @@ description: "A vendor's bid on an RFP (SmeMartProject in published status)"
 extends:
   - Object
 properties:
-  - providerId:
-    field: bid.providerId
+  - vendorId:
+    field: bid.vendorId
   - coverLetter:
     field: bid.coverLetter
   - price:

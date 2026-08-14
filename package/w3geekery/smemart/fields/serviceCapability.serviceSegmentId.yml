@@ -8,8 +8,8 @@
 #
 # WHY type: string — every Catalog-keyed field in this package already is one, with the Catalog
 # meaning carried in the description and resolved on read:
-#   providerServiceSegment.serviceSegmentId · orgSegment.segmentId · providerSegment.segmentId
-#   providerRole.roleId · providerSkill.skillId
+#   vendorServiceSegment.serviceSegmentId · orgSegment.segmentId · vendorSegment.segmentId
+#   vendorRole.roleId · vendorSkillProficiency.skillId
 # Ruled Clark 2026-08-03. The typing argument was dropped deliberately — do not re-derive it.
 #
 # WHY NOT A TYPED REFERENCE — "not yet", never "impossible":
@@ -20,9 +20,9 @@
 #   base/interfaces/Role.yml and base/interfaces/Competency.yml; Segment itself lives in its own
 #   repo, zerobias-org/segment. If a Segment class is ever authored, revisiting this is legitimate.
 #
-# WHY IT SHARES A NAME WITH providerServiceSegment.serviceSegmentId — deliberately. Same key,
+# WHY IT SHARES A NAME WITH vendorServiceSegment.serviceSegmentId — deliberately. Same key,
 # different payload, which is the F6(a) three-way split made visible in the schema:
-#   ProviderServiceSegment = a MEMBERSHIP CLAIM        — which Catalog segment this org sits in
+#   VendorServiceSegment   = a MEMBERSHIP CLAIM        — which Catalog segment this org sits in
 #   ServiceCapability      = an ATTESTED CAPABILITY    — what it claims it can do, and who checked
 # Same key on different classes is normal and legible (cf. bid.projectId, note.projectId). A name
 # that disagrees with its own description is not — which is why this is no longer "serviceType".
