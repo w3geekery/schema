@@ -1,0 +1,13 @@
+description: An Azure Management Group
+properties:
+  # Links
+  - tenant:
+    linkTo: AzureTenant
+  - parent:
+    linkTo: AzureManagementGroup
+  - children:
+    linkTo: AzureManagementGroup
+    multi: true
+  - subscriptions:
+    linkTo: AzureSubscription
+    multi: true

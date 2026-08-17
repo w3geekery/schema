@@ -1,0 +1,12 @@
+description: An Azure Resource Provider
+shared: true
+properties:
+  - resourceTypes:
+    linkTo: AzureResourceType
+    multi: true
+  - resources:
+    linkTo: AzureResource
+    multi: true
+  - inventoryItems:
+    linkTo: AzureInventoryItem
+    multi: true

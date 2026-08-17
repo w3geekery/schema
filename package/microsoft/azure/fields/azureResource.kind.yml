@@ -1,0 +1,3 @@
+description: 'Resource kind qualifier as returned by Azure Resource Manager (resource-type specific, open vocabulary)'
+displayName: 'Kind'
+type: string

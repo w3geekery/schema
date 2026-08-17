@@ -1,0 +1,17 @@
+description: An Azure Inventory Item
+extends:
+  - InventoryItem
+properties:
+  # Links
+  - subscription:
+    linkTo: AzureSubscription
+  - resourceGroup:
+    linkTo: AzureResourceGroup
+  - resourceProvider:
+    linkTo: AzureResourceProvider
+  - resourceType:
+    linkTo: AzureResourceType
+# - location:
+#   linkTo: AzureLocation
+# - availabilityZones:
+#   linkTo: AzureAvailabilityZone

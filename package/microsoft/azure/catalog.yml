@@ -1,0 +1,5 @@
+Schema:
+  name: "Microsoft Azure Schema"
+  package: "microsoft.azure.schema"
+  description: |-
+    AuditgraphDB umbrella schema for Microsoft Azure.
