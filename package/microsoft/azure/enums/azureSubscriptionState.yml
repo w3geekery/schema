@@ -1,0 +1,8 @@
+description: Azure subscription state
+displayName: Azure Subscription State
+values:
+  - DELETED: Deleted
+  - DISABLED: Disabled
+  - ENABLED: Enabled
+  - PASTDUE: PastDue
+  - WARNED: Warned

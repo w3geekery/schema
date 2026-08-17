@@ -1,0 +1,27 @@
+description: An Azure Resource
+extends:
+  - Asset
+properties:
+  - region:
+    field: cloud.region
+  - kind:
+    field: azureResource.kind
+  # Links
+  - subscription:
+    linkTo: AzureSubscription
+  - resourceGroup:
+    linkTo: AzureResourceGroup
+  - resourceProvider:
+    linkTo: AzureResourceProvider
+  - resourceType:
+    linkTo: AzureResourceType
+  - managedBy:
+    linkTo: AzureResource
+  - manages:
+    linkTo: AzureResource
+    multi: true
+# - location:
+#   linkTo: AzureLocation
+# - availabilityZones:
+#   linkTo: AzureAvailabilityZone
+#   multi: true

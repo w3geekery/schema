@@ -1,0 +1,16 @@
+description: An Azure Resource Group
+properties:
+  - region:
+    field: cloud.region
+  # Links
+  - subscription:
+    linkTo: AzureSubscription
+  - managedBy:
+    linkTo: AzureResource
+    uniLink: true
+  - resources:
+    linkTo: AzureResource
+    multi: true
+  - inventoryItems:
+    linkTo: AzureInventoryItem
+    multi: true

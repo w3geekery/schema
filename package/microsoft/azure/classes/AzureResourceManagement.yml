@@ -1,0 +1,6 @@
+description: An Azure Resource Management Application
+extends:
+  - InventoryApplication
+properties:
+  - tenant:
+    linkTo: AzureTenant
