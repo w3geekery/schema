@@ -1,7 +1,7 @@
 {
   "version": "3.0.0-uat.0",
   "branch": "feat/microsoft-azure-schema",
-  "sourceHash": "dabb52865df38ee5312170fa6310d30bc63c7def4ebef6478dd83614ecc70dfe",
+  "sourceHash": "5614f1b56dbb553f3106ed8089a1f3cbb9d073d8a07c63c4918eb1fcdf23196d",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",
