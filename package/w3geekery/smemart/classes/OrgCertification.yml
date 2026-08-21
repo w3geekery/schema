@@ -1,0 +1,27 @@
+description: "Organization holds an org-scope compliance certification (C3PAO authorization, FedRAMP authorization, SOC 2 report, etc.). Links a platform Org to a ComplianceCertification in the zerobias.schemas.certifications catalog with issue/expiry dates and verification state."
+extends:
+  - Object
+  - Verifiable
+properties:
+  - orgId:
+    field: orgCertification.orgId
+  - issuedAt:
+    field: orgCertification.issuedAt
+  - expiresAt:
+    field: orgCertification.expiresAt
+  - certificationNumber:
+    field: orgCertification.certificationNumber
+  - notes:
+    field: orgCertification.notes
+  - certificationCode:
+    field: orgCertification.certificationCode
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Verified":
+    jsonata: verified
+    sort: verified
+  "Expires":
+    jsonata: expiresAt
+    sort: expiresAt

@@ -80,6 +80,27 @@ classes:
   - ProviderSkillProficiency
   - ProviderProductProficiency
   - ProviderFrameworkProficiency
+  # ── 2026-08-19 SecurityCredential MOVES OUT of smemart ──────────────────────────────────────
+  # The curated credential catalog is no longer W3Geekery's. Chris ruled at the 2026-08-19 standup
+  # that the 126 records ship as a shared ZeroBias dataset (collector + pipeline), so the class
+  # moves to zerobias.schemas.certifications.schema and is retired here.
+  #
+  # THIS TOMBSTONE MUST PUBLISH BEFORE the new package can load. A class name is globally unique
+  # across schema packages while it is active -- the dataloader refuses the new package outright
+  # with "Class 'SecurityCredential' is active in another schema 'w3geekery.smemart.schema',
+  # cannot overload from lower, or different vsp package". Measured, not inferred.
+  #
+  # The two claim junctions STAY as concepts but are RENAMED. They are a customer's assertion
+  # about itself, both extending Verifiable -- a different thing from a catalog entry -- but
+  # "credential" means secrets in this platform (base schema owns AccessCredential), so:
+  #   OrgCredential  -> OrgCertification
+  #   UserCredential -> UserCertification
+  # A rename mints a new class id (UUIDv5 over the NAME), so the old names are retired here.
+  # Their `securityCredential` property stops being a link and becomes a plain code field,
+  # `certificationCode`, since the shared package cannot carry back-references into smemart.
+  - SecurityCredential
+  - OrgCredential
+  - UserCredential
 fields:
   - marketplaceProfileItem.section
   - marketplaceProfileItem.expiresAt
@@ -340,6 +361,35 @@ fields:
   #   review.providerId -> review.vendorId
   - bid.providerId
   - review.providerId
+  # ── 2026-08-19 SecurityCredential MOVES OUT -- the 11 catalog fields, retired with their class.
+  # They are re-declared inline in the new package rather than moved, so nothing here is reused.
+  - securityCredential.code
+  - securityCredential.ecosystemCode
+  - securityCredential.frameworkIds
+  - securityCredential.issuerVendorIds
+  - securityCredential.proficiency
+  - securityCredential.qualifiesForRoleIds
+  - securityCredential.scope
+  - securityCredential.sourceSnapshotDate
+  - securityCredential.sourceUrl
+  - securityCredential.status
+  - securityCredential.submittedByUserId
+  # -- 2026-08-21 OrgCredential/UserCredential renamed to *Certification. Field names carry the
+  # class camelCase prefix, so all 12 are retired and re-declared under the new prefix:
+  #   orgCredential.*  -> orgCertification.*    (credentialNumber -> certificationNumber,
+  #   userCredential.* -> userCertification.*    securityCredential -> certificationCode)
+  - orgCredential.orgId
+  - orgCredential.issuedAt
+  - orgCredential.expiresAt
+  - orgCredential.credentialNumber
+  - orgCredential.notes
+  - orgCredential.securityCredential
+  - userCredential.userId
+  - userCredential.issuedAt
+  - userCredential.expiresAt
+  - userCredential.credentialNumber
+  - userCredential.notes
+  - userCredential.securityCredential
 enums:
   - marketplaceProfileItem.section
   # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.

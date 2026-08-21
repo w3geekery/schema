@@ -1,0 +1,27 @@
+description: "Individual user holds an individual-scope compliance certification. Links a platform User to a ComplianceCertification in the zerobias.schemas.certifications catalog with issue/expiry dates, verification state, and certification number. Used by Seller profile to claim individual-scope certifications (CISSP, CCA, OSCP, etc.)."
+extends:
+  - Object
+  - Verifiable
+properties:
+  - userId:
+    field: userCertification.userId
+  - issuedAt:
+    field: userCertification.issuedAt
+  - expiresAt:
+    field: userCertification.expiresAt
+  - certificationNumber:
+    field: userCertification.certificationNumber
+  - notes:
+    field: userCertification.notes
+  - certificationCode:
+    field: userCertification.certificationCode
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Verified":
+    jsonata: verified
+    sort: verified
+  "Expires":
+    jsonata: expiresAt
+    sort: expiresAt

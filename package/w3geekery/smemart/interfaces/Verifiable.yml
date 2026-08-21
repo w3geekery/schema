@@ -8,7 +8,7 @@
 #
 # NAMING — `verificationExpiresAt`, NOT `expiresAt` (RULED: Clark, 2026-07-29).
 #   Four shipped field files already carry a DOMAIN `expiresAt` with a different meaning:
-#   insuranceCoverage (policy lapse), orgCredential + userCredential (credential expiry),
+#   insuranceCoverage (policy lapse), orgCertification + userCertification (certification expiry),
 #   vettingItem (vetting expiry). InsuranceCoverage adopts this interface, so a bare
 #   `expiresAt` here would make one class carry one name for two concepts. Nothing shipped
 #   gets renamed.
