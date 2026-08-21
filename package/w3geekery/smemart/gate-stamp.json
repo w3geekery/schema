@@ -1,7 +1,7 @@
 {
-  "version": "2.0.11",
-  "branch": "refactor/provider-to-vendor-rename",
-  "sourceHash": "f3578de26309bf6f91ed2778b0c7aa31e49b43748b8919df572cc4323bcdb5bb",
+  "version": "2.0.11-uat.0",
+  "branch": "feat/smemart-retire-securitycredential",
+  "sourceHash": "bc7d0ecb478e1613952ca20086d593171571b324ca5b90bda8b37a82118455e5",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",

@@ -80,6 +80,21 @@ classes:
   - ProviderSkillProficiency
   - ProviderProductProficiency
   - ProviderFrameworkProficiency
+  # ── 2026-08-19 SecurityCredential MOVES OUT of smemart ──────────────────────────────────────
+  # The curated credential catalog is no longer W3Geekery's. Chris ruled at the 2026-08-19 standup
+  # that the 126 records ship as a shared ZeroBias dataset (collector + pipeline), so the class
+  # moves to zerobias.schemas.credentials.schema and is retired here.
+  #
+  # THIS TOMBSTONE MUST PUBLISH BEFORE the new package can load. A class name is globally unique
+  # across schema packages while it is active -- the dataloader refuses the new package outright
+  # with "Class 'SecurityCredential' is active in another schema 'w3geekery.smemart.schema',
+  # cannot overload from lower, or different vsp package". Measured, not inferred.
+  #
+  # OrgCredential and UserCredential STAY. They are tenant claim junctions -- a customer's
+  # assertion about itself, both extending Verifiable -- which is a different thing from a catalog
+  # entry. Their `securityCredential` property stops being a link and becomes a plain code, since
+  # the shared package cannot carry back-references into smemart.
+  - SecurityCredential
 fields:
   - marketplaceProfileItem.section
   - marketplaceProfileItem.expiresAt
@@ -340,6 +355,19 @@ fields:
   #   review.providerId -> review.vendorId
   - bid.providerId
   - review.providerId
+  # ── 2026-08-19 SecurityCredential MOVES OUT -- the 11 catalog fields, retired with their class.
+  # They are re-declared inline in the new package rather than moved, so nothing here is reused.
+  - securityCredential.code
+  - securityCredential.ecosystemCode
+  - securityCredential.frameworkIds
+  - securityCredential.issuerVendorIds
+  - securityCredential.proficiency
+  - securityCredential.qualifiesForRoleIds
+  - securityCredential.scope
+  - securityCredential.sourceSnapshotDate
+  - securityCredential.sourceUrl
+  - securityCredential.status
+  - securityCredential.submittedByUserId
 enums:
   - marketplaceProfileItem.section
   # Cluster B rename (commit 5) -- replaced by provider*Proficiency.proficiencyLevel, same values.
