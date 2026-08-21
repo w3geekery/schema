@@ -1,0 +1,3 @@
+description: 'Code of the ComplianceCertification being claimed (e.g. "ISC2.CISSP"), from the zerobias.schemas.certifications catalog. Held as a plain identifier rather than a link because the catalog now lives in a separate schema package.'
+displayName: 'Certification Code'
+type: string

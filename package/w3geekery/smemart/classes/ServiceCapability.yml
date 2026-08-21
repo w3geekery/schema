@@ -8,8 +8,8 @@
 #
 # NO certifications[] AND NO specializations[] — omitted deliberately (F6(b), ruled 2026-07-31):
 #   1. Personnel precedent, already shipped and directly on point — its own class doc says
-#      person-held credentials/certs are NOT stored on it, they hang off UserCredential.
-#      Org-held certifications are OrgCredential rows. Same argument, same cluster.
+#      person-held certifications are NOT stored on it, they hang off UserCertification.
+#      Org-held certifications are OrgCertification rows. Same argument, same cluster.
 #   2. Zero precedent — `grep -rl 'type: array' fields/` over all 38 classes returns nothing.
 #      A net-new class is the wrong place to introduce the package's first array field.
 #   3. Additive later costs nothing; removing a shipped property costs a deprecated.yml recipe
