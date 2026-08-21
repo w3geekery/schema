@@ -1,0 +1,34 @@
+{
+  "name": "@zerobias-org/schema-zerobias-schemas-certifications",
+  "version": "1.0.0",
+  "description": "Schema for curated cybersecurity and compliance certifications and accreditations.",
+  "author": "team@zerobias.com",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zerobias-org/schema.git",
+    "directory": "package/zerobias/schemas/certifications/"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "classes/**",
+    "catalog.yml"
+  ],
+  "dependencies": {
+    "@zerobias-com/schema-zerobias-zerobias-platform": "latest",
+    "@zerobias-org/product-zerobias-schemas-certifications": "latest",
+    "@zerobias-org/schema-zerobias-zerobias-base": "latest"
+  },
+  "zerobias": {
+    "dataloader-version": "1.0.0",
+    "import-artifact": "schema",
+    "package": "zerobias.schemas.certifications.schema",
+    "imports": [
+      "zerobias.zerobias.platform.schema",
+      "zerobias.zerobias.base.schema"
+    ]
+  }
+}

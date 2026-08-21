@@ -1,0 +1,99 @@
+description: "Curated catalog entry for a cybersecurity or compliance certification or accreditation (CMMC CCA, C3PAO, CISSP, FedRAMP 3PAO, OSCP, CIPP, ISO 27001 Lead Auditor, etc.) — proof of assessed competency or conformity held by a person or an organization. Links to platform Vendor (issuer), Framework(s), Standard(s) and Role(s) via opaque UUID foreign keys. Holders claim entries through their own junction objects."
+extends:
+  - Object
+properties:
+  - code:
+    field:
+      type: string
+      description: 'Namespaced identifier for the certification (e.g. "CMMC.CCA", "ISC2.CISSP", "CYBERAB.C3PAO")'
+
+  - scope:
+    field:
+      type: string
+      description: 'Who holds it: individual or organizational. An explicit column rather than an inference from what the entry links to.'
+
+  - issuerVendorIds:
+    multi: true
+    field:
+      type: string
+      multi: true
+      description: 'UUIDs of platform Vendors that issue this certification; empty when the source does not enumerate an issuer'
+
+  - frameworkIds:
+    multi: true
+    field:
+      type: string
+      multi: true
+      description: 'UUIDs of platform Frameworks this certification attests competency in (CMMC, FedRAMP, ISO 27001, etc.); empty when no framework link is established'
+
+  - standardIds:
+    multi: true
+    field:
+      type: string
+      multi: true
+      description: 'UUIDs of platform Standards this certification is assessed against (e.g. ISO/IEC 17020 for a C3PAO accreditation, NIST SP 800-218 for SCA CODE 2). The standard is what the certification is measured by, distinct from the framework it demonstrates competency in.'
+
+  - prerequisiteCertificationIds:
+    multi: true
+    field:
+      type: string
+      multi: true
+      description: 'Codes of certifications accepted toward eligibility for this one (e.g. the DoD 8140.3-612 grid accepted toward CMMC CCP/CCA). Any one of them satisfies the requirement unless the issuer states otherwise.'
+
+  - qualifiesForRoleIds:
+    multi: true
+    field:
+      type: string
+      multi: true
+      description: 'UUIDs of platform Roles that holders of this certification qualify for (Assessor, Auditor, Architect, etc.)'
+
+  - supersedesCode:
+    field:
+      type: string
+      description: 'Code of the certification this one replaced after a rename or programme change (e.g. CompTIA SecurityX supersedes CASP+, ISC2 CGRC supersedes CAP). A holder of the superseded certification holds this one.'
+
+  - proficiency:
+    field:
+      type: string
+      description: 'Optional proficiency level: foundational, intermediate, advanced'
+
+  - ecosystemCode:
+    field:
+      type: string
+      description: 'Free-form organizing identifier (e.g. "CMMC", "SCF", "FedRAMP"); stopgap when a Framework catalog entry is missing'
+
+  - sourceUrl:
+    field:
+      type: string
+      description: 'URL to authoritative source (issuer site, cyberab.org snapshot, etc.)'
+
+  - sourceSnapshotDate:
+    field:
+      type: date
+      description: 'Date the source reference was captured; used for staleness tracking'
+
+  - status:
+    field:
+      type: string
+      description: 'Curation state: curated (maintained in the dataset), submitted (proposed), rejected'
+
+  - submittedByUserId:
+    field:
+      type: string
+      description: 'UUID of the platform User who proposed this certification; null for curated entries'
+viewProperties:
+  "Name":
+    jsonata: name
+    sort: name
+  "Code":
+    jsonata: code
+    sort: code
+  "Scope":
+    jsonata: scope
+    sort: scope
+  "Ecosystem":
+    jsonata: ecosystemCode
+    sort: ecosystemCode
+  "Status":
+    jsonata: status
+    sort: status
