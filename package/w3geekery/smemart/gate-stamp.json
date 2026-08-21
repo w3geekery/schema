@@ -1,5 +1,5 @@
 {
-  "version": "2.0.11-uat.0",
+  "version": "2.0.12",
   "branch": "feat/smemart-retire-securitycredential",
   "sourceHash": "cdbbc962e21b56f737cdab55955fdb4266324aecf323154e2300d8b2396e987c",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
