@@ -1,4 +1,4 @@
-description: "Curated catalog entry for a cybersecurity or compliance certification or accreditation (CMMC CCA, C3PAO, CISSP, FedRAMP 3PAO, OSCP, CIPP, ISO 27001 Lead Auditor, etc.) — proof of assessed competency or conformity held by a person or an organization. Links to platform Vendor (issuer), Framework(s), Standard(s) and Role(s) via opaque UUID foreign keys. Holders claim entries through their own junction objects."
+description: "Curated catalog entry for a compliance or cybersecurity qualification — a certification, accreditation, registration or authorization that a party holds as evidence of assessed competency or conformity (ISC2 CISSP, CMMC CCA, CyberAB C3PAO, SCF RPO, CyberAB ATP). `instrumentType` says which of those it is; they are distinct instruments, not synonyms — a certification assesses the holder, an accreditation authorises the holder to assess others. Links to platform Vendor (issuer), Framework(s), Standard(s) and Role(s) via opaque UUID foreign keys. Holders claim entries through their own junction objects."
 extends:
   - Object
 properties:
@@ -11,6 +11,11 @@ properties:
     field:
       type: string
       description: 'Who holds it: individual or organizational. An explicit column rather than an inference from what the entry links to.'
+
+  - instrumentType:
+    field:
+      type: string
+      description: 'Which kind of instrument this entry is: certification | accreditation | registration | authorization. Distinct from `scope`, which says WHO holds it — this says WHAT it is, and the two vary independently (a C3PAO accreditation and an SCF CORE certification are both organizational). certification = the holder was assessed against a standard. accreditation = the holder is authorised to assess or certify others. registration = the holder is listed on a registry after training or agreement, without independent assessment of competency. authorization = the holder is approved to deliver something (training, a platform, published content) rather than to assess.'
 
   - issuerVendorIds:
     multi: true
@@ -33,12 +38,12 @@ properties:
       multi: true
       description: 'UUIDs of platform Standards this certification is assessed against (e.g. ISO/IEC 17020 for a C3PAO accreditation, NIST SP 800-218 for SCA CODE 2). The standard is what the certification is measured by, distinct from the framework it demonstrates competency in.'
 
-  - prerequisiteCertificationIds:
+  - prerequisiteCodes:
     multi: true
     field:
       type: string
       multi: true
-      description: 'Codes of certifications accepted toward eligibility for this one (e.g. the DoD 8140.3-612 grid accepted toward CMMC CCP/CCA). Any one of them satisfies the requirement unless the issuer states otherwise.'
+      description: 'Codes of entries in this catalog accepted toward eligibility for this one (e.g. the DoD 8140.3-612 grid accepted toward CMMC CCP/CCA). Any one of them satisfies the requirement unless the issuer states otherwise.'
 
   - qualifiesForRoleIds:
     multi: true
