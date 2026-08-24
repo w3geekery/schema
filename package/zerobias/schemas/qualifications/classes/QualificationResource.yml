@@ -1,28 +1,11 @@
-description: "Curated catalog entry for a compliance or cybersecurity qualification — a certification, accreditation, registration or authorization that a party holds as evidence of assessed competency or conformity (ISC2 CISSP, CMMC CCA, CyberAB C3PAO, SCF RPO, CyberAB ATP). `qualificationType` says which of those it is; they are distinct instruments, not synonyms — a certification assesses the holder, an accreditation authorises the holder to assess others. Links to platform Vendor (issuer), Framework(s), Standard(s) and Role(s) via opaque UUID foreign keys. Holders claim entries through their own junction objects."
+description: "Curated catalog entry for a compliance or cybersecurity qualification — a certification, accreditation, registration or authorization that a party holds as evidence of assessed competency or conformity (ISC2 CISSP, CMMC CCA, CyberAB C3PAO, SCF RPO, CyberAB ATP). `type` says which of those it is; they are distinct instruments, not synonyms — a certification assesses the holder, an accreditation authorises the holder to assess others. Links to platform Vendor (issuer), Framework(s), Standard(s) and Role(s) via opaque UUID foreign keys. Holders claim entries through their own junction objects."
 extends:
   - Object
+  - Qualification
 properties:
-  - code:
-    field:
-      type: string
-      description: 'Namespaced identifier for the certification (e.g. "CMMC.CCA", "ISC2.CISSP", "CYBERAB.C3PAO")'
 
-  - scope:
-    field:
-      type: string
-      description: 'Who holds it: individual or organizational. An explicit column rather than an inference from what the entry links to.'
 
-  - qualificationType:
-    field:
-      type: string
-      description: 'Which kind of qualification this entry is: certification | accreditation | registration | authorization. Distinct from `scope`, which says WHO holds it — this says WHAT it is, and the two vary independently (a C3PAO accreditation and an SCF CORE certification are both organizational). certification = the holder was assessed against a standard. accreditation = the holder is authorised to assess or certify others. registration = the holder is listed on a registry after training or agreement, without independent assessment of competency. authorization = the holder is approved to deliver something (training, a platform, published content) rather than to assess.'
 
-  - issuerVendorIds:
-    multi: true
-    field:
-      type: string
-      multi: true
-      description: 'UUIDs of platform Vendors that issue this certification; empty when the source does not enumerate an issuer'
 
   - frameworkIds:
     multi: true
@@ -77,10 +60,6 @@ properties:
       type: date
       description: 'Date the source reference was captured; used for staleness tracking'
 
-  - status:
-    field:
-      type: string
-      description: 'Curation state: curated (maintained in the dataset), submitted (proposed), rejected'
 
   - submittedByUserId:
     field:
