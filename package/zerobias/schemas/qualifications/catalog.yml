@@ -1,0 +1,5 @@
+Schema:
+  name: "Compliance Qualifications Schema"
+  package: "zerobias.schemas.qualifications.schema"
+  description: |-
+    AuditgraphDB schema for curated cybersecurity and compliance qualifications

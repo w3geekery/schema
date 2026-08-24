@@ -1,5 +1,0 @@
-Schema:
-  name: "Compliance Certifications Schema"
-  package: "zerobias.schemas.certifications.schema"
-  description: |-
-    AuditgraphDB schema for curated cybersecurity and compliance certifications
