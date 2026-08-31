@@ -26,3 +26,11 @@ properties:
   - vendors:
     linkTo: Vendor
     multi: true
+
+  - standards:
+    linkTo: Standard
+    multi: true
+
+  - qualifiesForRoles:
+    linkTo: Role
+    multi: true
