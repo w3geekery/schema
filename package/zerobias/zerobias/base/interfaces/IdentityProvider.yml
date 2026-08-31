@@ -1,3 +1,4 @@
+id: b76e6012-103a-5011-a2f8-a021a40a71e1
 description: "A Federated Identity/Single-Sign On (SSO) Provider"
 icon: images/classes/auditmation/base/IdentityProvider.svg
 extends: Application

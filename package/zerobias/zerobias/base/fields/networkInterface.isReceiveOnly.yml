@@ -1,3 +1,4 @@
+id: e5d8bc72-6568-4b76-8b6e-33db3f29f313
 description: "Boolean value indicating receive permission"
 displayName: "Receive Only"
 type: "boolean"

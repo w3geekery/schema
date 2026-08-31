@@ -1,3 +1,4 @@
+id: b48bfb66-76a2-54b9-9cfa-45941895fa67
 description: "A user or system account inside an application"
 extends: Account
 properties:

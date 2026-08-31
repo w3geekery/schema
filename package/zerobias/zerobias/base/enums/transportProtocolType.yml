@@ -1,3 +1,5 @@
+id: d69366e4-43e3-44af-b23b-3d23c945f65a
+fieldId: 02ae28e8-23c5-4907-afdf-573c7b115432
 description: "Indicates the transport type as defined by IANA Service Name and Transport Protocol Port Number Registry"
 displayName: "Transport Protocol"
 deprecated: true

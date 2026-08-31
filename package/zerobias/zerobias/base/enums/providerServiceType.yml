@@ -1,3 +1,5 @@
+id: e85b4e24-07da-48c9-aabb-ddacdfc4db31
+fieldId: c9fa2ad6-2b18-4695-afda-740b27d818cc
 description: "Type of services provided by a given Provider"
 displayName: "Service Provider Type"
 values:

@@ -1,3 +1,4 @@
+id: be46cc7a-883c-574c-bb0b-f842c26af56f
 description: 'An X.509 certificate is a digital certificate that uses the X.509 public key infrastructure standard to verify that a public key belongs to the individual, organization, or device it claims to represent.'
 properties:
   - certificate:

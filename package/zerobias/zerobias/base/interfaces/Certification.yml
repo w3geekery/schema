@@ -1,3 +1,4 @@
+id: 76f09363-6765-5102-93a5-54d072a154b4
 # Disabled by Kenji: This is causing issues with the GraphQL/schema builder, and needs to be researched, since it
 # contains no properties, just links.
 description: "Certification providing proof of competency"

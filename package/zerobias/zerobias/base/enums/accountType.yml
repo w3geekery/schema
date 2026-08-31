@@ -1,3 +1,5 @@
+id: 181e71bc-1756-4225-af2a-e0d82a52ee0d
+fieldId: 640116df-7aef-4b8b-8b2f-f7d891328fc3
 description: "Type of a user or system account inside an application"
 displayName: "Account Type"
 values:

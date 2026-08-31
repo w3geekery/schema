@@ -1,3 +1,4 @@
+id: d0dfce4b-97a7-42b4-95ad-8bd19e22d952
 example: "127.0.0.1 (IPv4), fe80::e2d5:5eff:fe26:d69f (IPv6)"
 description: "An IP Gateway"
 displayName: "Gateway"

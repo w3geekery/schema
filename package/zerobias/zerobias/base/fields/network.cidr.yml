@@ -1,3 +1,4 @@
+id: fe35e2ab-b305-4e4d-bd2e-857e61232789
 description: "The network/supernet that contains all subnets for this environment"
 example: "172.31.0.0/16"
 displayName: "Network"

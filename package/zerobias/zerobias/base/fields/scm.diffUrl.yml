@@ -1,3 +1,4 @@
+id: 0febf282-dc1e-40d9-a723-18e1948f2648
 description: "URL for retrieving a diff for an SCM object"
 displayName: "Diff URL"
 type: "url"

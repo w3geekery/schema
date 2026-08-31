@@ -1,3 +1,4 @@
+id: f3ff4733-65c2-5d8c-b8db-f8bd766fc099
 description: "Provider of a service or product"
 extends:
   - Organization

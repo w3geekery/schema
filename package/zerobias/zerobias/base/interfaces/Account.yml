@@ -1,3 +1,4 @@
+id: 1a32e499-4e51-5bae-9e39-70f6c2e4184a
 description: "A user or system account inside an application"
 icon: images/classes/auditmation/base/Account.svg
 extends:

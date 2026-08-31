@@ -1,3 +1,5 @@
+id: e116ad0c-8c28-43dc-8af7-a30d113340e9
+fieldId: c646e82e-c360-4edf-b014-26b3e50975e0
 description: "Change Approval Type of roles required to approve a change in a given workflow"
 displayName: "Change Approval Type"
 values:

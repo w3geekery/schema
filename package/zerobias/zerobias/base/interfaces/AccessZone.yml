@@ -1,3 +1,4 @@
+id: 0e6a86e8-cef1-5abd-97e3-8dae1e93669e
 description: A logical grouping of access points within a site, representing areas with similar access requirements
 extends:
   - Asset

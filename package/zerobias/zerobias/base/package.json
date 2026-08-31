@@ -28,6 +28,7 @@
   },
   "zerobias": {
     "package": "zerobias.zerobias.base.schema",
+    "id": "ab5c9a21-33b1-40fc-9dcd-7012feb43e78",
     "dataloader-version": "1.0.0",
     "import-artifact": "schema",
     "imports": [

@@ -1,3 +1,4 @@
+id: 916e54a0-3881-5cc7-91ed-b1242ab562ce
 description: "A backup profile which contains a backup application's strategy"
 icon: images/classes/auditmation/base/BackupProfile.svg
 properties:

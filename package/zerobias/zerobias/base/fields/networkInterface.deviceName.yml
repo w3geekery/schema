@@ -1,3 +1,4 @@
+id: b4bce285-97c9-45ed-86ec-f62d368e12a9
 description: "Official name of device seen by operating system"
 displayName: "Device Name"
 type: "string"

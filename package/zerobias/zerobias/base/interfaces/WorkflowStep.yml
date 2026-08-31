@@ -1,3 +1,4 @@
+id: 27a0872f-c646-5b85-be7a-ffae1f88f411
 description: "Transition step / state provided by and enforced by an Application Workflow, such as HR worfklows, ITSM workflows"
 # icon: images/classes/auditmation/base/Application.svg #fixme - update with Workflow State app icon
 properties:

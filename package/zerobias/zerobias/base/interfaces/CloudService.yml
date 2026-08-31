@@ -1,3 +1,4 @@
+id: 842e09f4-87a8-5651-bd1f-9b2649f3e9a7
 icon: images/classes/auditmation/base/CloudService.svg
 description: "Cloud Service"
 extends: Application

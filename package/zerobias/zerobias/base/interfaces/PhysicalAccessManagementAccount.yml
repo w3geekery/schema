@@ -1,3 +1,4 @@
+id: 80c8b7c4-b184-58a3-9126-08bf9a507790
 description: An account used for physical access management systems
 extends:
   - Account

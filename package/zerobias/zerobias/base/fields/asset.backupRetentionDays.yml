@@ -1,3 +1,4 @@
+id: 2d49598e-eebb-439f-a258-bb3e77cbb112
 displayName: "Backup Retention"
 description: "The number of days to retain backups of this Asset"
 example: "30"

@@ -1,3 +1,4 @@
+id: 509602f9-d9a1-4f37-9f27-4c5990e00ebc
 description: "An organizationally specific identifier that is used to uniquely identify a logical or tangible item by the organization that owns the item"
 displayName: "Asset ID"
 type: "string"

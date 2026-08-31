@@ -1,3 +1,5 @@
+id: 32101ac7-3abf-40a2-bb23-04c1c80af4c3
+fieldId: 8fbcc708-45c2-498a-8813-bd810336bc13
 description: "Current operational state of a resource or interface."
 displayName: "Operational Status"
 values:

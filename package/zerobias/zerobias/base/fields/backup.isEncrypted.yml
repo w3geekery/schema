@@ -1,3 +1,4 @@
+id: 5aa6adf9-3718-476f-9855-bd3a6f66a024
 description: "Boolean value to determine if encryption is enabled or not"
 displayName: "Backup Encryption"
 type: "boolean"

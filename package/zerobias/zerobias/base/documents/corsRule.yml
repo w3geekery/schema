@@ -1,3 +1,5 @@
+id: a9343841-25e0-4799-8398-f58f0ee07923
+fieldId: e098e6ab-a8dd-433c-a6a3-54a1ba8f9ba1
 description: "A rule that supports a Cross-Origin Resource Sharing (CORS) configuration"
 displayName: "CORS Rule"
 properties:

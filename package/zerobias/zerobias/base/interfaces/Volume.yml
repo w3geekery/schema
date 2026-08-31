@@ -1,3 +1,4 @@
+id: 39bc645e-4b6b-5971-b8aa-d804b482a5d8
 description: "Store for Volume type records"
 extends:
   - Asset

@@ -1,3 +1,5 @@
+id: af1c944d-1df3-41c5-b33b-139bc1616889
+fieldId: ee260edc-1609-4a60-a7dd-0e6135608527
 description: "Enumeration indicating the type of address being stored"
 displayName: "Address Type"
 values:

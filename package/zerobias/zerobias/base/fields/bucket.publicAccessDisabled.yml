@@ -1,3 +1,4 @@
+id: 38e5154d-a07d-4147-a638-5c1df598b9b2
 description: "Whether public access is disabled for this bucket"
 displayName: "Public Access Disabled"
 type: "boolean"

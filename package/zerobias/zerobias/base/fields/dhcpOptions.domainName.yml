@@ -1,3 +1,4 @@
+id: a9340520-d8f8-4df6-982e-258bd5190eb5
 displayName: "Domain Name"
 description: "The domain name that client should use when resolving hostnames via DNS"
 type: "string"

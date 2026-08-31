@@ -1,3 +1,4 @@
+id: 02bf3cd4-0f71-4c38-ae61-09dfd8282bb8
 description: "Amount of time a product is covered by warranty"
 displayName: "Warranty Months"
 type: "integer"

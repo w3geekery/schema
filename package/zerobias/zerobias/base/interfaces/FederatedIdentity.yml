@@ -1,3 +1,4 @@
+id: 4cb5aa81-ab8c-5590-8f72-c2b0ea13d1ac
 # Disabled by Kenji: This is causing issues with the GraphQL/schema builder, and needs to be researched, since it
 # contains no properties, just links.
 description: "A Federated identity tied to a user or user account inside an application"

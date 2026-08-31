@@ -1,3 +1,4 @@
+id: 463d027a-0e35-4eca-9131-76351087ad26
 description: "Whether a Pull Request is a draft"
 displayName: "Draft"
 type: "boolean"

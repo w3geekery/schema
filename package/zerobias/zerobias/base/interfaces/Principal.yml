@@ -1,3 +1,4 @@
+id: 11d13286-dfcb-595d-805d-58b839806501
 description: An entity that can be given access rights to Resources
 properties:
   - principalType:

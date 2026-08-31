@@ -1,3 +1,4 @@
+id: c692043e-8ece-5e18-bbd0-04747ff09879
 icon: images/classes/auditmation/base/CloudService.svg
 description: "Cloud Environment"
 extends: Environment

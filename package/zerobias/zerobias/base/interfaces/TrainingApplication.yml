@@ -1,3 +1,4 @@
+id: 27d699e7-576f-57b6-aad4-cc4fb245bb66
 # Disabled by Kenji: This is causing issues with the GraphQL/schema builder, and needs to be researched, since it
 # contains no properties, just links.
 description: "Training Software Application (hosted or SaaS)"

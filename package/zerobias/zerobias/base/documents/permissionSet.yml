@@ -1,3 +1,5 @@
+id: 68c41391-765e-46a4-8594-1faecdbe05c6
+fieldId: 690f8920-576c-4310-8435-a79381b624c3
 description: "List of permissions for a given principal and resource"
 displayName: "Permissions"
 properties:

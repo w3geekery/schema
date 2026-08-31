@@ -1,3 +1,4 @@
+id: df6bbb56-73c5-4e67-bf8e-09a0cc62b360
 description: True if the user has enabled multi-factor authentication
 displayName: MFA Enabled
 example: true

@@ -1,3 +1,4 @@
+id: 0ccc4d43-2622-4137-8afb-53c04091369b
 displayName: "Trusted"
 description: "Wherther the x509 certificate is trusted."
 example: true

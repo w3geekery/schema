@@ -1,3 +1,4 @@
+id: f07aa315-a944-4e8f-aebb-6bd2035bd80b
 description: "Boolean value indicating whether or not the repository or branch is a fork of another"
 displayName: "Disabled"
 type: "boolean"

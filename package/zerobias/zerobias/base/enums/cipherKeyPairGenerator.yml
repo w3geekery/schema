@@ -1,3 +1,5 @@
+id: 6dd9db43-bfe7-4b66-8846-70c38e6894ec
+fieldId: e8a3cd90-5cf3-4445-987d-a6fc8673adad
 description: "The name of the Cipher Key Pair Generator as prescribed by JCE"
 displayName: "Key Pair Generator"
 values:

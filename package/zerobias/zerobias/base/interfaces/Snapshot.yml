@@ -1,3 +1,4 @@
+id: 31879a95-ae6e-5759-a52a-0bb6d695d0bc
 description: "A record of the state of a running image, generally captured as the differences between an image and the current state"
 icon: images/classes/auditmation/base/Snapshot.svg
 tags: 

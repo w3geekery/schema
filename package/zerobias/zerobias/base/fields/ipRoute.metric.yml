@@ -1,3 +1,4 @@
+id: 116eab17-c72a-4ad0-975e-c9cd131bac62
 displayName: "Metric"
 description: "Distance to target (in hops)"
 type: "integer"

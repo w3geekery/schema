@@ -1,3 +1,4 @@
+id: 9f04b8d1-1902-4c91-99c7-ca7ea4ba36e5
 description: "A broadcast domain that is partitioned and isolated within a network at the data link layer. A single physical local area network (LAN) can be logically partitioned into multiple, independent VLANs; a group of devices on one or more physical LANs can be configured to communicate within the same VLAN, as if they were attached to the same physical LAN."
 displayName: "VLAN ID"
 type: "int32"

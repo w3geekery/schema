@@ -1,3 +1,4 @@
+id: ce10a6d5-f3ae-4339-b3d9-4fc0b5c63f63
 description: "Boolean value indicating whether or not the repository has downloads"
 displayName: "Has Downloads"
 type: "boolean"

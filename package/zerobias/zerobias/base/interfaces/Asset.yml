@@ -1,3 +1,4 @@
+id: 96ad51e9-7a88-54d1-b6fd-d2fe0572bac9
 description: "A component that is unqiuely identifiable (virtual or physical)"
 icon: images/classes/auditmation/base/Asset.svg
 extends: 

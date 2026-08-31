@@ -1,3 +1,5 @@
+id: 5cb7d9b5-3028-4cd6-8860-4cb320434391
+fieldId: 0b897a69-a4df-44e7-8344-75b48b6e9365
 description: "Enumeration store for the current status of an Certificate"
 displayName: "Certificate Status"
 values:

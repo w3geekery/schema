@@ -1,3 +1,5 @@
+id: dbd21af7-5565-47dd-810c-89f832479e6a
+fieldId: 4f285e39-7b3d-48aa-93d0-41238420dcbf
 description: "Administrative status of the Interface. Available states are: Enabled/Up (1), Disabled/Down (2), and Testing (3)"
 displayName: "Admin Status"
 values:

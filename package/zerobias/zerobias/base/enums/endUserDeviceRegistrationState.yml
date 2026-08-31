@@ -1,3 +1,5 @@
+id: 01cde807-a5da-4658-9523-162eb4be3f8c
+fieldId: 31460bb8-098f-41ee-816b-9ec522438aba
 description: "The possible values for an end user device registration"
 displayName: "Registration Status"
 values:

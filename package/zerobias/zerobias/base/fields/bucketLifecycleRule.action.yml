@@ -1,3 +1,4 @@
+id: c755d876-cc64-42e6-8650-0f03a8bded2d
 description: "Action to take when a bucket lifecycle rule is triggered"
 displayName: "Bucket Lifecycle Rule Action"
 type: "string"

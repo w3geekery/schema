@@ -1,3 +1,4 @@
+id: ba1494f1-badc-4baf-a5e6-8c9ddad41416
 description: "DNS Zone Id (for instance Route 53 Hosted Zone ID, etc)"
 displayName: "DNS Zone ID"
 type: "string"

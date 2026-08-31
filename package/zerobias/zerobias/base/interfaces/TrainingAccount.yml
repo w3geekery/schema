@@ -1,3 +1,4 @@
+id: 7f578135-2ef0-5a4e-926f-9bcdcc3603f7
 description: "A user or system account inside a training application"
 icon: images/classes/auditmation/base/Account.svg
 extends: Account

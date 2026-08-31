@@ -1,3 +1,4 @@
+id: 5a036563-3a7d-47b2-89d7-33c0afa8a6a4
 displayName: "Preferred Backup Window"
 description: "The time when the Database should be backed up"
 example: "02:00-03:00"

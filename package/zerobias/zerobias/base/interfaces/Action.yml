@@ -1,3 +1,4 @@
+id: 0c483cd7-cd1f-5016-900b-54a74fbe46e1
 description: An operation or method that may be restricted on a given Resource
 properties:
   - accessRules:

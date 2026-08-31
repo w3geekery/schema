@@ -1,3 +1,4 @@
+id: 69d667b5-ebae-4f94-9efb-d9ea2d168987
 description: "Boolean value indicating whether or not the asset allows for authenticated vulnerability scans"
 displayName: "Authenticated Scan"
 type: "boolean"

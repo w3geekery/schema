@@ -1,3 +1,4 @@
+id: 55f351a8-60dd-518d-b666-45b2c9d797ae
 description: "One or more discrete data centers with redundant power, networking, and connectivity in a given CloudRegion."
 properties:
   - zoneId:

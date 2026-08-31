@@ -1,3 +1,5 @@
+id: 7e2cba5a-ec40-41e3-aef1-268c89acb46d
+fieldId: 67463039-3fd9-4456-b15a-c19a3ab83811
 description: "The type of relationship between a router and subnet"
 displayName: "Association Type"
 values:

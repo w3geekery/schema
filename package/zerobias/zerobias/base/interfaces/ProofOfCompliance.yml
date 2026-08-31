@@ -1,3 +1,4 @@
+id: 8c41049f-f121-5f89-a655-8e9d7090ce78
 description: "A pointer to a validation record (e.g., FIPS 140-2) or other compliance information"
 icon: images/classes/auditmation/base/ProofOfCompliance.svg
 extends: Component

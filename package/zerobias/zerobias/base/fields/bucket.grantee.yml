@@ -1,3 +1,4 @@
+id: 1c573282-22bb-48d1-9cce-5367d38ba92e
 description: "Enables a different account/user/group to access a bucket"
 displayName: "Bucket Grantee"
 type: "string" 

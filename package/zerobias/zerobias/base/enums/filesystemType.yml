@@ -1,3 +1,5 @@
+id: 461f5282-ca18-4a52-b088-e6eb6b65c5a9
+fieldId: d0ddeb59-f6f5-401e-a391-0a815cd8b185
 description: "Commonly used filesystems as defined by NIST SP 800-86"
 displayName: "Filesystem Type"
 values:

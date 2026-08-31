@@ -1,3 +1,4 @@
+id: e0158c15-6a40-4b53-abaa-56fff7fa0442
 displayName: "NETBIOS Name Servers"
 description: "IP addresses for NETBIOS name servers"
 type: "ipAddress"

@@ -1,3 +1,4 @@
+id: 5756811f-dad6-46df-9e66-dedb76610f4f
 example: "100"
 description: "A numeric value indicating speed measured in bits per second (bps)"
 displayName: "Bits Per Second"

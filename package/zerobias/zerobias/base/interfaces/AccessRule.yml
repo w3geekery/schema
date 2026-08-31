@@ -1,3 +1,4 @@
+id: f9252e36-8c05-560c-95fb-6150b3df2409
 description: A rule, policy, or directive that allows or disallows an Action to be performed on a Resource by a Principal.
 properties:
   - resources:

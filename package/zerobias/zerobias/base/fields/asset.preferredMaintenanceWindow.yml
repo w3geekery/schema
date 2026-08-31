@@ -1,3 +1,4 @@
+id: eee9d286-2208-44fc-9b0a-b0ae699464f5
 displayName: "Preferred Maintenance Window"
 description: "The time when the Asset should be maintained"
 example: "02:00-03:00"

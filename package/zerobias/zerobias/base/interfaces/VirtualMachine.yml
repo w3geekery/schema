@@ -1,3 +1,4 @@
+id: 0d39d19a-a89b-5ca1-9cc3-88eae65af28f
 icon: images/classes/auditmation/base/VirtualMachine.svg
 description: "Store for Virtual Machine record."
 extends:

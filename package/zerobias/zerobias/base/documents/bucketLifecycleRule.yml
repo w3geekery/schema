@@ -1,3 +1,5 @@
+id: 7bf6dc6a-499a-4de2-b626-1a2ca5f94d6f
+fieldId: ae03b8cd-2cf9-4a6c-a3e0-8829afe77288
 description: "Rules that govern when to delete or migrate bucket content"
 displayName: "Bucket Lifecycle Rule"
 properties:

@@ -1,3 +1,4 @@
+id: ce516fc5-03da-4262-a3a8-50ff3a3abb5f
 description: "Whether auto-merge is enabled for a Pull Request"
 displayName: "Auto Merge"
 type: "boolean"

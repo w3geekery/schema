@@ -1,3 +1,4 @@
+id: b35226bd-678c-5b34-bb6b-c6bb4e662f6a
 description: "An SSH Key Pair"
 properties:
   - fingerprint:

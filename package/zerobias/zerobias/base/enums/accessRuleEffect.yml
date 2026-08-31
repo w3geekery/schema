@@ -1,3 +1,5 @@
+id: 86e95cc5-2feb-40c2-823f-c66471b98651
+fieldId: eeff59f6-ea85-4ca8-bc41-52953c3fe235
 description: "The effect of a given AccessRule being applied"
 displayName: "Effect"
 values:

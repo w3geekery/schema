@@ -1,3 +1,4 @@
+id: b910eb27-2394-4bd7-b360-5269c0f4f4e3
 displayName: "Window"
 description: "Default window size for TCP connections"
 type: "integer"

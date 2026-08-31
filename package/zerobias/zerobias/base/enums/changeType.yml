@@ -1,3 +1,5 @@
+id: d703de58-23ba-43cd-bc19-6807a1ea91a5
+fieldId: f36b4057-404f-4e5d-b0f8-5a5cf0742e97
 description: "Type of change as defined by the Information Technology Infrastructure Library (ITIL) verison 3 (ITIL v3) Service Transition best practices"
 displayName: "Change Type"
 values:

@@ -1,7 +1,7 @@
 {
-  "version": "3.0.2",
-  "branch": "main",
-  "sourceHash": "196cb59869b0fbfd68917cbc6416c8350ba677838a0e688a47aff226f0662c7e",
+  "version": "3.0.2-uat.0",
+  "branch": "task/schema-artifact-ids-base",
+  "sourceHash": "9dbd7c027b69b2f089431d834198a8c260166b49c1f4160da654a151eafeff0c",
   "testHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tasks": {
     "validate": "passed",

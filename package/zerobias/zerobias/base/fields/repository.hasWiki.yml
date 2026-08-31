@@ -1,3 +1,4 @@
+id: 57ded7de-864a-49ed-b3ea-e0d0bbdd86f8
 description: "Boolean value indicating whether or not the repository has a wiki page"
 displayName: "Has Wiki"
 type: "boolean"

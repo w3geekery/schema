@@ -1,3 +1,5 @@
+id: 057a287b-0f23-4921-824f-a9943ac1d0f1
+fieldId: 01d6c3d9-6315-48b9-98ad-6d4bd9904007
 description: "Enumeration store for the current status of an employee"
 displayName: "Employment Status"
 values:

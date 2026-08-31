@@ -1,3 +1,4 @@
+id: cfa58228-b70b-5b25-b13d-d901218789f2
 description: A specialized application for managing physical access control systems, security zones, and visitor management
 extends:
   - Application

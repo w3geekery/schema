@@ -1,3 +1,5 @@
+id: 8bc6074f-cb85-4edf-ae96-a5285131e427
+fieldId: bc096fe2-bcd8-47e6-87c0-41a0e1829f1a
 description: "Whether the environment is managed by self or others"
 displayName: "Environment Type"
 values:

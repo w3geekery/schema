@@ -1,3 +1,4 @@
+id: 77d76d2d-049c-4724-a40d-dfb36e03437c
 displayName: "Genmask"
 description: "The netmask for the destination net"
 type: "ipAddress"

@@ -1,3 +1,4 @@
+id: b7d7b7df-d382-5c78-873a-8a242cca606b
 description: "Indicates a user can report or be assigned Tickets"
 icon: images/classes/auditmation/base/Ticket.svg
 properties:

@@ -1,3 +1,4 @@
+id: 83928649-3b1c-5c37-8538-dec94f084127
 description: "Validating body assigned attesting compliance, such as NIST, FIPS, ISO, etc"
 icon: images/classes/auditmation/base/Validation.svg
 extends: Component

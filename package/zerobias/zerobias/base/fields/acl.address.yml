@@ -1,3 +1,4 @@
+id: bed67ce4-fa47-4e4d-a2f3-54ec8539a926
 displayName: "Address Block"
 description: "CIDR block of IP addresses for an ACL rule"
 type: "cidr"

@@ -1,3 +1,4 @@
+id: e4a2ecd4-88c5-488a-b79b-5efa94e38595
 example: "latitude:40.7127281, longitude:74.0060152"
 description: "GPS Coordinate in WGS-84 coordinates"
 displayName: "GPS Point"

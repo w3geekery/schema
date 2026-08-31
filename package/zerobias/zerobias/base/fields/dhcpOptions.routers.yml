@@ -1,3 +1,4 @@
+id: 09f2ae48-fb5d-46fb-a933-abfffffa3667
 displayName: "Routers"
 description: "IP addresses for routers on the client's subnet"
 type: "ipAddress"

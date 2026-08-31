@@ -1,3 +1,4 @@
+id: 60598f91-c854-551f-978c-3c032526fb69
 description: "A vulnerability or other issue that has been identified in a source code management system"
 extends: Finding
 properties:

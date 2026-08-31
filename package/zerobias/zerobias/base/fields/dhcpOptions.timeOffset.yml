@@ -1,3 +1,4 @@
+id: 08c2969e-796b-4421-99c6-664209542a4f
 displayName: "Time Offset"
 description: "the offset of the client's subnet in seconds from Coordinated Universal Time (UTC)"
 type: "integer"

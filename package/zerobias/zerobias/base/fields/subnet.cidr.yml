@@ -1,3 +1,4 @@
+id: ebf58c2b-8ea1-4ec5-b186-c869a42f23e3
 description: "The CIDR block for a subnet"
 example: "172.31.0.0/16"
 displayName: "CIDR Block"

@@ -1,3 +1,4 @@
+id: 2475f650-baa1-4cf5-af8d-62235badb10e
 description: true if versioning is enabled, otherwise false
 displayName: Versioning Enabled
 type: "boolean"

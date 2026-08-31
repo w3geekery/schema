@@ -1,3 +1,4 @@
+id: f0d79f4d-ac0f-4e1a-9e67-e8642246ab4f
 description: "Whether a Pull Request is locked or not"
 displayName: "Locked"
 type: "boolean"

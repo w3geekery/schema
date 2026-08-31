@@ -1,3 +1,4 @@
+id: 7d526ad0-dd03-5136-a8e7-e588ad2a49bb
 description: 'An endpoint of a service.'
 properties:
   - tlsVersions:

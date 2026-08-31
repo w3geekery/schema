@@ -1,3 +1,5 @@
+id: 43121e6d-f7d5-463f-a8f2-84c18f2ea012
+fieldId: 195f49bc-a523-4229-93ae-36f27bf1b00e
 description: "Enables a different account/user to access a bucket"
 displayName: "Bucket Grant"
 properties:

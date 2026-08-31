@@ -1,3 +1,5 @@
+id: fbdd6bdd-ea0d-4eed-a7c5-332d8a9e64a7
+fieldId: 498db2c7-7a42-4547-9301-89b79fffafbd
 description: "Enumeration store for the current status of an Campaign"
 displayName: "Campaign Status"
 values:

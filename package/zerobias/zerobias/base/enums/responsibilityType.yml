@@ -1,3 +1,5 @@
+id: b7c3a422-dfee-4943-92c7-a51b9be372d8
+fieldId: 33935eb6-ed98-4bd0-a7b5-38132769bac9
 description: "Enumeration of responsibility assignment associated with Responsibility Matrix, such as RACI, RASCI model to assign responsibilities to processes"
 displayName: "Responsibility"
 values:

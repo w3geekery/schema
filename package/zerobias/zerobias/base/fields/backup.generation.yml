@@ -1,3 +1,4 @@
+id: 1353ddb4-3cd9-45f3-be47-59b0099c686b
 description: "The generation of the backup. 0 = full, 1 = child, 2 = grandchild, etc."
 displayName: "Generation"
 type: integer

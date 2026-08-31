@@ -1,3 +1,4 @@
+id: c60b508a-f939-5275-ae2d-2175064770fc
 icon: images/classes/auditmation/base/CloudService.svg
 description: "Cloud Object Storage (AWS S3, Azure BLOB Service, GCP Storage, ...)"
 extends: ObjectStorage

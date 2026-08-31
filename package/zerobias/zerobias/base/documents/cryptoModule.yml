@@ -1,3 +1,5 @@
+id: fdce3c7b-412c-4991-8d11-d9a843d1de7b
+fieldId: 97c670e7-041a-4df5-8ae5-167ce8cbec54
 description: "A set of hardware, software, and/or firmware that implements approved security functions (including cryptographic algorithms and key generation)."
 displayName: "Cryptographic Module"
 properties:

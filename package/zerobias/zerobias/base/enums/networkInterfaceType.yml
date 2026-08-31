@@ -1,3 +1,5 @@
+id: a9bdcc53-f684-44f8-9d6c-75df1492d923
+fieldId: ebc0ad5b-7948-4476-8a2e-df3da1c88584
 description: "Specifies types of network interfaces as defined by the Institute of Electrical and Electronics Engineers (IEEE) standards"
 displayName: "Network Interface Types"
 values:

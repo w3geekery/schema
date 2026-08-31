@@ -1,3 +1,4 @@
+id: b780516c-57e6-4efb-ab13-5769a2acef84
 description: "Boolean value indicating whether or not the repository is archived or not"
 displayName: "Archived"
 type: "boolean"

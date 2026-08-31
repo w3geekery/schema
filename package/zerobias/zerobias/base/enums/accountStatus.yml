@@ -1,3 +1,5 @@
+id: 08ed1315-02a8-4693-ab60-bb5e000494e4
+fieldId: 4b51ea2e-9c08-4f25-9dfd-2da424d5f84d
 description: "Status of a user or system account inside an application"
 displayName: "Account Status"
 values:

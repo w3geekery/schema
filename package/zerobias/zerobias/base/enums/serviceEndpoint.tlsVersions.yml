@@ -1,3 +1,5 @@
+id: 180413fe-3802-4cda-9f05-058903e80fed
+fieldId: 27d47c05-d806-4a3c-9698-0087a299a169
 description: The TLS versions supported by the server.
 displayName: TLS Versions
 values:

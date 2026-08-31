@@ -1,3 +1,4 @@
+id: a703d1ac-18f2-4b95-a312-c963fecc1d87
 displayName: "Gateway"
 description: "Gateway address or undefined if none set"
 type: "ipAddress"

@@ -1,3 +1,4 @@
+id: 0cc3e327-dc3e-54ee-a0d7-3889155120b5
 description: A physical location with access control capabilities, extending basic location with security zones and entry points
 extends:
   - Location

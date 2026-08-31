@@ -1,3 +1,5 @@
+id: 2d53a2a5-7146-49b0-98ac-ed6f877f6917
+fieldId: c4dc4ba8-b867-479d-b7b0-8259c6794e55
 description: "Object store for a phone number: includes the number and phone type"
 displayName: "Phone"
 properties:

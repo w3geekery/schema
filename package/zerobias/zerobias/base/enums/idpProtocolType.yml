@@ -1,3 +1,5 @@
+id: 0e3df753-39cd-4159-ba6c-5831788d2da8
+fieldId: be4a74eb-053d-459e-ba1d-2007f1044d19
 description: "Protocol used by Identity Provider"
 displayName: "IdP Protocol"
 values:

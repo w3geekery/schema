@@ -1,3 +1,4 @@
+id: 06acaf07-5a63-4d01-9013-9e90115c00be
 description: "Boolean value indicating whether branch protection is enabled"
 displayName: "Protected"
 type: "boolean"

@@ -1,3 +1,5 @@
+id: b6e3234e-af26-4511-a772-0fe6e60b1f9e
+fieldId: cb54dd6b-5f37-4ec5-83ab-e46f3813e55c
 description: "The current powered state of an application environment"
 displayName: "Power State"
 values:

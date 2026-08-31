@@ -1,3 +1,4 @@
+id: b7cb796a-8637-416f-b4f9-ef42efeb3101
 displayName: "CPE Edition"
 description: "The edition attribute is considered deprecated in this specification, and it SHOULD be assigned the logical value ANY except where required for backward compatibility with version 2.2 of the CPE specification. This attribute is referred to as the “legacy edition” attribute. If this attribute is used, values for this attribute SHOULD capture edition-related terms applied by the vendor to the product. Values for this attribute SHOULD be selected from an attribute-specific validvalues list, which MAY be defined by other specifications that utilize this specification. Any character string meeting the requirements for WFNs (cf. 5.3.2) MAY be specified as the value of the attribute."
 example: "enterprise"

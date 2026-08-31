@@ -1,3 +1,4 @@
+id: 4301e191-a30c-414a-a2f4-86f3a01ce37b
 description: "Reason why a Pull Request is locked"
 displayName: "Locked Reason"
 type: "string"

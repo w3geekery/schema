@@ -1,3 +1,5 @@
+id: 38bae2cb-1b57-466a-827c-71d03370cb25
+fieldId: e6e13ab0-e00b-4b68-9bb6-f49ad31a88d5
 description: "Control Family Type as defined by NIST SP 800-53"
 displayName: "Control Family Type"
 values:

@@ -1,3 +1,4 @@
+id: 8597eca8-0325-59d1-a29d-38d1155037c8
 icon: images/classes/auditmation/base/PhysicalAsset.svg
 description: "A device management application (MDM, RMM, etc)"
 extends:

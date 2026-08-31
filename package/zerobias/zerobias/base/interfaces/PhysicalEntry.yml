@@ -1,3 +1,4 @@
+id: 029b657f-4bc4-577b-85ca-a891dd085c1b
 description: A physical entry point or access control device such as doors, gates, or barriers
 extends:
   - Asset

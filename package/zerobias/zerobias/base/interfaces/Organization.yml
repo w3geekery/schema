@@ -1,3 +1,4 @@
+id: 44e67021-8f27-5d0e-ba22-95eae826231a
 description: "A business entity or group of people"
 icon: images/classes/auditmation/base/Organization.svg
 extends: Party
