@@ -380,3 +380,46 @@ zb.package:    {vendor}.{code}.schema
 - **Product repo:** `../product/`
 - **Collector bot repo:** `../collectorbot/`
 - **Existing schema examples:** `../../auditlogic/schema/package/` (e.g., `github/github/`)
+
+## GitHub token — `read:packages` (required for EVERY zbb/gradle command)
+
+This repo resolves its gradle plugins (`zb.workspace`, `zb.base`,
+`zb.content`) from **GitHub Packages Maven**, so the token gates the whole
+zbb toolchain — compile, validation, tests, `gate`, publish — not one task.
+
+`com.zerobias.build-tools` is a **public** package, but GitHub Packages Maven
+refuses **anonymous** reads. This is a registry requirement, not a permission
+one: nothing has to be granted to anyone and no org membership is involved.
+Any GitHub account whose token carries `read:packages` can read it.
+
+**Being logged in to `gh` is NOT enough — the scope is separate, and an
+authenticated-but-unscoped token is the usual false pass.** Assert the scope,
+not the login:
+
+```bash
+gh auth status 2>&1 | grep -q 'read:packages' && echo OK || echo 'MISSING read:packages'
+gh auth refresh -s read:packages && export GITHUB_TOKEN=$(gh auth token)   # the fix
+```
+
+Definitive check — proves the read (200 = ready, 401 = scope missing):
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' -u "x:$(gh auth token)" \
+  https://maven.pkg.github.com/zerobias-org/util/zb/workspace/zb.workspace.gradle.plugin/maven-metadata.xml
+```
+
+**Agent rule — do not report this as a blocker.** A 401 from
+`maven.pkg.github.com`, `Plugin [id: 'zb.workspace'] was not found`, or
+`Could not resolve com.zerobias.build-tools` is a KNOWN, SELF-FIXABLE state.
+It lands on the very first request (plugins pin `1.+`, so `maven-metadata.xml`
+is fetched before any package file is read). Run the refresh above and retry.
+Never present it as an environment limitation, never silently downgrade to
+`validateContent`-only, and never write "validation deferred to CI" — a
+package whose gate never ran cannot publish.
+
+⚠ Machines that have run `publishToMavenLocal` on build-tools are silently
+exempt (`mavenLocal()` is first in the resolution order). Clean, CI and
+container environments have no `~/.m2` and always need the scope — never
+conclude it is unnecessary because a developer machine worked. An INVALID
+`GITHUB_TOKEN` also silently shadows a valid keyring login (`gh auth status`
+exposes it).
