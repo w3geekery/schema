@@ -1,0 +1,6 @@
+description: "Lifecycle of the qualification itself, not of any holder's instance of it."
+displayName: "Qualification Status"
+values:
+  - ACTIVE: 'Currently offered by the issuer'
+  - RETIRED: 'No longer offered and not replaced'
+  - SUPERSEDED: 'Replaced by another qualification'

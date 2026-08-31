@@ -1,0 +1,5 @@
+description: "Who holds the qualification. An explicit value rather than an inference from what the qualification links to."
+displayName: "Qualification Scope"
+values:
+  - INDIVIDUAL: 'Held by a person'
+  - ORGANIZATIONAL: 'Held by an organization'

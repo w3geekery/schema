@@ -1,0 +1,10 @@
+description: "The kind of qualification. These are distinct instruments, not synonyms: a certification assesses the holder, an accreditation authorises the holder to assess others."
+displayName: "Qualification Type"
+values:
+  - ACCREDITATION: 'Authorises the holder to assess others'
+  - AUTHORIZATION: 'Grants the holder permission to operate in a defined capacity'
+  - CERTIFICATION: 'Assesses the competency or conformity of the holder'
+  - CLEARANCE: 'Grants the holder access at a vetted trust level'
+  - DEGREE: 'Awarded on completion of a course of academic study'
+  - LICENSE: 'Grants the holder a legal right to practise'
+  - REGISTRATION: 'Records the holder on a register maintained by an authority'

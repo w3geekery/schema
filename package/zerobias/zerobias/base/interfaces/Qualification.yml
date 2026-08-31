@@ -1,18 +1,12 @@
-# Base class for anything a party holds as evidence of assessed competency, conformity or
-# standing — certifications, accreditations, licenses, degrees, clearances, registrations.
-#
-# The supply side of a Requirement: a party asserts a Qualification ahead of anyone demanding
-# it, and a job description or contract turns the demand half into a Requirement that the
-# assertion satisfies.
-#
-# Concrete implementations follow the Standard / StandardResource pattern — see
-# QualificationResource in zerobias.schemas.qualifications.
-#
-# `type` is the subtype discriminator, matching Standard.type. Subclass instead of adding a
-# type value only where the property set genuinely diverges (a license carries jurisdiction
-# and disciplinary state; a degree never expires).
+id: e65a7906-cccf-5614-b547-f2109b08b460
+# Evidence a party holds, asserted by the holder ahead of anyone demanding it — the supply side
+# of a Requirement. Concrete implementations follow the Standard / StandardResource pattern.
+# Subclass rather than adding a `type` value only where the property set genuinely diverges: a
+# license carries jurisdiction and disciplinary state, a degree never expires.
 description: "Evidence that a party holds an assessed competency, conformity or standing — a certification, accreditation, license, degree, clearance or registration. Asserted by the holder ahead of any requirement demanding it."
 icon: images/classes/auditmation/base/Certification.svg
+extends:
+  - Object
 properties:
   - code:
     field:
@@ -20,23 +14,15 @@ properties:
       description: 'Namespaced identifier for the qualification (e.g. "ISC2.CISSP", "CMMC.CCA")'
 
   - type:
-    field:
-      type: string
-      description: 'Type of qualification — certification, accreditation, license, degree, clearance, registration'
+    field: qualificationType
 
   - scope:
-    field:
-      type: string
-      description: 'Who holds it: individual or organizational. An explicit column rather than an inference from what it links to.'
-
-  - issuerVendorIds:
-    multi: true
-    field:
-      type: string
-      multi: true
-      description: 'UUIDs of platform Vendors that issue this qualification; empty when the source does not enumerate an issuer'
+    field: qualificationScope
 
   - status:
-    field:
-      type: string
-      description: 'Lifecycle of the qualification itself: active, retired, superseded'
+    field: qualificationStatus
+
+  # Links
+  - vendors:
+    linkTo: Vendor
+    multi: true
