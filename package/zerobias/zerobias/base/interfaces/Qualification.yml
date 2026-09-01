@@ -24,13 +24,15 @@ properties:
 
   # Links
   - vendors:
-    linkTo: Vendor
+    linkTo: Vendor.id.qualifications
     multi: true
+    defered: true
 
   - standards:
-    linkTo: Standard
+    linkTo: Standard.id.qualifications
     multi: true
+    defered: true
 
   - qualifiesForRoles:
-    linkTo: Role
+    linkTo: Role.id.qualifications
     multi: true

@@ -42,4 +42,7 @@ properties:
   - app:
     linkTo: Application.id.roles
     multi: true
+  - qualifications:
+    linkTo: Qualification.id.qualifiesForRoles
+    multi: true
   # Inherits Access Rules, groups, roles, accessCredentials links from Principals
